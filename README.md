@@ -10,3 +10,13 @@ En la comunidad se realizan distintos procesos tales como: entregar certificados
 Todo lo anterior nos impulsa a realizar una plataforma web donde dichos trámites se puedan realizar digitando un documento, seleccionando un módulo y descargando un certificado, el cual llevaría un código en donde los interesados verifican en la misma plataforma su autenticidad.
 
 Para unificar a los miembros de la comunidad se pretende incluir en la plataforma un módulo donde se publiquen convocatorias de oportunidades académicas, laborales  y también crear un módulo de difusión de eventos culturales
+
+## Nombre del equipo
+UNavalaible
+
+## Integrantes
+- Jhon Emmanuel Torres
+- Camilo Pinzon
+- Cristina Cristancho
+- Rafael Salgado
+- Jhon Jairo Mueses
