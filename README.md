@@ -17,6 +17,6 @@ UNavalaible
 ## Integrantes
 - Jhon Emmanuel Torres
 - Camilo Pinzon
-- Cristina Cristancho
+- Cristian Cristancho
 - Rafael Salgado
 - Jhon Jairo Mueses
