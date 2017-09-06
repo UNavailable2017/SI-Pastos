@@ -14,6 +14,9 @@ Para unificar a los miembros de la comunidad se pretende incluir en la plataform
 ## Nombre del equipo
 UNavalaible
 
+
+
+
 ## Integrantes
 - Jhon Emmanuel Torres
 - Camilo Pinzon
