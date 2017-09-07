@@ -1,66 +1,126 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title></title>
+<nav role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">SI Pastos</a>
+    <ul class="right hide-on-med-and-down">
+      <li><p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        <!-- Logged in as <strong><%= current_user.email %></strong> -->
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %><li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
+      <% else %>
 
-<body>
-  <nav class="green lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><p class="navbar-text pull-right">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %><li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+      <% end %>
+      </p></li>
+    </ul>
 
-        <% else %>
-
-          <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-        <% end %>
-        </p></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
-
-
-  <div class="container">
-    <div class="section">
-
-    </div>
-    <br><br>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
+</nav>
 
-  <footer class="page-footer green">
-    <div class="container">
+<div class="parallax-container">
+  <div class="parallax"><%= image_tag("backgrounds/Pastos1.jpg") %></div>
+</div>
 
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
+  <div class="section white">
+    <div class="row container">
+
+      <div class="col m4">
+        <div class="center-align">
+           <%= fa_icon "clock-o 5x" %>
+        </div>
+        <p class="text-justified">El Pueblo indígena de “Los Pastos” está ubicado en el departamento de Nariño, su territorio comprende la zona andina de frontera; su reconocimiento como pueblo indígena tiene un proceso que comprende múltiples estrategias que han generado encuentros al interior de su pueblo y sus formas de organización, y tensiones con el Estado como garante del goce efectivo de derechos.</p>
+      </div>
+      <div class="col m4">
+        <div class="center-align">
+          <%= fa_icon "lightbulb-o 5x" %>
+        </div>
+        <p class="text-justified">La organización territorial en el caso del Pueblo de los Pastos se configura a partir de dinámicas propias, donde cada Resguardo cuenta con autonomía en sus formas de gobierno y en la aplicación de leyes, reflejando una heteronomía entre cabildos de la misma etnia.</p>
+      </div>
+      <div class="col m4">
+        <div class="center-align">
+          <%= fa_icon "desktop 5x" %>
+        </div>
+        <p class="text-justified">Desarrollo de una plataforma web llamada SI Pastos para el Cabildo Indígena de los Pastos residente en la ciudad de Bogotá. El cabildo es una organización política organizativa conformada por la directiva en cabeza de su Gobernador(a) y corporación, quienes son los representantes de la comunidad.</p>
+      </div>
+  </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><%= image_tag("backgrounds/Pastos2.jpg") %></div>
+</div>
+
+
+<section class="container">
+  <div class="row">
+  <h3 class="center-align">CONTÁCTANOS</h3>
+    <article class="col s6 offset-s3">
+      <form method="POST" action="formulario-contacto.php">
+        <div class="input-field">
+          <i class="material-icons prefix">perm_identity</i>
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" required>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">person_pin</i>
+          <label for="apellido">Apellido</label>
+          <input type="text" name="apellido" required>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <label for="email">Email</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">mode_edit</i>
+          <label for="mensaje">Mensaje</label>
+          <textarea name="mensaje" id="" rows="10" class="materialize-textarea"  length="140" required></textarea>
+        </div>
+
+        <p class="center-align">
+          <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">send</i>enviar</button>
+        </p>
+
+      </form>
+
+    </article>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12 center-align">
+        <h5 class="white-text">Universidad Nacional de Colombia</h5>
+        <p class="grey-text text-lighten-4">Departamento de Ingenieria de Sistemas e Industrial</p>
+        <p class="grey-text text-lighten-4">Ingenieria de Software II</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Desarrollador por</h5>
+        <ul>
+          <li>Jhon Mueses</li>
+          <li>Cristian Cristancho</li>
+          <li>Rafael Salgado</li>
+          <li>Camilo Pinzón</li>
+          <li>Jhon Torres</li>
+        </ul>
       </div>
     </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
-</html>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="center-align">
+        <%= fa_icon "facebook 2x" %>
+        <%= fa_icon "twitter 2x" %>
+        <%= fa_icon "whatsapp 2x" %>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,3 +1,14 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.text-justified {
+  text-align: justify;
+}
+
+
+
+.parallax img {
+   @media #{$small-and-down} { max-width: 200%; }
+   @media #{$medium-and-up} { width: 100%; }
+}
