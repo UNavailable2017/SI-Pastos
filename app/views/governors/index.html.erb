@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Governors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Startgovermentperiod</th>
+      <th>Endgovermentperiod</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @governors.each do |governor| %>
+      <tr>
+        <td><%= governor.name %></td>
+        <td><%= governor.startgovermentperiod %></td>
+        <td><%= governor.endgovermentperiod %></td>
+        <td><%= link_to 'Show', governor %></td>
+        <td><%= link_to 'Edit', edit_governor_path(governor) %></td>
+        <td><%= link_to 'Destroy', governor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Governor', new_governor_path %>

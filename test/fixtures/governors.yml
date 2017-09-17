@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  startgovermentperiod: 2017-09-17
+  endgovermentperiod: 2017-09-17
+
+two:
+  name: MyString
+  startgovermentperiod: 2017-09-17
+  endgovermentperiod: 2017-09-17

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @health_service.name %>
+</p>
+
+<p>
+  <strong>Admissiondate:</strong>
+  <%= @health_service.admissionDate %>
+</p>
+
+<p>
+  <strong>Departuredate:</strong>
+  <%= @health_service.departureDate %>
+</p>
+
+<p>
+  <strong>Regime:</strong>
+  <%= @health_service.regime %>
+</p>
+
+<%= link_to 'Edit', edit_health_service_path(@health_service) %> |
+<%= link_to 'Back', health_services_path %>

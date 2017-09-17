@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cabildo.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @cabildo.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @cabildo.phone %>
+</p>
+
+<p>
+  <strong>Workgroup:</strong>
+  <%= @cabildo.workGroup %>
+</p>
+
+<%= link_to 'Edit', edit_cabildo_path(@cabildo) %> |
+<%= link_to 'Back', cabildos_path %>

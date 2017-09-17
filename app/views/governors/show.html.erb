@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @governor.name %>
+</p>
+
+<p>
+  <strong>Startgovermentperiod:</strong>
+  <%= @governor.startgovermentperiod %>
+</p>
+
+<p>
+  <strong>Endgovermentperiod:</strong>
+  <%= @governor.endgovermentperiod %>
+</p>
+
+<%= link_to 'Edit', edit_governor_path(@governor) %> |
+<%= link_to 'Back', governors_path %>

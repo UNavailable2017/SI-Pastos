@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  summoner: MyString
+  frecuency: MyString
+  theme: MyText
+
+two:
+  summoner: MyString
+  frecuency: MyString
+  theme: MyText

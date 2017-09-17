@@ -1,0 +1,2 @@
+class Cabildo < ApplicationRecord
+end

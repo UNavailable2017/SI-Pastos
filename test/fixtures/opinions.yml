@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interest: MyText
+  socialOrganization: MyText
+  groupsParticipation: MyText
+  workGroupDecision: MyText
+  ideas: MyText
+  activitiesParticipatedBogota: MyText
+  whatIsParticipating: MyText
+  rightsMechanisms: MyText
+  districtParticipation: MyText
+  reasonParticipation: MyText
+  reasonNoParticipation: MyText
+  adviceOnParticipation: MyText
+
+two:
+  interest: MyText
+  socialOrganization: MyText
+  groupsParticipation: MyText
+  workGroupDecision: MyText
+  ideas: MyText
+  activitiesParticipatedBogota: MyText
+  whatIsParticipating: MyText
+  rightsMechanisms: MyText
+  districtParticipation: MyText
+  reasonParticipation: MyText
+  reasonNoParticipation: MyText
+  adviceOnParticipation: MyText

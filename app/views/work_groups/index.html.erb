@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Work Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Proyect</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_groups.each do |work_group| %>
+      <tr>
+        <td><%= work_group.participant %></td>
+        <td><%= work_group.proyect %></td>
+        <td><%= link_to 'Show', work_group %></td>
+        <td><%= link_to 'Edit', edit_work_group_path(work_group) %></td>
+        <td><%= link_to 'Destroy', work_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work Group', new_work_group_path %>
