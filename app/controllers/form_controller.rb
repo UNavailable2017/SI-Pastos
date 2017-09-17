@@ -1,4 +1,4 @@
 class FormController < ApplicationController
-  def formulario
+  def contactanos
   end
 end
