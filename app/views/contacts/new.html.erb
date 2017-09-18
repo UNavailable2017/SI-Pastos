@@ -1,28 +1,4 @@
-
-<nav role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">SI Pastos</a>
-    <ul class="right hide-on-med-and-down">
-      <li><p class="navbar-text pull-right">
-      <% if user_signed_in? %>
-        <!-- Logged in as <strong><%= current_user.email %></strong> -->
-        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %><li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>
-
-      <% else %>
-
-        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-		    <li><%= link_to "Contáctanos", new_contact_path %></li>
-      <% end %>
-      </p></li>
-    </ul>
-
-    <ul id="nav-mobile" class="side-nav">
-      <li><a href="#">Navbar Link</a></li>
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+<%= render "shared/navbar" %>
 
 <section class="container">
   <div class="row">
@@ -32,35 +8,3 @@
     </article>
   </h3>
 </section>
-
-
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12 center-align">
-        <h5 class="white-text">Universidad Nacional de Colombia</h5>
-        <p class="grey-text text-lighten-4">Departamento de Ingenieria de Sistemas e Industrial</p>
-        <p class="grey-text text-lighten-4">Ingenieria de Software II</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Desarrollador por</h5>
-        <ul>
-          <li>Jhon Mueses</li>
-          <li>Cristian Cristancho</li>
-          <li>Rafael Salgado</li>
-          <li>Camilo Pinzón</li>
-          <li>Jhon Torres</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-      <div class="center-align">
-        <%= fa_icon "facebook 2x" %>
-        <%= fa_icon "twitter 2x" %>
-        <%= fa_icon "whatsapp 2x" %>
-      </div>
-    </div>
-  </div>
-</footer>
