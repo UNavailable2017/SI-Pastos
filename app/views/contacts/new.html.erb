@@ -12,7 +12,7 @@
 
         <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
         <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-    		<li><%= link_to "Contáctanos", new_contact_path %></li>
+		    <li><%= link_to "Contáctanos", new_contact_path %></li>
       <% end %>
       </p></li>
     </ul>
@@ -24,47 +24,18 @@
   </div>
 </nav>
 
-
-
-
 <section class="container">
   <div class="row">
-  <h3 class="center-align">CONTÁCTANOS</h3>
+    <h3 class="center-align">CONTÁCTANOS</h3>
     <article class="col s6 offset-s3">
-      <form method="POST" action="formulario-contacto.php">
-        <div class="input-field">
-          <i class="material-icons prefix">perm_identity</i>
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" required>
-        </div>
 
-        <div class="input-field">
-          <i class="material-icons prefix">person_pin</i>
-          <label for="apellido">Apellido</label>
-          <input type="text" name="apellido" required>
-        </div>
-
-        <div class="input-field">
-          <i class="material-icons prefix">email</i>
-          <label for="email">Email</label>
-          <input type="email" name="email" required>
-        </div>
-
-        <div class="input-field">
-          <i class="material-icons prefix">mode_edit</i>
-          <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="" rows="10" class="materialize-textarea"  length="140" required></textarea>
-        </div>
-
-        <p class="center-align">
-          <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">send</i>enviar</button>
-        </p>
-
-      </form>
-
+      <%= render 'form', contact: @contact %>
     </article>
-  </div>
+  </h3>
 </section>
+
+<%= link_to 'Back', contacts_path %>
+
 
 <footer class="page-footer">
   <div class="container">
