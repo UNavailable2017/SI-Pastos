@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  documentPerson: 1
+  mailPerson: 1
+  residence: 1
+  idGovernCenso: 1
+  documentType: 1
+  name: MyString
+  lastname: MyString
+  age: MyString
+  birthDate: MyString
+  civilStatus: MyString
+  gender: MyString
+  originLanguage: MyString
+  domainLanguage: MyString
+  languageDomination: MyString
+
+two:
+  documentPerson: 1
+  mailPerson: 1
+  residence: 1
+  idGovernCenso: 1
+  documentType: 1
+  name: MyString
+  lastname: MyString
+  age: MyString
+  birthDate: MyString
+  civilStatus: MyString
+  gender: MyString
+  originLanguage: MyString
+  domainLanguage: MyString
+  languageDomination: MyString

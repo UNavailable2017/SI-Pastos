@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numberDocumentPerson: 1
+  idOpinion: 1
+  idHealthService: 1
+  date: MyString
+  numberOfChildren: 1
+  gender: MyString
+  ageChildren: 1
+  originResguardo: MyString
+  levelStudies: MyString
+  profession: MyString
+  entry: MyString
+
+two:
+  numberDocumentPerson: 1
+  idOpinion: 1
+  idHealthService: 1
+  date: MyString
+  numberOfChildren: 1
+  gender: MyString
+  ageChildren: 1
+  originResguardo: MyString
+  levelStudies: MyString
+  profession: MyString
+  entry: MyString

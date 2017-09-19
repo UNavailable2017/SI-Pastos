@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idGovernor: MyString
+  name: MyString
+  govermentperiod: 2017-09-19
+  nameCabildo: MyString
+  cabildoAddress: MyString
+  cabildoPhone: MyString
+  documentGovernor: 1
+
+two:
+  idGovernor: MyString
+  name: MyString
+  govermentperiod: 2017-09-19
+  nameCabildo: MyString
+  cabildoAddress: MyString
+  cabildoPhone: MyString
+  documentGovernor: 1

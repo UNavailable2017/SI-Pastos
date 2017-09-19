@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idAnnouncement: 1
+  idGovernor: MyString
+  publicationDate: 2017-09-19
+  deadline: 2017-09-19
+  announcementType: MyText
+  announcementInformation: MyText
+
+two:
+  idAnnouncement: 1
+  idGovernor: MyString
+  publicationDate: 2017-09-19
+  deadline: 2017-09-19
+  announcementType: MyText
+  announcementInformation: MyText

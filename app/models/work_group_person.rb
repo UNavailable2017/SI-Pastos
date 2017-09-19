@@ -1,0 +1,2 @@
+class WorkGroupPerson < ApplicationRecord
+end

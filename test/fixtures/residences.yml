@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idResidence: 1
+  address: MyText
+  phone: 1
+  neighborhood: MyString
+  locality: MyString
+
+two:
+  idResidence: 1
+  address: MyText
+  phone: 1
+  neighborhood: MyString
+  locality: MyString

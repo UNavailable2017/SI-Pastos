@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idgovernor:</strong>
+  <%= @governor.idGovernor %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @governor.name %>
+</p>
+
+<p>
+  <strong>Govermentperiod:</strong>
+  <%= @governor.govermentperiod %>
+</p>
+
+<p>
+  <strong>Namecabildo:</strong>
+  <%= @governor.nameCabildo %>
+</p>
+
+<p>
+  <strong>Cabildoaddress:</strong>
+  <%= @governor.cabildoAddress %>
+</p>
+
+<p>
+  <strong>Cabildophone:</strong>
+  <%= @governor.cabildoPhone %>
+</p>
+
+<p>
+  <strong>Documentgovernor:</strong>
+  <%= @governor.documentGovernor %>
+</p>
+
+<%= link_to 'Edit', edit_governor_path(@governor) %> |
+<%= link_to 'Back', governors_path %>

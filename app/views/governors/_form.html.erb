@@ -1,0 +1,52 @@
+<%= form_with(model: governor, local: true) do |form| %>
+  <% if governor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(governor.errors.count, "error") %> prohibited this governor from being saved:</h2>
+
+      <ul>
+      <% governor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idGovernor %>
+    <%= form.text_field :idGovernor, id: :governor_idGovernor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :governor_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :govermentperiod %>
+    <%= form.date_select :govermentperiod, id: :governor_govermentperiod %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nameCabildo %>
+    <%= form.text_field :nameCabildo, id: :governor_nameCabildo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cabildoAddress %>
+    <%= form.text_field :cabildoAddress, id: :governor_cabildoAddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cabildoPhone %>
+    <%= form.text_field :cabildoPhone, id: :governor_cabildoPhone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :documentGovernor %>
+    <%= form.number_field :documentGovernor, id: :governor_documentGovernor %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

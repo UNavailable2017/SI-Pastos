@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idworkgroup:</strong>
+  <%= @work_group_person.idWorkGroup %>
+</p>
+
+<p>
+  <strong>Documentnumberperson:</strong>
+  <%= @work_group_person.documentNumberPerson %>
+</p>
+
+<%= link_to 'Edit', edit_work_group_person_path(@work_group_person) %> |
+<%= link_to 'Back', work_group_people_path %>

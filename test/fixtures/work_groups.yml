@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idGroup: 1
+  participant: MyText
+  proyect: MyText
+  cabildo: MyText
+
+two:
+  idGroup: 1
+  participant: MyText
+  proyect: MyText
+  cabildo: MyText

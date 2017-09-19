@@ -1,0 +1,112 @@
+<%= form_with(model: opinion, local: true) do |form| %>
+  <% if opinion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
+
+      <ul>
+      <% opinion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idOpinion %>
+    <%= form.number_field :idOpinion, id: :opinion_idOpinion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interest %>
+    <%= form.text_area :interest, id: :opinion_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :socialOrganization %>
+    <%= form.text_area :socialOrganization, id: :opinion_socialOrganization %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groupsParticipation %>
+    <%= form.text_area :groupsParticipation, id: :opinion_groupsParticipation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :workGroupDecision %>
+    <%= form.text_area :workGroupDecision, id: :opinion_workGroupDecision %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ideas %>
+    <%= form.text_area :ideas, id: :opinion_ideas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activitiesParticipatedBogota %>
+    <%= form.text_area :activitiesParticipatedBogota, id: :opinion_activitiesParticipatedBogota %>
+  </div>
+
+  <div class="field">
+    <%= form.label :whatIsParticipating %>
+    <%= form.text_area :whatIsParticipating, id: :opinion_whatIsParticipating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rightsMechanisms %>
+    <%= form.text_area :rightsMechanisms, id: :opinion_rightsMechanisms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :districtParticipation %>
+    <%= form.text_area :districtParticipation, id: :opinion_districtParticipation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reasonParticipation %>
+    <%= form.text_area :reasonParticipation, id: :opinion_reasonParticipation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reasonNoParticipation %>
+    <%= form.text_area :reasonNoParticipation, id: :opinion_reasonNoParticipation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adviceOnParticipation %>
+    <%= form.text_area :adviceOnParticipation, id: :opinion_adviceOnParticipation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :training %>
+    <%= form.text_area :training, id: :opinion_training %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trainingTheme %>
+    <%= form.text_area :trainingTheme, id: :opinion_trainingTheme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cabildoTrust %>
+    <%= form.text_area :cabildoTrust, id: :opinion_cabildoTrust %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trustLocalGovernment %>
+    <%= form.text_area :trustLocalGovernment, id: :opinion_trustLocalGovernment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trustNationalGovernment %>
+    <%= form.text_area :trustNationalGovernment, id: :opinion_trustNationalGovernment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trustONGfoundation %>
+    <%= form.text_area :trustONGfoundation, id: :opinion_trustONGfoundation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

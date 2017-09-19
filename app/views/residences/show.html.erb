@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idresidence:</strong>
+  <%= @residence.idResidence %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @residence.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @residence.phone %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @residence.neighborhood %>
+</p>
+
+<p>
+  <strong>Locality:</strong>
+  <%= @residence.locality %>
+</p>
+
+<%= link_to 'Edit', edit_residence_path(@residence) %> |
+<%= link_to 'Back', residences_path %>

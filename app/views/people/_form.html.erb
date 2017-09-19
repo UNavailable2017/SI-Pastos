@@ -1,0 +1,87 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :documentPerson %>
+    <%= form.number_field :documentPerson, id: :person_documentPerson %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailPerson %>
+    <%= form.number_field :mailPerson, id: :person_mailPerson %>
+  </div>
+
+  <div class="field">
+    <%= form.label :residence %>
+    <%= form.number_field :residence, id: :person_residence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idGovernCenso %>
+    <%= form.number_field :idGovernCenso, id: :person_idGovernCenso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :documentType %>
+    <%= form.number_field :documentType, id: :person_documentType %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :person_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :person_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.text_field :age, id: :person_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthDate %>
+    <%= form.text_field :birthDate, id: :person_birthDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :civilStatus %>
+    <%= form.text_field :civilStatus, id: :person_civilStatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :person_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :originLanguage %>
+    <%= form.text_field :originLanguage, id: :person_originLanguage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :domainLanguage %>
+    <%= form.text_field :domainLanguage, id: :person_domainLanguage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :languageDomination %>
+    <%= form.text_field :languageDomination, id: :person_languageDomination %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

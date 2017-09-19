@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idgroup:</strong>
+  <%= @work_group.idGroup %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @work_group.participant %>
+</p>
+
+<p>
+  <strong>Proyect:</strong>
+  <%= @work_group.proyect %>
+</p>
+
+<p>
+  <strong>Cabildo:</strong>
+  <%= @work_group.cabildo %>
+</p>
+
+<%= link_to 'Edit', edit_work_group_path(@work_group) %> |
+<%= link_to 'Back', work_groups_path %>

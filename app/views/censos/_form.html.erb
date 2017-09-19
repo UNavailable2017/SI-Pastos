@@ -1,0 +1,72 @@
+<%= form_with(model: censo, local: true) do |form| %>
+  <% if censo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(censo.errors.count, "error") %> prohibited this censo from being saved:</h2>
+
+      <ul>
+      <% censo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :numberDocumentPerson %>
+    <%= form.number_field :numberDocumentPerson, id: :censo_numberDocumentPerson %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idOpinion %>
+    <%= form.number_field :idOpinion, id: :censo_idOpinion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idHealthService %>
+    <%= form.number_field :idHealthService, id: :censo_idHealthService %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date, id: :censo_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numberOfChildren %>
+    <%= form.number_field :numberOfChildren, id: :censo_numberOfChildren %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :censo_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ageChildren %>
+    <%= form.number_field :ageChildren, id: :censo_ageChildren %>
+  </div>
+
+  <div class="field">
+    <%= form.label :originResguardo %>
+    <%= form.text_field :originResguardo, id: :censo_originResguardo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :levelStudies %>
+    <%= form.text_field :levelStudies, id: :censo_levelStudies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profession %>
+    <%= form.text_field :profession, id: :censo_profession %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entry %>
+    <%= form.text_field :entry, id: :censo_entry %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
