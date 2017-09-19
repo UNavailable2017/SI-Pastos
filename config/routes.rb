@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'aux_user/homeUser'
+
+  get 'aux_user/homeGovernor'
+
   resources :contacts, only: [:new, :index, :create]
 
   devise_for :users

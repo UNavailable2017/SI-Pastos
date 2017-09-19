@@ -9,6 +9,9 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
+# convert number to words
+gem 'numbers_and_words'
+
 # devise for login
 gem 'devise'
 # materialize

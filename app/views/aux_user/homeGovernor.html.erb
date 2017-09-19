@@ -1,0 +1,56 @@
+<nav class="nav-extended">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="/" class="brand-logo">SI Pastos</a>
+    <ul class="right hide-on-med-and-down">
+      <li><p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %><li>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link' %><li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+      <% end %>
+        <li><%= link_to "Contáctanos", new_contact_path %></li>
+      </p></li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+  <div class="nav-content">
+    <ul class="tabs tabs-transparent">
+      <li class="tab"><a class="active" href="#test1">Inicio</a></li>
+      <li class="tab"><a href="#test2">Registrar Censo</a></li>
+      <li class="tab"><a href="#test3">Consultar Censo</a></li>
+      <li class="tab"><a href="#test4">Certificados</a></li>
+      <li class="tab"><a href="#test5">Eventos</a></li>
+      <li class="tab"><a href="#test6">Correos</a></li>
+      <li class="tab"><a href="#test7">Mapas</a></li>
+      <li class="tab"><a href="#test8">Ofertas</a></li>
+      <li class="tab"><a href="#test9">Elecciones</a></li>
+      <li class="tab"><a href="#test10">Estadísticas</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="test1" class="col s12">
+  <div class="carousel">
+    <% for i in 1...11 %>
+      <a class="carousel-item" href="#<%= i.to_words %>!">
+        <%= image_tag("home/fotoCom" + i.to_s + ".jpg") %>
+      </a>
+    <% end %>
+  </div>
+</div>
+
+<div id="test2" class="col s12">
+
+</div>
+<div id="test3" class="col s12">
+
+</div>
+<div id="test4" class="col s12">
+
+</div>
