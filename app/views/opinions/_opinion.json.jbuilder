@@ -1,0 +1,2 @@
+json.extract! opinion, :id, :idOpinion, :interest, :socialOrganization, :groupsParticipation, :workGroupDecision, :ideas, :activitiesParticipatedBogota, :whatIsParticipating, :rightsMechanisms, :districtParticipation, :reasonParticipation, :reasonNoParticipation, :adviceOnParticipation, :training, :trainingTheme, :cabildoTrust, :trustLocalGovernment, :trustNationalGovernment, :trustONGfoundation, :censo_id, :created_at, :updated_at
+json.url opinion_url(opinion, format: :json)

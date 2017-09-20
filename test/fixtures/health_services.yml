@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idHealthService: 1
+  name: MyString
+  censo_id: 1
+
+two:
+  idHealthService: 1
+  name: MyString
+  censo_id: 1

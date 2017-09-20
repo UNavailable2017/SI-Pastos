@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idOpinion: 1
+  interest: MyText
+  socialOrganization: MyText
+  groupsParticipation: MyText
+  workGroupDecision: MyText
+  ideas: MyText
+  activitiesParticipatedBogota: MyText
+  whatIsParticipating: MyText
+  rightsMechanisms: MyText
+  districtParticipation: MyText
+  reasonParticipation: MyText
+  reasonNoParticipation: MyText
+  adviceOnParticipation: MyText
+  training: MyText
+  trainingTheme: MyText
+  cabildoTrust: MyText
+  trustLocalGovernment: MyText
+  trustNationalGovernment: MyText
+  trustONGfoundation: MyText
+  censo_id: 1
+
+two:
+  idOpinion: 1
+  interest: MyText
+  socialOrganization: MyText
+  groupsParticipation: MyText
+  workGroupDecision: MyText
+  ideas: MyText
+  activitiesParticipatedBogota: MyText
+  whatIsParticipating: MyText
+  rightsMechanisms: MyText
+  districtParticipation: MyText
+  reasonParticipation: MyText
+  reasonNoParticipation: MyText
+  adviceOnParticipation: MyText
+  training: MyText
+  trainingTheme: MyText
+  cabildoTrust: MyText
+  trustLocalGovernment: MyText
+  trustNationalGovernment: MyText
+  trustONGfoundation: MyText
+  censo_id: 1

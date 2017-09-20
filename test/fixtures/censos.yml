@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-09-20
+  numberOfChildren: 1
+  originResguardo: MyString
+  levelStudies: MyString
+  profession: MyString
+  entry: MyString
+  person_id: 1
+
+two:
+  date: 2017-09-20
+  numberOfChildren: 1
+  originResguardo: MyString
+  levelStudies: MyString
+  profession: MyString
+  entry: MyString
+  person_id: 1

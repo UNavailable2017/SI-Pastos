@@ -1,0 +1,2 @@
+class Censo < ApplicationRecord
+end
