@@ -1,6 +1,4 @@
 <div class="container">
-
-
   <div class="row">
     <div class="col s6 offset-s3">
 
@@ -8,7 +6,7 @@
           <%= link_to image_tag("escudo.png", height: "200"), :root %>
       </div>
 
-      <h2 class="center-align">Sign up</h2>
+      <h2 class="center-align">Regístrate</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
@@ -21,7 +19,7 @@
         <div class="field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(Minimo <%= @minimum_password_length %> caracteres.)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
@@ -32,15 +30,13 @@
         </div>
         <div class="center-align">
           <div class="actions btn waves-effect waves-light center-align">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "Regístrate" %>
           </div>
         </div>
-  <%= link_to "Back", :root %>
+        <%= link_to "Atras", :root %>
       </div>
 
       </div>
-
-        <!-- <%= render "devise/shared/links" %> -->
       <% end %>
 
 

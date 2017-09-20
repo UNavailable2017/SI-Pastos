@@ -20,6 +20,8 @@ gem 'material_icons'
 # jquery
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
+# annotate
+gem 'annotate'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
