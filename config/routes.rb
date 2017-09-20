@@ -23,6 +23,7 @@
 # 
 
 Rails.application.routes.draw do
+  resources :members
   resources :contacts, only: [:new, :index, :create]
 
   devise_for :users

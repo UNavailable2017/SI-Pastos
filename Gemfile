@@ -11,6 +11,8 @@ gem 'rails', '~> 5.1.3'
 
 gem 'annotate'
 
+gem 'pundit'
+
 # devise for login
 gem 'devise'
 # materialize

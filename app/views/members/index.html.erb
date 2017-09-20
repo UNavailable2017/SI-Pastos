@@ -1,0 +1,31 @@
+
+
+<%= render "shared/navbar" %>
+
+<h1>Members</h1>
+
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th col ="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.name %></td>
+        <td><%= member.age %></td>
+        <td><%= link_to 'Show', member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_member_path %>
