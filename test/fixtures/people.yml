@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  documentPerson: 1
+  documentType: MyString
+  name: MyString
+  lastname: MyString
+  birthDate: 2017-09-20
+  civilStatus: MyString
+  gender: MyString
+  isCensus: false
+  originLanguage: MyString
+  languageDomination: MyString
+  user_id: 1
+
+two:
+  documentPerson: 1
+  documentType: MyString
+  name: MyString
+  lastname: MyString
+  birthDate: 2017-09-20
+  civilStatus: MyString
+  gender: MyString
+  isCensus: false
+  originLanguage: MyString
+  languageDomination: MyString
+  user_id: 1

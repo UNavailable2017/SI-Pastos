@@ -10,12 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920174738) do
+ActiveRecord::Schema.define(version: 20170920214153) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.integer "documentPerson"
+    t.string "documentType"
+    t.string "name"
+    t.string "lastname"
+    t.date "birthDate"
+    t.string "civilStatus"
+    t.string "gender"
+    t.boolean "isCensus"
+    t.string "originLanguage"
+    t.string "languageDomination"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "residences", force: :cascade do |t|
+    t.text "address"
+    t.integer "phone"
+    t.string "neighborhood"
+    t.string "locality"
+    t.float "lat"
+    t.float "long"
+    t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

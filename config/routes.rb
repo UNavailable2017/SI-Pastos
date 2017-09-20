@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :residences
+  resources :people
   resources :contacts, only: [:new, :index, :create]
 
   devise_for :users

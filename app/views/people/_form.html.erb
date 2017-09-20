@@ -1,0 +1,72 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :documentPerson %>
+    <%= form.number_field :documentPerson, id: :person_documentPerson %>
+  </div>
+
+  <div class="field">
+    <%= form.label :documentType %>
+    <%= form.text_field :documentType, id: :person_documentType %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :person_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :person_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthDate %>
+    <%= form.date_select :birthDate, id: :person_birthDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :civilStatus %>
+    <%= form.text_field :civilStatus, id: :person_civilStatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :person_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isCensus %>
+    <%= form.check_box :isCensus, id: :person_isCensus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :originLanguage %>
+    <%= form.text_field :originLanguage, id: :person_originLanguage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :languageDomination %>
+    <%= form.text_field :languageDomination, id: :person_languageDomination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :person_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
