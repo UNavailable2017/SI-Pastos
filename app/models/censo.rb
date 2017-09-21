@@ -18,6 +18,6 @@ class Censo < ApplicationRecord
     belongs_to :person
     has_one :opinion
     has_many :children
-    has_one :health_service
+    belongs_to :health_service
 
 end
