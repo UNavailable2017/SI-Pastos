@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'gobernador/inicio', to: 'governor#home'
+
+  get 'gobernador/registrar_censo', to: 'governor/register_censo'
+
+  get 'gobernador/buscar_censo', to: 'governor/find_censo'
+
+  get 'gobernador/certificado', to: 'governor/certificate'
+
+  get 'gobernador/publicar_evento', to: 'governor/publish_event'
+
+  get 'gobernador/correo', to: 'governor/email'
+
+  get 'gobernador/mapa', to: 'governor/map'
+
+  get 'gobernador/convocatorias', to: 'governor/announcement'
+
+  get 'gobernador/elecciones', to: 'governor/election'
+
+  get 'gobernador/estadisticas', to: 'governor/statistic'
+
   resources :announcements
   resources :events
   resources :elections
