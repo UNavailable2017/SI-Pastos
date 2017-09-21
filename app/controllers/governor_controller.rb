@@ -1,4 +1,6 @@
 class GovernorController < ApplicationController
+
+
   def home
   end
 
@@ -28,4 +30,5 @@ class GovernorController < ApplicationController
 
   def statistic
   end
+
 end

@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'railroady'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
@@ -22,6 +22,10 @@ gem 'jquery-turbolinks'
 gem 'jquery-rails'
 # annotate
 gem 'annotate'
+# for generate model
+gem 'railroady'
+# convert number to string words
+gem 'to_words'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
