@@ -5,7 +5,8 @@ class CreateAnnouncements < ActiveRecord::Migration[5.1]
       t.date :publicationDate
       t.date :deadline
       t.text :announcementType
-      t.tex :announcementInformation
+      t.text :announcementInformation
+      t.integer :person_id
 
       t.timestamps
     end

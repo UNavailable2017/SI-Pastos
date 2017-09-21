@@ -10,12 +10,104 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920214153) do
+ActiveRecord::Schema.define(version: 20170921165236) do
+
+  create_table "announcements", force: :cascade do |t|
+    t.integer "idAnnouncement"
+    t.date "publicationDate"
+    t.date "deadline"
+    t.text "announcementType"
+    t.text "announcementInformation"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.integer "idCandidate"
+    t.integer "votes"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "censos", force: :cascade do |t|
+    t.date "date"
+    t.integer "numberOfChildren"
+    t.string "originResguardo"
+    t.string "levelStudies"
+    t.string "profession"
+    t.string "entry"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "children", force: :cascade do |t|
+    t.integer "idChild"
+    t.string "name"
+    t.integer "age"
+    t.integer "censo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elections", force: :cascade do |t|
+    t.integer "idElection"
+    t.date "date"
+    t.string "winner"
+    t.integer "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.string "eventType"
+    t.string "eventInfo"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "health_services", force: :cascade do |t|
+    t.integer "idHealthService"
+    t.string "name"
+    t.integer "censo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "opinions", force: :cascade do |t|
+    t.integer "idOpinion"
+    t.text "interest"
+    t.text "socialOrganization"
+    t.text "groupsParticipation"
+    t.text "workGroupDecision"
+    t.text "ideas"
+    t.text "activitiesParticipatedBogota"
+    t.text "whatIsParticipating"
+    t.text "rightsMechanisms"
+    t.text "districtParticipation"
+    t.text "reasonParticipation"
+    t.text "reasonNoParticipation"
+    t.text "adviceOnParticipation"
+    t.text "training"
+    t.text "trainingTheme"
+    t.text "cabildoTrust"
+    t.text "trustLocalGovernment"
+    t.text "trustNationalGovernment"
+    t.text "trustONGfoundation"
+    t.integer "censo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

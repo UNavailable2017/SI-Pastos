@@ -33,7 +33,12 @@
 
   <div class="field">
     <%= form.label :announcementInformation %>
-    <%= form.text_field :announcementInformation, id: :announcement_announcementInformation %>
+    <%= form.text_area :announcementInformation, id: :announcement_announcementInformation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :person_id %>
+    <%= form.number_field :person_id, id: :announcement_person_id %>
   </div>
 
   <div class="actions">

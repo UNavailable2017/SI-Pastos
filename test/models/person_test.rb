@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: people
+#
+#  id                 :integer          not null, primary key
+#  documentPerson     :integer
+#  documentType       :string
+#  name               :string
+#  lastname           :string
+#  birthDate          :date
+#  civilStatus        :string
+#  gender             :string
+#  isCensus           :boolean
+#  originLanguage     :string
+#  languageDomination :string
+#  user_id            :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
 require 'test_helper'
 
 class PersonTest < ActiveSupport::TestCase

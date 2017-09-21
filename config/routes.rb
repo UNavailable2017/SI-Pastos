@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :announcements
+  resources :events
   resources :elections
   resources :candidates
   resources :opinions
   resources :children
   resources :health_services
-  resources :announcements
-  resources :events
   resources :censos
   resources :residences
   resources :people

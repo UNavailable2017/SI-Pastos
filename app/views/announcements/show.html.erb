@@ -25,5 +25,10 @@
   <%= @announcement.announcementInformation %>
 </p>
 
+<p>
+  <strong>Person:</strong>
+  <%= @announcement.person_id %>
+</p>
+
 <%= link_to 'Edit', edit_announcement_path(@announcement) %> |
 <%= link_to 'Back', announcements_path %>

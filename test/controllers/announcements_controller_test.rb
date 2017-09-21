@@ -17,7 +17,7 @@ class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create announcement" do
     assert_difference('Announcement.count') do
-      post announcements_url, params: { announcement: { announcementInformation: @announcement.announcementInformation, announcementType: @announcement.announcementType, deadline: @announcement.deadline, idAnnouncement: @announcement.idAnnouncement, publicationDate: @announcement.publicationDate } }
+      post announcements_url, params: { announcement: { announcementInformation: @announcement.announcementInformation, announcementType: @announcement.announcementType, deadline: @announcement.deadline, idAnnouncement: @announcement.idAnnouncement, person_id: @announcement.person_id, publicationDate: @announcement.publicationDate } }
     end
 
     assert_redirected_to announcement_url(Announcement.last)
@@ -34,7 +34,7 @@ class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update announcement" do
-    patch announcement_url(@announcement), params: { announcement: { announcementInformation: @announcement.announcementInformation, announcementType: @announcement.announcementType, deadline: @announcement.deadline, idAnnouncement: @announcement.idAnnouncement, publicationDate: @announcement.publicationDate } }
+    patch announcement_url(@announcement), params: { announcement: { announcementInformation: @announcement.announcementInformation, announcementType: @announcement.announcementType, deadline: @announcement.deadline, idAnnouncement: @announcement.idAnnouncement, person_id: @announcement.person_id, publicationDate: @announcement.publicationDate } }
     assert_redirected_to announcement_url(@announcement)
   end
 
