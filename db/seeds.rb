@@ -103,9 +103,6 @@ end
 puts 'finished loading event data'
 Faker::UniqueGenerator.clear
 
-
-
-
 100.times do |row|
   Opinion.create(
   interest: Faker::Lorem.sentence,
