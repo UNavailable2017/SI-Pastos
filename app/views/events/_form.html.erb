@@ -17,7 +17,7 @@
     <%= form.text_field :name, id: :event_name %>
   </div>
 
-  <div class="input-">
+  <div class="input">
     <i class="material-icons prefix">access_time</i>
     <%= form.label :date %>
     <%= form.text_field :date, id: :event_date, class: "datepicker" %>
@@ -35,12 +35,15 @@
     <%= form.text_area :eventInfo, id: :event_eventInfo,  class: "materialize-textarea" %>
   </div>
 
-  <div class="input-field">
+  <div class='disable_input'>
     <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :event_person_id %>
+    <%= form.number_field :person_id, id: :event_person_id, value: 1, :disabled => true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <a class="btn waves-effect waves-light">
+      <%= form.submit %>
+    </a>
   </div>
+
 <% end %>
