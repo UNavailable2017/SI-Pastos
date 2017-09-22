@@ -54,6 +54,7 @@ Faker::UniqueGenerator.clear
 100.times do
   a = Censo.new
   a.numberOfChildren = Faker::Number.number(1)
+  a.date = Faker::Date.forward(2000)
   a.originResguardo = Faker::Lorem.characters(7)
   a.levelStudies = Faker::Lorem.characters(7)
   a.profession = Faker::Company.profession
