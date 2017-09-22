@@ -13,25 +13,25 @@
 
   <div class="input-field">
     <i class="material-icons prefix">accessibility</i>
-    <%= form.label :Nombre %>
+    <%= form.label :name %>
     <%= form.text_field :name, id: :event_name %>
   </div>
 
-  <div class="input-field">
+  <div class="input-">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :Fecha%>
-    <%= form.date_select :date, id: :event_date %>
+    <%= form.label :date %>
+    <%= form.text_field :date, id: :event_date, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :Tipo_de_evento %>
+    <%= form.label :eventType %>
     <%= form.text_field :eventType, id: :event_eventType %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :Informacion_del_Evento %>
+    <%= form.label :eventInfo %>
     <%= form.text_area :eventInfo, id: :event_eventInfo,  class: "materialize-textarea" %>
   </div>
 
@@ -40,7 +40,7 @@
     <%= form.number_field :person_id, id: :event_person_id %>
   </div>
 
-  <!-- <div class="actions">
+  <div class="actions">
     <%= form.submit %>
-  </div> -->
+  </div>
 <% end %>
