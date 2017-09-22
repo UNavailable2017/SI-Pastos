@@ -5,6 +5,17 @@ class ResidencesController < ApplicationController
   # GET /residences.json
   def index
     @residences = Residence.all
+    @hash = Gmaps4rails.build_markers(@residences) do |residence, marker|
+      marker.lat residence.latitude
+      marker.lng residence.longitude
+      marker.infowindow residence.neighborhood
+      # marker.picture({
+      #   "url" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT16VxCntJ1iFyivM3t0hPYUzcu0g5sYjMUZSSj5lTM0P4jxU8E9w",
+      #     "width" =>  100,
+      #     "height"=> 100
+      #   })
+      # marker.json({title: residence.title})
+    end
   end
 
   # GET /residences/1
@@ -69,6 +80,6 @@ class ResidencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def residence_params
-      params.require(:residence).permit(:address, :phone, :neighborhood, :locality, :lat, :long, :person_id)
+      params.require(:residence).permit(:address, :phone, :neighborhood, :locality, :latitude, :longitude, :person_id)
     end
 end
