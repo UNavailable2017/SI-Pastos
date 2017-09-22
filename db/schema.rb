@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921165236) do
+ActiveRecord::Schema.define(version: 20170922000104) do
 
   create_table "announcements", force: :cascade do |t|
-    t.integer "idAnnouncement"
     t.date "publicationDate"
     t.date "deadline"
     t.text "announcementType"
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(version: 20170921165236) do
   end
 
   create_table "candidates", force: :cascade do |t|
-    t.integer "idCandidate"
     t.integer "votes"
     t.integer "person_id"
     t.datetime "created_at", null: false
@@ -44,7 +42,6 @@ ActiveRecord::Schema.define(version: 20170921165236) do
   end
 
   create_table "children", force: :cascade do |t|
-    t.integer "idChild"
     t.string "name"
     t.integer "age"
     t.integer "censo_id"
@@ -61,7 +58,6 @@ ActiveRecord::Schema.define(version: 20170921165236) do
   end
 
   create_table "elections", force: :cascade do |t|
-    t.integer "idElection"
     t.date "date"
     t.string "winner"
     t.integer "candidate_id"
@@ -80,7 +76,6 @@ ActiveRecord::Schema.define(version: 20170921165236) do
   end
 
   create_table "health_services", force: :cascade do |t|
-    t.integer "idHealthService"
     t.string "name"
     t.integer "censo_id"
     t.datetime "created_at", null: false
@@ -88,7 +83,6 @@ ActiveRecord::Schema.define(version: 20170921165236) do
   end
 
   create_table "opinions", force: :cascade do |t|
-    t.integer "idOpinion"
     t.text "interest"
     t.text "socialOrganization"
     t.text "groupsParticipation"

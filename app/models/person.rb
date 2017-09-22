@@ -24,5 +24,5 @@ class Person < ApplicationRecord
     has_one :candidate
     has_many :events
     has_many :announcements
-    has_one :censo    
+    has_one :censo
 end
