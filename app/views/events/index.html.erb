@@ -2,6 +2,20 @@
 
 <h1>Events</h1>
 
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+        <label for="icon_prefix2">Nombre del Evento</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+
 <table>
   <thead>
     <tr>
@@ -18,7 +32,6 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
-        <td><%= event.date %></td>
         <td><%= event.eventType %></td>
         <td><%= event.eventInfo %></td>
         <td><%= event.person_id %></td>

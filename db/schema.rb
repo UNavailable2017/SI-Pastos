@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922000104) do
+ActiveRecord::Schema.define(version: 20170922012132) do
 
   create_table "announcements", force: :cascade do |t|
     t.date "publicationDate"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20170922000104) do
     t.string "name"
     t.date "date"
     t.string "eventType"
-    t.string "eventInfo"
+    t.text "eventInfo"
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
