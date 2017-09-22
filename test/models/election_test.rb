@@ -3,7 +3,6 @@
 # Table name: elections
 #
 #  id           :integer          not null, primary key
-#  idElection   :integer
 #  date         :date
 #  winner       :string
 #  candidate_id :integer

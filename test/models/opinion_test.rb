@@ -3,7 +3,6 @@
 # Table name: opinions
 #
 #  id                           :integer          not null, primary key
-#  idOpinion                    :integer
 #  interest                     :text
 #  socialOrganization           :text
 #  groupsParticipation          :text

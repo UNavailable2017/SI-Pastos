@@ -3,7 +3,6 @@
 # Table name: announcements
 #
 #  id                      :integer          not null, primary key
-#  idAnnouncement          :integer
 #  publicationDate         :date
 #  deadline                :date
 #  announcementType        :text

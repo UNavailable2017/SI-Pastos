@@ -3,7 +3,6 @@
 # Table name: children
 #
 #  id         :integer          not null, primary key
-#  idChild    :integer
 #  name       :string
 #  age        :integer
 #  censo_id   :integer
