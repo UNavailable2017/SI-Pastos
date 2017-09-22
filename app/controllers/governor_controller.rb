@@ -1,6 +1,6 @@
 # governor_controller
 class GovernorController < ApplicationController
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
 
   def home
   end

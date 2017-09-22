@@ -1,14 +1,14 @@
 <div class="row">
-    <ul class="tabs">
-      <li class="tab"><a class="active" href="#test1">Inicio</a></li>
-      <li class="tab"><a href="#test2">Registrar Censo</a></li>
-      <li class="tab"><a href="#test3">Consultar Censo</a></li>
-      <li class="tab"><a href="#test4">Certificados</a></li>
-      <li class="tab"><a href="#test5">Eventos</a></li>
-      <li class="tab"><a href="#test6">Correos</a></li>
-      <li class="tab"><a href="#test7">Mapas</a></li>
-      <li class="tab"><a href="#test8">Ofertas</a></li>
-      <li class="tab"><a href="#test9">Elecciones</a></li>
-      <li class="tab"><a href="#test10">Estadísticas</a></li>
-    </ul>
+  <ul class="tabs">
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/inicio" ? 'active' : '' %>" href="inicio" target="_self">Inicio</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/registrar_censo" ? 'active' : '' %>" href="registrar_censo" target="_self">Registrar</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/buscar_censo" ? 'active' : '' %>" href="buscar_censo" target="_self">Consultar</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/certificado" ? 'active' : '' %>" href="certificado" target="_self">Certificados</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/publicar_evento" ? 'active' : '' %>" href="publicar_evento" target="_self">Eventos</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/correo" ? 'active' : '' %>" href="correo" target="_self">Correos</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/mapa" ? 'active' : '' %>" href="mapa" target="_self">Mapas</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/convocatorias" ? 'active' : '' %>" href="convocatorias" target="_self">Convocatorias</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/elecciones" ? 'active' : '' %>" href="elecciones" target="_self">Elecciones</a></li>
+    <li class="tab"><a class="<%= request.fullpath == "/gobernador/estadisticas" ? 'active' : '' %>" href="estadisticas" target="_self">Estadísticas</a></li>
+  </ul>
 </div>
