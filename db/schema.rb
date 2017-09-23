@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922043416) do
+ActiveRecord::Schema.define(version: 20170922050616) do
 
   create_table "announcements", force: :cascade do |t|
     t.date "publicationDate"
@@ -125,12 +125,12 @@ ActiveRecord::Schema.define(version: 20170922043416) do
   end
 
   create_table "residences", force: :cascade do |t|
-    t.text "address"
+    t.string "address"
     t.integer "phone"
     t.string "neighborhood"
     t.string "locality"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
