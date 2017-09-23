@@ -1,6 +1,11 @@
-<h1>Editing Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Editar Evento</h3>
+    <article class="col s8 offset-s2">
+      <%= render 'form', event: @event %>
+      <div class="right-align">
+        <%= link_to 'Show', @event, class:"btn waves-effect waves-light" %>
+      </div>
+    </article>
+  </div>
+</section>

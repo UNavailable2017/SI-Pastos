@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922012132) do
+ActiveRecord::Schema.define(version: 20170922043416) do
 
   create_table "announcements", force: :cascade do |t|
     t.date "publicationDate"
-    t.date "deadline"12da0011dae4a71551c23950f7bef3be72e870bb
+    t.date "deadline"
     t.text "announcementType"
     t.text "announcementInformation"
     t.integer "person_id"

@@ -17,7 +17,7 @@
     <%= form.text_field :name, id: :event_name %>
   </div>
 
-  <div class="input">
+  <div class="input-field">
     <i class="material-icons prefix">access_time</i>
     <%= form.label :date %>
     <%= form.text_field :date, id: :event_date, class: "datepicker" %>
@@ -44,6 +44,7 @@
     <a class="btn waves-effect waves-light">
       <%= form.submit %>
     </a>
+    <%= link_to 'Back', events_path, class:"btn waves-effect waves-light" %>
   </div>
 
 <% end %>

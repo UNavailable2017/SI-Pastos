@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="col s10 ">
+    <table class="centered">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          <th>Evento</th>
+          <th>Informacion</th>
+          <th>Person</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @event.name %></td>
+          <td><%= @event.date %></td>
+          <td><%= @event.eventType %></td>
+          <td><%= @event.eventInfo %></td>
+          <td><%= @event.person_id %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Eventtype:</strong>
-  <%= @event.eventType %>
-</p>
-
-<p>
-  <strong>Eventinfo:</strong>
-  <%= @event.eventInfo %>
-</p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @event.person_id %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="col s10">
+  <div class="center-align">
+    <%= link_to 'Edit', edit_event_path(@event), class:"btn waves-effect waves-light" %> |
+    <!-- <%= link_to 'Show', @event, class:"btn waves-effect waves-light" %> | -->
+    <%= link_to 'Back', events_path, class:"btn waves-effect waves-light" %>
+  </div>
+</div>
