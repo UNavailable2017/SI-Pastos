@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /candidates/1

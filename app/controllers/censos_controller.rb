@@ -4,7 +4,7 @@ class CensosController < ApplicationController
   # GET /censos
   # GET /censos.json
   def index
-    @censos = Censo.all
+    @censos = Censo.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /censos/1

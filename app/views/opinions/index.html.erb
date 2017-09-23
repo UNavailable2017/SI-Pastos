@@ -4,8 +4,7 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Idopinion</th>
+    <tr>      
       <th>Interest</th>
       <th>Socialorganization</th>
       <th>Groupsparticipation</th>
@@ -32,7 +31,6 @@
   <tbody>
     <% @opinions.each do |opinion| %>
       <tr>
-        <td><%= opinion.idOpinion %></td>
         <td><%= opinion.interest %></td>
         <td><%= opinion.socialOrganization %></td>
         <td><%= opinion.groupsParticipation %></td>
@@ -61,5 +59,9 @@
 </table>
 
 <br>
+<div class="center-align">
+  <%= will_paginate @opinions,  renderer: MaterializePagination::Rails %>
+</div>
+
 
 <%= link_to 'New Opinion', new_opinion_path %>

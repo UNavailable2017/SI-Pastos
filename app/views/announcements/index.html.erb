@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Idannouncement</th>
+
       <th>Publicationdate</th>
       <th>Deadline</th>
       <th>Announcementtype</th>
@@ -18,7 +18,7 @@
   <tbody>
     <% @announcements.each do |announcement| %>
       <tr>
-        <td><%= announcement.idAnnouncement %></td>
+
         <td><%= announcement.publicationDate %></td>
         <td><%= announcement.deadline %></td>
         <td><%= announcement.announcementType %></td>
@@ -33,5 +33,8 @@
 </table>
 
 <br>
+<div class="center-align">
+  <%= will_paginate @announcements,  renderer: MaterializePagination::Rails %>
+</div>
 
 <%= link_to 'New Announcement', new_announcement_path %>

@@ -4,7 +4,7 @@ class ChildrenController < ApplicationController
   # GET /children
   # GET /children.json
   def index
-    @children = Child.all
+    @children = Child.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /children/1

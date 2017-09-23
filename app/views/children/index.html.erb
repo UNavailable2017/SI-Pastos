@@ -4,8 +4,7 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Idchild</th>
+    <tr>      
       <th>Name</th>
       <th>Age</th>
       <th>Censo</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @children.each do |child| %>
       <tr>
-        <td><%= child.idChild %></td>
         <td><%= child.name %></td>
         <td><%= child.age %></td>
         <td><%= child.censo_id %></td>
@@ -29,5 +27,9 @@
 </table>
 
 <br>
+<div class="center-align">
+  <%= will_paginate @children,  renderer: MaterializePagination::Rails %>
+</div>
+
 
 <%= link_to 'New Child', new_child_path %>
