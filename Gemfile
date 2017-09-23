@@ -7,6 +7,9 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
+gem 'will_paginate'
+gem 'will_paginate-materialize'
+
 # devise for login
 gem 'devise'
 # materialize
@@ -49,7 +52,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  #  Faker for populate the Database: 
+  #  Faker for populate the Database:
   gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # Use sqlite3 as the database for Active Record

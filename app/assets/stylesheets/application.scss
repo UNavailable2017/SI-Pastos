@@ -7,3 +7,7 @@ $secondary-color: color("blue", "base") !default;
 @import "font-awesome";
 @import "material_icons";
 @import 'home';
+
+.pagination a li.active {
+  color: #fff;
+}
