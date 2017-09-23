@@ -9,6 +9,16 @@ class ApplicationController < ActionController::Base
     response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
   end
 
+  def after_sign_in_path_for(resource)
+    if false
+      if current_user.try(:admin?)
+        governor_home_path
+      else
+        redirect_to :root
+      end
+    end
+  end
+
   protected
 
   def authenticate_admin!

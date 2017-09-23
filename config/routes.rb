@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'gobernador/inicio', to: 'governor#home'
+  get 'gobernador/inicio', to: 'governor#home', as: 'governor_home'
 
   get 'gobernador/registrar_censo', to: 'governor#register_censo'
 

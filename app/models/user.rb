@@ -24,4 +24,8 @@ class User < ApplicationRecord
   has_one :person
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def index
+    
+  end
 end
