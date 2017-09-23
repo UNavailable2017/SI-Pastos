@@ -1,0 +1,52 @@
+<%= form_with(model: residence, local: true) do |form| %>
+  <% if residence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(residence.errors.count, "error") %> prohibited this residence from being saved:</h2>
+
+      <ul>
+      <% residence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :residence_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone, id: :residence_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighborhood %>
+    <%= form.text_field :neighborhood, id: :residence_neighborhood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :locality %>
+    <%= form.text_field :locality, id: :residence_locality %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat, id: :residence_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :long %>
+    <%= form.text_field :long, id: :residence_long %>
+  </div>
+
+  <div class="field">
+    <%= form.label :person_id %>
+    <%= form.number_field :person_id, id: :residence_person_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,3 +10,10 @@
    @media #{$small-and-down} { max-width: 200%; }
    @media #{$medium-and-up} { width: 100%; }
 }
+
+.carousel .carousel-item {
+  width:600px !important;
+}
+.carousel {
+  margin-bottom: 5em;
+}
