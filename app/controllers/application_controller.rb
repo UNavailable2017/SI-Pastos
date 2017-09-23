@@ -11,10 +11,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def authenticate_admin!
-    unless user_signed_in? and current_user.try(:admin?)
-      flash[:danger] = 'No tienes autorización para entrar en esa sección'
-      redirect_to :root
-    end
+  def authorization_admin
+    redirect_to :root unless user_signed_in?
+  end
+
+  def authorization_user
+    redirect_to :root unless user_signed_in?
   end
 end
