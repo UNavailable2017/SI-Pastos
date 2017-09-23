@@ -1,62 +1,44 @@
-<%= render 'shared/navbar' %>
+<% unless user_signed_in? %>
+    <section class="parallax-container">
+      <div class="parallax"><%= image_tag("backgrounds/Pastos1.jpg") %></div>
+    </section>
 
-<div class="container">
-  <% if user_signed_in? %>
-    <% if current_user.try(:admin?) %>
-      <h1>Admin</h1>
-    <% else %>
-      <h2>User</h2>
-    <% end %>
-  <% end %>
-</div>
+    <section class="section white">
+      <div class="container">
+        <div class="row">
 
-<section class="parallax-container">
-  <div class="parallax"><%= image_tag("backgrounds/Pastos1.jpg") %></div>
-</section>
+          <div class="col m4">
+            <div class="center-align">
+              <%= fa_icon "clock-o 5x" %>
+              <h4>Pueblo Indígena</h4>
+            </div>
+            <p class="text-justified">El Pueblo indígena de “Los Pastos” está ubicado en el departamento de Nariño, su territorio comprende la zona andina de frontera; su reconocimiento como pueblo indígena tiene un proceso que comprende múltiples estrategias que han generado encuentros al interior de su pueblo y sus formas de organización, y tensiones con el Estado como garante del goce efectivo de derechos.</p>
+          </div>
 
-<section class="section white">
-  <div class="container">
-    <div class="row">
+          <div class="col m4">
+            <div class="center-align">
+              <%= fa_icon "lightbulb-o 5x" %>
+              <h4>Organización</h4>
+            </div>
+            <p class="text-justified">La organización territorial en el caso del Pueblo de los Pastos se configura a partir de dinámicas propias, donde cada Resguardo cuenta con autonomía en sus formas de gobierno y en la aplicación de leyes, reflejando una heteronomía entre cabildos de la misma etnia.</p>
+          </div>
 
-      <div class="col m4">
-        <div class="center-align">
-           <%= fa_icon "clock-o 5x" %>
-           <h4>Pueblo Indígena</h4>
-        </div>
+          <div class="col m4">
+            <div class="center-align">
+              <%= fa_icon "desktop 5x" %>
+              <h4>Nuestra Plataforma</h4>
+            </div>
+            <p class="text-justified">Desarrollo de una plataforma web llamada SI Pastos para el Cabildo Indígena de los Pastos residente en la ciudad de Bogotá. El cabildo es una organización política organizativa conformada por la directiva en cabeza de su Gobernador(a) y corporación, quienes son los representantes de la comunidad.</p>
+          </div>
+        </div> <!-- .row -->
+
+      </div> <!-- .container -->
+    </section>
+
+    <section class="parallax-container">
+      <div class="parallax">
+        <%= image_tag("backgrounds/Pastos2.jpg") %>
       </div>
+    </section>
 
-      <div class="col m4">
-        <div class="center-align">
-          <%= fa_icon "lightbulb-o 5x" %>
-        <h4>Organización</h4>
-        </div>
-
-      </div>
-
-      <div class="col m4">
-        <div class="center-align">
-          <%= fa_icon "desktop 5x" %>
-        </div>
-        <h4>Nuestra Plataforma</h4>
-      </div>
-    </div> <!-- .row -->
-
-    <div class="row">
-      <div class="col m4">
-        <p class="text-justified">El Pueblo indígena de “Los Pastos” está ubicado en el departamento de Nariño, su territorio comprende la zona andina de frontera; su reconocimiento como pueblo indígena tiene un proceso que comprende múltiples estrategias que han generado encuentros al interior de su pueblo y sus formas de organización, y tensiones con el Estado como garante del goce efectivo de derechos.</p>
-      </div>
-      <div class="col m4">
-        <p class="text-justified">La organización territorial en el caso del Pueblo de los Pastos se configura a partir de dinámicas propias, donde cada Resguardo cuenta con autonomía en sus formas de gobierno y en la aplicación de leyes, reflejando una heteronomía entre cabildos de la misma etnia.</p>
-      </div>
-      <div class="col m4">
-        <p class="text-justified">Desarrollo de una plataforma web llamada SI Pastos para el Cabildo Indígena de los Pastos residente en la ciudad de Bogotá. El cabildo es una organización política organizativa conformada por la directiva en cabeza de su Gobernador(a) y corporación, quienes son los representantes de la comunidad.</p>
-      </div>
-    </div> <!-- .row -->
-  </div> <!-- .container -->
-</section>
-
-<section class="parallax-container">
-    <div class="parallax">
-      <%= image_tag("backgrounds/Pastos2.jpg") %>
-    </div>
-</section>
+<% end %>

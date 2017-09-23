@@ -4,8 +4,7 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Idelection</th>
+    <tr>    
       <th>Date</th>
       <th>Winner</th>
       <th>Candidate</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @elections.each do |election| %>
       <tr>
-        <td><%= election.idElection %></td>
         <td><%= election.date %></td>
         <td><%= election.winner %></td>
         <td><%= election.candidate_id %></td>
@@ -29,5 +27,9 @@
 </table>
 
 <br>
+<div class="center-align">
+  <%= will_paginate @elections,  renderer: MaterializePagination::Rails %>
+</div>
+
 
 <%= link_to 'New Election', new_election_path %>

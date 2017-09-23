@@ -4,7 +4,7 @@ class ElectionsController < ApplicationController
   # GET /elections
   # GET /elections.json
   def index
-    @elections = Election.all
+    @elections = Election.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /elections/1

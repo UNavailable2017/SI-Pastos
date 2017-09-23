@@ -4,7 +4,7 @@ class ResidencesController < ApplicationController
   # GET /residences
   # GET /residences.json
   def index
-    @residences = Residence.all
+    @residences = Residence.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /residences/1
