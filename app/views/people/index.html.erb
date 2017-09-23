@@ -43,5 +43,9 @@
 </table>
 
 <br>
+<div class="center-align">
+  <%= will_paginate @people,  renderer: MaterializePagination::Rails %>
+</div>
+
 
 <%= link_to 'New Person', new_person_path %>
