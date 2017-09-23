@@ -1,11 +1,23 @@
+<style type="text/css">
+ /*.carousel .carousel-item {
+ width:600px !important;
+ margin-bottom: 5em;
+}
+.carousel {
+  margin-bottom: 5em;
+}*/
+</style>
+
 <%= render 'shared/navbar' %>
 
 <%= render 'shared/navbar_governor' %>
 
-<div class="carousel">
-  <% for i in 1...11 %>
-    <a class="carousel-item" href="#<%= i.to_words %>!">
-      <%= image_tag("home/fotoCom" + i.to_s + ".jpg") %>
-    </a>
-  <% end %>
+<div class="container">
+  <div class="carousel">
+    <% for i in 1...11 %>
+      <a class="carousel-item" href="#<%= i.to_words %>!">
+        <%= image_tag("home/fotoCom" + i.to_s + ".jpg",) %>
+      </a>
+    <% end %>
+  </div>
 </div>
