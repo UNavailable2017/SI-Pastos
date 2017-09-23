@@ -11,32 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-field">
+    <i class="material-icons prefix">accessibility</i>
     <%= form.label :name %>
     <%= form.text_field :name, id: :event_name %>
   </div>
 
-  <div class="field">
+  <div class="input">
+    <i class="material-icons prefix">access_time</i>
     <%= form.label :date %>
-    <%= form.date_select :date, id: :event_date %>
+    <%= form.text_field :date, id: :event_date, class: "datepicker" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
+    <i class="material-icons prefix">chevron_right</i>
     <%= form.label :eventType %>
     <%= form.text_field :eventType, id: :event_eventType %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
+    <i class="material-icons prefix">chevron_right</i>
     <%= form.label :eventInfo %>
-    <%= form.text_field :eventInfo, id: :event_eventInfo %>
+    <%= form.text_area :eventInfo, id: :event_eventInfo,  class: "materialize-textarea" %>
   </div>
 
-  <div class="field">
+  <div class='disable_input'>
     <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :event_person_id %>
+    <%= form.number_field :person_id, id: :event_person_id, value: 1, :disabled => true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <a class="btn waves-effect waves-light">
+      <%= form.submit %>
+    </a>
   </div>
+
 <% end %>

@@ -1,5 +1,11 @@
-<h1>New Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Back', events_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Nuevo Evento</h3>
+    <article class="col s6 offset-s3">
+      <%= render 'form', event: @event %>
+    </article>
+    <div class="col s12">
+      <%= link_to 'Back', events_path, class:"btn waves-effect waves-light" %>
+    </div>
+  </div>
+</section>
