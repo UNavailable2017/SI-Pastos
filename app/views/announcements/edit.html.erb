@@ -1,6 +1,11 @@
-<h1>Editing Announcement</h1>
-
-<%= render 'form', announcement: @announcement %>
-
-<%= link_to 'Show', @announcement %> |
-<%= link_to 'Back', announcements_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Editar Oferta</h3>
+    <article class="col s8 offset-s2">
+      <%= render 'form', announcement: @announcement %>
+      <div class="right-align">
+        <%= link_to 'Show', @announcement, class:"btn waves-effect waves-light"  %>
+      </div>
+    </article>
+  </div>
+</section>

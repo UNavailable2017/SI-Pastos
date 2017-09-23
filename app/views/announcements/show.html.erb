@@ -1,34 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Idannouncement:</strong>
-  <%= @announcement.idAnnouncement %>
-</p>
+<div class="container">
+  <!-- <div class="col s10"> -->
+    <div class="row">
+      <div class="col s6">
+        <p class="center-align">
+          <h5>Fecha Publicacion: </h5>
+          <%= @announcement.publicationDate %>
+        </p>
+      </div>
 
-<p>
-  <strong>Publicationdate:</strong>
-  <%= @announcement.publicationDate %>
-</p>
+      <div class="col s6">
+        <p class="center-align">
+          <h5>Fecha Limite: </h5>
+          <%= @announcement.deadline %>
+        </p>
+      </div>
+    </div>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @announcement.deadline %>
-</p>
+    <div class="row">
+      <div class="col s10 offset-s1">
+        <p>
+          <h5> Tipo de Oferta: </h5>
+          <%= @announcement.announcementType %>
+        </p>
+      </div>
+    </div>
 
-<p>
-  <strong>Announcementtype:</strong>
-  <%= @announcement.announcementType %>
-</p>
+    <div class="row">
+      <div class="col s10 offset-s1">
+        <p>
+          <h5>Informacion: </h5>
+          <%= @announcement.announcementInformation %>
+        </p>
+      </div>
+    </div>
 
-<p>
-  <strong>Announcementinformation:</strong>
-  <%= @announcement.announcementInformation %>
-</p>
+    <strong>persona:</strong>
+    <%= @announcement.person_id %>
 
-<p>
-  <strong>Person:</strong>
-  <%= @announcement.person_id %>
-</p>
+  <!-- </div> -->
+</div>
 
-<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
-<%= link_to 'Back', announcements_path %>
+<div class="col s10">
+  <div class="center-align">
+    <%= link_to 'Edit', edit_announcement_path(@announcement), class:"btn waves-effect waves-light" %> |
+    <%= link_to 'Back', announcements_path, class:"btn waves-effect waves-light" %>
+  </div>
+</div>
