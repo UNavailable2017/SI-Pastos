@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <div class="container">
   <h2 class="center-align">Eventos de la comunidad</h2>
 </div>
@@ -46,7 +45,9 @@
 
   </div>
 </div>
-
+<div class="center-align">
+  <%= will_paginate @events,  renderer: MaterializePagination::Rails %>
+</div>
 <div class="divider"></div>
 <div class="col s12">
   <p class="center-align">
