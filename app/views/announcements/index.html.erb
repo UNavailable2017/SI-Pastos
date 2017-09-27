@@ -40,6 +40,10 @@
           <% end %>
         </tbody>
       </table>
+      <div class="center-align">
+        <%= will_paginate @announcements,  renderer: MaterializePagination::Rails %>
+      </div>
+
     </div>
   </div>
 </div>
