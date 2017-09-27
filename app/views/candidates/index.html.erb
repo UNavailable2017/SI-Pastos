@@ -24,6 +24,11 @@
   </tbody>
 </table>
 
+<div class="center-align">
+  <%= will_paginate @candidates,  renderer: MaterializePagination::Rails %>
+</div>
+
+
 <br>
 
 <%= link_to 'New Candidate', new_candidate_path %>
