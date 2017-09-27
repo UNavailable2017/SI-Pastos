@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'gobernador/correo', to: 'governor#email'
 
-  get 'gobernador/mapa', to: 'governor#map'
+  get 'gobernador/mapa', to: 'residences#index'
 
   get 'gobernador/convocatorias', to: 'governor#announcement'
 

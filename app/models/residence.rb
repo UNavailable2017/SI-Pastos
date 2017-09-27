@@ -16,4 +16,6 @@
 
 class Residence < ApplicationRecord
     belongs_to :person
+    geocoded_by :address
+    after_validation :geocode
 end
