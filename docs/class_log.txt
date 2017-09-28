@@ -3,3 +3,4 @@
 * Configuraciones adicionales para el despliege
 * Correccion de Mapa de ubicaciones usuario
 * Traduccion vistas announments y events
+* Pruebas de despliege
