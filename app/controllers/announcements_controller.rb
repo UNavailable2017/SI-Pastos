@@ -28,7 +28,7 @@ class AnnouncementsController < ApplicationController
 
     respond_to do |format|
       if @announcement.save
-        format.html { redirect_to @announcement, notice: 'Announcement was successfully created.' }
+        format.html { redirect_to @announcement, notice: 'La oferta fue creada exitosamente.' }
         format.json { render :show, status: :created, location: @announcement }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AnnouncementsController < ApplicationController
   def update
     respond_to do |format|
       if @announcement.update(announcement_params)
-        format.html { redirect_to @announcement, notice: 'Announcement was successfully updated.' }
+        format.html { redirect_to @announcement, notice: 'La oferta fue actualizada exitosamente.' }
         format.json { render :show, status: :ok, location: @announcement }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class AnnouncementsController < ApplicationController
   def destroy
     @announcement.destroy
     respond_to do |format|
-      format.html { redirect_to announcements_url, notice: 'Announcement was successfully destroyed.' }
+      format.html { redirect_to announcements_url, notice: 'La oferta fue eliminada exitosamente.' }
       format.json { head :no_content }
     end
   end
