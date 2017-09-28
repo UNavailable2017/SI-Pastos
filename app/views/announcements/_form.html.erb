@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <!-- <div class="input-field">
-    <%= form.label :idAnnouncement %>
-    <%= form.number_field :idAnnouncement, id: :announcement_idAnnouncement %>
-  </div> -->
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
@@ -40,10 +36,9 @@
     <%= form.text_area :announcementInformation, id: :announcement_announcementInformation, class: "materialize-textarea" %>
   </div>
 
-  <div class="input-field" style="display:none">
-    <i class="material-icons prefix">accessibility</i>
+  <div class='input-field' style="display:none">
     <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :announcement_person_id, value: 1, :disabled => true %>
+    <%= form.number_field :person_id, id: :event_person_id, value: 1, 'aria-hidden' => true %>
   </div>
 
   <div class="actions">

@@ -4,13 +4,17 @@
 
 <div class="divider"></div>
 <div class="container">
-  <div class="row">
-    <div class="col s4 m4 l2">
-      <h5 class="left-align">
+  <% if current_user.try(:admin?) %>
+    <div class="row">
+      <h5 class="center-align">
         <%= link_to 'Nuevo', new_announcement_path, class: "btn waves-effect waves-light" %>
       </h5>
     </div>
-    <div class="col s8 m4 l10">
+  <% end %>
+
+  <div class="row">
+
+    <div class="col s12">
       <table class="striped">
         <thead>
           <tr>
@@ -29,10 +33,13 @@
               <td><%= announcement.deadline %></td>
               <td><%= announcement.announcementType %></td>
               <td><%= announcement.announcementInformation %></td>
-              <td><%= link_to 'Ver', announcement %></td>
+
+              <%=  %>
+              <td><%= link_to (fa_icon "pencil"), announcement %></td>
+
               <% if current_user.try(:admin?) %>
-                <td><%= link_to 'Editar', edit_announcement_path(announcement) %></td>
-                <td><%= link_to 'Eliminar', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to (fa_icon "eye"), edit_announcement_path(announcement) %></td>
+                <td><%= link_to (fa_icon "times"), announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
             </tr>
           <% end %>
