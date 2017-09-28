@@ -55,9 +55,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'gmaps4rails'
 gem 'geocoder'
 
+#  Faker for populate the Database:
+gem 'faker'
+
 group :development, :test do
-  #  Faker for populate the Database:
-  gem 'faker'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
