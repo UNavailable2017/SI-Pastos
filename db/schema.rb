@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20170922050616) do
     t.string "name"
     t.date "date"
     t.string "eventType"
-    t.string "eventInfo"
+    t.text "eventInfo"
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

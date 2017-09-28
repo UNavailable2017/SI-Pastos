@@ -43,7 +43,7 @@
   <div class="input-field">
     <i class="material-icons prefix">accessibility</i>
     <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :announcement_person_id %>
+    <%= form.number_field :person_id, id: :announcement_person_id, value: 1, :disabled => true %>
   </div>
 
   <div class="actions">

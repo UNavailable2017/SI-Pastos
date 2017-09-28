@@ -35,7 +35,8 @@
     <%= form.text_area :eventInfo, id: :event_eventInfo,  class: "materialize-textarea" %>
   </div>
 
-  <div class='disable_input'>
+  <div class='input-field'>
+    <i class="material-icons prefix">accessibility</i>
     <%= form.label :person_id %>
     <%= form.number_field :person_id, id: :event_person_id, value: 1, :disabled => true %>
   </div>
