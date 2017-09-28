@@ -4,14 +4,14 @@
   <!-- <div class="col s10"> -->
     <div class="row">
       <div class="col s6">
-        <p class="center-align">
+        <p class="right-align">
           <h5>Fecha Publicacion: </h5>
           <%= @announcement.publicationDate %>
         </p>
       </div>
 
       <div class="col s6">
-        <p class="center-align">
+        <p class="left-align">
           <h5>Fecha Limite: </h5>
           <%= @announcement.deadline %>
         </p>
@@ -44,7 +44,7 @@
 
 <div class="col s10">
   <div class="center-align">
-    <%= link_to 'Edit', edit_announcement_path(@announcement), class:"btn waves-effect waves-light" %> |
+    <%= link_to 'Edit', edit_announcement_path(@announcement), class:"btn waves-effect waves-light" %>
     <%= link_to 'Back', announcements_path, class:"btn waves-effect waves-light" %>
   </div>
 </div>
