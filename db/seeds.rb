@@ -9,6 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'rubygems'
 100.times do
   a = User.new
   a.email =  Faker::Internet.email
