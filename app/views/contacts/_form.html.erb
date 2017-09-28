@@ -13,7 +13,7 @@
 
   <div class="input-field">
     <i class="material-icons prefix">person_pin</i>
-    <%= form.label :name %>
+    <%= form.label :name, "Nombre" %>
     <%= form.text_field :name, id: :contact_name %>
   </div>
 
@@ -25,15 +25,15 @@
 
   <div class="input-field">
     <i class="material-icons prefix">mode_edit</i>
-    <%= form.label :message %>
+    <%= form.label :message, "Mensaje" %>
     <%= form.text_area :message, id: :contact_message,  class: "materialize-textarea" %>
   </div>
 
-  <p class="center-align">
-    <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">send</i>enviar</button>
-  </p>
-  <!--
-  <div class="actions">
-    <%= form.submit %>
-  </div> -->
+
+  <div class="actions center-align">
+    <%= button_tag type: 'submit', class: "waves-effect waves-light btn" do %>
+        Enviar <i class="material-icons right">send</i>
+    <% end %>
+  </div>
+
 <% end %>

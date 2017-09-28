@@ -3,12 +3,12 @@
 # Table name: residences
 #
 #  id           :integer          not null, primary key
-#  address      :text
+#  address      :string
 #  phone        :integer
 #  neighborhood :string
 #  locality     :string
-#  lat          :float
-#  long         :float
+#  latitude     :float
+#  longitude    :float
 #  person_id    :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null

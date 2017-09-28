@@ -8,12 +8,10 @@
         El correo se ha enviado satisfatoriamente
       </h4>
       <div class="center-align">
-        <a href="/" class="waves-effect waves-light btn pulse">
-          <%= fa_icon "home 5x" %>
-          Ir al inicio
-        </a>
+        <%= link_to :root, class: "waves-effect waves-light btn pulse" do %>
+          <%= fa_icon "home 5x" %> Ir al inicio
+        <% end %>
       </div>
-
     </div>
   </div>
 </div>

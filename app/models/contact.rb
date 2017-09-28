@@ -9,6 +9,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Contact < ApplicationRecord
+  validates :name, :email, :message, presence: true
 end
