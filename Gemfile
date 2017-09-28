@@ -9,6 +9,7 @@ gem 'rails', '~> 5.1.3'
 
 gem 'will_paginate'
 gem 'will_paginate-materialize'
+gem 'omniauth-facebook'
 
 # devise for login
 gem 'devise'

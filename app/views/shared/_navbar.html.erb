@@ -3,13 +3,14 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="/" class="brand-logo">SI Pastos</a>
     <ul class="right hide-on-med-and-down">
-      
+
       <% if user_signed_in? %>
         <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %><li>
         <li><%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete, :class => 'navbar-link' %><li>
       <% else %>
         <li><%= link_to "Regístrate", new_user_registration_path, :class => 'navbar-link'  %></li>
         <li><%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Registrarse con facebook", user_omniauth_authorize_path(:facebook) %></li>
       <% end %>
         <li><%= link_to "Contáctanos", new_contact_path %></li>
 
