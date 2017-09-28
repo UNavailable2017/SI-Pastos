@@ -1,61 +1,32 @@
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
 
-    <div class="row">
-      <ul class="tabs">
-        <li class="tab">
-          <a class="<%= request.fullpath == "/" ? 'active' : '' %>" href="/" target="_self">Inicio</a>
-        </li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/registrar_censo" ? 'active' : '' %>" href="registrar_censo" target="_self">Registrar</a></li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/buscar_censo" ? 'active' : '' %>" href="buscar_censo" target="_self">Consultar</a></li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/certificado" ? 'active' : '' %>" href="certificado" target="_self">Certificados</a></li>
-        <li class="tab"><a class="<%= request.fullpath == "/events" ? 'active' : '' %>" href="events" target="_self">Eventos</a></li>
-        <li class="tab">
-        <a class="<%= request.fullpath == "/events" ? 'active' : '' %>" href="correo" target="_self">Correos</a>
-        </li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/mapa" ? 'active' : '' %>" href="mapa" target="_self">Mapas</a></li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/convocatorias" ? 'active' : '' %>" href="convocatorias" target="_self">Convocatorias</a></li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/elecciones" ? 'active' : '' %>" href="elecciones" target="_self">Elecciones</a></li>
-        <li class="tab"><a class="<%= request.fullpath == "/gobernador/estadisticas" ? 'active' : '' %>" href="estadisticas" target="_self">Estadísticas</a></li>
-      </ul>
-    </div>
+    <!-- is admin -->
+    <div class="container">
+      <div class="row">
+        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col m3" %>
+        <%= link_to "Mapa", residences_path, class: "waves-effect waves-light btn col m3" %>
+        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m3" %>
+        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m3" %>
 
-    <% if request.fullpath == "/"  %>
-      <div class="carousel">
-        <% for i in 1..11 %>
-          <a class="carousel-item" href="#<%= i.to_words %>!">
-            <%= image_tag("home/fotoCom" + i.to_s + ".jpg") %>
-          </a>
-        <% end %>
       </div>
-    <% end %>
-
     </div>
-
 
   <% else %>
 
-    <div class="row">
-      <div class="col s12">
-        <ul class="tabs">
-          <li class="tab col s3"><a href="#test1">Test 1</a></li>
-          <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-          <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
-          <li class="tab col s3"><a href="#test4">Test 4</a></li>
-        </ul>
+    <!-- is user -->
+    <div class="container">
+      <div class="row">
+        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col m4" %>
+        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m4" %>
+        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m4" %>
+        <!-- <a class="waves-effect waves-teal btn-flat">Button</a>
+        <a class="waves-effect waves-light btn col m4">Inicio</a>
+        <a class="waves-effect waves-light btn col m4">Empleos</a>
+        <a class="waves-effect waves-light btn col m4">Eventos</a> -->
       </div>
-
-       <% if request.fullpath == "/"  %>
-        <div class="carousel">
-          <% for i in 1..11 %>
-            <a class="carousel-item" href="#<%= i.to_words %>!">
-              <%= image_tag("home/fotoCom" + i.to_s + ".jpg") %>
-            </a>
-          <% end %>
-        </div>
-      <% end %>
-
     </div>
 
   <% end %>
+
 <% end %>

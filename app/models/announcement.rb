@@ -11,7 +11,6 @@
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #
-
 class Announcement < ApplicationRecord
-    belongs_to :person
+  belongs_to :person
 end

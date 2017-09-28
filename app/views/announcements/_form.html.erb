@@ -18,29 +18,29 @@
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :publicationDate %>
+    <%= form.label :publicationDate, "Fecha de publicacion" %>
     <%= form.text_field :publicationDate, id: :announcement_publicationDate, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">access_alarm</i>
-    <%= form.label :deadline %>
+    <%= form.label :deadline, "Fecha de terminacion" %>
     <%= form.text_field :deadline, id: :announcement_deadline, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">info</i>
-    <%= form.label :announcementType %>
-    <%= form.text_area :announcementType, id: :announcement_announcementType %>
+    <%= form.label :announcementType, "Tipo de Anuncio" %>
+    <%= form.text_area :announcementType, id: :announcement_announcementType, class: "materialize-textarea" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">event</i>
-    <%= form.label :announcementInformation %>
-    <%= form.text_area :announcementInformation, id: :announcement_announcementInformation %>
+    <%= form.label :announcementInformation, "Tipo de informacion" %>
+    <%= form.text_area :announcementInformation, id: :announcement_announcementInformation, class: "materialize-textarea" %>
   </div>
 
-  <div class="input-field">
+  <div class="input-field" style="display:none">
     <i class="material-icons prefix">accessibility</i>
     <%= form.label :person_id %>
     <%= form.number_field :person_id, id: :announcement_person_id, value: 1, :disabled => true %>
@@ -48,10 +48,10 @@
 
   <div class="actions">
     <div class="center-align">
+      <%= link_to 'Atras', announcements_path, class:"btn waves-effect waves-light" %>
       <a class="btn waves-effect waves-light">
         <%= form.submit %>
       </a>
-      <%= link_to 'Back', announcements_path, class:"btn waves-effect waves-light" %>
     </div>
   </div>
 <% end %>

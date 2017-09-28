@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
   <!-- <div class="col s10"> -->
     <div class="row">
@@ -35,16 +33,13 @@
         </p>
       </div>
     </div>
-
-    <strong>persona:</strong>
-    <%= @announcement.person_id %>
-
-  <!-- </div> -->
 </div>
 
 <div class="col s10">
   <div class="center-align">
-    <%= link_to 'Edit', edit_announcement_path(@announcement), class:"btn waves-effect waves-light" %>
-    <%= link_to 'Back', announcements_path, class:"btn waves-effect waves-light" %>
+    <%= link_to 'Atras', announcements_path, class:"btn waves-effect waves-light" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'Editar', edit_announcement_path(@announcement), class:"btn waves-effect waves-light" %>
+    <% end %>
   </div>
 </div>

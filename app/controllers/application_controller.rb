@@ -1,21 +1,23 @@
+# application_controller
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :authenticate_user!
 
-  before_action :set_cache_buster
-
-  def set_cache_buster
-    response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
-    response.headers['Pragma'] = 'no-cache'
-    response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
-  end
-
-  protected
-
-  def authorization_admin
-    redirect_to :root unless user_signed_in?
-  end
-
-  def authorization_user
-    redirect_to :root unless user_signed_in?
-  end
+  # before_action :set_cache_buster
+  #
+  # def set_cache_buster
+  #   response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
+  #   response.headers['Pragma'] = 'no-cache'
+  #   response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
+  # end
+  #
+  # protected
+  #
+  # def authorization_admin
+  #   redirect_to :root unless user_signed_in? && current_user.try(:admin?)
+  # end
+  #
+  # def authorization_user
+  #   redirect_to :root unless user_signed_in? && !current_user.try(:admin?)
+  # end
 end

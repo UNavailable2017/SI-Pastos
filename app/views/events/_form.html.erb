@@ -13,39 +13,36 @@
 
   <div class="input-field">
     <i class="material-icons prefix">accessibility</i>
-    <%= form.label :name %>
+    <%= form.label :name, "Nombre" %>
     <%= form.text_field :name, id: :event_name %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :date %>
+    <%= form.label :date, "Fecha" %>
     <%= form.text_field :date, id: :event_date, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :eventType %>
+    <%= form.label :eventType, "Tipo de Evento" %>
     <%= form.text_field :eventType, id: :event_eventType %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :eventInfo %>
+    <%= form.label :eventInfo, "Información del evento" %>
     <%= form.text_area :eventInfo, id: :event_eventInfo,  class: "materialize-textarea" %>
   </div>
 
-  <div class='input-field'>
-    <i class="material-icons prefix">accessibility</i>
+  <div class='input-field' style="display:none">
     <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :event_person_id, value: 1, :disabled => true %>
+    <%= form.number_field :person_id, id: :event_person_id, value: 1, 'aria-hidden' => true %>
   </div>
 
-  <div class="actions">
-    <a class="btn waves-effect waves-light">
-      <%= form.submit %>
-    </a>
-    <%= link_to 'Back', events_path, class:"btn waves-effect waves-light" %>
+  <div class="actions center-align">
+      <%= link_to 'Atras', events_path, class:"btn waves-effect waves-light" %>
+      <%= form.submit class: "btn waves-effect waves-light" %>
   </div>
 
 <% end %>

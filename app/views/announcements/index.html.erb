@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
   <h2 class="center-align">Ofertas de Empleo</h2>
 </div>
@@ -20,7 +18,6 @@
             <th>Fecha Limite</th>
             <th>Tipo Oferta</th>
             <th>Informacion</th>
-            <th>Person</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -32,10 +29,11 @@
               <td><%= announcement.deadline %></td>
               <td><%= announcement.announcementType %></td>
               <td><%= announcement.announcementInformation %></td>
-              <td><%= announcement.person_id %></td>
-              <td><%= link_to 'Show', announcement %></td>
-              <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-              <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Ver', announcement %></td>
+              <% if current_user.try(:admin?) %>
+                <td><%= link_to 'Editar', edit_announcement_path(announcement) %></td>
+                <td><%= link_to 'Eliminar', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

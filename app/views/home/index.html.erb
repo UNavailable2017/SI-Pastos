@@ -1,4 +1,14 @@
-<% unless user_signed_in? %>
+<% if user_signed_in? %>
+
+  <div class="carousel">
+    <% for i in 1..11 %>
+      <a class="carousel-item" href="#<%= i.to_words %>!">
+        <%= image_tag("home/fotoCom" + i.to_s + ".jpg") %>
+      </a>
+    <% end %>
+  </div>
+
+<% else %>
     <section class="parallax-container">
       <div class="parallax"><%= image_tag "backgrounds/Pastos1.jpg" %></div>
     </section>
