@@ -12,6 +12,10 @@ gem 'will_paginate-materialize'
 
 # devise for login
 gem 'devise'
+
+#omniauth Facebook
+gem 'omniauth'
+gem 'omniauth-facebook'
 # materialize
 gem 'materialize-sass'
 # font-awesome
