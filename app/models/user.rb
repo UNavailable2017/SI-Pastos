@@ -16,6 +16,9 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
+#  provider               :string
+#  uid                    :stringname
+#  image                  :text
 #
 
 class User < ApplicationRecord
@@ -24,7 +27,8 @@ class User < ApplicationRecord
   has_one :person
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable
+         :omniauthable, omniauth_providers: [:facebook]
+
 
  def self.new_with_session(params, session)
    super.tap do |user|

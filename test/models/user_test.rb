@@ -16,6 +16,9 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
+#  provider               :string
+#  uid                    :stringname
+#  image                  :text
 #
 
 require 'test_helper'

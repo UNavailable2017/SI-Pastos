@@ -15,7 +15,7 @@ gem 'devise'
 
 #omniauth Facebook
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 1.4.0'
 # materialize
 gem 'materialize-sass'
 # font-awesome
