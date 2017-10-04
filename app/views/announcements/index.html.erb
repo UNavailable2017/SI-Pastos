@@ -35,10 +35,10 @@
               <td><%= announcement.announcementInformation %></td>
 
               <%=  %>
-              <td><%= link_to (fa_icon "pencil"), announcement %></td>
+              <td><%= link_to (fa_icon "eye"), announcement %></td>
 
               <% if current_user.try(:admin?) %>
-                <td><%= link_to (fa_icon "eye"), edit_announcement_path(announcement) %></td>
+                <td><%= link_to (fa_icon "pencil"), edit_announcement_path(announcement) %></td>
                 <td><%= link_to (fa_icon "times"), announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
             </tr>

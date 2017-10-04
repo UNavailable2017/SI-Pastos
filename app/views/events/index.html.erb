@@ -18,7 +18,7 @@
       <table class="striped">
         <thead>
           <tr>
-            <th>Npmbre</th>
+            <th>Nombre</th>
             <th>Fecha</th>
             <th>Tipo de Evento</th>
             <th>Información del Evento</th>
@@ -33,9 +33,9 @@
               <td><%= event.date %></td>
               <td><%= event.eventType %></td>
               <td><%= event.eventInfo %></td>
-              <td><%= link_to (fa_icon "pencil"), event %></td>
+              <td><%= link_to (fa_icon "eye"), event %></td>
               <% if current_user.try(:admin?) %>
-                <td><%= link_to (fa_icon "eye"), edit_event_path(event) %></td>
+                <td><%= link_to (fa_icon "pencil"), edit_event_path(event) %></td>
                 <td><%= link_to (fa_icon "times"), event, method: :delete, data: { confirm: '¿esta seguro?' } %></td>
               <% end %>
             </tr>
