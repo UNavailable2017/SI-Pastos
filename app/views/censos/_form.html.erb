@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-field">
+    <i class="material-icons prefix">access_time</i>
     <%= form.label :date %>
-    <%= form.date_select :date, id: :censo_date %>
+    <%= form.text_field :date, id: :censo_date, class: "datepicker" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :numberOfChildren %>
     <%= form.number_field :numberOfChildren, id: :censo_numberOfChildren %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :originResguardo %>
     <%= form.text_field :originResguardo, id: :censo_originResguardo %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :levelStudies %>
     <%= form.text_field :levelStudies, id: :censo_levelStudies %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :profession %>
     <%= form.text_field :profession, id: :censo_profession %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :entry %>
     <%= form.text_field :entry, id: :censo_entry %>
   </div>
@@ -46,7 +47,8 @@
     <%= form.number_field :person_id, id: :censo_person_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions center-align">
+    <%= link_to 'Back', censos_path, class:"btn waves-effect waves-light" %>
+    <%= form.submit class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

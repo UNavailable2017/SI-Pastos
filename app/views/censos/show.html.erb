@@ -1,39 +1,80 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @censo.date %>
-</p>
+<div class="container">
+  
+  <p>
+    <strong>Person:</strong>
+    <%= @censo.person_id %>
+  </p>
+  
+  <p>
+    <strong>Fecha:</strong>
+    <%= @censo.date %>
+  </p>
+  
+  <div class="row">
+    
+    <table class="striped">
+     <thead>
+        <tr>
+          <th>N° Hijos:</th>
+          <th>Resguardo Origen:</th>
+          <th>Nivel de Estudios:</th>
+          <th>Profesión:</th>
+          <th>Ingresos:</th>
+          <th colspan="3"></th>
+          
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td><%= @censo.numberOfChildren %></td>
+          <td><%= @censo.originResguardo %></td>
+          <td><%= @censo.levelStudies %></td>
+          <td><%= @censo.profession %></td>
+          <td><%= @censo.entry %></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- fgffdfgdr 
+    <div class="col s2">
+      <strong>N° Hijos:</strong>
+      <%= @censo.numberOfChildren %>
+    </div>
+    
+    <div class="col s3">
+      <strong>Resguardo Origen:</strong>
+      <%= @censo.originResguardo %>
+    </div>
+    
+    <div class="col s3">
+      <strong>Nivel de Estudios:</strong>
+      <%= @censo.levelStudies %>
+    </div>
+    
+    <div class="col s2">
+      <strong>Profesión:</strong>
+      <%= @censo.profession %>
+    </div>
+    
+    <div class="col s2">
+      <strong>Ingresos:</strong>
+      <%= @censo.entry %>
+    </div>
+    -->
+    
+  </div>
+  
+  
+</div>
 
-<p>
-  <strong>Numberofchildren:</strong>
-  <%= @censo.numberOfChildren %>
-</p>
 
-<p>
-  <strong>Originresguardo:</strong>
-  <%= @censo.originResguardo %>
-</p>
-
-<p>
-  <strong>Levelstudies:</strong>
-  <%= @censo.levelStudies %>
-</p>
-
-<p>
-  <strong>Profession:</strong>
-  <%= @censo.profession %>
-</p>
-
-<p>
-  <strong>Entry:</strong>
-  <%= @censo.entry %>
-</p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @censo.person_id %>
-</p>
-
-<%= link_to 'Edit', edit_censo_path(@censo) %> |
-<%= link_to 'Back', censos_path %>
+<div class="col s10">
+  <div class="center-align">
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'Back', censos_path, class:"btn waves-effect waves-light" %>
+      <%= link_to 'Edit', edit_censo_path(@censo), class:"btn waves-effect waves-light" %>
+    <% end %>
+  </div>
+</div>
