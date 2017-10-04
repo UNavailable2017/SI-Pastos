@@ -13,6 +13,12 @@ gem 'will_paginate-materialize'
 # devise for login
 gem 'devise'
 
+#generate pdf
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+gem 'render_anywhere'
+
+
 #omniauth Facebook
 gem 'omniauth'
 gem 'omniauth-facebook'

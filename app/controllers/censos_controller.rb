@@ -1,8 +1,8 @@
 class CensosController < ApplicationController
   before_action :set_censo, only: [:show, :edit, :update, :destroy]
-
   # GET /censos
   # GET /censos.json
+  
   def index
     @censos = Censo.paginate(:page => params[:page], :per_page => 20)
   end
@@ -10,6 +10,18 @@ class CensosController < ApplicationController
   # GET /censos/1
   # GET /censos/1.json
   def show
+    respond_to do |format|
+      some other formats like: format.html { render :show }
+
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "Hellow World!"
+        send_data pdf.render,
+        filename: "export.pdf",
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /censos/new
