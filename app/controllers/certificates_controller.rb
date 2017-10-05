@@ -7,7 +7,7 @@ class CertificatesController < ApplicationController
     @certificates = Certificate.all
     respond_to do |format|
       format.html
-      format.json { render json: @resource }
+      format.json { render json: @certificates }
       format.pdf {render template: 'certificates/certificate', pdf:'certificado'}
     end
   end
@@ -74,6 +74,7 @@ class CertificatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificate_params
-      params.fetch(:certificate, {})
+      params.require(:certificate).permit(:documentPerson)
     end
+
 end
