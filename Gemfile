@@ -14,9 +14,8 @@ gem 'will_paginate-materialize'
 gem 'devise'
 
 #generate pdf
-gem 'pdfkit'
-gem 'wkhtmltopdf-binary'
-gem 'render_anywhere'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'  
 
 
 #omniauth Facebook
