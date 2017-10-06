@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  
+
   <p>
     <strong>Person:</strong>
     <%= @censo.person_id %>
   </p>
-  
+
   <p>
     <strong>Fecha:</strong>
     <%= @censo.date %>
   </p>
-  
+
   <div class="row">
-    
+
     <table class="striped">
      <thead>
         <tr>
@@ -23,10 +23,10 @@
           <th>Profesión:</th>
           <th>Ingresos:</th>
           <th colspan="3"></th>
-          
+
         </tr>
       </thead>
-      
+
       <tbody>
         <tr>
           <td><%= @censo.numberOfChildren %></td>
@@ -37,44 +37,44 @@
         </tr>
       </tbody>
     </table>
-    <!-- fgffdfgdr 
+    <!-- fgffdfgdr
     <div class="col s2">
       <strong>N° Hijos:</strong>
       <%= @censo.numberOfChildren %>
     </div>
-    
+
     <div class="col s3">
       <strong>Resguardo Origen:</strong>
       <%= @censo.originResguardo %>
     </div>
-    
+
     <div class="col s3">
       <strong>Nivel de Estudios:</strong>
       <%= @censo.levelStudies %>
     </div>
-    
+
     <div class="col s2">
       <strong>Profesión:</strong>
       <%= @censo.profession %>
     </div>
-    
+
     <div class="col s2">
       <strong>Ingresos:</strong>
       <%= @censo.entry %>
     </div>
     -->
-    
+
   </div>
-  
-  
+
+
 </div>
 
 
 <div class="col s10">
   <div class="center-align">
     <% if current_user.try(:admin?) %>
-      <%= link_to 'Back', censos_path, class:"btn waves-effect waves-light" %>
-      <%= link_to 'Edit', edit_censo_path(@censo), class:"btn waves-effect waves-light" %>
+      <%= link_to 'Atrás', censos_path, class:"btn waves-effect waves-light" %>
+      <%= link_to 'Editar', edit_censo_path(@censo), class:"btn waves-effect waves-light" %>
     <% end %>
   </div>
 </div>

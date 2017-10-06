@@ -13,42 +13,48 @@
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :date %>
+    <%= form.label :date, "Fecha" %>
     <%= form.text_field :date, id: :censo_date, class: "datepicker" %>
   </div>
 
   <div class="input-field">
-    <%= form.label :numberOfChildren %>
+    <i class="material-icons prefix">child_care</i>
+    <%= form.label :numberOfChildren, "Numero de Hijos" %>
     <%= form.number_field :numberOfChildren, id: :censo_numberOfChildren %>
   </div>
 
   <div class="input-field">
-    <%= form.label :originResguardo %>
+    <i class="material-icons prefix">group</i>
+    <%= form.label :originResguardo, "Resguardo de Origen" %>
     <%= form.text_field :originResguardo, id: :censo_originResguardo %>
   </div>
 
   <div class="input-field">
-    <%= form.label :levelStudies %>
+    <i class="material-icons prefix">book</i>
+    <%= form.label :levelStudies, "Nivel de Estudios" %>
     <%= form.text_field :levelStudies, id: :censo_levelStudies %>
   </div>
 
   <div class="input-field">
-    <%= form.label :profession %>
+    <i class="material-icons prefix">business</i>
+    <%= form.label :profession, "Profesión" %>
     <%= form.text_field :profession, id: :censo_profession %>
   </div>
 
   <div class="input-field">
-    <%= form.label :entry %>
+    <i class="material-icons prefix">attach_money</i>
+    <%= form.label :entry, "Ingresos" %>
     <%= form.text_field :entry, id: :censo_entry %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
+    <i class="material-icons prefix">account_circle</i>
     <%= form.label :person_id %>
     <%= form.number_field :person_id, id: :censo_person_id %>
   </div>
 
   <div class="actions center-align">
-    <%= link_to 'Back', censos_path, class:"btn waves-effect waves-light" %>
+    <%= link_to 'Atrás', censos_path, class:"btn waves-effect waves-light" %>
     <%= form.submit class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
