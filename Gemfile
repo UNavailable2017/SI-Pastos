@@ -12,6 +12,15 @@ gem 'will_paginate-materialize'
 
 # devise for login
 gem 'devise'
+
+#generate pdf
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'  
+
+
+#omniauth Facebook
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 1.4.0'
 # materialize
 gem 'materialize-sass'
 # font-awesome

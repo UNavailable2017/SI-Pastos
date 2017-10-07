@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # get 'gobernador/inicio', to: 'governor#home'
   # get 'gobernador/registrar_censo', to: 'governor#register_censo'
   # get 'gobernador/buscar_censo', to: 'governor#find_censo'
@@ -15,12 +16,18 @@ Rails.application.routes.draw do
   # resources :health_services
   resources :censos
   # resources :people
-
+  resources :certificates
   resources :announcements
   resources :events
   resources :residences
   resources :elections
   resources :contacts, only: [:new, :index, :create]
-  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  devise_scope :user do
+    get 'sign_in', to: 'devise/sessions#new', as: :new_user_session_facebook
+    get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session_facebook
+  end
+
   root to: 'home#index'
 end

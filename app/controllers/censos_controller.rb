@@ -1,8 +1,8 @@
 class CensosController < ApplicationController
   before_action :set_censo, only: [:show, :edit, :update, :destroy]
-
   # GET /censos
   # GET /censos.json
+
   def index
     @censos = Censo.paginate(:page => params[:page], :per_page => 20)
   end

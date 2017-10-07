@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf'%>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+      <br>
+    <div class="logo">
+      <%= wicked_pdf_image_tag 'backgrounds/Logo-Aico.png'%>
+    </div>
+    <div class="title">
+
+
+      <blockquote>
+        La honorable corporacion del cabildo indigena del pueblo de los pastos en uso de sus
+        facultades legales que le confiere el derecho mayor, la ley de origen, la ley natural,
+        el convenio 169 de la OIT, la ley 89 de 1989, la constitucion politica de 1991, la declaracion
+        de las naciones unidas sobre los derechos de los pueblos indigenas, la ley 21 de 1991,
+        el decreto 543 del 2011 que adopta la politica publica para los pueblos
+        indigenas en Bogotá D.C, DECRETO 612 de 2015, "por el cual se crea el consejo consultivo
+        y de concertacion para los pueblos indigenas en Bogotá D.C" y demás normas que
+        defienen los derechos de los pueblos indigenas en Colombia
+      </blockquote>
+      <br>
+      <br>
+      <h5>CERTIFICA</h5>
+
+    </div>
+
+    <% time = Time.new%>
+    <div class="text-body">
+
+        <p> Que el indigena, <%= @dat.first.name %>   <%=@dat.first.lastname%>, identificado con numero de identificacion
+        <%= @dat.first.documentType %>. <%= @dat.first.documentPerson %>, hacen parte de la comunidad
+        del cabildo indigena del pueblo de los pastos de Bogotá, por lo tanto, se encuentran afiliados
+        al censo interno y cumplen a sus usos y costumbres con los programas y actividades del cabildo.
+        </p>
+        <p>Dado en Bogota el <%= time.day %>-<%= time.month %>-<%= time.year %>, dirigida a quien corresponda.
+
+    </div>
+
+    <div class="firm">
+        <p>Maria de Jesus Erira C.</p>
+        <p>Gobernadora</p>
+        <p>Cabildo indigena de los pastos</p>
+
+    </div>
+
+
+  </body>
+</html>
