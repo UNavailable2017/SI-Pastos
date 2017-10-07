@@ -5,16 +5,18 @@ class CertificatesController < ApplicationController
   # GET /certificates.json
   def index
     @certificates = Certificate.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @certificates }
-      format.pdf {render template: 'certificates/certificate', pdf:'certificado'}
-    end
   end
 
   # GET /certificates/1
   # GET /certificates/1.json
   def show
+      data_person = Certificate.last
+      @dat =   Person.joins(:censo).where(documentPerson: data_person.documentPerson)
+      respond_to do |format|
+        format.html
+        format.json { render json: @certificates }
+        format.pdf {render template: 'certificates/certificate', pdf:'certificado'}
+    end
   end
 
   # GET /certificates/new
@@ -30,7 +32,6 @@ class CertificatesController < ApplicationController
   # POST /certificates.json
   def create
     @certificate = Certificate.new(certificate_params)
-
     respond_to do |format|
       if @certificate.save
         format.html { redirect_to @certificate, notice: 'Certificate was successfully created.' }
@@ -40,7 +41,7 @@ class CertificatesController < ApplicationController
         format.json { render json: @certificate.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
 
   # PATCH/PUT /certificates/1
   # PATCH/PUT /certificates/1.json
