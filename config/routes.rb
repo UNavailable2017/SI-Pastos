@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # get 'gobernador/elecciones', to: 'governor#election'
   # get 'gobernador/estadisticas', to: 'governor#statistic'
   # resources :candidates
-  resources :opinions
+  # resources :opinions
   # resources :children
   # resources :health_services
   resources :censos

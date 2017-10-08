@@ -10,8 +10,9 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :documentPerson %>
+  <div class="input-field">
+    <i class="material-icons prefix">chevron_right</i>
+    <%= form.label :documentPerson, "Ingrese el Documento" %>
     <%= form.number_field :documentPerson, id: :certificate_documentPerson %>
   </div>
 
