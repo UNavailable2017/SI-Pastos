@@ -19,15 +19,17 @@
         <div class="col m2"></div>
         <div class="col m3">
             <ul class="nav">
-                <%= link_to "Total censo", statistics_show_path, class: "waves-effect waves-light btn sub" %>
-                <%= link_to "Número de hijos", statistics_get_data_path, class: "waves-effect waves-light  btn sub" %>
-                <%= link_to "Usuarios no censados", statistics_count_path, class: "waves-effect waves-light btn sub  " %>
+                <%= link_to "Total censo", statistics_total_path, class: "waves-effect waves-light btn sub" %>
+                <%= link_to "Número de hijos", statistics_children_path, class: "waves-effect waves-light  btn sub" %>
+                <%= link_to "servicio de salud", statistics_health_path, class: "waves-effect waves-light btn sub  " %>
+                <%= link_to "Usuarios no censados", statistics_noCenso_path, class: "waves-effect waves-light btn sub  " %>
             </ul>
         </div>
         <div class="col m5">
           <ul class="center-align collection with-header">
               <li class="collection-header"> <i class="material-icons">date_range</i>
-                  <h5>Clasificacion por número de hijos</h5></li>
+                  <h5>Clasificacion por número de hijos (número de personas con una
+                  cantidad determinada de hijos)</h5></li>
 
           </ul>
 
@@ -38,7 +40,6 @@
                 <tr>
                   <th>Cantidad de hijos </th>
                   <th>Número de personas</th>
-
                 </tr>
               </thead>
 

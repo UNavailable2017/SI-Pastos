@@ -46,7 +46,7 @@ puts 'finished loading Announcement data'
 Faker::UniqueGenerator.clear
 
 100.times do
-  HealthService.create(name: Faker::Lorem.characters(4),
+  HealthService.create(name: Faker::Company.suffix,
                        censo_id: Faker::Number.unique.between(1, 100))
 end
 puts 'finished loading health_service data'
