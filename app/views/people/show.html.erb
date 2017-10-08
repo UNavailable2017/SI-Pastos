@@ -1,59 +1,46 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Documento:</th>
+          <th>Tipo Documento:</th>
+          <th>Nombre:</th>
+          <th>Apellido:</th>
+          <th>Fecha Nacimiento:</th>
+          <th>Estado Civil:</th>
+          <th>Genero:</th>
+          <th>Esta Censado?</th>
+          <th>Lengua Origen:</th>
+          <th>Dominio Lengua</th>
+          <th>User:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @person.documentPerson %></td>
+          <td><%= @person.documentType %></td>
+          <td><%= @person.name %></td>
+          <td><%= @person.lastname %></td>
+          <td><%= @person.birthDate %></td>
+          <td><%= @person.civilStatus %></td>
+          <td><%= @person.gender %></td>
+          <td><%= @person.isCensus %></td>
+          <td><%= @person.originLanguage %></td>
+          <td><%= @person.languageDomination %></td>
+          <td><%= @person.user_id %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<p>
-  <strong>Documentperson:</strong>
-  <%= @person.documentPerson %>
-</p>
-
-<p>
-  <strong>Documenttype:</strong>
-  <%= @person.documentType %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @person.lastname %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @person.birthDate %>
-</p>
-
-<p>
-  <strong>Civilstatus:</strong>
-  <%= @person.civilStatus %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @person.gender %>
-</p>
-
-<p>
-  <strong>Iscensus:</strong>
-  <%= @person.isCensus %>
-</p>
-
-<p>
-  <strong>Originlanguage:</strong>
-  <%= @person.originLanguage %>
-</p>
-
-<p>
-  <strong>Languagedomination:</strong>
-  <%= @person.languageDomination %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @person.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<div class="col s10">
+  <div class="center-align">
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
+      <%= link_to 'Editar', edit_person_path(@person), class:"btn waves-effect waves-light" %>
+    <% end %>
+  </div>
+</div>
