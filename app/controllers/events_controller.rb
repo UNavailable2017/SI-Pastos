@@ -4,8 +4,9 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+  helper_method :sort_column, :sort_direction
   def index
-    @events = Event.paginate(:page => params[:page], :per_page => 20)
+    @events = Event.paginate(:page => params[:page], :per_page => 20).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /events/1
@@ -71,5 +72,13 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:name, :date, :eventType, :eventInfo, :person_id)
+    end
+
+    def sort_column
+      Event.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
     end
 end
