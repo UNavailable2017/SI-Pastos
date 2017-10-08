@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'statistics/show'
+
+  get 'statistics/count'
+
+  get 'statistics/get_data'
+
   # get 'gobernador/inicio', to: 'governor#home'
   # get 'gobernador/registrar_censo', to: 'governor#register_censo'
   # get 'gobernador/buscar_censo', to: 'governor#find_censo'
