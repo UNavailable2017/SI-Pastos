@@ -7,6 +7,7 @@ class StatisticsController < ApplicationController
   end
 
   def average
+      @birthDate= Person.pluck(:birthDate)
   end
 
   def health
