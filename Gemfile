@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.4'
 
 gem 'will_paginate'
 gem 'will_paginate-materialize'
@@ -15,7 +15,7 @@ gem 'devise'
 
 #generate pdf
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'  
+gem 'wkhtmltopdf-binary'
 
 
 #omniauth Facebook
