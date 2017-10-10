@@ -12532,3 +12532,778 @@ Processing by AnnouncementsController#index as HTML
 Completed 200 OK in 269ms (Views: 265.8ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-09 18:22:06 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1294.8ms)
+Completed 500 Internal Server Error in 1346ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...rt "statistics"": expected "{", was ";"):
+    10: 
+    11: <% else %>
+    12:     <section class="parallax-container">
+    13:       <div class="parallax"><%= image_tag("backgrounds/Pastos1.jpg") %></div>
+    14:     </section>
+    15: 
+    16:     <section class="section white">
+  
+app/assets/stylesheets/application.scss:12
+app/views/home/index.html.erb:13:in `_app_views_home_index_html_erb___577572897905421218_46944030107820'
+Started GET "/" for 127.0.0.1 at 2017-10-09 18:36:31 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4396.1ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 4792ms (Views: 4784.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-09 18:36:42 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (702.5ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 953ms (Views: 919.5ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/users" for 127.0.0.1 at 2017-10-09 18:38:58 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8rH9xE6jYukMRqDPvKviGUKnnz2oi+OgfVPxabiFdgYV4vE8Yn6N5mGnsO0m0DH/P58uc0N1GwU5MHK6m67p8w==", "user"=>{"email"=>"rfc@a.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Regístrate"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rfc@a.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "rfc@a.com"], ["encrypted_password", "$2a$11$kXpPhUCq86bJpSR9He5o8OipVMGLq3SZmKkjgDoCkE83Y2/dQEpI."], ["created_at", "2017-10-09 23:38:58.915394"], ["updated_at", "2017-10-09 23:38:58.915394"]]
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-09 23:38:59.010603"], ["last_sign_in_at", "2017-10-09 23:38:59.010603"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-10-09 23:38:59.013859"], ["id", 103]]
+  [1m[35m (85.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 469ms (ActiveRecord: 177.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 18:38:59 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (11.1ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 197ms (Views: 195.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2017-10-09 18:39:17 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (21.1ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 496ms (Views: 221.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2017-10-09 18:39:19 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering announcements/index.html.erb within layouts/application
+  [1m[36mAnnouncement Load (0.4ms)[0m  [1m[34mSELECT  "announcements".* FROM "announcements" ORDER BY publicationDate asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "announcements"[0m
+  Rendered announcements/index.html.erb within layouts/application (17.3ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 229ms (Views: 188.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 18:39:22 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (18.1ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 245ms (Views: 243.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-09 18:39:25 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.7ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 247ms (Views: 243.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2017-10-09 18:39:32 -0500
+Processing by ResidencesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mResidence Load (1.8ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  Rendering residences/index.html.erb within layouts/application
+  Rendered residences/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 367ms (Views: 203.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/certificates" for 127.0.0.1 at 2017-10-09 18:39:38 -0500
+Processing by CertificatesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/index.html.erb within layouts/application
+  Rendered certificates/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 205ms (Views: 200.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/statistics" for 127.0.0.1 at 2017-10-09 18:39:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/statistics"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2017-10-09 23:40:04.481408"], ["admin", "t"], ["id", 103]]
+  [1m[35m (81.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/certificates" for 127.0.0.1 at 2017-10-09 18:40:09 -0500
+Processing by CertificatesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/index.html.erb within layouts/application
+  Rendered certificates/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 184ms (Views: 181.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 18:40:11 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (3.3ms)
+  Rendered certificates/new.html.erb within layouts/application (5.3ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 204ms (Views: 193.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 18:44:28 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.6ms)
+  Rendered certificates/new.html.erb within layouts/application (3.8ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_navbar_users.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 238ms (Views: 234.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 18:44:35 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"02amHomrHFeXwoN/Q8hOqzV3CF/nLg/hUCsIShF6m5JYvRb7HYTHcJmMIyt1iLqtx4niRg60rDxx5fy+Jx7hGw==", "certificate"=>{"documentPerson"=>"2222"}, "button"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-09 23:44:35.082439"], ["updated_at", "2017-10-09 23:44:35.082439"], ["documentPerson", 2222]]
+  [1m[35m (87.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/2
+Completed 302 Found in 97ms (ActiveRecord: 89.7ms)
+
+
+Started GET "/certificates/2" for 127.0.0.1 at 2017-10-09 18:44:35 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.3ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  Rendered certificates/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:31: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+s-effect waves-light" <i class="material-icons right">pictur
+                              ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:32: unknown regexp option - h
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:32: unmatched close parenthesis: /i>);@output_buffer.safe_append='
+                    </
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:32: syntax error, unexpected tINTEGER, expecting ')'
+                    </h4>
+                        ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:34: unknown regexp options - dv
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:36: syntax error, unexpected '<'
+        </div>
+         ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:37: unknown regexp options - dv
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:40: unterminated string meets end of file
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:40: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/certificates/show.html.erb:31: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/certificates/show.html.erb:32: unknown regexp option - h
+app/views/certificates/show.html.erb:32: unmatched close parenthesis: /i>);@output_buffer.safe_append='
+app/views/certificates/show.html.erb:32: syntax error, unexpected tINTEGER, expecting ')'
+app/views/certificates/show.html.erb:34: unknown regexp options - dv
+app/views/certificates/show.html.erb:36: syntax error, unexpected '<'
+app/views/certificates/show.html.erb:37: unknown regexp options - dv
+app/views/certificates/show.html.erb:40: unterminated string meets end of file
+app/views/certificates/show.html.erb:40: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/certificates/2" for 127.0.0.1 at 2017-10-09 18:45:07 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 2222], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (60.7ms)
+  Rendered shared/_navbar.html.erb (3.4ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 266ms (Views: 259.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 18:45:10 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.8ms)
+  Rendered certificates/new.html.erb within layouts/application (4.6ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (3.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 192ms (Views: 187.8ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mCenso Load (0.4ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 18:46:11 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9SEgP1mnL3TsyYEPR8/Zr3Eg3EYE5qyaLMxVfyjK1ph++pDazYj0U+KHIVtxjy2pg942X+18D0cNAqGLHq6sEQ==", "certificate"=>{"documentPerson"=>"89016"}, "button"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-09 23:46:11.871633"], ["updated_at", "2017-10-09 23:46:11.871633"], ["documentPerson", 89016]]
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/3
+Completed 302 Found in 72ms (ActiveRecord: 62.9ms)
+
+
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:46:11 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (17.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 224ms (Views: 218.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:52:04 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/certificates/3.pdf":String):
+    27:                   <div class="col m3"></div>
+    28:                   <div class="col m7">
+    29:                     <h4 class="center-align ">
+    30:                          <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light" do %>
+    31:                          <i class="material-icons right">picture_as_pdf</i>
+    32:                          <%end%>
+    33:                     </h4>
+  
+app/views/certificates/show.html.erb:30:in `_app_views_certificates_show_html_erb__3722406950355566541_69830431586000'
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:53:21 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  Rendered certificates/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:44: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/certificates/show.html.erb:44: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:54:12 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  Rendered certificates/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:30: syntax error, unexpected keyword_class, expecting ')'
+ght">picture_as_pdf</i>' class: "btn waves-effect waves-ligh
+                              ^):
+  
+app/views/certificates/show.html.erb:30: syntax error, unexpected keyword_class, expecting ')'
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:55:48 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/certificates/3.pdf":String):
+    27:                   <div class="col m3"></div>
+    28:                   <div class="col m7">
+    29:                     <h4 class="center-align ">
+    30:                          <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light" do %>
+    31:                           <i class="material-icons right">picture_as_pdf</i>
+    32:                          <%end%>
+    33:                     </h4>
+  
+app/views/certificates/show.html.erb:30:in `_app_views_certificates_show_html_erb__3722406950355566541_69830398128200'
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:58:53 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 0..3)):
+    27:                   <div class="col m3"></div>
+    28:                   <div class="col m7">
+    29:                     <h4 class="center-align ">
+    30:                          <%= link_to '<i class="icon-ok icon-white"></i> Do it@'.html_safe, 'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light" %>
+    31: 
+    32:                     </h4>
+    33:                   </div>
+  
+app/views/certificates/show.html.erb:30:in `_app_views_certificates_show_html_erb__3722406950355566541_69830130645460'
+Started GET "/certificates/3" for 127.0.0.1 at 2017-10-09 18:59:04 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 176ms (Views: 171.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/certificates" for 127.0.0.1 at 2017-10-09 19:04:18 -0500
+Processing by CertificatesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/index.html.erb within layouts/application
+  Rendered certificates/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 188ms (Views: 185.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 19:04:20 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.1ms)
+  Rendered certificates/new.html.erb within layouts/application (3.6ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 214ms (Views: 210.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 19:04:32 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgBMSXgey+h34kCryIpyEhbGNlhSL1byZt0ZdnXup33N2/ys7DEQz3ms4P/+yoYU5DjcQbu19S9HE+2CQ4rd9A==", "certificate"=>{"documentPerson"=>"89016"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 00:04:32.153011"], ["updated_at", "2017-10-10 00:04:32.153011"], ["documentPerson", 89016]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/4
+Completed 302 Found in 108ms (ActiveRecord: 101.7ms)
+
+
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:04:32 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/certificates/4.pdf":String):
+    27:                   <div class="col m3"></div>
+    28:                   <div class="col m7">
+    29:                     <h4 class="center-align ">
+    30:                          <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light" do%>
+    31:                          <i class="material-icons right">picture_as_pdf</i>
+    32:                          <%end%>
+    33:                     </h4>
+  
+app/views/certificates/show.html.erb:30:in `_app_views_certificates_show_html_erb__3722406950355566541_69830430720380'
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:07:20 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 177ms (Views: 172.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:08:51 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 11]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 11]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 11]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 11]]
+  Rendered certificates/show.html.erb within layouts/application (187.5ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `icon' for #<#<Class:0x00007f05482247b0>:0x00007f0544272c98>):
+    27:                   <div class="col m3"></div>
+    28:                   <div class="col m7">
+    29:                     <h4 class="center-align ">
+    30:                          <%= link_to icon('plus'), 'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light" %>
+    31:                     </h4>
+    32:                   </div>
+    33:               </div>
+  
+app/views/certificates/show.html.erb:30:in `_app_views_certificates_show_html_erb__3722406950355566541_69830297492420'
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:14:46 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  Rendered certificates/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/certificates/show.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/certificates/show.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:15:00 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/certificates/4.pdf":String):
+    27:                   <div class="col m3"></div>
+    28:                   <div class="col m7">
+    29:                     <h4 class="center-align ">
+    30:                          <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light" do%>
+    31:                          <i class="material-icons right">picture_as_pdf</i>
+    32:                          <% end %>
+    33: 
+  
+app/views/certificates/show.html.erb:30:in `_app_views_certificates_show_html_erb__3722406950355566541_69830259642460'
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:17:01 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 167ms (Views: 163.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:17:21 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  Rendered certificates/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:30: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+fer.append=( link_to  <i class="material-icons right">pictur
+                              ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:34: unknown regexp option - h
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:34: unmatched close parenthesis: /i>,  certificate_path(format: :pdf), class: "btn waves-effect waves-light" );@output_buffer.safe_append='
+
+
+
+                    </
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:34: syntax error, unexpected tINTEGER, expecting ')'
+                    </h4>
+                        ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:36: unknown regexp options - dv
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:38: syntax error, unexpected '<'
+        </div>
+         ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:39: unknown regexp options - dv
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:42: unterminated string meets end of file
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/certificates/show.html.erb:30: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/certificates/show.html.erb:34: unknown regexp option - h
+app/views/certificates/show.html.erb:34: unmatched close parenthesis: /i>,  certificate_path(format: :pdf), class: "btn waves-effect waves-light" );@output_buffer.safe_append='
+app/views/certificates/show.html.erb:34: syntax error, unexpected tINTEGER, expecting ')'
+app/views/certificates/show.html.erb:36: unknown regexp options - dv
+app/views/certificates/show.html.erb:38: syntax error, unexpected '<'
+app/views/certificates/show.html.erb:39: unknown regexp options - dv
+app/views/certificates/show.html.erb:42: unterminated string meets end of file
+app/views/certificates/show.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:17:42 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  Rendered certificates/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+( link_to  "<i class="material-icons right">picture_as_pdf</
+                              ^
+/home/rafael/github/SI-Pastos/app/views/certificates/show.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+<i class="material-icons right">picture_as_pdf</i>",  certif
+                              ^):
+  
+app/views/certificates/show.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/certificates/show.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started GET "/certificates/4" for 127.0.0.1 at 2017-10-09 19:17:51 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (2.5ms)
+  Rendered shared/_navbar.html.erb (3.6ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 171ms (Views: 166.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 19:19:00 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.5ms)
+  Rendered certificates/new.html.erb within layouts/application (3.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 209ms (Views: 205.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 19:19:05 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cxQRh8ox42RbdRvXWplNXqDtULd5sRw1IuFhhgJKjn34z6FiXh44Q1U7u4Ns2blYUhO6rpArv+gDL5VyNC709A==", "certificate"=>{"documentPerson"=>"89016"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 00:19:05.191560"], ["updated_at", "2017-10-10 00:19:05.191560"], ["documentPerson", 89016]]
+  [1m[35m (90.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/5
+Completed 302 Found in 98ms (ActiveRecord: 92.2ms)
+
+
+Started GET "/certificates/5" for 127.0.0.1 at 2017-10-09 19:19:05 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (3.1ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 179ms (Views: 175.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/certificates/5.pdf" for 127.0.0.1 at 2017-10-09 19:19:08 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (1387.5ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (21.7ms)
+Completed 200 OK in 3950ms (Views: 21.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 19:20:29 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.2ms)
+  Rendered certificates/new.html.erb within layouts/application (3.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 210ms (Views: 207.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 19:20:32 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8e7Fq+ZcxgKYym3Je5r+TODlIxyzgtp7f3I/Mo8EdL56NXVOcnMdJZaEzZ1N2gpKEhvJBVoYeaZevMvGuWAONw==", "certificate"=>{"documentPerson"=>"89016"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 00:20:32.216798"], ["updated_at", "2017-10-10 00:20:32.216798"], ["documentPerson", 89016]]
+  [1m[35m (110.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/6
+Completed 302 Found in 118ms (ActiveRecord: 112.2ms)
+
+
+Started GET "/certificates/6" for 127.0.0.1 at 2017-10-09 19:20:32 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (2.0ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 222ms (Views: 217.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/certificates/6.pdf" for 127.0.0.1 at 2017-10-09 19:20:33 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.3ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 89016], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (17.1ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (1.0ms)
+Completed 200 OK in 1013ms (Views: 0.8ms | ActiveRecord: 1.4ms)
+
+

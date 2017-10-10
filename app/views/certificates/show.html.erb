@@ -19,16 +19,18 @@
           <div class="row">
               <div class="col m3"></div>
               <div class="col m7">
-                <h4 class="center-align">
-                      <h5> La persona identificada con <%= @dat.first.documentPerson%> se encuentra censada</h5>
-                </h4>
+                <h5 class="center-align">
+                    La persona identificada con <%= @dat.first.documentPerson%> se encuentra censada    </h5>
               </div>
 
               <div class="row">
                   <div class="col m3"></div>
                   <div class="col m7">
-                    <h4 class="center-align">
-                         <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), class: "btn waves-effect waves-light"%>
+                    <h4 class="center-align ">
+                         <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), target:"_blank", class: "btn waves-effect waves-light" %>
+
+
+
                     </h4>
                   </div>
               </div>
