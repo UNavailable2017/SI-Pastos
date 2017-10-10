@@ -7,15 +7,15 @@ class StatisticsController < ApplicationController
   end
 
   def average
-      @birthDate= Person.pluck(:birthDate)
+      @birthDate= Person.birth_date
   end
 
   def health
-      @health_service = HealthService.joins(:censos).group(:name).count
+      @health_service = HealthService.count_name
 
   end
 
   def children
-      @num_children = Censo.group(:numberOfChildren).count
+      @num_child = Censo.num_children
   end
 end

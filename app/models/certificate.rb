@@ -1,7 +1,6 @@
 class Certificate < ApplicationRecord
   def self.data_person
-    d = Certificate.last
-    dataaa =   Person.joins(:censo).where(documentPerson: d.documentPerson)
-    return dataaa
+    certi_last = Certificate.last
+    Person.joins(:censo).where(documentPerson: certi_last.documentPerson)    
   end
 end

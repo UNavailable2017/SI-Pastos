@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
-    <% if @num_children.empty?%>
+    <% if @num_child.empty?%>
 
         <div class="container">
           <div class="row">
@@ -47,7 +47,7 @@
                   </thead>
 
                   <tbody>
-                    <% @num_children.each do |key, value| %>
+                    <% @num_child.each do |key, value| %>
                       <tr>
                          <td><%= "#{key}"  %></td>
                         <td><%= "#{value}" %></td>

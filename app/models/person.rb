@@ -25,4 +25,8 @@ class Person < ApplicationRecord
     has_many :events
     has_many :announcements
     has_one :censo
+    
+    def self.birth_date
+        Person.pluck(:birthDate)
+    end
 end

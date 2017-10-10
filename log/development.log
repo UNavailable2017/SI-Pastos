@@ -19934,3 +19934,618 @@ Sent data certificado.pdf (0.9ms)
 Completed 200 OK in 1028ms (Views: 0.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-09 22:51:40 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (11190.7ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_navbar_users.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 11649ms (Views: 11637.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 22:51:52 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (15.1ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 267ms (Views: 255.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 22:51:59 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (712.1ms)
+  Rendered certificates/new.html.erb within layouts/application (713.4ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_navbar_users.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 1025ms (Views: 996.1ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mPerson Load (1.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 22:52:25 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"64UfzOI61w241/fuxigJhIBT/BbloX5hGIPVM+8dY5p4u27WPpxJV1pc2rHSqx1/dtbw991+eJJdtYpyrzFu6w==", "certificate"=>{"documentPerson"=>"54853"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 03:52:25.521187"], ["updated_at", "2017-10-10 03:52:25.521187"], ["documentPerson", 54853]]
+  [1m[35m (61.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/15
+Completed 302 Found in 72ms (ActiveRecord: 62.7ms)
+
+
+Started GET "/certificates/15" for 127.0.0.1 at 2017-10-09 22:52:25 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.4ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.3ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 54853], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 54853], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (60.8ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_navbar_users.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 298ms (Views: 268.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/certificates/15.pdf" for 127.0.0.1 at 2017-10-09 22:52:28 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 54853], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (1538.1ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (13.2ms)
+Completed 200 OK in 3839ms (Views: 12.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-09 22:52:36 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (41.5ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_navbar_users.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 354ms (Views: 337.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 22:52:38 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.2ms)
+  Rendered certificates/new.html.erb within layouts/application (4.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (2.1ms)
+Completed 200 OK in 247ms (Views: 242.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 22:52:39 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.3ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (28.5ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 312ms (Views: 305.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-09 22:52:41 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 295ms (Views: 289.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-09 22:52:42 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 256ms (Views: 200.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-09 22:52:43 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (2.2ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 328ms (Views: 322.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 22:59:51 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (320.1ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_navbar_users.html.erb (7.1ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 580ms (Views: 569.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 22:59:59 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (657.3ms)
+  Rendered certificates/new.html.erb within layouts/application (659.3ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 916ms (Views: 889.9ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 23:01:45 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xEBp2W1/3q5ST8XLhSoLOwPsclE3j6ijHYhonVUW0xv4WGpaCgSirAZuxHBCflpCCibs2RrihVK2nRYW3GifBg==", "certificate"=>{"documentPerson"=>"87389"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 04:01:45.439294"], ["updated_at", "2017-10-10 04:01:45.439294"], ["documentPerson", 87389]]
+  [1m[35m (67.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/16
+Completed 302 Found in 78ms (ActiveRecord: 68.3ms)
+
+
+Started GET "/certificates/16" for 127.0.0.1 at 2017-10-09 23:01:45 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (58.4ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 296ms (Views: 270.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/certificates/16.pdf" for 127.0.0.1 at 2017-10-09 23:01:47 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (26.4ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (1.4ms)
+Completed 200 OK in 1123ms (Views: 1.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 23:02:19 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.2ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (26.6ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 267ms (Views: 261.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-09 23:02:22 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (2.5ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 258ms (Views: 251.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 23:02:46 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.0ms)
+  Rendered certificates/new.html.erb within layouts/application (3.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (5.4ms)
+Completed 200 OK in 255ms (Views: 212.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 23:02:50 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t3lBGXus+8FlKA9Hbw0xeR7Hv/C2hgfuTwP0STOp1L+LYUKaHNeHwzEJDvyoWWAAFw0heJvrKh/kForCuteYog==", "certificate"=>{"documentPerson"=>"87389"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 04:02:50.170833"], ["updated_at", "2017-10-10 04:02:50.170833"], ["documentPerson", 87389]]
+  [1m[35m (241.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/17
+Completed 302 Found in 248ms (ActiveRecord: 243.2ms)
+
+
+Started GET "/certificates/17" for 127.0.0.1 at 2017-10-09 23:02:50 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (31.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 254ms (Views: 235.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/certificates/17.pdf" for 127.0.0.1 at 2017-10-09 23:02:52 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.3ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (21.4ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (0.8ms)
+Completed 200 OK in 1185ms (Views: 0.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 23:02:57 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.2ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (24.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 281ms (Views: 275.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-09 23:02:58 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 217ms (Views: 200.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-09 23:06:08 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    1: <% if user_signed_in? %>
+    2:   <% if current_user.try(:admin?) %>
+    3:     <% if @health_service.empty?%>
+    4: 
+    5:         <div class="container">
+    6:           <div class="row">
+  
+app/views/statistics/health.html.erb:3:in `_app_views_statistics_health_html_erb___211018228__1038349768'
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-09 23:06:18 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.5ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 269ms (Views: 222.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 23:09:28 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.2ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (20.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 282ms (Views: 237.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 23:09:30 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.3ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (4.3ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 227ms (Views: 222.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-09 23:09:31 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (6.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 249ms (Views: 244.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-09 23:09:32 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (3.0ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 301ms (Views: 280.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-09 23:09:33 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 231ms (Views: 214.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-09 23:11:27 -0500
+Processing by ContactsController#index as HTML
+Completed 500 Internal Server Error in 16ms
+
+
+  
+NameError (undefined local variable or method `params' for Contact (call 'Contact.connection' to establish a connection):Class):
+  
+app/models/contact.rb:15:in `paginate'
+app/controllers/contacts_controller.rb:8:in `index'
+Started GET "/contacts" for 127.0.0.1 at 2017-10-09 23:12:25 -0500
+Processing by ContactsController#index as HTML
+Completed 500 Internal Server Error in 25ms
+
+
+  
+NameError (undefined local variable or method `params' for Contact (call 'Contact.connection' to establish a connection):Class):
+  
+app/models/contact.rb:15:in `paginat'
+app/controllers/contacts_controller.rb:8:in `index'
+Started GET "/contacts" for 127.0.0.1 at 2017-10-09 23:12:52 -0500
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  Rendered contacts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (26.8ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 241ms (Views: 238.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-09 23:13:06 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (28.1ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 267ms (Views: 251.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-09 23:14:08 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 2.1ms)
+
+
+  
+NameError (undefined local variable or method `params' for #<Class:0x848cfaa8>):
+  
+app/models/event.rb:19:in `paginate'
+app/controllers/events_controller.rb:9:in `index'
+Started GET "/events" for 127.0.0.1 at 2017-10-09 23:19:08 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 1.6ms)
+
+
+  
+NameError (undefined local variable or method `params' for #<Class:0x83bee118>):
+  
+app/models/event.rb:19:in `paginate'
+app/controllers/events_controller.rb:9:in `index'
+Started GET "/events" for 127.0.0.1 at 2017-10-09 23:19:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 271ms (Views: 233.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-09 23:19:21 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (3.2ms)
+  Rendered certificates/new.html.erb within layouts/application (4.9ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 233ms (Views: 215.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/certificates" for 127.0.0.1 at 2017-10-09 23:19:34 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nWQmnE+lSWU8uPHpNpVNFOAxrXhcI4vgNxIKfSDrIluhfCUfKN41Z2iZ8FLxwRxt6fsz8HFOphGcB3T2qZVuRg==", "certificate"=>{"documentPerson"=>"87389"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-10 04:19:34.634749"], ["updated_at", "2017-10-10 04:19:34.634749"], ["documentPerson", 87389]]
+  [1m[35m (64.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/18
+Completed 302 Found in 75ms (ActiveRecord: 65.5ms)
+
+
+Started GET "/certificates/18" for 127.0.0.1 at 2017-10-09 23:19:34 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.3ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.3ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (40.1ms)
+  Rendered shared/_navbar.html.erb (11.6ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 301ms (Views: 283.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/certificates/18.pdf" for 127.0.0.1 at 2017-10-09 23:19:36 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 87389], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (20.4ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (0.9ms)
+Completed 200 OK in 1197ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 23:19:42 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.2ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (22.4ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 259ms (Views: 254.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-09 23:19:44 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (2.2ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 256ms (Views: 250.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-09 23:19:45 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.3ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (3.0ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 250ms (Views: 246.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-09 23:19:46 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.6ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 220ms (Views: 206.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-09 23:19:48 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 235ms (Views: 227.9ms | ActiveRecord: 1.5ms)
+
+

@@ -11,4 +11,7 @@
 
 class HealthService < ApplicationRecord
     has_many :censos
+    def self.count_name
+        HealthService.joins(:censos).group(:name).count
+    end
 end
