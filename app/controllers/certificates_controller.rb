@@ -10,12 +10,12 @@ class CertificatesController < ApplicationController
   # GET /certificates/1
   # GET /certificates/1.json
   def show
-      data_person = Certificate.last
-      @dat =   Person.joins(:censo).where(documentPerson: data_person.documentPerson)
+      @dat =  Certificate.data_person
       respond_to do |format|
         format.html
         format.json { render json: @certificates }
         format.pdf {render template: 'certificates/certificate', pdf:'certificado'}
+    
     end
   end
 

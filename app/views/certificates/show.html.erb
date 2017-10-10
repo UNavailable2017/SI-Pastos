@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
-    <% if @dat.first == nil%>
+    <% if @dat.empty?%>
 
         <div class="container">
           <div class="row">
@@ -28,8 +28,6 @@
                   <div class="col m7">
                     <h4 class="center-align ">
                          <%= link_to  'Descarga PDF',  certificate_path(format: :pdf), target:"_blank", class: "btn waves-effect waves-light" %>
-
-
 
                     </h4>
                   </div>
