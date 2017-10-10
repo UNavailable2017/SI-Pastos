@@ -1,8 +1,0 @@
-I"ƒ(function() {
-  $(document).ready(function() {
-    $('.parallax').parallax();
-    $('.carousel').carousel();
-  });
-
-}).call(this);
-:ET
