@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.3'
 gem 'devise'
 #omniauth Facebook
 gem 'omniauth'
-gem 'omniauth-facebook', '~> 1.4.0'
+gem 'omniauth-facebook', '~> 4.0.0'
 # materialize
 gem 'materialize-sass'
 # font-awesome
