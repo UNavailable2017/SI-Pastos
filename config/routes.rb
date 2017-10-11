@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   # resources :children
   # resources :health_services
   resources :censos
+  resources :people
+  resources :certificates
   # resources :people
   resources :certificates, only: [:new, :show, :create]
   resources :announcements

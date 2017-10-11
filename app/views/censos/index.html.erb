@@ -10,7 +10,9 @@
   <% if current_user.try(:admin?) %>
     <div class="row">
       <h5 class="center-align">
+        <%= link_to 'New Person', new_person_path, class: "btn waves-effect waves-light" %>
         <%= link_to 'Nuevo Censo', new_censo_path, class: "btn waves-effect waves-light" %>
+        <%= link_to 'New Opinion', new_opinion_path, class: "btn waves-effect waves-light" %>
       </h5>
     </div>
   <% end %>
