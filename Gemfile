@@ -28,6 +28,8 @@ gem 'will_paginate-materialize'
 gem 'figaro'
 # cancancan for roles
 gem 'cancancan', '~> 2.0'
+# for statistics
+gem 'chartkick'
 
 # jquery
 gem 'jquery-rails'

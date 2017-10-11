@@ -23405,3 +23405,487 @@ Processing by StatisticsController#children as HTML
 Completed 200 OK in 144ms (Views: 139.2ms | ActiveRecord: 0.6ms)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-11 08:59:33 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g+917uez7iJXrXynBEkj5l/6eLU3iIThTm+202RzbiFCFqzj5fAWRVdMBqZULkvW67NaOuU1Mmec0yj1LSm9ZA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 08:59:34 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 193ms (Views: 191.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:04:46 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (29.1ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Yogurt):
+    46:                   </thead>
+    47: 
+    48:                   <tbody>
+    49:                     <%= pie_chart Yogurt.group(@num_child).count %>
+    50: 
+    51:                     <% @num_child.each do |key, value| %>
+    52:                       <tr>
+  
+app/views/statistics/children.html.erb:49:in `_app_views_statistics_children_html_erb__4466182128878656707_70350154596360'
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:08:52 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendered statistics/children.html.erb within layouts/application (159.6ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x007ff7560b0928>:0x007ff757dd2e98>):
+    46:                   </thead>
+    47: 
+    48:                   <tbody>
+    49:                     <%= pie_chart Censo.group(:numberOfChildren).count %>
+    50: 
+    51:                     <% @num_child.each do |key, value| %>
+    52:                       <tr>
+  
+app/views/statistics/children.html.erb:49:in `_app_views_statistics_children_html_erb__4466182128878656707_70350153532260'
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:10:03 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendered statistics/children.html.erb within layouts/application (207.9ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x007ff7560b0928>:0x007ff7503c8968>):
+    47:                   </thead>
+    48: 
+    49:                   <tbody>
+    50:                     <%= pie_chart Censo.group(:numberOfChildren).count %>
+    51: 
+    52:                     <% @num_child.each do |key, value| %>
+    53:                       <tr>
+  
+app/views/statistics/children.html.erb:50:in `_app_views_statistics_children_html_erb__4466182128878656707_70350089899340'
+Started GET "/" for 127.0.0.1 at 2017-10-11 09:12:05 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'Chart.bundle' with type 'application/javascript'
+Checked in these paths: 
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/config
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/images
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/javascripts
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/stylesheets
+  /home/jhon/Documenti/github/SI-Pastos/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /var/lib/gems/2.3.0/gems/jquery-turbolinks-2.1.0/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/material_icons-2.2.1/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/material_icons-2.2.1/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/font-awesome-rails-4.7.0.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/font-awesome-rails-4.7.0.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/actionview-5.1.4/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jhon/Documenti/github/SI-Pastos/node_modules
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/images):
+    4:     <title>SIPastos</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8:   </head>
+    9: 
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1358121325444907935_70350146143100'
+Started GET "/" for 127.0.0.1 at 2017-10-11 09:12:06 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'Chart.bundle' with type 'application/javascript'
+Checked in these paths: 
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/config
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/images
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/javascripts
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/stylesheets
+  /home/jhon/Documenti/github/SI-Pastos/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /var/lib/gems/2.3.0/gems/jquery-turbolinks-2.1.0/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/material_icons-2.2.1/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/material_icons-2.2.1/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/font-awesome-rails-4.7.0.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/font-awesome-rails-4.7.0.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/actionview-5.1.4/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jhon/Documenti/github/SI-Pastos/node_modules
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/images):
+    4:     <title>SIPastos</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8:   </head>
+    9: 
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1358121325444907935_70349886988500'
+Started GET "/" for 127.0.0.1 at 2017-10-11 09:12:25 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'Chart.bundle' with type 'application/javascript'
+Checked in these paths: 
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/config
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/images
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/javascripts
+  /home/jhon/Documenti/github/SI-Pastos/app/assets/stylesheets
+  /home/jhon/Documenti/github/SI-Pastos/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /var/lib/gems/2.3.0/gems/jquery-turbolinks-2.1.0/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /var/lib/gems/2.3.0/gems/material_icons-2.2.1/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/material_icons-2.2.1/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/font-awesome-rails-4.7.0.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/font-awesome-rails-4.7.0.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/actionview-5.1.4/lib/assets/compiled
+  /var/lib/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jhon/Documenti/github/SI-Pastos/node_modules
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /var/lib/gems/2.3.0/gems/materialize-sass-0.100.2/app/assets/images):
+    4:     <title>SIPastos</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8:   </head>
+    9: 
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1358121325444907935_70349990367880'
+Started GET "/" for 127.0.0.1 at 2017-10-11 09:13:24 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+Started GET "/" for 127.0.0.1 at 2017-10-11 09:13:24 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (17536.8ms)
+  Rendered home/index.html.erb within layouts/application (18197.6ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 18308ms (Views: 18307.7ms | ActiveRecord: 0.0ms)
+
+
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 19219ms (Views: 19212.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-11 09:14:00 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4098.4ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 4357ms (Views: 4316.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-10-11 09:14:08 -0500
+Started GET "/users/auth/facebook/callback?code=AQCIm__qmxMZOWHjNB3itVZ84SxJ4xTrhdxa-ClWJQ_zuhvgdxC06fY5CR3dk0fMk_wd6b6aFUcN2LfkuxCK8kGzY82_ftzA-EopSQnxdY4YUQTbBBfZ_A6cAQEQQG51jrNvaN_zYeP8vitUhCjrNKcDQHoamM7II45NtQxKj6DH5LEK0CvSud3_k4Qz3Q1MRYKnyqXzlPJDjEjDL3IP7Jlpa__74L-nCemhpdI7ereom8Ie_kOkZH-1iPpBHaiH0PuvoYpR4mWO3QLYItV4_5Be2NRyQDqozyUlRQIOhN2T27BrTp-GZ237oMB7PeYdpY4&state=c4a9b18935dd50cf8259d9c8562fc7b272d8de945e309cd3" for 127.0.0.1 at 2017-10-11 09:14:09 -0500
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCIm__qmxMZOWHjNB3itVZ84SxJ4xTrhdxa-ClWJQ_zuhvgdxC06fY5CR3dk0fMk_wd6b6aFUcN2LfkuxCK8kGzY82_ftzA-EopSQnxdY4YUQTbBBfZ_A6cAQEQQG51jrNvaN_zYeP8vitUhCjrNKcDQHoamM7II45NtQxKj6DH5LEK0CvSud3_k4Qz3Q1MRYKnyqXzlPJDjEjDL3IP7Jlpa__74L-nCemhpdI7ereom8Ie_kOkZH-1iPpBHaiH0PuvoYpR4mWO3QLYItV4_5Be2NRyQDqozyUlRQIOhN2T27BrTp-GZ237oMB7PeYdpY4", "state"=>"c4a9b18935dd50cf8259d9c8562fc7b272d8de945e309cd3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10211044406737488"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-11 14:14:10.955825"], ["last_sign_in_at", "2017-10-11 12:20:45.283895"], ["sign_in_count", 12], ["updated_at", "2017-10-11 14:14:10.956879"], ["id", 102]]
+  [1m[35m (820.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 832ms (ActiveRecord: 822.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 09:14:11 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (12.1ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 169ms (Views: 167.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-11 09:14:15 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendering statistics/total.html.erb within layouts/application
+  Rendered statistics/total.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 412ms (Views: 193.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 09:14:18 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (2.1ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 366ms (Views: 188.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:14:20 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (1.3ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 190ms (Views: 183.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 09:14:37 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 197ms (Views: 193.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 09:15:53 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.7ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_navbar_users.html.erb (2.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 311ms (Views: 306.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 09:16:05 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (2.0ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 189ms (Views: 183.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-11 09:16:06 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (1.7ms)
+Completed 200 OK in 218ms (Views: 202.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 09:16:08 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.1ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 216ms (Views: 211.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:16:09 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (4.5ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 208ms (Views: 203.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:16:20 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (1.9ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_navbar_users.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 295ms (Views: 289.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:16:46 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (2.2ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_navbar_users.html.erb (2.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 263ms (Views: 255.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:17:58 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (2.1ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 159ms (Views: 155.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 09:18:05 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 190ms (Views: 181.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-11 09:18:16 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 206ms (Views: 198.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-11 09:18:23 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendering statistics/total.html.erb within layouts/application
+  Rendered statistics/total.html.erb within layouts/application (1.1ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 160ms (Views: 156.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-11 09:18:28 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 166ms (Views: 162.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-11 09:18:32 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendering statistics/total.html.erb within layouts/application
+  Rendered statistics/total.html.erb within layouts/application (1.5ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 239ms (Views: 233.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 09:18:37 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (7.2ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 198ms (Views: 191.8ms | ActiveRecord: 1.3ms)
+
+

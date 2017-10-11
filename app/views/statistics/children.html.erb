@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
     <% if @num_child.empty? %>
@@ -36,6 +37,7 @@
               </ul>
 
               <div class="col m12">
+                <%= pie_chart @num_child %>
 
                 <table class="striped responsive-table centered">
                   <thead>
