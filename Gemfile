@@ -7,12 +7,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
-gem 'will_paginate'
-gem 'will_paginate-materialize'
-
 # devise for login
 gem 'devise'
-
 #omniauth Facebook
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.0'
@@ -22,6 +18,13 @@ gem 'materialize-sass'
 gem "font-awesome-rails"
 # materialize icons
 gem 'material_icons'
+# paginate
+gem 'will_paginate'
+gem 'will_paginate-materialize'
+# enviroment entorn
+gem 'figaro'
+
+
 # jquery
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
