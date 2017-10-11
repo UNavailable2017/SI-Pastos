@@ -1,19 +1,13 @@
-
+/* libraries */
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("blue", "base") !default;
 @import 'materialize';
+@import 'font-awesome';
+@import 'material_icons';
 
-@import "font-awesome";
-@import "material_icons";
+/* css */
 @import 'home';
 @import "events";
-
 @import "statistics";
-
 @import "announcements";
-
-
-.pagination a li.active {
-  color: #fff;
-}

@@ -14,6 +14,22 @@
 .carousel .carousel-item {
   width:600px !important;
 }
+
 .carousel {
   margin-bottom: 5em;
+}
+
+.pagination a li.active {
+  color: #fff;
+}
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }

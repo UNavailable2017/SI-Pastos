@@ -9,10 +9,12 @@
 
 
   <body>
-    
+
     <%= render 'shared/navbar' %>
     <%= render 'shared/navbar_users' %>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
     <%= render "shared/footer" %>
     <%= javascript_include_tag :application %>
 

@@ -4,14 +4,11 @@ class ContactsController < ApplicationController
   skip_before_action :authenticate_user!
   # GET /contacts
   # GET /contacts.json
-  def index
-    @contacts = Contact.paginate(:page => params[:page], :per_page => 20)
-  end
+  def index; end
 
   # GET /contacts/1
   # GET /contacts/1.json
-  def show
-  end
+  def show; end
 
   # GET /contacts/new
   def new
@@ -19,8 +16,7 @@ class ContactsController < ApplicationController
   end
 
   # GET /contacts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /contacts
   # POST /contacts.json
@@ -29,7 +25,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        UserMailer.contact_email(@contact).deliver_later
+        UserMailer.contact_email(@contact).deliver_now
         @contact.destroy
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
@@ -65,7 +61,7 @@ class ContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_contact
       @contact = Contact.find(params[:id])
     end

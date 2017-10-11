@@ -18,7 +18,7 @@ gem 'omniauth-facebook', '~> 4.0.0'
 # materialize
 gem 'materialize-sass'
 # font-awesome
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 # materialize icons
 gem 'material_icons'
 # paginate
@@ -27,10 +27,9 @@ gem 'will_paginate-materialize'
 # enviroment entorn
 gem 'figaro'
 
-
 # jquery
-gem 'jquery-turbolinks'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 # annotate
 gem 'annotate'
 # for generate model
