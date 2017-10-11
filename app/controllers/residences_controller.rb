@@ -1,6 +1,6 @@
 class ResidencesController < ApplicationController
   before_action :set_residence, only: [:show, :edit, :update, :destroy]
-
+  before_action :recharge_page, only: [:index]
   # GET /residences
   # GET /residences.json
   def index
@@ -73,6 +73,10 @@ class ResidencesController < ApplicationController
   end
 
   private
+
+    def recharge_page
+      # redirect_to residences_path
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_residence
       @residence = Residence.find(params[:id])

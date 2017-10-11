@@ -12,15 +12,15 @@ Rails.application.routes.draw do
   # get 'gobernador/elecciones', to: 'governor#election'
   # get 'gobernador/estadisticas', to: 'governor#statistic'
   # resources :candidates
-  resources :opinions
   # resources :children
   # resources :health_services
-  resources :censos
   # resources :people
+  resources :opinions
+  resources :censos
   resources :certificates, only: [:new, :show, :create]
   resources :announcements
   resources :events
-  resources :residences
+  resources :residences, only: [:index]
   resources :elections
   resources :contacts, only: [:new, :index, :create]
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -29,11 +29,6 @@ Rails.application.routes.draw do
   get 'statistics/children'
   get 'statistics/health'
 
-
-  devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new', as: :new_user_session_facebook
-    get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session_facebook
-  end
 
   root to: 'home#index'
 end
