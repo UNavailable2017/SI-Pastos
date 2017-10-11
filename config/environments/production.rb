@@ -95,8 +95,8 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'si-pastosunal.herokuapp.com',
-    user_name:            'sipastos@gmail.com',
-    password:             'pastos2017',
+    user_name:            ENV['email_platform'],
+    password:             ENV['password_email'],
     authentication:       'plain',
     enable_starttls_auto: true
   }

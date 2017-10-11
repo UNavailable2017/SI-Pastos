@@ -7,26 +7,27 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
-gem 'will_paginate'
-gem 'will_paginate-materialize'
-
 # devise for login
 gem 'devise'
-
-#generate pdf
+# generate pdf
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-
-
-#omniauth Facebook
+# omniauth Facebook
 gem 'omniauth'
-gem 'omniauth-facebook', '~> 1.4.0'
+gem 'omniauth-facebook', '~> 4.0.0'
 # materialize
 gem 'materialize-sass'
 # font-awesome
 gem "font-awesome-rails"
 # materialize icons
 gem 'material_icons'
+# paginate
+gem 'will_paginate'
+gem 'will_paginate-materialize'
+# enviroment entorn
+gem 'figaro'
+
+
 # jquery
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
