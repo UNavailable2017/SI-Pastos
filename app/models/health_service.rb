@@ -8,10 +8,9 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class HealthService < ApplicationRecord
-    has_many :censos
-    def self.count_name
-        HealthService.joins(:censos).group(:name).count
-    end
+  has_many :censos
+  def self.count_name
+    HealthService.joins(:censos).group(:name).count
+  end
 end

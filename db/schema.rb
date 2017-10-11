@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005142733) do
+ActiveRecord::Schema.define(version: 20171011133215) do
 
   create_table "announcements", force: :cascade do |t|
     t.date "publicationDate"
@@ -138,6 +138,11 @@ ActiveRecord::Schema.define(version: 20171005142733) do
     t.float "latitude"
     t.float "longitude"
     t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statistics", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

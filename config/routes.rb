@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   # get 'gobernador/inicio', to: 'governor#home'
   # get 'gobernador/registrar_censo', to: 'governor#register_censo'
   # get 'gobernador/buscar_censo', to: 'governor#find_censo'
@@ -28,7 +26,6 @@ Rails.application.routes.draw do
   get 'statistics/average'
   get 'statistics/children'
   get 'statistics/health'
-
 
   root to: 'home#index'
 end

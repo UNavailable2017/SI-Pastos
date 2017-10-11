@@ -26,6 +26,8 @@ gem 'will_paginate'
 gem 'will_paginate-materialize'
 # enviroment entorn
 gem 'figaro'
+# cancancan for roles
+gem 'cancancan', '~> 2.0'
 
 # jquery
 gem 'jquery-rails'

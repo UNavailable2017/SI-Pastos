@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
-    <% if @num_child.empty?%>
+    <% if @num_child.empty? %>
 
         <div class="container">
           <div class="row">
@@ -12,7 +12,7 @@
             </div>
 
           </div>
-          <%= link_to 'Atras', statistics_get_data_path %>
+          <%= link_to 'Atras', root_path %>
 
 
     <% else %>
@@ -24,7 +24,6 @@
                     <%= link_to "Total censo", statistics_total_path, class: "waves-effect waves-light btn sub" %>
                     <%= link_to "Número de hijos", statistics_children_path, class: "waves-effect waves-light  btn sub" %>
                     <%= link_to "servicio de salud", statistics_health_path, class: "waves-effect waves-light btn sub  " %>
-
                     <%= link_to "Promedio de edad", statistics_average_path, class: "waves-effect waves-light btn sub  " %>
                 </ul>
             </div>
@@ -49,14 +48,12 @@
                   <tbody>
                     <% @num_child.each do |key, value| %>
                       <tr>
-                         <td><%= "#{key}"  %></td>
+                        <td><%= "#{key}"  %></td>
                         <td><%= "#{value}" %></td>
-
                       </tr>
                     <% end %>
                   </tbody>
                 </table>
-
               </div>
             </div>
         </div>

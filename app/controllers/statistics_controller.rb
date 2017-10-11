@@ -1,21 +1,18 @@
+# statistic_controller
 class StatisticsController < ApplicationController
   def total
-      @num_person_censo = Censo.all
-  end
-
-  def noCenso
+    @num_person_censo = Censo.all.count
   end
 
   def average
-      @birthDate= Person.birth_date
+    @average_age = Statistic.average_age
   end
 
   def health
-      @health_service = HealthService.count_name
-
+    @health_service = HealthService.count_name
   end
 
   def children
-      @num_child = Censo.num_children
+    @num_child = Censo.num_children
   end
 end

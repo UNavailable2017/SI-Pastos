@@ -1,3 +1,4 @@
+# certificate_controller
 class CertificatesController < ApplicationController
   before_action :set_certificate, only: [:show, :edit, :update, :destroy]
 
@@ -10,12 +11,11 @@ class CertificatesController < ApplicationController
   # GET /certificates/1
   # GET /certificates/1.json
   def show
-      @dat =  Certificate.data_person
-      respond_to do |format|
-        format.html
-        format.json { render json: @certificates }
-        format.pdf {render template: 'certificates/certificate', pdf:'certificado'}
-    
+    @dat = Certificate.data_person
+    respond_to do |format|
+      format.html
+      format.json { render json: @certificates }
+      format.pdf {render template: 'certificates/certificate', pdf:'certificado'}
     end
   end
 
@@ -41,7 +41,7 @@ class CertificatesController < ApplicationController
         format.json { render json: @certificate.errors, status: :unprocessable_entity }
       end
     end
-end
+  end
 
   # PATCH/PUT /certificates/1
   # PATCH/PUT /certificates/1.json
@@ -68,14 +68,14 @@ end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_certificate
-      @certificate = Certificate.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def certificate_params
-      params.require(:certificate).permit(:documentPerson)
-    end
+  def set_certificate
+    @certificate = Certificate.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def certificate_params
+    params.require(:certificate).permit(:documentPerson)
+  end
 
 end
