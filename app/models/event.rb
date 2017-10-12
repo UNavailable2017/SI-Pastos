@@ -13,4 +13,5 @@
 #
 class Event < ApplicationRecord
   belongs_to :person
+  validates :name, :date, :eventType, :eventInfo, presence: true
 end
