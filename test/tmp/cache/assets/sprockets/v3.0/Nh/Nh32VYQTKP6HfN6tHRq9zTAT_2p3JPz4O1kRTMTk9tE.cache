@@ -1,0 +1,13 @@
+I"Þ(function() {
+  $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 10,
+    dateFormat: 'dd-mm-yy',
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false
+  });
+
+}).call(this);
+:ET

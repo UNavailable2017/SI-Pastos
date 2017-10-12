@@ -258,7 +258,7 @@ DEPENDENCIES
   materialize-sass
   omniauth
   omniauth-facebook (~> 4.0.0)
-  pg (~> 0.21)
+  pg
   puma (~> 3.7)
   railroady
   rails (~> 5.1.4)
@@ -277,4 +277,4 @@ DEPENDENCIES
   wkhtmltopdf-binary
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.15.4
