@@ -1,5 +1,8 @@
-<h1>New Person</h1>
-
-<%= render 'form', person: @person %>
-
-<%= link_to 'Back', people_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Nuevos Datos Personales</h3>
+    <article class="col s6 offset-s3">
+      <%= render 'form', person: @person %>
+    </article>
+  </div>
+</section>

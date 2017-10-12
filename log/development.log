@@ -20549,6 +20549,7 @@ Processing by StatisticsController#average as HTML
 Completed 200 OK in 235ms (Views: 227.9ms | ActiveRecord: 1.5ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2017-10-11 20:35:09 -0500
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomeController#index as HTML
@@ -21013,5 +21014,121 @@ Processing by StatisticsController#average as HTML
   Rendered shared/_navbar_users.html.erb (1.4ms)
   Rendered shared/_footer.html.erb (0.6ms)
 Completed 200 OK in 155ms (Views: 142.6ms | ActiveRecord: 1.0ms)
+=======
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-10-11 17:58:17 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (11250.4ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 11593ms (Views: 11583.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-11 17:58:33 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (683.8ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (1.5ms)
+Completed 200 OK in 914ms (Views: 877.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-11 17:58:36 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P4VmhHcLcuCK8W4jk6l3ker8LWMArXPVXSgpWjMq31hSB+G8EyLtUrF4P4X4OaY6Qkh6lYrz7eutdacdHwnGow==", "user"=>{"email"=>"rafa@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "rafa@a.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-11 22:58:37.157903"], ["last_sign_in_at", "2017-10-10 01:01:49.247951"], ["sign_in_count", 3], ["updated_at", "2017-10-11 22:58:37.159616"], ["id", 101]]
+  [1m[35m (93.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 333ms (ActiveRecord: 94.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 17:58:37 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (14.0ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (2.0ms)
+Completed 200 OK in 227ms (Views: 225.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 18:00:04 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (11.6ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 189ms (Views: 187.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-11 18:00:05 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (12.0ms)
+  Rendered certificates/new.html.erb within layouts/application (14.2ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_navbar_users.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (1.5ms)
+Completed 200 OK in 220ms (Views: 206.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mPerson Load (1.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/certificates" for 127.0.0.1 at 2017-10-11 18:00:34 -0500
+Processing by CertificatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6rUJsYCzOziuDvSrkwnXNA1+bK6QjTJ/rECt0LnqZ1/GYlPUiiOa1N6JcuDeuYTKv7w+C8DzJ6BIjVA69Quc8w==", "certificate"=>{"documentPerson"=>"54853"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "certificates" ("created_at", "updated_at", "documentPerson") VALUES (?, ?, ?)[0m  [["created_at", "2017-10-11 23:00:34.663788"], ["updated_at", "2017-10-11 23:00:34.663788"], ["documentPerson", 54853]]
+  [1m[35m (76.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/certificates/19
+Completed 302 Found in 85ms (ActiveRecord: 77.6ms)
+
+
+Started GET "/certificates/19" for 127.0.0.1 at 2017-10-11 18:00:34 -0500
+Processing by CertificatesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.2ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering certificates/show.html.erb within layouts/application
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? LIMIT ?[0m  [["documentPerson", 54853], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 54853], ["LIMIT", 1]]
+  Rendered certificates/show.html.erb within layouts/application (53.7ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (2.7ms)
+Completed 200 OK in 296ms (Views: 261.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/certificates/19.pdf" for 127.0.0.1 at 2017-10-11 18:00:38 -0500
+Processing by CertificatesController#show as PDF
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" WHERE "certificates"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCertificate Load (0.1ms)[0m  [1m[34mSELECT  "certificates".* FROM "certificates" ORDER BY "certificates"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+***************WICKED***************
+  Rendering certificates/certificate.pdf.erb
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" INNER JOIN "censos" ON "censos"."person_id" = "people"."id" WHERE "people"."documentPerson" = ? ORDER BY "people"."id" ASC LIMIT ?[0m  [["documentPerson", 54853], ["LIMIT", 1]]
+  Rendered certificates/certificate.pdf.erb (1493.6ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data certificado.pdf (27.4ms)
+Completed 200 OK in 3815ms (Views: 27.2ms | ActiveRecord: 0.8ms)
+>>>>>>> b5ce563b615f8e3c827cf5d0b063790f57460cb2
 
 

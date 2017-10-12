@@ -1,6 +1,11 @@
-<h1>Editing Person</h1>
-
-<%= render 'form', person: @person %>
-
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Editar Datos Personales</h3>
+    <article class="col s8 offset-s2">
+      <%= render 'form', person: @person %>
+      <div class="right-align">
+        <%= link_to 'Ver', @person, class:"btn waves-effect waves-light" %>
+      </div>
+    </article>
+  </div>
+</section>
