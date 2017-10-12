@@ -22,12 +22,10 @@ gem 'font-awesome-rails'
 # materialize icons
 gem 'material_icons'
 # paginate
-gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-materialize'
 # enviroment entorn
 gem 'figaro'
-# cancancan for roles
-gem 'cancancan', '~> 2.0'
 # for statistics
 gem 'chartkick'
 

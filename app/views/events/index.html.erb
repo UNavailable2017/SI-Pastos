@@ -47,14 +47,9 @@
   </div>
 
 </div>
-  <ul class="pagination">
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>
 
-  <%= will_paginate @collection, class: 'center-align', renderer: MaterializePagination::Rails %>
+<%= will_paginate @collection,
+    class: 'apple_pagination',
+    previous_label: '&#8592;<strong> Anterior',
+    next_label: 'Siguiente &#8594;'
+%>
