@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.paginate(:page => params[:page], :per_page => 5)
+    @opinions = Opinion.paginate(page: params[:page])
   end
 
   # GET /opinions/1

@@ -11,9 +11,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Event < ApplicationRecord
-    belongs_to :person
-
-
+  belongs_to :person
 end

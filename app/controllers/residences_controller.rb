@@ -1,21 +1,11 @@
+# residences_controller
 class ResidencesController < ApplicationController
   before_action :set_residence, only: [:show, :edit, :update, :destroy]
 
   # GET /residences
   # GET /residences.json
   def index
-    @residences = Residence.all
-    @hash = Gmaps4rails.build_markers(@residences) do |residence, marker|
-      marker.lat residence.latitude
-      marker.lng residence.longitude
-      marker.infowindow residence.neighborhood
-      # marker.picture({
-      #   "url" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT16VxCntJ1iFyivM3t0hPYUzcu0g5sYjMUZSSj5lTM0P4jxU8E9w",
-      #     "width" =>  100,
-      #     "height"=> 100
-      #   })
-      # marker.json({title: residence.title})
-    end
+    @hash = Residence.data_gps
   end
 
   # GET /residences/1
@@ -73,13 +63,14 @@ class ResidencesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_residence
-      @residence = Residence.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def residence_params
-      params.require(:residence).permit(:address, :phone, :neighborhood, :locality, :latitude, :longitude, :person_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_residence
+    @residence = Residence.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def residence_params
+    params.require(:residence).permit(:address, :phone, :neighborhood, :locality, :latitude, :longitude, :person_id)
+  end
 end

@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? and !current_page?(new_contact_path) and !current_page?(contacts_path)%>
   <% if current_user.try(:admin?) %>
     <!-- is admin -->
     <div class="container">
@@ -8,7 +8,7 @@
         <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Censo", censos_path, class: "waves-effect waves-light btn col m1" %>
+        <%= link_to "Censos", censos_path, class: "waves-effect waves-light btn col m1" %>
         <%= link_to "Estadisticas", statistics_total_path, class: "waves-effect waves-light btn col m2" %>
       </div>
     </div>

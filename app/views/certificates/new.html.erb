@@ -1,14 +1,14 @@
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
 
-        <section class="container">
-          <div class="row">
-            <h3 class="center-align">Certificado</h3>
-            <article class="col s6 offset-s3">
-              <%= render 'form', certificate: @certificate %>
-            </article>
-          </h3>
-        </section>
-        <%end%>
-
+    <section class="container">
+      <div class="row">
+        <h3 class="center-align">Certificado</h3>
+        <article class="col s6 offset-s3">
+          <%= render 'form', certificate: @certificate %>
+        </article>
+      </h3>
+    </section>
+    
+  <%end%>
 <%end%>

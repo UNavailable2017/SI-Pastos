@@ -17,16 +17,15 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
-
 class Person < ApplicationRecord
-    has_one :residence
-    belongs_to :user
-    has_one :candidate
-    has_many :events
-    has_many :announcements
-    has_one :censo
-    
-    def self.birth_date
-        Person.pluck(:birthDate)
-    end
+  has_one :residence
+  belongs_to :user
+  has_one :candidate
+  has_many :events
+  has_many :announcements
+  has_one :censo
+
+  def self.birth_date
+    Person.pluck(:birthDate)
+  end
 end
