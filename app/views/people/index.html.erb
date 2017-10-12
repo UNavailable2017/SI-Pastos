@@ -8,7 +8,7 @@
     <% if current_user.try(:admin?) %>
       <div class="col m12">
         <h5 class="center-align">
-            <%= link_to 'New Person', new_person_path, class: "btn waves-effect waves-light" %>
+            <%= link_to 'Nueva Persona', new_person_path, class: "btn waves-effect waves-light" %>
         </h5>
       </div>
     <% end %>
@@ -23,10 +23,10 @@
             <th>Cumpleaños</th>
             <th>Estado Civil</th>
             <th>Genero</th>
-            <th>Censado?</th>
+            <th>¿Censado?</th>
             <th>Lengua Origen</th>
             <th>Dominio Lenguaje</th>
-            <th>User</th>
+            <!-- <th>User</th> -->
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -44,7 +44,7 @@
               <td><%= person.isCensus %></td>
               <td><%= person.originLanguage %></td>
               <td><%= person.languageDomination %></td>
-              <td><%= person.user_id %></td>
+              <!-- <td><%= person.user_id %></td> -->
               <td><%= link_to (fa_icon "eye"), person %></td>
               <td><%= link_to (fa_icon "pencil"), edit_person_path(person) %></td>
               <td><%= link_to (fa_icon "times"), person, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>

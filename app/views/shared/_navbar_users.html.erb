@@ -1,4 +1,9 @@
-<% if user_signed_in? and !current_page?(new_contact_path) and !current_page?(contacts_path)%>
+<% if user_signed_in? and
+      !current_page?(new_contact_path) and
+      !current_page?(contacts_path) and
+      !current_page?(contacts_path) and
+      !current_page?(edit_user_registration_path)
+%>
   <% if current_user.try(:admin?) %>
     <!-- is admin -->
     <div class="container">

@@ -252,10 +252,10 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook,
-                  ENV['APP_ID_FACEBOOK'],
-                  ENV['APP_SECRET_FACEBOOK'],
-                  callback_url: ENV['CALLBACK_DEVELOP']
-                  # change for production
+                  ENV['app_id_facebook'],
+                  ENV['app_secret_facebook'],
+                  callback_url: ENV['url_app'] + ENV['callback_facebok']
+                  
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
