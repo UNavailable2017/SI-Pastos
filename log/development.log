@@ -20549,3 +20549,469 @@ Processing by StatisticsController#average as HTML
 Completed 200 OK in 235ms (Views: 227.9ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:35:09 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (18440.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 21455ms (Views: 21437.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-11 20:35:37 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1358.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 1581ms (Views: 1528.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-11 20:36:02 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Js68q8f0ledK7zWNIYfGNBI5BdGDJ/b3ydil4y6cR9s8Ja8Odj4FnIxu/i9QBpMwws64tlZTbGrN3tSHEbqXzg==", "user"=>{"email"=>"jhon45@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jhon45@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 52ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Js68q8f0ledK7zWNIYfGNBI5BdGDJ/b3ydil4y6cR9s8Ja8Odj4FnIxu/i9QBpMwws64tlZTbGrN3tSHEbqXzg==", "user"=>{"email"=>"jhon45@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 580ms (Views: 174.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-11 20:36:09 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 185ms (Views: 183.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-11 20:36:21 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uIfDRcnNUNVPimtR5AwM2cs5JEPEuXyz1mF21wcoqJiibNDgeAfArokLoPOVjVndG86ZJBHN5i7SZwezOA54jQ==", "user"=>{"email"=>"jhon46@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Regístrate"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jhon46@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "jhon46@gmail.com"], ["encrypted_password", "$2a$11$DT4NZqXc9oAeog80SC0G1O/bpYXFjRRenBGRE.TKhZzVi8nkDXgv2"], ["created_at", "2017-10-12 01:36:21.778194"], ["updated_at", "2017-10-12 01:36:21.778194"]]
+  [1m[35m (158.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-12 01:36:21.940259"], ["last_sign_in_at", "2017-10-12 01:36:21.940259"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-10-12 01:36:21.940858"], ["id", 102]]
+  [1m[35m (151.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 604ms (ActiveRecord: 311.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:36:22 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (20.4ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 157ms (Views: 155.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-11 20:36:28 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (16.9ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 188ms (Views: 167.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:36:33 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (17.9ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (2.2ms)
+Completed 200 OK in 270ms (Views: 267.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-11 20:37:34 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xHEB9NoM0RNgJScrL4E5fcPI/pgjAxlEyvm7Bw89n1PemhJRa8ZBaKak7IleAGx5Ez9D//Z3g9nO/8pjMBtPRg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms (ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-11 20:37:34 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xHEB9NoM0RNgJScrL4E5fcPI/pgjAxlEyvm7Bw89n1PemhJRa8ZBaKak7IleAGx5Ez9D//Z3g9nO/8pjMBtPRg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:37:34 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 160ms (Views: 159.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2017-10-12 01:37:50.701793"], ["admin", "t"], ["id", 102]]
+  [1m[35m (117.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-11 20:37:54 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 151ms (Views: 149.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-11 20:38:00 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rv9LHoiD4bZfkhKTZpg9kK5wecVydFv8OlazCQcemYwXv7XgPhw3Fs4s74H9s98ttMQ9V1fIs29VcHyTNVirAQ==", "user"=>{"email"=>"jhon46@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jhon46@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-12 01:38:01.092682"], ["sign_in_count", 2], ["updated_at", "2017-10-12 01:38:01.093687"], ["id", 102]]
+  [1m[35m (179.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 357ms (ActiveRecord: 180.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:38:01 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (11.6ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_navbar_users.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 167ms (Views: 165.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-11 20:38:12 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.2ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (14.8ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 191ms (Views: 161.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 20:38:16 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 386ms (Views: 150.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-11 20:38:20 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (26.9ms)
+  Rendered certificates/new.html.erb within layouts/application (28.3ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 207ms (Views: 198.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-11 20:38:26 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.7ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 156ms (Views: 152.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2017-10-11 20:38:29 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering announcements/index.html.erb within layouts/application
+  [1m[36mAnnouncement Load (0.5ms)[0m  [1m[34mSELECT  "announcements".* FROM "announcements" ORDER BY publicationDate asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "announcements"[0m
+  Rendered announcements/index.html.erb within layouts/application (29.5ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 276ms (Views: 265.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:38:36 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (13.3ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 179ms (Views: 177.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/censos" for 127.0.0.1 at 2017-10-11 20:39:24 -0500
+Processing by CensosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering censos/index.html.erb within layouts/application
+  [1m[36mCenso Load (0.4ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered censos/index.html.erb within layouts/application (15.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 191ms (Views: 179.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/censos/new" for 127.0.0.1 at 2017-10-11 20:39:31 -0500
+Processing by CensosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering censos/new.html.erb within layouts/application
+  Rendered censos/_form.html.erb (11.1ms)
+  Rendered censos/new.html.erb within layouts/application (21.3ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 188ms (Views: 170.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/censos" for 127.0.0.1 at 2017-10-11 20:39:36 -0500
+Processing by CensosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering censos/index.html.erb within layouts/application
+  [1m[36mCenso Load (0.3ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered censos/index.html.erb within layouts/application (11.6ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 149ms (Views: 146.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-11 20:39:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/people"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:41:56 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (16.3ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 173ms (Views: 171.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-11 20:42:07 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (1.7ms)
+  Rendered certificates/new.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 158ms (Views: 153.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-11 20:42:11 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (17.6ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 244ms (Views: 240.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2017-10-11 20:42:15 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering announcements/index.html.erb within layouts/application
+  [1m[36mAnnouncement Load (0.4ms)[0m  [1m[34mSELECT  "announcements".* FROM "announcements" ORDER BY publicationDate asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "announcements"[0m
+  Rendered announcements/index.html.erb within layouts/application (11.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 209ms (Views: 205.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 20:43:08 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (16.5ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 190ms (Views: 187.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2017-10-11 20:43:14 -0500
+Processing by ResidencesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mResidence Load (0.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  Rendering residences/index.html.erb within layouts/application
+  Rendered residences/index.html.erb within layouts/application (2.9ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 314ms (Views: 186.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/certificates/new" for 127.0.0.1 at 2017-10-11 20:43:18 -0500
+Processing by CertificatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering certificates/new.html.erb within layouts/application
+  Rendered certificates/_form.html.erb (2.9ms)
+  Rendered certificates/new.html.erb within layouts/application (4.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 214ms (Views: 210.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-11 20:43:23 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (15.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_navbar_users.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 257ms (Views: 253.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2017-10-11 20:43:29 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering announcements/index.html.erb within layouts/application
+  [1m[36mAnnouncement Load (0.4ms)[0m  [1m[34mSELECT  "announcements".* FROM "announcements" ORDER BY publicationDate asc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "announcements"[0m
+  Rendered announcements/index.html.erb within layouts/application (14.9ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 173ms (Views: 169.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/statistics/total" for 127.0.0.1 at 2017-10-11 20:43:35 -0500
+Processing by StatisticsController#total as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering statistics/total.html.erb within layouts/application
+  [1m[36mCenso Load (0.3ms)[0m  [1m[34mSELECT  "censos".* FROM "censos" ORDER BY "censos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "censos"[0m
+  Rendered statistics/total.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_navbar_users.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 159ms (Views: 156.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/statistics/children" for 127.0.0.1 at 2017-10-11 20:44:27 -0500
+Processing by StatisticsController#children as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "censos"."numberOfChildren" AS censos_numberofchildren FROM "censos" GROUP BY "censos"."numberOfChildren"[0m
+  Rendering statistics/children.html.erb within layouts/application
+  Rendered statistics/children.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_navbar_users.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 149ms (Views: 143.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/statistics/health" for 127.0.0.1 at 2017-10-11 20:44:31 -0500
+Processing by StatisticsController#health as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "health_services"."name" AS health_services_name FROM "health_services" INNER JOIN "censos" ON "censos"."health_service_id" = "health_services"."id" GROUP BY "health_services"."name"[0m
+  Rendering statistics/health.html.erb within layouts/application
+  Rendered statistics/health.html.erb within layouts/application (1.1ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_navbar_users.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 172ms (Views: 168.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/statistics/average" for 127.0.0.1 at 2017-10-11 20:44:37 -0500
+Processing by StatisticsController#average as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "people"."birthDate" FROM "people"[0m
+  Rendering statistics/average.html.erb within layouts/application
+  Rendered statistics/average.html.erb within layouts/application (1.1ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_navbar_users.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 155ms (Views: 142.6ms | ActiveRecord: 1.0ms)
+
+
