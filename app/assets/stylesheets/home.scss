@@ -19,11 +19,6 @@
   margin-bottom: 5em;
 }
 
-.pagination a li.active {
-  color: #fff;
-}
-
-
 body {
   display: flex;
   min-height: 100vh;
@@ -32,4 +27,8 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.pagination li.active a {
+  color: #fff !important;
 }

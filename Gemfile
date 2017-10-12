@@ -22,7 +22,7 @@ gem 'font-awesome-rails'
 # materialize icons
 gem 'material_icons'
 # paginate
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-materialize'
 # enviroment entorn
 gem 'figaro'

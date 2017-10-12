@@ -26,5 +26,4 @@ class Residence < ApplicationRecord
       marker.infowindow residence.neighborhood
     end
   end
-
 end

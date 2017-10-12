@@ -13,4 +13,5 @@
 #
 class Announcement < ApplicationRecord
   belongs_to :person
+  self.per_page = 15 # for will paginate
 end

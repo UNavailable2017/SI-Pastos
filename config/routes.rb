@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # resources :candidates
   # resources :children
   # resources :health_services
-  # resources :people
+  resources :people
   resources :opinions
   resources :censos
   resources :certificates, only: [:new, :show, :create]

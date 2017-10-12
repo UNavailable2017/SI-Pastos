@@ -1,12 +1,12 @@
 # events_controller
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /events
   # GET /events.json
-  helper_method :sort_column, :sort_direction
   def index
-    @events = Event.paginate(:page => params[:page], :per_page => 20).order(sort_column + ' ' + sort_direction)
+    @events = Event.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /events/1
