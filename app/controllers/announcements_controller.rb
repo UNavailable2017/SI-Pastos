@@ -1,13 +1,11 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /announcements
   # GET /announcements.json
-  helper_method :sort_column, :sort_direction
   def index
-    #@announcement = Announcement.order(params[:sort]).paginate(:page => params[:page], :per_page => 20)
-    @announcements = Announcement.paginate(:page => params[:page], :per_page => 20).order(sort_column + ' ' + sort_direction)
-    # @products = Product.order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    @announcements = Announcement.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /announcements/1

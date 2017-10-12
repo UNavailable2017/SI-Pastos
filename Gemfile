@@ -23,7 +23,6 @@ gem 'font-awesome-rails'
 gem 'material_icons'
 # paginate
 gem 'will_paginate', '~> 3.1.1'
-gem 'will_paginate-materialize'
 # enviroment entorn
 gem 'figaro'
 # for statistics
@@ -63,8 +62,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # maps
-gem 'gmaps4rails'
 gem 'geocoder'
+gem 'gmaps4rails'
 #  Faker for populate the Database:
 gem 'faker'
 

@@ -9,7 +9,6 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
-
 class Election < ApplicationRecord
-    has_many :candidates
+  has_many :candidates
 end
