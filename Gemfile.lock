@@ -258,7 +258,7 @@ DEPENDENCIES
   materialize-sass
   omniauth
   omniauth-facebook (~> 4.0.0)
-  pg
+  pg (~> 0.21)
   puma (~> 3.7)
   railroady
   rails (~> 5.1.4)
