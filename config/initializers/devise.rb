@@ -157,7 +157,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -252,10 +252,10 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook,
-                  ENV['app_id_facebook'],
-                  ENV['app_secret_facebook'],
-                  callback_url: ENV['url_app'] + ENV['callback_facebok']
-                  
+                  Figaro.env.app_id_facebook,
+                  Figaro.env.app_secret_facebook,
+                  callback_url: Figaro.env.url_app + Figaro.env.callback_facebook
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
