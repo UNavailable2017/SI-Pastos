@@ -4,9 +4,10 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-
 # devise for login
 gem 'devise'
 # generate pdf
@@ -27,7 +28,6 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'figaro'
 # for statistics
 gem 'chartkick'
-
 # jquery
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
@@ -37,6 +37,11 @@ gem 'annotate'
 gem 'railroady'
 # convert number to string words
 gem 'to_words'
+# maps
+gem 'geocoder'
+gem 'gmaps4rails'
+#  Faker for populate the Database:
+gem 'faker'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -60,12 +65,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# maps
-gem 'geocoder'
-gem 'gmaps4rails'
-#  Faker for populate the Database:
-gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
