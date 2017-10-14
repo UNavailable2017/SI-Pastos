@@ -7,6 +7,7 @@ $secondary-color: color("blue", "base") !default;
 @import 'material_icons';
 
 /* css */
+@import 'devise';
 @import 'home';
 @import 'events';
 @import 'statistics';

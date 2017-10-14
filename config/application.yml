@@ -8,8 +8,8 @@ app_secret_facebook: 'c84457fb15f73617dbd8d7d76f4713e0'
 callback_facebook: '/users/auth/facebook/callback'
 
 production:
-  password_email: 'pastos2017'
   email_platform: 'sipastos@gmail.com'
+  password_email: 'pastos2017'
   url_app: 'http://si-pastosunal.herokuapp.com/'
   app_id_facebook: '1447536465359074'
   app_secret_facebook: '4b41e6307b12fd503a4149c45edccaa6'

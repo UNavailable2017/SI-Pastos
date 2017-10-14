@@ -1,50 +1,74 @@
+
 <div class="container">
+
   <div class="row">
-    <div class="col s6 offset-s3">
-
+    <div class="col s12">
       <div class="center-align">
-          <%= link_to image_tag("escudo.png", height: "200"), :root %>
+        <%= link_to image_tag("escudo.png", height: "200"), root_path, class: 'responsive-img' %>
+        <h2>Iniciar sesión</h2>
       </div>
-
-      <h2 class="center-align">Iniciar sesión</h2>
-
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <% if devise_mapping.rememberable? -%>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me, "Recuerdame" %>
-          </div>
-        <% end -%>
-        <div class="center-align">
-          <div class="actions btn waves-effect waves-light center-align">
-            <%= f.submit "Iniciar sesión" %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s6">
-            <%= link_to "Atras", :root %>
-          </div>
-          <div class="col s6 right-align">
-            <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %>
-          </div>
-        </div>
-        <div class="center-align">o</div>
-        <hr />
-        <div class="center-align col m8 offset-m2">
-          <%= link_to image_tag("fbicon.png", class: 'responsive-img'), user_facebook_omniauth_authorize_path %>
-        </div>
-
-      <% end %>
     </div>
   </div>
+
+  <div class="row">
+
+    <!-- social networks -->
+    <div class="col m6">
+      <div class="center-align col m8 offset-m2">
+        <%= link_to (fa_icon "facebook-official", class: "col s2") + "Seguir con facebook" ,
+          user_facebook_omniauth_authorize_path,
+          class: 'indigo darken-3 col s12 waves-effect waves-light btn-large'
+        %>
+        <%= link_to (fa_icon "google-plus-square", class: "col s2") + "Seguir con Google" ,
+          user_facebook_omniauth_authorize_path,
+          class: 'red darken-3 col s12 waves-effect waves-light btn-large'
+        %>
+      </div>
+    </div>
+
+    <!-- with email -->
+    <div class="col s6 z-depth-5">
+      <div class="card-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email, 'Correo electrónico:' %>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, 'Contraseña:' %><br />
+            <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me, "Recuérdame" %>
+            </div>
+          <% end -%>
+          <div class="center-align">
+            <div class="actions btn waves-effect waves-light center-align">
+              <%= f.submit "Iniciar sesión" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+<!--
+<div class="center-align">o</div>
+<hr />
+<div class="center-align col m8 offset-m2">
+  <%= link_to (fa_icon "facebook-official", class: "col s2") + "Seguir con facebook" ,
+    user_facebook_omniauth_authorize_path,
+    class: 'indigo darken-3 col s12 waves-effect waves-light btn-large'
+  %>
+  <%= link_to (fa_icon "facebook-official", class: "col s2") + "Seguir con Google" ,
+    user_facebook_omniauth_authorize_path,
+    class: 'red darken-3 col s12 waves-effect waves-light btn-large'
+  %>
+</div> -->
