@@ -38,11 +38,10 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      # we need these spaces in own model
-      #user.name = auth.info.name   # assuming the user model has a name
-      #user.image = auth.info.image # assuming the user model has an image
+      user.email = auth.info.email
+      user.image = auth.info.image # assuming the user model has an image
+      user.name = auth.info.name   # assuming the user model has a name
     end
   end
 end

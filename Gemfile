@@ -66,14 +66,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# group :production do
-gem 'pg', '~> 0.20'
-# end
+group :production do
+  gem 'pg', '~> 0.20'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # Use sqlite3 as the database for Active Record
-  # gem 'sqlite3'
+  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
