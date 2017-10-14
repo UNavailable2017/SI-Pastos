@@ -6,6 +6,7 @@ url_app: 'http://localhost:3000'
 app_id_facebook: '355766128209717'
 app_secret_facebook: 'c84457fb15f73617dbd8d7d76f4713e0'
 callback_facebook: '/users/auth/facebook/callback'
+GMAIL_DOMAIN: gmail.com
 
 production:
   email_platform: 'sipastos@gmail.com'
