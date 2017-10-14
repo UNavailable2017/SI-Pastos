@@ -17,7 +17,8 @@
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
 #  provider               :string
-#  uid                    :stringname
+#  uid                    :string
+#  name                   :string
 #  image                  :text
 #
 

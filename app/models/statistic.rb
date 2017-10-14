@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: statistics
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # statistic
 class Statistic < ApplicationRecord
   def self.average_age

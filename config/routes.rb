@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :elections
   resources :contacts, only: [:new, :index, :create]
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   get 'statistics/total'
   get 'statistics/average'
   get 'statistics/children'

@@ -13,9 +13,12 @@ gem 'devise'
 # generate pdf
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-# omniauth Facebook
-gem 'omniauth'
-gem 'omniauth-facebook', '~> 4.0.0'
+# omniauth Facebook and google
+# gem 'oauth2'
+# gem 'omniauth'
+# gem 'omniauth-facebook', '~> 4.0.0'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-oauth2'
 # materialize
 gem 'materialize-sass'
 # font-awesome
