@@ -25,16 +25,15 @@ Rails.application.routes.draw do
   namespace :users do
     get 'omniauth_callbacks/facebook'
     get 'omniauth_callbacks/google_oauth2'
+    get 'omniauth_callbacks/twitter'
   end
-  get 'users/omniauth_callbacks'
 
   devise_for :users
   devise_scope :user do
     get '/users/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
     get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
+    get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
   end
-  #, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  #get 'users/auth/:provider/callback' => 'devise/sessions#create'
 
   get 'statistics/total'
   get 'statistics/average'

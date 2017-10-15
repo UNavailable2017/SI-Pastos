@@ -7,7 +7,10 @@ FACEBOOK_APP_ID: '355766128209717'
 FACEBOOK_APP_SECRET: 'c84457fb15f73617dbd8d7d76f4713e0'
 GOOGLE_APP_ID:  '931350528514-85tegk50os3f8mdqvmmen86p5sb8c479.apps.googleusercontent.com'
 GOOGLE_APP_SECRET: 'WuYmb2gwVEUhr4_VHzTMyPzb'
-GMAIL_DOMAIN: gmail.com
+GMAIL_DOMAIN: 'gmail.com'
+TWITTER_APP_ID: 'P0MDXNLJh0grOT5yGJj07zd8N'
+TWITTER_APP_SECRET: 'WunQa1WTN9zDnHD8ewwsxYrluPJVynyH84pplutmVCA81QGQsH'
+
 
 production:
   email_platform: 'sipastos@gmail.com'
@@ -18,3 +21,5 @@ production:
   FACEBOOK_APP_SECRET: '4b41e6307b12fd503a4149c45edccaa6'
   GOOGLE_APP_ID:  '931350528514-eud7677gi5hq13gujeqpk6soo6j7ckg5.apps.googleusercontent.com'
   GOOGLE_APP_SECRET: 'ZnTHnj9LzaipMUqYFDAO-yxO'
+  TWITTER_APP_ID: 'P0MDXNLJh0grOT5yGJj07zd8N'
+  TWITTER_APP_SECRET: 'WunQa1WTN9zDnHD8ewwsxYrluPJVynyH84pplutmVCA81QGQsH'
