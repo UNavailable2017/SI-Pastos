@@ -13,8 +13,8 @@ require 'rubygems'
 100.times do
   a = User.new
   a.email =  Faker::Internet.email
-  a.password = '123456'
-  a.password_confirmation = '123456'
+  a.password = '12345678'
+  a.password_confirmation = '12345678'
   a.save
 end
 puts 'finished loading user data'
