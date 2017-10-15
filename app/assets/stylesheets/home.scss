@@ -6,6 +6,11 @@
   text-align: justify;
 }
 
+.logo-img {
+  max-height: 64px!important;
+  padding: 15px 0!important;
+}
+
 .parallax img {
    @media #{$small-and-down} { max-width: 200%; }
    @media #{$medium-and-up} { width: 100%; }
