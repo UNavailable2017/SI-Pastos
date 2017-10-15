@@ -16,5 +16,5 @@ production:
 
   FACEBOOK_APP_ID: '1447536465359074'
   FACEBOOK_APP_SECRET: '4b41e6307b12fd503a4149c45edccaa6'
-  GOOGLE_APP_ID:  ' 931350528514-eud7677gi5hq13gujeqpk6soo6j7ckg5.apps.googleusercontent.com'
-  GOOGLE_APP_SECRET: ' ZnTHnj9LzaipMUqYFDAO-yxO'
+  GOOGLE_APP_ID:  '931350528514-eud7677gi5hq13gujeqpk6soo6j7ckg5.apps.googleusercontent.com'
+  GOOGLE_APP_SECRET: 'ZnTHnj9LzaipMUqYFDAO-yxO'
