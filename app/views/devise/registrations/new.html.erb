@@ -14,11 +14,11 @@
     <div class="col m6">
       <div class="center-align col m8 offset-m2">
         <%= link_to (fa_icon "facebook-official", class: "col s2") + "Seguir con facebook" ,
-          user_google_oauth2_omniauth_authorize_path,
+          '/users/auth/facebook',
           class: 'indigo darken-3 col s12 waves-effect waves-light btn-large'
         %>
         <%= link_to (fa_icon 'google-plus-square', class: "col s2") + "Seguir con Google" ,
-          user_google_oauth2_omniauth_authorize_path,
+          '/users/auth/google_oauth2',
           class: 'red darken-3 col s12 waves-effect waves-light btn-large'
         %>
       </div>

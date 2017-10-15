@@ -21,7 +21,20 @@ Rails.application.routes.draw do
   resources :residences, only: [:index]
   resources :elections
   resources :contacts, only: [:new, :index, :create]
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  namespace :users do
+    get 'omniauth_callbacks/facebook'
+    get 'omniauth_callbacks/google_oauth2'
+  end
+  get 'users/omniauth_callbacks'
+
+  devise_for :users
+  devise_scope :user do
+    get '/users/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
+    get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
+  end
+  #, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  #get 'users/auth/:provider/callback' => 'devise/sessions#create'
 
   get 'statistics/total'
   get 'statistics/average'

@@ -14,9 +14,7 @@ gem 'devise'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # omniauth Facebook and google
-# gem 'oauth2'
-# gem 'omniauth'
-# gem 'omniauth-facebook', '~> 4.0.0'
+gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-oauth2'
 # materialize
