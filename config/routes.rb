@@ -22,13 +22,12 @@ Rails.application.routes.draw do
   resources :elections
   resources :contacts, only: [:new, :index, :create]
 
+  devise_for :users
   namespace :users do
     get 'omniauth_callbacks/facebook'
     get 'omniauth_callbacks/google_oauth2'
     get 'omniauth_callbacks/twitter'
   end
-
-  devise_for :users
   devise_scope :user do
     get '/users/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
     get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
