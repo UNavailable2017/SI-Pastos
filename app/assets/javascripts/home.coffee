@@ -4,7 +4,4 @@
 $('.parallax').parallax()
 $('.carousel').carousel()
 $(".button-collapse").sideNav()
-
-# chark kick
-
-Chartkick.configure({language: 'es'});
+Chartkick.configure({language: "es"})

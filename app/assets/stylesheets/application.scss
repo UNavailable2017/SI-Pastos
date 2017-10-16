@@ -1,7 +1,7 @@
 /* libraries */
-@import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
-$secondary-color: color("blue", "base") !default;
+@import 'materialize/components/color';
+$primary-color: color('blue', 'darken-3') !default;
+$secondary-color: color("indigo", 'darken-3') !default;
 @import 'materialize';
 @import 'font-awesome';
 @import 'material_icons';

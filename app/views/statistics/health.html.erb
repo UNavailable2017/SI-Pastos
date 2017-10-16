@@ -1,63 +1,44 @@
-<% if user_signed_in? %>
-  <% if current_user.try(:admin?) %>
-    <% if @health_service.empty?%>
+<% if @health_service.empty? %>
 
-        <div class="container">
-          <div class="row">
-            <div class="col m3"></div>
-            <div class="col m7">
-              <h5 class="center-align">
-                No existen personas censadas
-              </h5>
-            </div>
-          </div>
-          <%= link_to 'Atras', statistics_get_data_path %>
-      </div>
+  <%= render 'anything_people' %>
 
-    <% else %>
-    <div class="containner">
-        <div class="row">
-            <div class="col m2"></div>
-            <div class="col m3">
-                <ul class="nav">
-                    <%= link_to "Total censo", statistics_total_path, class: "waves-effect waves-light btn sub" %>
-                    <%= link_to "Número de hijos", statistics_children_path, class: "waves-effect waves-light  btn sub" %>
-                    <%= link_to "servicio de salud", statistics_health_path, class: "waves-effect waves-light btn sub  " %>
-                    <%= link_to "Promedio de edad", statistics_average_path, class: "waves-effect waves-light btn sub  " %>
-                </ul>
-            </div>
-            <div class="col m5">
-              <ul class="center-align collection with-header">
-                  <li class="collection-header"> <i class="material-icons">date_range</i>
-                      <h5>Cantidad de personas censadas en cada uno de las entidades de salud</h5></li>
+<% else %>
 
-              </ul>
+  <%= render 'navbar' %>
 
-              <div class="col m12">
-                <%= pie_chart @health_service %>
-
-                <table class="striped responsive-table centered">
-                  <thead>
-                    <tr>
-                      <th>Nombre entidad salud </th>
-                      <th>Numero de personas censadas afiliadas</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <% @health_service.each do |key, value| %>
-                      <tr>
-                         <td><%= "#{key}"  %></td>
-                        <td><%= "#{value}" %></td>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-
-              </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 z-depth-2 ">
+        <div class="card-form center-align">
+          <%= fa_icon "medkit 4x" %>
+          <h5>
+            Cantidad de personas con entidades de salud que estan censadas
+          </h5>
         </div>
+      </div>
     </div>
-    <% end %>
-<% end %>
+    <div class="row">
+      <div class="col s12">
+        <%= pie_chart @health_service, donut: true, download: true  %>
+
+        <table class="striped responsive-table centered">
+          <thead>
+            <tr>
+              <th>Nombre entidad salud </th>
+              <th>Numero de personas censadas afiliadas</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @health_service.each do |key, value| %>
+              <tr>
+                <td><%= "#{key}"  %></td>
+                <td><%= "#{value}" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 <% end %>

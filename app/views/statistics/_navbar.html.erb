@@ -1,0 +1,53 @@
+<h2 class="center-align">Estadisticas</h2>
+<div class="divider"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s2" >
+          <%= link_to "Generales",
+            statistics_total_path,
+            target: "_self",
+            class: current_page?(statistics_total_path) ? 'active' : ''
+          %>
+        </li>
+        <li class="tab col s2">
+          <%= link_to 'Hijos',
+            statistics_children_path,
+            target: "_self",
+            class: current_page?(statistics_children_path) ? 'active' : ''
+          %>
+        </li>
+        <li class="tab col s2">
+          <%= link_to "Salud",
+            statistics_health_path,
+            target: "_self",
+            class: current_page?(statistics_health_path)  ? 'active' : ''
+          %>
+        </li>
+        <li class="tab col s2">
+          <%= link_to 'localidades',
+            statistics_average_path,
+            target: "_self",
+            class: current_page?(statistics_average_path) ? 'active' : ''
+          %>
+        </li>
+        <li class="tab col s2">
+          <%= link_to "Genero",
+            statistics_gender_path,
+            target: "_self",
+            class: current_page?(statistics_gender_path)  ? 'active' : ''
+          %>
+        </li>
+        <li class="tab col s2">
+          <%= link_to 'Fecha',
+            statistics_censo_date_path,
+            target: "_self",
+            class: current_page?(statistics_censo_date_path) ? 'active' : ''
+          %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
