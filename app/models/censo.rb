@@ -20,7 +20,5 @@ class Censo < ApplicationRecord
   has_many :children
   belongs_to :health_service
 
-  def self.num_children
-    Censo.group(:numberOfChildren).count
-  end
+
 end

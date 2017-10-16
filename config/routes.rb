@@ -39,6 +39,9 @@ Rails.application.routes.draw do
   get 'statistics/average'
   get 'statistics/children'
   get 'statistics/health'
+  get 'statistics/gender'
+  get 'statistics/health'
+  get 'statistics/censo_date'
 
   root to: 'home#index'
 end

@@ -1,0 +1,40 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <div class="row">
+
+    <h3 class="center-align z-depth-2">
+      <div class="card-form">
+        <%= fa_icon 'venus-mars' %><br />
+        Generos
+      </div>
+    </h3>
+
+    <%= column_chart @data, download: true %>
+
+    <h3 class="center-align z-depth-2">
+      <div class="card-form">
+        Datos
+      </div>
+    </h3>
+
+    <table class="striped responsive-table centered">
+      <thead>
+        <tr>
+          <th>Genero </th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Femenino</td>
+          <td><%= @data['Female'] %></td>
+        </tr>
+        <tr>
+          <td>Masculino</td>
+          <td><%= @data['Male'] %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -26,7 +26,7 @@ gem 'font-awesome-rails'
 gem 'material_icons'
 # paginate
 gem 'will_paginate'
-# enviroment entorn
+# variablem enviroment entorn
 gem 'figaro'
 # for statistics
 gem 'chartkick'
@@ -44,6 +44,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 #  Faker for populate the Database:
 gem 'faker'
+# for statistics
+gem 'groupdate'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

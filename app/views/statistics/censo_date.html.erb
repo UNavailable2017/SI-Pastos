@@ -1,0 +1,38 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <div class="row">
+
+    <h3 class="center-align z-depth-2">
+      <div class="card-form">
+        <%= fa_icon 'calendar' %><br />
+        Numeros de personas censadas por año
+      </div>
+    </h3>
+
+    <%= line_chart @data, download: true %>
+
+    <h3 class="center-align z-depth-2">
+      <div class="card-form">
+        Datos
+      </div>
+    </h3>
+
+    <table class="striped responsive-table centered">
+      <thead>
+        <tr>
+          <th>Genero </th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @data.each do |key, value| %>
+          <tr>
+            <td><%= key.year %></td>
+            <td><%= value %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

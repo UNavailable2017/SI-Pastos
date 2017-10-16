@@ -28,4 +28,5 @@ class Person < ApplicationRecord
   def self.birth_date
     Person.pluck(:birthDate)
   end
+
 end

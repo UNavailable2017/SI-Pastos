@@ -1,18 +1,28 @@
 # statistic_controller
 class StatisticsController < ApplicationController
   def total
-    @num_person_censo = Censo.all.count
+    @data = Statistic.importante_statistics
+  end
+
+  def children
+    @data = Censo.group(:numberOfChildren).count
   end
 
   def average
-    @average_age = Statistic.average_age
+    @data = Person.joins(:residence).group(:locality).count
   end
 
   def health
     @health_service = HealthService.count_name
   end
 
-  def children
-    @num_child = Censo.num_children
+  def gender
+    @data = Person.group(:gender).count
   end
+
+  def censo_date
+    @data = Censo.group_by_year(:date).count.sort
+  end
+
+
 end
