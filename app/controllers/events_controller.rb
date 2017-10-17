@@ -76,10 +76,10 @@ class EventsController < ApplicationController
   end
 
   def sortable_columns
-      ['date', "\'eventInfo\'", "\'eventType\'"]
+      ['date', '\"eventInfo\"', '\"eventType\"']
   end
   def sort_column
-    sortable_columns.include?(params[:sort]) ? params[:sort] : "\'eventType\'"
+    sortable_columns.include?(params[:sort]) ? params[:sort] : '\"eventType\""'
   end
 
   def sort_direction
