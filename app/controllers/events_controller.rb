@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.paginate(page: params[:page]).order("#{sort_column} #{sort_direction}")
+    @events = Event.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /events/1
