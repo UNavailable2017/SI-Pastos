@@ -2,10 +2,10 @@ class CreateAnnouncements < ActiveRecord::Migration[5.1]
   def change
     create_table :announcements do |t|
       t.integer :idAnnouncement
-      t.date :publicationDate
+      t.date "publicationDate"
       t.date :deadline
-      t.text :announcementType
-      t.text :announcementInformation
+      t.text "announcementType"
+      t.text "announcementInformation"
       t.integer :person_id
 
       t.timestamps
