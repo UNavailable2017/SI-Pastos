@@ -72,9 +72,12 @@ class AnnouncementsController < ApplicationController
     def announcement_params
       params.require(:announcement).permit(:idAnnouncement, :publicationDate, :deadline, :announcementType, :announcementInformation, :person_id)
     end
+    def sortable_columns
+        ['deadline', "\"publicationDate\"", "\"announcementType\"", "\"announcementInformation\""]
+    end
 
     def sort_column
-      Announcement.column_names.include?(params[:column]) ? params[:column] : "publicationDate"
+      sortable_columns.include?(params[:column]) ? params[:column] : "\"publicationDate\""
     end
 
     def sort_direction
