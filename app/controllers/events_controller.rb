@@ -79,7 +79,7 @@ class EventsController < ApplicationController
       ["date", "eventInfo", "eventType"]
   end
   def sort_column
-    sortable_columns.include?(params[:sort]) ? params[:sort] : "date"
+    sortable_columns.include?(params[:column]) ? params[:column] : "date"
   end
 
   def sort_direction
