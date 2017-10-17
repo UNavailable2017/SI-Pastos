@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
+    @events = Event.paginate(page: params[:page]).order("#{sort_column} #{sort_direction}")
   end
 
   # GET /events/1
@@ -76,10 +76,10 @@ class EventsController < ApplicationController
   end
 
   def sort_column
-    Event.column_names.include?(params[:sort]) ? params[:sort] : 'date'
+    Event.column_names.include?(params[:sort]) ? params[:sort] : "date"
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
   end
 end
