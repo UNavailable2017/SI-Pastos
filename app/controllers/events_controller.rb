@@ -75,8 +75,11 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :date, :eventType, :eventInfo, :person_id)
   end
 
+  def sortable_columns
+  ["date", "eventInfo", "eventType"]
+end
   def sort_column
-    Event.column_names.include?(params[:sort]) ? params[:sort] : "date"
+    Event.column_names.include?(params[:column]) ? params[:column] : "date"
   end
 
   def sort_direction
