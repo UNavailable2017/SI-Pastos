@@ -77,7 +77,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def sort_column
-      sortable_columns.include?(params[:column]) ? params[:column] : "\"publicationDate\""
+      sortable_columns.include?(params[:sort]) ? params[:sort] : "\"publicationDate\""
     end
 
     def sort_direction
