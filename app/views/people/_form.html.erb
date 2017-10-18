@@ -50,7 +50,7 @@
   <div class="input-field">
     <i class="material-icons prefix">wc</i>
     <%= form.label :gender, "Genero" %>
-    <%= form.text_field :gender, id: :person_gender %>
+    <%= form.text_field :gender, id: :person_gender, class: "active" %>
   </div>
 
   <div class="input">
@@ -78,6 +78,6 @@
 
   <div class="actions center-align">
     <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
-    <%= form.submit 'Crear Persona',class: "btn waves-effect waves-light" %>
+    <%= form.submit 'Actualizar Persona',class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
