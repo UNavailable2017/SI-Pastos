@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20171011133215) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.date "date"
+    t.string "image"
     t.string "eventType"
     t.string "eventInfo"
     t.integer "person_id"

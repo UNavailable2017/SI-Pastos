@@ -10,6 +10,7 @@
 
 require 'faker'
 require 'rubygems'
+
 100.times do
   a = User.new
   a.email =  Faker::Internet.email
@@ -141,7 +142,7 @@ Faker::UniqueGenerator.clear
   Residence.create(address: Faker::Address.street_address,
                    phone: Faker::PhoneNumber.cell_phone,
                    neighborhood: Faker::Address.community,
-                   locality: Faker::Address.city,
+                   locality: Faker::Company.suffix,
                    latitude: Faker::Address.latitude(),
                    longitude: Faker::Address.longitude(),
                    person_id: Faker::Number.unique.between(1, 100))

@@ -46,6 +46,10 @@ gem 'gmaps4rails'
 gem 'faker'
 # for statistics
 gem 'groupdate'
+# to upload files
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
+gem 'mini_magick'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

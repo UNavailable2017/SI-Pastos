@@ -5,11 +5,11 @@ class StatisticsController < ApplicationController
   end
 
   def children
-    @data = Censo.group(:numberOfChildren).count
+    @data = Statistic.censo_group_number_of_children_count
   end
 
   def average
-    @data = Person.joins(:residence).group(:locality).count
+    @data = Statistic.person_joins_residence_group_locality_count
   end
 
   def health
@@ -17,12 +17,10 @@ class StatisticsController < ApplicationController
   end
 
   def gender
-    @data = Person.group(:gender).count
+    @data = Statistic.person_group_count
   end
 
   def censo_date
-    @data = Censo.group_by_year(:date).count.sort
+    @data = Statistic.censo_group_by_year_date_count_sort
   end
-
-
 end

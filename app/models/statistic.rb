@@ -15,6 +15,7 @@ class Statistic < ApplicationRecord
     birth_date.each do |date|
       sum += (time.to_date - date.to_date).to_i
     end
+    return if sum.zero?
     days = sum / birth_date.size
     days /= 365
     return days
@@ -32,6 +33,22 @@ class Statistic < ApplicationRecord
     statistics['¿Cantidad de de Centros de salud?'] = HealthService.all.size
     statistics['¿Edad promedio de los usuarios censados?'] = Statistic.average_age
     return statistics
+  end
+
+  def self.censo_group_number_of_children_count
+    Censo.group(:numberOfChildren).count
+  end
+
+  def self.person_joins_residence_group_locality_count
+    Person.joins(:residence).group(:locality).count
+  end
+
+  def self.person_group_count
+    Person.group(:gender).count
+  end
+
+  def self.censo_group_by_year_date_count_sort
+    Censo.group_by_year(:date).count.sort
   end
 
 end

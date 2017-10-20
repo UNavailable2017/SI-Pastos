@@ -22,12 +22,33 @@
     <%= form.label :date, "Fecha" %>
     <%= form.text_field :date, id: :event_date, class: "datepicker" %>
   </div>
+<!--
+  <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div> -->
+
+  <div class="input-field file-field">
+    <div class="btn">
+      <span>Imagen</span>
+      <%= form.file_field :image, id: :event_image, class: 'btn' %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
     <%= form.label :eventType, "Tipo de Evento" %>
     <%= form.text_field :eventType, id: :event_eventType %>
   </div>
+
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>

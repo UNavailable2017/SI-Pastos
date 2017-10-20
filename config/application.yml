@@ -1,5 +1,10 @@
 # Add configuration values here, as shown below.
 #
+
+S3_KEY: 'AKIAJOAVT7UEQOI735VA'
+S3_SECRET: '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'
+S3_BUCKET: 'images-ingesoft'
+S3_REGION: 'sa-east-1'
 email_platform: 'sipastos@gmail.com'
 password_email: 'pastos2017'
 url_app: 'http://localhost:3000'
