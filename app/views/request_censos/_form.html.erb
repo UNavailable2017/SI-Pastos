@@ -43,15 +43,22 @@
     <%= form.label :address, "Dirección residencia"%>
     <%= form.text_field :address, id: :request_censo_address %>
   </div>
-
+ <% unless current_user.try(:admin?) %>
   <div class="input-field">
      <i class="material-icons prefix">email</i>
-
     <%=  form.email_field :user_email, id: :request_censo_address, :value => current_user.email, readonly: true %>
+    <div class="actions center-align">
+     <%= form.submit 'Solicitar', class: "btn waves-effect waves-light" %>
+   </div>
   </div>
-
-   <div class="actions center-align">
-    <%= form.submit 'Solicitar', class: "btn waves-effect waves-light" %>
-
-  </div>
-<% end %>
+ <%else%>
+     <div class="input-field">
+        <i class="material-icons prefix">email</i>
+       <%= form.label :user_email, "Correo"%>
+       <%= form.text_field :user_email, id: :request_censo_user_email %>
+     </div>
+     <div class="actions center-align">
+      <%= form.submit 'Agendar', class: "btn waves-effect waves-light" %>
+    </div>
+  <% end %>
+<%end%>

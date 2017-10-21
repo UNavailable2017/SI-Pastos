@@ -5,10 +5,17 @@
           <article class="col s8 offset-s2 z-depth-5">
             <div class="card-form">
               <h3 class="center-align">Solicitud de censo</h3>
-                <h6 class="center-align">Usted ya tiene una solicitud en curso</h6>
+                <h6 class="center-align">Usted ya tiene una solicitud agendada</h6>
             </div>
-             <%= link_to 'Volver al inicio', root_path %>
+
           </article>
+          </div>
+          <div class=" row col m10 center-align">
+              <%= link_to 'Contactese con el administrador', new_contact_path, class:"col m6"%>
+              <%= link_to 'Volver al inicio', root_path, class:" col m6" %>
+
+          </div>
+
       </section>
 
     <% else%>
@@ -20,6 +27,7 @@
                 <%= render 'form', request_censo: @request_censo %>
               </div>
             </article>
+            </div>
         </section>
 
     <% end%>

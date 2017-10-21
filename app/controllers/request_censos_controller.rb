@@ -1,26 +1,37 @@
 class RequestCensosController < ApplicationController
   before_action :set_request_censo, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_admin, only: [:edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /request_censos
   # GET /request_censos.json
   def index
-    @request_censos = RequestCenso.all
+    @request_censos = RequestCenso.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /request_censos/1
   # GET /request_censos/1.json
   def show
-      @check_censo = RequestCenso.check_data
+      if  current_user.try(:admin?)
+          @check_censo = RequestCenso.check_data_two
+      else
+          @check_censo = RequestCenso.check_data
+      end
   end
 
   # GET /request_censos/new
   def new
     @request_censo = RequestCenso.new
-    @check_data = RequestCenso.check_user_request
+    if  current_user.try(:admin?)
+        @check_data = nil
+    else
+        @check_data = RequestCenso.check_user_request
+    end
   end
 
   # GET /request_censos/1/edit
   def edit
+
   end
 
   # POST /request_censos
@@ -73,4 +84,19 @@ class RequestCensosController < ApplicationController
     def request_censo_params
       params.require(:request_censo).permit(:name, :lastname, :num_document, :phone, :address, :user_email)
     end
+
+    def sortable_columns
+        ['name','lastname', 'num_document', 'phone', 'direction', 'user_email']
+    end
+    def sort_column
+      sortable_columns.include?(params[:sort]) ? params[:sort] : 'name'
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
+    end
+    def authorize_admin
+       return unless !current_user.admin?
+       redirect_to root_path, alert: 'Admins only!'
+   end
 end
