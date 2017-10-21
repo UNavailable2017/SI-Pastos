@@ -14,30 +14,30 @@
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :publicationDate, "Fecha de publicacion" %>
+    <%= form.label :publicationDate, "Fecha de publicacion", class: 'active' %>
     <%= form.text_field :publicationDate, id: :announcement_publicationDate, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">access_alarm</i>
-    <%= form.label :deadline, "Fecha de terminacion" %>
+    <%= form.label :deadline, "Fecha de terminacion", class: 'active' %>
     <%= form.text_field :deadline, id: :announcement_deadline, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">info</i>
-    <%= form.label :announcementType, "Tipo de Anuncio" %>
+    <%= form.label :announcementType, "Tipo de Anuncio", class: 'active' %>
     <%= form.text_area :announcementType, id: :announcement_announcementType, class: "materialize-textarea" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">event</i>
-    <%= form.label :announcementInformation, "Tipo de informacion" %>
+    <%= form.label :announcementInformation, "Tipo de informacion", class: 'active' %>
     <%= form.text_area :announcementInformation, id: :announcement_announcementInformation, class: "materialize-textarea" %>
   </div>
 
   <div class='input-field' style="display:none">
-    <%= form.label :person_id %>
+    <%= form.label :person_id, class: 'active'%>
     <%= form.number_field :person_id, id: :event_person_id, value: 1, 'aria-hidden' => true %>
   </div>
 

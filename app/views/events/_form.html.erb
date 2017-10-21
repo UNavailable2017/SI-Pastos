@@ -13,30 +13,30 @@
 
   <div class="input-field">
     <i class="material-icons prefix">accessibility</i>
-    <%= form.label :name, "Nombre" %>
+    <%= form.label :name, "Nombre", class: 'active' %>
     <%= form.text_field :name, id: :event_name %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :date, "Fecha" %>
+    <%= form.label :date, "Fecha", class: 'active' %>
     <%= form.text_field :date, id: :event_date, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :eventType, "Tipo de Evento" %>
+    <%= form.label :eventType, "Tipo de Evento", class: 'active' %>
     <%= form.text_field :eventType, id: :event_eventType %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :eventInfo, "Información del evento" %>
+    <%= form.label :eventInfo, "Información del evento", class: 'active' %>
     <%= form.text_area :eventInfo, id: :event_eventInfo,  class: "materialize-textarea" %>
   </div>
 
   <div class='input-field' style="display:none">
-    <%= form.label :person_id %>
+    <%= form.label :person_id, class: 'active' %>
     <%= form.number_field :person_id, id: :event_person_id, value: 1, 'aria-hidden' => true %>
   </div>
 
