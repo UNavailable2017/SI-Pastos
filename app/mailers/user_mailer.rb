@@ -11,7 +11,7 @@ class UserMailer < ApplicationMailer
     @newsletter = newsletter
     @users = User.all
     emails = @users.collect(&:email).join(", ")
-    mail(to: emails, subject: 'My Newsletter')
+    mail(to: emails, subject: 'Nuevas Noticias')
   end
 
 end
