@@ -10,11 +10,13 @@ class RequestCensosController < ApplicationController
   # GET /request_censos/1
   # GET /request_censos/1.json
   def show
+      @check_censo = RequestCenso.check_data
   end
 
   # GET /request_censos/new
   def new
     @request_censo = RequestCenso.new
+    @check_data = RequestCenso.check_user_request
   end
 
   # GET /request_censos/1/edit
