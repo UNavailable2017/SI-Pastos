@@ -69,6 +69,6 @@ class RequestCensosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_censo_params
-      params.require(:request_censo).permit(:name, :type_document, :num_document, :phone, :address)
+      params.require(:request_censo).permit(:name, :lastname, :num_document, :phone, :address, :user_email)
     end
 end

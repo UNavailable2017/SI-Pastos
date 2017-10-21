@@ -10,10 +10,11 @@
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Type document</th>
+                  <th>Apellido</th>
                   <th>Num document</th>
                   <th>Phone</th>
                   <th>Address</th>
+                  <th>email</th>
                   <th colspan="3"></th>
                 </tr>
               </thead>
@@ -22,10 +23,11 @@
                 <% @request_censos.each do |request_censo| %>
                   <tr>
                     <td><%= request_censo.name %></td>
-                    <td><%= request_censo.type_document %></td>
+                    <td><%= request_censo.lastname %></td>
                     <td><%= request_censo.num_document %></td>
                     <td><%= request_censo.phone %></td>
                     <td><%= request_censo.address %></td>
+                    <td><%= request_censo.user_email %></td>
                     <td><%= link_to 'Show', request_censo %></td>
                     <td><%= link_to 'Edit', edit_request_censo_path(request_censo) %></td>
                     <td><%= link_to 'Destroy', request_censo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

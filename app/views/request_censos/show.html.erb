@@ -5,10 +5,6 @@
   <%= @request_censo.name %>
 </p>
 
-<p>
-  <strong>Type document:</strong>
-  <%= @request_censo.type_document %>
-</p>
 
 <p>
   <strong>Num document:</strong>
@@ -22,8 +18,17 @@
 
 <p>
   <strong>Address:</strong>
-  <%= @request_censo.address %>
+  <%= @request_censo.address%>
 </p>
+
+<p>
+  <strong>email:</strong>
+  <%= @request_censo.user_email%>
+</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_request_censo_path(@request_censo) %> |
 <%= link_to 'Back', request_censos_path %>
