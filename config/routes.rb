@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :request_censos
   # get 'gobernador/inicio', to: 'governor#home'
   # get 'gobernador/registrar_censo', to: 'governor#register_censo'
   # get 'gobernador/buscar_censo', to: 'governor#find_censo'

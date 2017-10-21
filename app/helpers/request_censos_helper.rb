@@ -1,0 +1,2 @@
+module RequestCensosHelper
+end

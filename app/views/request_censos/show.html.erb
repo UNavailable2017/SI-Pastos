@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @request_censo.name %>
+</p>
+
+<p>
+  <strong>Type document:</strong>
+  <%= @request_censo.type_document %>
+</p>
+
+<p>
+  <strong>Num document:</strong>
+  <%= @request_censo.num_document %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @request_censo.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @request_censo.address %>
+</p>
+
+<%= link_to 'Edit', edit_request_censo_path(@request_censo) %> |
+<%= link_to 'Back', request_censos_path %>

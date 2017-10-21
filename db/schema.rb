@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011133215) do
+ActiveRecord::Schema.define(version: 20171021133157) do
 
   create_table "announcements", force: :cascade do |t|
     t.date "publicationDate"
@@ -126,6 +126,16 @@ ActiveRecord::Schema.define(version: 20171011133215) do
     t.string "originLanguage"
     t.string "languageDomination"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "request_censos", force: :cascade do |t|
+    t.string "name"
+    t.string "type_document"
+    t.integer "num_document"
+    t.integer "phone"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

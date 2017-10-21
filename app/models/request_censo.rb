@@ -1,0 +1,2 @@
+class RequestCenso < ApplicationRecord
+end
