@@ -36,7 +36,8 @@
               <td><%= link_to (fa_icon "eye"), newsletter %></td>
               <td><%= link_to (fa_icon "pencil"), edit_newsletter_path(newsletter) %></td>
               <td><%= link_to (fa_icon "times"), newsletter, method: :delete, data: { confirm: '¿Esta seguro de eliminar el mensaje?' } %></td>
-              <td><%= link_to (fa_icon "telegram"), deliver_newsletter_path(newsletter), data: { confirm: '¿Quiere enviar el mensaje?'}, method:  :post %></td>
+              <td><%= link_to (fa_icon "telegram"), deliver_newsletter_path(newsletter), data: {confirm: '¿Quiere enviar el mensaje?'}, method:  :post %></td>
+
             </tr>
           <% end %>
         </tbody>
@@ -46,3 +47,7 @@
   </div>
 
 </div>
+<% @correos.each do |m|%>
+<p><%= m.email%></p>
+
+<% end %>

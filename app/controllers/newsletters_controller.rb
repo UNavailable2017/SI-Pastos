@@ -5,6 +5,7 @@ class NewslettersController < ApplicationController
   # GET /newsletters.json
   def index
     @newsletters = Newsletter.all
+    @correos = User.all
   end
 
   # GET /newsletters/1

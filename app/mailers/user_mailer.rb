@@ -9,9 +9,20 @@ class UserMailer < ApplicationMailer
 
   def newsletter(newsletter)
     @newsletter = newsletter
-    @users = User.all
+    @users=User.limit(5)
+    #@users = User.limit(5)
+    # @users.each do |usuario|
+    #   mail(to: usuario.email, subject: 'Nuevas Noticias')
+    # end
     emails = @users.collect(&:email).join(", ")
-    mail(to: emails, subject: 'Nuevas Noticias')
+    mail(to: emails, subject: @newsletter.subject)
+
+
+    # @users.each do |m|
+    #   correo=m.email
+    #   mail(to: correo, subject: 'Nuevas Noticias').deliver_later
+    # end
+
   end
 
 end
