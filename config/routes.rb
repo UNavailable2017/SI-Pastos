@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # get 'gobernador/inicio', to: 'governor#home'
   # get 'gobernador/registrar_censo', to: 'governor#register_censo'
   # get 'gobernador/buscar_censo', to: 'governor#find_censo'
@@ -33,7 +34,12 @@ Rails.application.routes.draw do
     get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
     get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
   end
-
+  resources :newsletters do
+    member do
+      post :deliver
+    end
+  end
+  get 'newsletters/deliver'
   get 'statistics/total'
   get 'statistics/average'
   get 'statistics/children'
