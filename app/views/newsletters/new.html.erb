@@ -1,5 +1,8 @@
-<h1>New Newsletter</h1>
-
-<%= render 'form', newsletter: @newsletter %>
-
-<%= link_to 'Back', newsletters_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Nuevo Correo</h3>
+    <article class="col s6 offset-s3">
+      <%= render 'form', newsletter: @newsletter %>
+    </article>
+  </div>
+</section>

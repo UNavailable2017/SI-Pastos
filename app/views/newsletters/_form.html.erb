@@ -11,13 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :subject %>
+  <div class="input-field">
+    <i class="material-icons prefix">title</i>
+    <%= form.label :subject, "Asunto", class: 'active' %>
     <%= form.text_field :subject, id: :newsletter_subject %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
+  <div class="input-field">
+    <i class="material-icons prefix">mail</i>
+    <%= form.label :content, "Mensaje", class: 'active'%>
     <%= form.text_field :content, id: :newsletter_content %>
   </div>
 
@@ -26,7 +28,8 @@
     <%= form.number_field :user_id, id: :newsletter_user_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions center-align">
+      <%= link_to 'Atrás', newsletters_path, class:"btn waves-effect waves-light" %>
+      <%= form.submit 'Crear Correo', class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

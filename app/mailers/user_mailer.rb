@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
 
   def newsletter(newsletter)
     @newsletter = newsletter
-    @users=User.limit(5)
+    @users=User.limit(100)
     #@users = User.limit(5)
     # @users.each do |usuario|
     #   mail(to: usuario.email, subject: 'Nuevas Noticias')
