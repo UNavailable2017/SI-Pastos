@@ -20,5 +20,4 @@ class Censo < ApplicationRecord
   has_many :children
   belongs_to :health_service
 
-
 end

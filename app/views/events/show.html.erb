@@ -1,45 +1,43 @@
 <div class="container">
 
-    <div class="row">
-      <div class="col s6">
-        <p class="right-align">
-          <h5>Nombre</h5>
-          <%= @event.name %>
-        </p>
-      </div>
-
-      <div class="col s6">
-        <p class="left-align">
-          <h5>Fecha </h5>
-          <%= @event.date %>
-        </p>
-      </div>
+  <div class="row">
+    <div class="col s12">
+      <h2 class="header center-align">Evento</h2>
     </div>
-
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <p>
-          <h5>Evento </h5>
-          <%= @event.eventType %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <p>
-          <h5>Información: </h5>
-          <%= @event.eventInfo  %>
-        </p>
-      </div>
-    </div>
-</div>
-
-<div class="col s10">
-  <div class="center-align">
-    <%= link_to 'Atras', events_path, class:"btn waves-effect waves-light" %>
-    <% if current_user.try(:admin?) %>
-      <%= link_to 'Editar', edit_event_path(@event), class:"btn waves-effect waves-light" %>
-    <% end %>
   </div>
-</div>
+  <div class="row">
+    <div class="card horizontal z-depth-5">
+      <div class="card-form">
+        <div class="card-image col s6 m6 l6">
+          <% if @event.image.url == nil %>
+            <img
+              src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Sin_foto.svg/300px-Sin_foto.svg.png'
+              class="responsive-img putMaxWidth materialboxed"
+            />
+          <% else %>
+            <%= image_tag(@event.image.url, alt: 'Imagen de Evento', class: 'responsive-img putMaxWidth materialboxed') %>
+          <% end %>
+        </div>
+
+        <div class="card-stacked col s6 m6 l6">
+          <div class="card-content">
+            <p><strong>Name:</strong> <%= @event.name %></p>
+            <p><strong>Fecha:</strong> <%= @event.date %></p>
+            <p><strong>Evento:</strong> <%= @event.eventType %></p>
+            <p><strong>Información:</strong></p>
+            <%= @event.eventInfo %>
+          </div>
+          <div class="card-action">
+            <div class="center-align">
+              <%= link_to 'Atras', events_path, class:"btn waves-effect waves-light" %>
+              <% if current_user.try(:admin?) %>
+                <%= link_to 'Editar', edit_event_path(@event), class:"btn waves-effect waves-light" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- .row -->
+</div>  <!-- .container -->

@@ -27,6 +27,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event[:person_id] = 1 # governor
 
     respond_to do |format|
       if @event.save
@@ -72,17 +73,18 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:name, :date, :eventType, :eventInfo, :person_id)
+    params.require(:event).permit(:name, :image, :date, :eventType, :eventInfo, :person_id)
   end
 
   def sortable_columns
-      ['name','date', "\"eventInfo\"", "\"eventType\""]
+    ['name', 'date', "\"eventInfo\"", "\"eventType\""]
   end
+
   def sort_column
-    sortable_columns.include?(params[:sort]) ? params[:sort] : "\"eventType\""
+    sortable_columns.include?(params[:sort]) ? params[:sort] : 'date'
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end
