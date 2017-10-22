@@ -9,9 +9,9 @@
 }
 
 .striped th .asc {
-  background-image: image-url('up_arrow.gif');
+  background-image: asset-url('up_arrow.gif');
 }
 
 .striped th .desc {
-  background-image: image-url('down_arrow.gif');
+  background-image: asset-url('down_arrow.gif');
 }
