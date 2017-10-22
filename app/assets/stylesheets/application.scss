@@ -7,9 +7,4 @@ $secondary-color: color("indigo", 'darken-3') !default;
 @import 'material_icons';
 
 // css
-@import 'devise';
-@import 'home';
-@import 'events';
-@import 'statistics';
-@import 'announcements';
-@import 'pagination';
+@import './*';

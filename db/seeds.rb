@@ -107,8 +107,9 @@ puts 'finished loading candidates data'
 100.times do
   Event.create(name: Faker::Lorem.characters(8),
                date: Faker::Date.forward(900),
-               eventType: Faker::Lorem.characters(8),
-               eventInfo: Faker::Lorem.characters(8),
+               image: 'http://www.joyandvisionagency.com/wp-content/uploads/2015/07/SAMEN_ETEN1-e1436970143287.jpg',
+               eventType: Faker::Lorem.sentence,
+               eventInfo: Faker::Lorem.paragraphs.join(' '),
                person_id: Faker::Number.unique.between(1, 100))
 end
 puts 'finished loading event data'

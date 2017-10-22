@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  name       :string
 #  date       :date
+#  image      :string
 #  eventType  :string
 #  eventInfo  :string
 #  person_id  :integer
@@ -14,5 +15,5 @@
 class Event < ApplicationRecord
   belongs_to :person
   mount_uploader :image, ImageUploader
-  # validates :name, :date, :eventType, :eventInfo, presence: true
+  validates :name, :date, :eventType, :eventInfo, presence: true
 end

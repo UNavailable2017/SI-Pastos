@@ -1,56 +1,44 @@
 <div class="container">
 
-    <div class="row">
-      <div class="col s6">
-        <p class="right-align">
-          <h5>Nombre</h5>
-          <%= @event.name %>
-        </p>
-      </div>
+  <div class="row">
+    <div class="col s12 m12">
+      <h2 class="header center-align">Evento</h2>
+      <div class="row">
+        <div class="card horizontal z-depth-5">
+          <div class="card-form">
+            <div class="card-image col s6">
+              <% if @event.image.url == nil %>
+                <img
+                  src='http://www.joyandvisionagency.com/wp-content/uploads/2015/07/SAMEN_ETEN1-e1436970143287.jpg'
+                  class="responsive-img putMaxWith materialboxed"
+                />
+              <% else %>
+                <%= image_tag(@event.image.url, alt: 'Imagen de Evento', class: 'responsive-img') %>
+              <% end %>
+            </div>
 
-      <div class="col s6">
-        <p class="left-align">
-          <h5>Fecha </h5>
-          <%= @event.date %>
-        </p>
-      </div>
-    </div>
+            <div class="card-stacked col s6">
+              <div class="card-content">
+                <p><strong>Name:</strong> <%= @event.name %></p>
+                <p><strong>Fecha:</strong> <%= @event.date %></p>
+                <p><strong>Evento:</strong> <%= @event.eventType %></p>
+                <p><strong>Información:</strong></p>
+                <%= @event.eventInfo %>
+              </div>
+              <div class="card-action">
+                <div class="center-align">
+                  <%= link_to 'Atras', events_path, class:"btn waves-effect waves-light" %>
+                  <% if current_user.try(:admin?) %>
+                    <%= link_to 'Editar', edit_event_path(@event), class:"btn waves-effect waves-light" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <p>
-          <h5>Evento </h5>
-          <%= @event.eventType %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <p>
-          <h5>Información: </h5>
-          <%= @event.eventInfo  %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <p>
-          <h5>Imagen: </h5>
-          <%= image_tag(@event.image.url, alt: 'Image', class: 'responsive-img') if @event.image? %>
-        </p>
+        </div>
       </div>
     </div>
-
-
-</div>
-
-<div class="col s10">
-  <div class="center-align">
-    <%= link_to 'Atras', events_path, class:"btn waves-effect waves-light" %>
-    <% if current_user.try(:admin?) %>
-      <%= link_to 'Editar', edit_event_path(@event), class:"btn waves-effect waves-light" %>
-    <% end %>
   </div>
+
 </div>

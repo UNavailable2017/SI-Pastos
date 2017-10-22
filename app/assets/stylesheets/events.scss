@@ -7,16 +7,6 @@
   margin-bottom: 1em;
 }
 
-.striped th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-.striped th .asc {
-  background-image: url('up_arrow.gif');
-}
-
-.striped th .desc {
-  background-image: url('down_arrow.gif');
+.putMaxWith {
+  width: 100% !important;
 }

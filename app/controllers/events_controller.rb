@@ -27,6 +27,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event[:person_id] = 1 # governor
 
     respond_to do |format|
       if @event.save
@@ -76,13 +77,14 @@ class EventsController < ApplicationController
   end
 
   def sortable_columns
-      ['name','date', "\"eventInfo\"", "\"eventType\""]
+    ['name', 'date', "\"eventInfo\"", "\"eventType\""]
   end
+
   def sort_column
-    sortable_columns.include?(params[:sort]) ? params[:sort] : "\"eventType\""
+    sortable_columns.include?(params[:sort]) ? params[:sort] : 'date'
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end
