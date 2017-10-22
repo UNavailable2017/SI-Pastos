@@ -1,0 +1,77 @@
+
+<% if user_signed_in? %>
+    <% unless  @check_data == nil%>
+        <section class="container">
+          <div class="row card-form">
+            <article class="col s8 offset-s2 z-depth-5">
+              <div class="card-form">
+                  <h6 class="center-align"> Ya se encuentra en el censo</h6>
+              </div>
+               <%= link_to 'Volver al inicio', root_path %>
+            </article>
+        </section>
+          <%= link_to 'Atras', new_certificate_path %>
+
+    <% else %>
+    <div class="container">
+      <!-- <div class="col s10"> -->
+        <div class="row">
+          <div class="col s6">
+            <p class="right-align">
+              <h5> Nombre </h5>
+              <%= @request_censo.name  %>
+            </p>
+          </div>
+
+          <div class="col s6">
+            <p class="left-align">
+              <h5> Apellido </h5>
+              <%= @request_censo.lastname %>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <p>
+              <h5> Número de documento </h5>
+                <%= @request_censo.num_document %>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <p>
+              <h5> Telefono </h5>
+                <%= @request_censo.phone %>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <p>
+              <h5> Dirección </h5>
+                 <%= @request_censo.address%>
+            </p>
+          </div>
+        </div>
+
+
+    </div>
+
+    <div class="col s10">
+      <div class="center-align">
+        <%= link_to 'Ir al inicio', root_path, class:"btn waves-effect waves-light" %>
+        <% if current_user.try(:admin?) %>
+            <%= link_to 'Atrás', request_censos_path, class:"btn waves-effect waves-light" %>
+        <%end%>
+
+      </div>
+    </div>
+
+    <% end %>
+
+
+<%end%>

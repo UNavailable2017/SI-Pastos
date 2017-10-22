@@ -37,4 +37,11 @@ class User < ApplicationRecord
       user.name = auth.info.name
     end
   end
+
+      def self.current
+      Thread.current[:user]
+    end
+    def self.current=(user)
+      Thread.current[:user] = user
+    end
 end
