@@ -9,11 +9,11 @@
             <div class="card-image col s6">
               <% if @event.image.url == nil %>
                 <img
-                  src='http://www.joyandvisionagency.com/wp-content/uploads/2015/07/SAMEN_ETEN1-e1436970143287.jpg'
-                  class="responsive-img putMaxWith materialboxed"
+                  src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Sin_foto.svg/300px-Sin_foto.svg.png'
+                  class="responsive-img putMaxWidth materialboxed"
                 />
               <% else %>
-                <%= image_tag(@event.image.url, alt: 'Imagen de Evento', class: 'responsive-img') %>
+                <%= image_tag(@event.image.url, alt: 'Imagen de Evento', class: 'responsive-img putMaxWidth materialboxed') %>
               <% end %>
             </div>
 
