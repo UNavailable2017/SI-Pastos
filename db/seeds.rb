@@ -22,7 +22,7 @@ puts 'finished loading user data'
 100.times do
   Person.create(documentPerson: Faker::Number.number(5),
                 documentType: Faker::Lorem.characters(2),
-                name: Faker::Name.first_name,
+                firstname: Faker::Name.first_name,
                 lastname: Faker::Name.last_name,
                 birthDate: Faker::Date.backward(23_725),
                 civilStatus: Faker::Lorem.words.join(' '),

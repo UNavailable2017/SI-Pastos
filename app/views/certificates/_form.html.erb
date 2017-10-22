@@ -12,14 +12,28 @@
   <% end %>
   <div class="input-field">
     <i class="material-icons prefix">chevron_right</i>
-    <%= form.label :documentPerson, "Ingrese el Documento" %>
+    <%= form.label :documentPerson, "Ingrese  Documento" %>
     <%= form.number_field :documentPerson, id: :certificate_documentPerson %>
   </div>
 
-  <div class="actions center-align">
-    <%= button_tag type: 'submit', class: "waves-effect waves-light btn" do %>
-        Consulta Censo <i class="material-icons">search</i>
+<% if current_user.try(:admin?) %>
+      <div class="actions center-align">
+        <%= button_tag type: 'submit', class: "waves-effect waves-light btn" do %>
+            Consulta Censo <i class="material-icons">search</i>
+        <% end %>
+      </div>
+ <% else %>
+     <div class="input-field">
+        <i class="material-icons prefix">email</i>
+       <%=  form.email_field :user_email, id: :request_censo_address, :value => current_user.email, readonly: true %>
+    </div>
+       <div class="actions center-align">
+        <%= form.submit 'Solicitar', class: "btn waves-effect waves-light" %>
+      </div>
+
+
+
     <% end %>
-  </div>
+
 
 <% end %>

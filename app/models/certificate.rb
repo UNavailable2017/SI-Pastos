@@ -14,4 +14,10 @@ class Certificate < ApplicationRecord
     certi_last = Certificate.last
     Person.joins(:censo).where(documentPerson: certi_last.documentPerson)
   end
+
+  def self.check_censo
+      User.select("documentPerson", "firstname", "lastname", "documentPerson", "documentType").joins(:person).where("email= ? and isCensus=?",("#{User.current.email}"), "t")   
+  end
+
+
 end

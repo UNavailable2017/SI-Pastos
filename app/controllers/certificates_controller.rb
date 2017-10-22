@@ -11,7 +11,12 @@ class CertificatesController < ApplicationController
   # GET /certificates/1
   # GET /certificates/1.json
   def show
-    @dat = Certificate.data_person
+     if  current_user.try(:admin?)
+         @dat = Certificate.data_person
+
+    else        
+        @dat = Certificate.check_censo
+    end
     respond_to do |format|
       format.html
       format.json { render json: @certificates }
@@ -75,7 +80,7 @@ class CertificatesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def certificate_params
-    params.require(:certificate).permit(:documentPerson)
+    params.require(:certificate).permit(:documentPerson, :email)
   end
 
 end
