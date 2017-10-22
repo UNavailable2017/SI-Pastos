@@ -13,8 +13,8 @@ class CertificatesController < ApplicationController
   def show
      if  current_user.try(:admin?)
          @dat = Certificate.data_person
-
-    else        
+        
+    else
         @dat = Certificate.check_censo
     end
     respond_to do |format|

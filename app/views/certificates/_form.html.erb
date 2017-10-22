@@ -25,13 +25,11 @@
  <% else %>
      <div class="input-field">
         <i class="material-icons prefix">email</i>
-       <%=  form.email_field :user_email, id: :request_censo_address, :value => current_user.email, readonly: true %>
+       <%=  form.email_field :email, id: :certificate_email, :value => current_user.email, readonly: true %>
     </div>
        <div class="actions center-align">
         <%= form.submit 'Solicitar', class: "btn waves-effect waves-light" %>
       </div>
-
-
 
     <% end %>
 
