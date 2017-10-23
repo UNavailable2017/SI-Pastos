@@ -1,10 +1,12 @@
 <section class="container">
   <div class="row">
     <h3 class="center-align">Editar Evento</h3>
-    <article class="col s8 offset-s2">
-      <%= render 'form', event: @event %>
-      <div class="right-align">
-        <%= link_to 'Ver', @event, class:"btn waves-effect waves-light" %>
+    <article class="col s8 offset-s2 z-depth-5">
+      <div class="card-form">
+        <%= render 'form', event: @event %>
+        <div class="right-align">
+          <%= link_to 'Ver', @event, class:"btn waves-effect waves-light" %>
+        </div>
       </div>
     </article>
   </div>
