@@ -29,4 +29,8 @@ class Person < ApplicationRecord
     Person.pluck(:birthDate)
   end
 
+  def self.id_user
+    Person.joins(:user).where(:user_id)
+  end
+  
 end
