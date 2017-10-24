@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery-ui/widgets/autocomplete
+//= require autocomplete-rails
 //= require materialize-sprockets
 //= require underscore
 //= require Chart.bundle

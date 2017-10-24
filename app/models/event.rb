@@ -16,4 +16,8 @@ class Event < ApplicationRecord
   belongs_to :person
   mount_uploader :image, ImageUploader
   validates :name, :date, :eventType, :eventInfo, presence: true
+
+  
+
+
 end

@@ -36,6 +36,11 @@ Rails.application.routes.draw do
     get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
   end
 
+  resources :events do
+    get :autocomplete_event_name, on: :collection
+  end
+
+
   get 'statistics/total'
   get 'statistics/average'
   get 'statistics/children'

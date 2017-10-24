@@ -50,6 +50,9 @@ gem 'groupdate'
 gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem 'mini_magick'
+# search engine
+gem 'jquery-ui-rails'
+gem 'rails-jquery-autocomplete'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

@@ -1,7 +1,26 @@
 <div class="container">
   <h2 class="center-align">Eventos de la comunidad</h2>
+  <div class="nav-wrapper">
+
+    <%= form_tag(events_path, method: 'get', id: "search-form") do %>
+      <div class="row">
+        <div class="col s10">
+          <%= text_field_tag :search,
+              params[:search],
+              class: "search-query",
+              type: "search",
+              data: { autocomplete: autocomplete_event_name_events_path } 
+          %>
+        </div>
+        <div class="actions s2">
+          <%= submit_tag "Buscar", class: 'btn col s2' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="divider"></div>
+
 
 <div class="row">
   <div class="container">
