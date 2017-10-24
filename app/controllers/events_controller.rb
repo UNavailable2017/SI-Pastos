@@ -2,20 +2,11 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
-  autocomplete :event, :name
 
   # GET /events
   # GET /events.json
   def index
-    # @events = Event.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
-    @events = Event.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
-
-    if params[:search]
-      @events = Event
-                .paginate(page: params[:page])
-                .where('name LIKE ?', "%#{params[:search]}%")
-                .order(sort_column + ' ' + sort_direction)
-    end
+    @events = Event.paginate_all(params[:page], params[:search]).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /events/1

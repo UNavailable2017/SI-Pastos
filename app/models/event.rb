@@ -17,7 +17,12 @@ class Event < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :name, :date, :eventType, :eventInfo, presence: true
 
-  
-
+  def self.paginate_all(page, field)
+    if field
+      Event.paginate(page: page).where('name LIKE ?', "%#{field}%")
+    else
+      Event.paginate(page: page)
+    end
+  end
 
 end
