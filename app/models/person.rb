@@ -32,5 +32,19 @@ class Person < ApplicationRecord
   def self.id_user
     Person.joins(:user).where(:user_id)
   end
-  
+
+  def self.check_user_request
+      User.find_by user_id: ("#{User.current.uid}")
+  end
+
+  def self.check_id
+      get_iden = User.find_by user_id: ("#{User.current.uid}")
+      Person.joins(:user).where(user_id: get_iden.num_id)
+  end
+
+  # def self.check_data_two
+  #     get_document = RequestCenso.last
+  #     Person.joins(:censo).where(documentPerson: get_document.num_document)
+  # end
+
 end
