@@ -1,0 +1,47 @@
+<div class="container">
+  <h2 class="center-align">Correos Masivos</h2>
+</div>
+<div class="divider"></div>
+
+<div class="row">
+  <div class="container">
+    <% if current_user.try(:admin?) %>
+      <div class="col m12">
+        <h5 class="center-align">
+            <%= link_to 'Nuevo Correo', new_newsletter_path, class: "btn waves-effect waves-light"%>
+        </h5>
+      </div>
+    <% end %>
+
+    <div class="col m12">
+
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Asunto</th>
+            <th>Contenido</th>
+            <th>Usuario</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @newsletters.each do |newsletter| %>
+            <tr>
+              <td><%= newsletter.subject %></td>
+              <td><%= newsletter.content %></td>
+              <td><%= newsletter.user_id %></td>
+              <td><%= link_to (fa_icon "eye"), newsletter %></td>
+              <td><%= link_to (fa_icon "pencil"), edit_newsletter_path(newsletter) %></td>
+              <td><%= link_to (fa_icon "times"), newsletter, method: :delete, data: { confirm: '¿Esta seguro de eliminar el mensaje?' } %></td>
+              <td><%= link_to (fa_icon "telegram"), deliver_newsletter_path(newsletter), data: {confirm: '¿Quiere enviar el mensaje?'}, method:  :post %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

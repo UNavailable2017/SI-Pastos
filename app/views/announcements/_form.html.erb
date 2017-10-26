@@ -14,7 +14,7 @@
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :publicationDate, "Fecha de publicacion" %>
+    <%= form.label :publicationDate, "Fecha de publicacion", class: 'active' %>
     <%= form.text_field :publicationDate, id: :announcement_publicationDate, class: "datepicker" %>
   </div>
 
@@ -26,13 +26,13 @@
 
   <div class="input-field">
     <i class="material-icons prefix">info</i>
-    <%= form.label :announcementType, "Tipo de Anuncio" %>
+    <%= form.label :announcementType, "Tipo de Anuncio", class: 'active' %>
     <%= form.text_area :announcementType, id: :announcement_announcementType, class: "materialize-textarea" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">event</i>
-    <%= form.label :announcementInformation, "Tipo de informacion" %>
+    <%= form.label :announcementInformation, "Tipo de informacion", class: 'active' %>
     <%= form.text_area :announcementInformation, id: :announcement_announcementInformation, class: "materialize-textarea" %>
   </div>
 

@@ -1,0 +1,35 @@
+<%= form_with(model: newsletter, local: true) do |form| %>
+  <% if newsletter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(newsletter.errors.count, "error") %> prohibited this newsletter from being saved:</h2>
+
+      <ul>
+      <% newsletter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+    <i class="material-icons prefix">title</i>
+    <%= form.label :subject, "Asunto", class: 'active' %>
+    <%= form.text_field :subject, id: :newsletter_subject %>
+  </div>
+
+  <div class="input-field">
+    <i class="material-icons prefix">mail</i>
+    <%= form.label :content, "Mensaje", class: 'active'%>
+    <%= form.text_field :content, id: :newsletter_content %>
+  </div>
+
+  <div class="field" style="display:none">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :newsletter_user_id, value: 1 %>
+  </div>
+
+  <div class="actions center-align">
+      <%= link_to 'Atrás', newsletters_path, class:"btn waves-effect waves-light" %>
+      <%= form.submit 'Crear Correo', class: "btn waves-effect waves-light" %>
+  </div>
+<% end %>

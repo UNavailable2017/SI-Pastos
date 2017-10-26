@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+      <div class="col s10">
+        <p class="center-align">
+          <h5>Asunto</h5>
+          <%= @newsletter.subject %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s10">
+        <p class="center-align">
+          <h5>Mensaje </h5>
+          <%= @newsletter.content %>
+        </p>
+      </div>
+    </div>
+</div>
+
+<div class="col s10">
+  <div class="center-align">
+    <%= link_to 'Atras', newsletters_path, class:"btn waves-effect waves-light" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'Editar', edit_newsletter_path(@newsletter), class:"btn waves-effect waves-light" %>
+    <% end %>
+  </div>
+</div>
