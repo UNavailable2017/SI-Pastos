@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171022140722) do
-=======
 ActiveRecord::Schema.define(version: 20171019214341) do
->>>>>>> correos_masivos
 
   create_table "announcements", force: :cascade do |t|
     t.date "publicationDate"
