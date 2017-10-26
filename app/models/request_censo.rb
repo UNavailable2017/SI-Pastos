@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: request_censos
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  lastname     :string
+#  num_document :integer
+#  phone        :integer
+#  address      :string
+#  user_email   :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class RequestCenso < ApplicationRecord
     validates :name, :lastname, :num_document, :phone, :address, presence: true
 
