@@ -25,6 +25,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
+  acts_as_voter
   has_one :person
   has_many :newsletters
   devise :database_authenticatable, :registerable,

@@ -1,15 +1,16 @@
 class ElectionsController < ApplicationController
-  before_action :set_election, only: [:show, :edit, :update, :destroy]
+  before_action :set_election, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /elections
   # GET /elections.json
   def index
-    @elections = Election.paginate(page: params[:page])
+    @elections = Election.all
   end
 
   # GET /elections/1
   # GET /elections/1.json
   def show
+     @get_data_candidates = Candidate.get_data    
   end
 
   # GET /elections/new
@@ -59,6 +60,16 @@ class ElectionsController < ApplicationController
       format.html { redirect_to elections_url, notice: 'Election was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+      @election.upvote_from current_user
+      redirect_to election_path
+  end
+
+  def downvote
+      @election.upvote_from current_user
+      redirect_to election_path
   end
 
   private

@@ -85,17 +85,17 @@ end
 puts 'finished loading contact data'
 
 
-100.times do
-  Election.create(date: Faker::Date.forward(900),
-                  winner: Faker::Lorem.characters(8),
+3.times do
+  Election.create(date: Faker::Date.backward(900),
+                  winner: Faker::Name.name,
                   candidate_id:Faker::Number.unique.between(1, 100))
 end
 Faker::UniqueGenerator.clear
 puts 'finished loading election data'
 
-100.times do
+9.times do
   a = Candidate.new
-  a.votes = Faker::Number.number(2)
+  a.votes = Faker::Number.number(100)
   a.person_id = Faker::Number.unique.between(1, 100)
   Faker::UniqueGenerator.clear
   a.election_id = Faker::Number.unique.between(1, 100)

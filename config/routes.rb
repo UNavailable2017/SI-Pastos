@@ -20,7 +20,13 @@ Rails.application.routes.draw do
   resources :announcements
   resources :events
   resources :residences, only: [:index]
-  resources :elections
+  resources :candidates
+  resources :elections do
+      member do
+          put "like" => "elections#upvote"
+          put "unlike" => "elections#downvote"
+      end
+  end
   resources :request_censos
   resources :contacts, only: [:new, :index, :create]
 
@@ -41,7 +47,7 @@ Rails.application.routes.draw do
       post :deliver
     end
   end
-  
+
   get 'newsletters/deliver'
   get 'statistics/total'
   get 'statistics/average'

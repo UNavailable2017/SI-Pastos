@@ -1,24 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Idelection:</strong>
-  <%= @election.idElection %>
-</p>
+  <div class="row">
+    <div class="col s12">
+      <h2 class="header center-align">Eleccion</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card horizontal z-depth-5">
+      <div class="card-form">
 
-<p>
-  <strong>Date:</strong>
-  <%= @election.date %>
-</p>
+          <div class="card-stacked col s4 m4 l4">
+          <div class="card-content">
+            <p><strong>Fecha finalizacion:</strong> <%= @election.date %></p>
+            <p><strong>Ganador:</strong> <%= @election.winner %></p>
+            <p><strong>id candidato:</strong> <%= @election.candidate_id %></p>
+          </div>
+          <div class="card-action">
+            <div class="center-align">
+              <%= link_to 'Atras', elections_path , class:"btn waves-effect waves-light" %>
+              <% if current_user.try(:admin?) %>
+                <%= link_to 'Editar',  edit_election_path(@election) , class:"btn waves-effect waves-light" %>
+                <%= link_to 'Agregar candidatos',new_candidate_path , class:"btn waves-effect waves-light" %>
+              <% end %>
+            </div>
+          </div>
+         </div>
 
-<p>
-  <strong>Winner:</strong>
-  <%= @election.winner %>
-</p>
+         <%if @get_data_candidates.empty? %>
 
-<p>
-  <strong>Candidate:</strong>
-  <%= @election.candidate_id %>
-</p>
+             <div class="card-stacked col s2.5 m2.5 l2.5">
+                 <div class="card-content">                
+                 </div>
+             </div>
 
-<%= link_to 'Edit', edit_election_path(@election) %> |
-<%= link_to 'Back', elections_path %>
+             <div class="card-stacked col s2.5 m2.5 l2.5">
+                 <div class="card-content">
+                 </div>
+             </div>
+             <div class="card-stacked col s3 m3 l3">
+                 <div class="card-content">
+                 </div>
+             </div>
+           </div>
+       </div>
+     </div><!-- .row -->
+    </div>  <!-- .container -->
+
+    <%else%>
+          <div class="card-stacked col s2.5 m2.5 l2.5">
+              <div class="card-content">
+                  <p><strong>Nombre:</strong> <%=@get_data_candidates[0].firstname%></p>
+                  <p><strong>Apellido:</strong> <%=@get_data_candidates[0].lastname%></p>
+              </div>
+          </div>
+
+          <div class="card-stacked col s2.5 m2.5 l2.5">
+              <div class="card-content">
+                  <p><strong>Nombre:</strong> <%=@get_data_candidates[1].firstname%></p>
+                  <p><strong>Apellido:</strong> <%=@get_data_candidates[1].lastname%></p>
+              </div>
+          </div>
+          <div class="card-stacked col s3 m3 l3">
+              <div class="card-content">
+                  <p><strong>Nombre:</strong> <%=@get_data_candidates[2].firstname%></p>
+                  <p><strong>Apellido:</strong> <%=@get_data_candidates[2].lastname%></p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div><!-- .row -->
+</div>  <!-- .container -->
+<%end%>
