@@ -41,7 +41,7 @@ Rails.application.routes.draw do
       post :deliver
     end
   end
-  
+
   get 'newsletters/deliver'
   get 'statistics/total'
   get 'statistics/average'

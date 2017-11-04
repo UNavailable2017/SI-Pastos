@@ -20,4 +20,19 @@ class Censo < ApplicationRecord
   has_many :children
   belongs_to :health_service
 
+  def self.check_user
+    us_id = User.find_by email: ("#{User.current.id}")
+  end
+
+  def self.check_data
+      get_usid = User.find_by id: ("#{User.current.id}")
+      #Person.select("\"documentPerson\"").joins(:censo).where(documentPerson: get_document.num_document)
+      Person.joins(:censo).select(:id,:documentPerson,:user_id).where("\"isCensus\"=? and \"documentPerson\" =?", "t", "38425")
+
+  end
+  
 end
+
+
+#Censo.joins(:person).where("People.documentPerson": "51073")
+#

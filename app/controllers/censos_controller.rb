@@ -10,6 +10,11 @@ class CensosController < ApplicationController
   # GET /censos/1
   # GET /censos/1.json
   def show
+    if  current_user.try(:admin?)
+      @dat = Censo.check_user
+    else
+      @dat = Censo.check_data 
+    end
   end
 
   # GET /censos/new
