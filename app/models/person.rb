@@ -29,4 +29,10 @@ class Person < ApplicationRecord
     Person.pluck(:birthDate)
   end
 
+  def self.check_user
+    get_user = User.select(:name, :id).find_by id: ("#{User.current.id}")
+    Person.joins(:censo).where(user_id: get_user)
+  end
+
+
 end
