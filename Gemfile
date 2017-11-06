@@ -52,9 +52,7 @@ gem 'fog-aws'
 gem 'mini_magick'
 # quill for masive emails
 gem 'quilljs-rails'
-# sidekiq for job
-gem 'sidekiq'
-gem 'whenever', require: false
+
 
 
 # Use Puma as the app server

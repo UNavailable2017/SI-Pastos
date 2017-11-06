@@ -1,6 +1,6 @@
 # events_controller
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy], except: [:remove_olds]
   helper_method :sort_column, :sort_direction
 
   # GET /events
@@ -62,6 +62,11 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'El evento fue eliminado exitosamente.' }
       format.json { head :no_content }
     end
+  end
+
+  def remove_olds
+    DatesCleanerJob.perform_later
+    redirect_to events_path
   end
 
   private

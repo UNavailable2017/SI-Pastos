@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :people
   resources :certificates
   resources :announcements
+
+  # routes for events
+  delete '/events/remove_olds', to: 'events#remove_olds'
   resources :events
+
   resources :elections
   resources :request_censos
   resources :contacts, only: %i[new index create]
