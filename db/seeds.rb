@@ -143,8 +143,8 @@ Faker::UniqueGenerator.clear
                    phone: Faker::PhoneNumber.cell_phone,
                    neighborhood: Faker::Address.community,
                    locality: Faker::Company.suffix,
-                   latitude: Faker::Address.latitude(),
-                   longitude: Faker::Address.longitude(),
+                   latitude: Faker::Number.between(3.0, 6.0),
+                   longitude: Faker::Number.negative(-73.0, -76.0),
                    person_id: Faker::Number.unique.between(1, 100))
 end
 puts 'finished loading residence data'

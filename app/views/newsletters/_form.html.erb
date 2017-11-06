@@ -17,10 +17,11 @@
     <%= form.text_field :subject, id: :newsletter_subject %>
   </div>
 
-  <div class="input-field">
-    <i class="material-icons prefix">mail</i>
+  <div>
     <%= form.label :content, "Mensaje", class: 'active'%>
-    <%= form.text_field :content, id: :newsletter_content %>
+    <div style="height:30em">
+      <%= form.text_area :content, id: :newsletter_content, class: 'quill_container' %>
+    </div>
   </div>
 
   <div class="field" style="display:none">
@@ -28,6 +29,7 @@
     <%= form.number_field :user_id, id: :newsletter_user_id, value: 1 %>
   </div>
 
+  <br /> <br />
   <div class="actions center-align">
       <%= link_to 'Atrás', newsletters_path, class:"btn waves-effect waves-light" %>
       <%= form.submit 'Crear Correo', class: "btn waves-effect waves-light" %>

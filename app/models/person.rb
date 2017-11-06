@@ -5,7 +5,7 @@
 #  id                 :integer          not null, primary key
 #  documentPerson     :integer
 #  documentType       :string
-#  name               :string
+#  firstname          :string
 #  lastname           :string
 #  birthDate          :date
 #  civilStatus        :string
@@ -17,6 +17,7 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
+
 class Person < ApplicationRecord
   has_one :residence
   belongs_to :user

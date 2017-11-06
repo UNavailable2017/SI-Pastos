@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  name       :string
 #  date       :date
+#  image      :string
 #  eventType  :string
 #  eventInfo  :string
 #  person_id  :integer

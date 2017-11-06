@@ -23,14 +23,14 @@ class Statistic < ApplicationRecord
 
   def self.importante_statistics
     statistics = {}
-    statistics['¿Cantidad de personas censadas?'] = Censo.all.size
-    statistics['¿Cantidad de personas registradas en la plataforma?'] = User.all.size
-    statistics['¿Cantidad de certificados emitidos?'] = Certificate.all.size
-    statistics['¿Cantidad de correos enviados?'] = Contact.all.size
-    statistics['¿Cantidad de eventos realizados?'] = Event.all.size
-    statistics['¿Cantidad de empleos publicados?'] = Announcement.all.size
-    statistics['¿Cantidad de elecciones hechas?'] = Election.all.size
-    statistics['¿Cantidad de de Centros de salud?'] = HealthService.all.size
+    statistics['¿Cantidad de personas censadas?'] = Censo.count
+    statistics['¿Cantidad de personas registradas en la plataforma?'] = User.count
+    statistics['¿Cantidad de certificados emitidos?'] = Certificate.count
+    statistics['¿Cantidad de correos enviados?'] = Contact.count
+    statistics['¿Cantidad de eventos realizados?'] = Event.count
+    statistics['¿Cantidad de empleos publicados?'] = Announcement.count
+    statistics['¿Cantidad de elecciones hechas?'] = Election.count
+    statistics['¿Cantidad de de Centros de salud?'] = HealthService.count
     statistics['¿Edad promedio de los usuarios censados?'] = Statistic.average_age
     return statistics
   end

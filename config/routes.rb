@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # app routes
 
   # rest
   resources :censos

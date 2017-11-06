@@ -15,7 +15,8 @@
 //= require jquery.turbolinks
 //= require materialize-sprockets
 //= require underscore
-//= require Chart.bundle
 //= require chartkick
 //= require gmaps/google
+//= require quill.min
+//= require quill.global
 //= require_tree .

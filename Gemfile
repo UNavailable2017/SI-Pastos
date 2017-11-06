@@ -26,7 +26,7 @@ gem 'font-awesome-rails'
 gem 'material_icons'
 # paginate
 gem 'will_paginate'
-# variablem enviroment entorn
+# variables enviroment entorn
 gem 'figaro'
 # for statistics
 gem 'chartkick'
@@ -50,6 +50,8 @@ gem 'groupdate'
 gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem 'mini_magick'
+# quill for masive emails
+gem 'quilljs-rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
