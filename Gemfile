@@ -54,6 +54,8 @@ gem 'mini_magick'
 gem 'quilljs-rails'
 # sidekiq for job
 gem 'sidekiq'
+gem 'whenever', require: false
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -92,7 +94,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'whenever', :require => false
 end
 
 group :development do

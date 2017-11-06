@@ -1,5 +1,3 @@
-// *= require quill.snow
-
 // libraries
 @import 'materialize/components/color';
 $primary-color: color('blue', 'darken-3') !default;
@@ -7,6 +5,7 @@ $secondary-color: color("indigo", 'darken-3') !default;
 @import 'materialize';
 @import 'font-awesome';
 @import 'material_icons';
+@import 'quill.snow';
 
 // css
 @import './*';
