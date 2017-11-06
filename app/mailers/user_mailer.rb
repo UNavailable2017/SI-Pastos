@@ -1,6 +1,6 @@
 # user_mailer
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: ENV['email_platform']
 
   def contact_email(user)
     @user = user

@@ -17,12 +17,10 @@
     <%= form.text_field :subject, id: :newsletter_subject %>
   </div>
 
-  <div>
-    <%= form.label :content, "Mensaje", class: 'active'%>
-    <div style="height:30em">
+  <div style="height:30em">
       <%= form.text_area :content, id: :newsletter_content, class: 'quill_container' %>
-    </div>
   </div>
+
 
   <div class="field" style="display:none">
     <%= form.label :user_id %>

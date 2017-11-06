@@ -19,8 +19,8 @@ class NewslettersController < ApplicationController
   end
 
   def deliver
-     @newsletter = Newsletter.find params[:id]
-     UserMailer.newsletter(@newsletter).deliver
+     @newsletter = Newsletter.find(params[:id])
+     UserMailer.newsletter(@newsletter).deliver_now
      flash[:notice] = "El correo se esta entregando actualmente"
      redirect_to newsletters_url
   end
