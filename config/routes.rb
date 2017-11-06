@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :censos
   resources :people
   resources :certificates
+
+  # routes for announcements
+  delete '/announcements/remove_olds', to: 'announcements#remove_olds'
   resources :announcements
 
   # routes for events

@@ -62,26 +62,32 @@ class AnnouncementsController < ApplicationController
     end
   end
 
+  def remove_olds
+    AnnouncementCleanerJob.perform_later
+    redirect_to announcements_path
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_announcement
-      @announcement = Announcement.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_announcement
+    @announcement = Announcement.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def announcement_params
-      params.require(:announcement).permit(:idAnnouncement, :publicationDate, :deadline, :announcementType, :announcementInformation, :person_id)
-    end
-    def sortable_columns
-        ['deadline', "\"publicationDate\"", "\"announcementType\"", "\"announcementInformation\""]
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def announcement_params
+    params.require(:announcement).permit(:idAnnouncement, :publicationDate, :deadline, :announcementType, :announcementInformation, :person_id)
+  end
+  
+  def sortable_columns
+    ['deadline', "\"publicationDate\"", "\"announcementType\"", "\"announcementInformation\""]
+  end
 
-    def sort_column
-      sortable_columns.include?(params[:sort]) ? params[:sort] : "\"publicationDate\""
-    end
+  def sort_column
+    sortable_columns.include?(params[:sort]) ? params[:sort] : "\"publicationDate\""
+  end
 
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
-    end
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'desc'
+  end
 
 end
