@@ -1,10 +1,10 @@
-
-
-    <p>
-    <h3> <%= @newsletter.subject %> <br></h3>
-    </p>
-
-    <p>
-       <%= @newsletter.content %> <br>
-    </p>
-     
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3><%= @newsletter.subject %></h3>
+    <%= raw @newsletter.content %>
+  </body>
+</html>

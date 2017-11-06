@@ -5,7 +5,6 @@ class NewslettersController < ApplicationController
   # GET /newsletters.json
   def index
     @newsletters = Newsletter.all
-    @correos = User.all
   end
 
   # GET /newsletters/1
@@ -19,10 +18,10 @@ class NewslettersController < ApplicationController
   end
 
   def deliver
-     @newsletter = Newsletter.find(params[:id])
-     UserMailer.newsletter(@newsletter).deliver_now
-     flash[:notice] = "El correo se esta entregando actualmente"
-     redirect_to newsletters_url
+    @newsletter = Newsletter.find(params[:id])
+    # the next line is executed asynchronously
+    UserMailer.newsletter(@newsletter).deliver_later
+    redirect_to newsletters_path
   end
 
   # GET /newsletters/1/edit

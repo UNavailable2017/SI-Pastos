@@ -9,8 +9,7 @@ class UserMailer < ApplicationMailer
 
   def newsletter(newsletter)
     @newsletter = newsletter
-    @users = User.limit(100).offset(30)
-    emails = @users.collect(&:email).join(', ')
+    emails = User.pluck(:email).join(' ,')
     mail(to: emails, subject: @newsletter.subject)
   end
 
