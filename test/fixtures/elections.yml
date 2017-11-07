@@ -13,13 +13,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  idElection: 1
   date: 2017-09-20
   winner: MyString
   candidate_id: 1
 
 two:
-  idElection: 1
   date: 2017-09-20
   winner: MyString
   candidate_id: 1

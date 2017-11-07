@@ -17,14 +17,12 @@
 
 one:
   name: MyString
-  type_document: MyString
   num_document: 1
   phone: 1
   address: MyString
 
 two:
   name: MyString
-  type_document: MyString
   num_document: 1
   phone: 1
   address: MyString

@@ -15,13 +15,6 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create person" do
-    assert_difference('Person.count') do
-      post people_url, params: { person: { birthDate: @person.birthDate, civilStatus: @person.civilStatus, documentPerson: @person.documentPerson, documentType: @person.documentType, gender: @person.gender, isCensus: @person.isCensus, languageDomination: @person.languageDomination, lastname: @person.lastname, name: @person.name, originLanguage: @person.originLanguage, user_id: @person.user_id } }
-    end
-
-    assert_redirected_to person_url(Person.last)
-  end
 
   test "should show person" do
     get person_url(@person)
@@ -33,10 +26,6 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update person" do
-    patch person_url(@person), params: { person: { birthDate: @person.birthDate, civilStatus: @person.civilStatus, documentPerson: @person.documentPerson, documentType: @person.documentType, gender: @person.gender, isCensus: @person.isCensus, languageDomination: @person.languageDomination, lastname: @person.lastname, name: @person.name, originLanguage: @person.originLanguage, user_id: @person.user_id } }
-    assert_redirected_to person_url(@person)
-  end
 
   test "should destroy person" do
     assert_difference('Person.count', -1) do

@@ -15,7 +15,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  idAnnouncement: 1
   publicationDate: 2017-09-21
   deadline: 2017-09-21
   announcementType: MyText
@@ -23,7 +22,6 @@ one:
   person_id: 1
 
 two:
-  idAnnouncement: 1
   publicationDate: 2017-09-21
   deadline: 2017-09-21
   announcementType: MyText
