@@ -1,0 +1,77 @@
+<% if user_signed_in? %>
+    <% unless  @check_vote == nil%>
+        <section class="container">
+          <div class="row card-form">
+            <article class="col s8 offset-s2 z-depth-5">
+              <div class="card-form">
+                  <h4 class="center-align"> Agradecemos su participación en las elecciones para gobernador</h4>
+              </div>
+              <div class="center-align">
+                  <%= link_to 'Ir al inicio', root_path %>
+              </div>
+
+            </article>
+        </section>
+
+    <% else %>
+        <%if @candidates==nil%>
+        <div class="container">
+          <div class="row">
+            <div class="col m12">
+              <h5 class="header center-align"> En el momento no hay votaciones en curso para gobernador</h5>
+            </div>
+          </div>
+
+        <%else%>
+        <div class="container">
+          <div class="row">
+            <div class="col m12">
+              <h3 class="header center-align">Votación Gobernador </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card horizontal z-depth-5">
+              <div class="card-form">
+                 <%option = 0%>
+                <% @candidates.each do |candidate| %>
+                <div class="card-stacked col s3 m3 l3">
+                  <div class="card-content">
+                      <%option +=1%>
+                      <h5 class="header center-align"><strong><%=option%> opción </strong> </h5>
+                      <br>
+                    <div class="card horizontal z-depth-10">
+                       <img src="" alt="img">
+                    </div>
+
+                    <p><strong>Nombre</strong> <%= candidate.firstname %></p>
+                    <p><strong>Apellido</strong> <%= candidate.lastname %></p>
+                    <!-- <p><strong>votos</strong> <%= candidate.votes %></p> -->
+                  </div>
+                 </div>
+                 <% end %>
+                 <div class="card-stacked col s3 m3 l3">
+                   <div class="card-content">
+                       <h5 class="header center-align"><strong>4 opción </strong> </h5>
+                       <br>
+                       <br>
+                      <h6 class="header center-align">Voto en blanco </h6>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+             </div><!-- .row -->
+
+        </div>  <!-- .container -->
+        <%end%>
+
+        <section class="container">
+          <div class="row">
+            <article class="col s6 offset-s3">
+              <div class="card-form">
+                <%= render 'form', vote: @vote %>
+              </div>
+            </article>
+          </div>
+        </section>
+<%end%>
+<%end%>

@@ -14,11 +14,11 @@
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :date, "Fecha", class: 'active' %>
+    <%= form.label :date, "Fecha de inicio", class: 'active' %>
     <%= form.text_field :date, id: :election_date, class: "datepicker" %>
   </div>
 
-  <div class="input-field">
+  <!-- <div class="input-field">
     <i class="material-icons prefix">stars</i>
     <%= form.label :winner, "Ganador", class: 'active' %>
     <%= form.text_field :winner, id: :election_winner %>
@@ -28,12 +28,12 @@
       <i class="material-icons prefix">picture_in_picture</i>
      <%= form.label :candidate_id, "id del candidato", class: 'active' %>
     <%= form.text_field :candidate_id, id: :election_candidate_id %>
-  </div>
+  </div> -->
 
 
   <div class="actions center-align">
-      <%= link_to 'Atrás', elections_path, class:"btn waves-effect waves-light" %>
-      <%= form.submit (current_page?(new_election_path) ? 'Crear' : 'Editar') + ' Eleccion',
+      <%= link_to 'Atrás', :back, class:"btn waves-effect waves-light" %>
+      <%= form.submit (current_page?(new_election_path) ? 'Crear' : 'Editar') + ' Fecha',
       class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

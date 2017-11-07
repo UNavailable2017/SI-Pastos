@@ -51,7 +51,6 @@ gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem 'mini_magick'
 
-gem 'acts_as_votable'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

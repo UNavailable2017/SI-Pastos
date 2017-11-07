@@ -1,6 +1,6 @@
 
 <% if user_signed_in? %>
-    <% unless  @check_data == nil%>
+    <% if  @check_data == nil%>
         <section class="container">
           <div class="row card-form">
             <article class="col s8 offset-s2 z-depth-5">

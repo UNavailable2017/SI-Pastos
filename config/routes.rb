@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :votes
   # get 'gobernador/inicio', to: 'governor#home'
   # get 'gobernador/registrar_censo', to: 'governor#register_censo'
   # get 'gobernador/buscar_censo', to: 'governor#find_censo'
@@ -20,13 +21,13 @@ Rails.application.routes.draw do
   resources :announcements
   resources :events
   resources :residences, only: [:index]
-  resources :candidates
-  resources :elections do
+  resources :candidates  do
       member do
           put "like" => "elections#upvote"
           put "unlike" => "elections#downvote"
       end
   end
+  resources :elections
   resources :request_censos
   resources :contacts, only: [:new, :index, :create]
 

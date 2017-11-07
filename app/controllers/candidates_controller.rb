@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
    def index
-    @candidates = Candidate.all
+    @candidates = Candidate.get_data
   end
 
   # GET /candidates/1
@@ -61,6 +61,11 @@ class CandidatesController < ApplicationController
       format.html { redirect_to candidates_url, notice: 'Candidate was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+      @candid.upvote_from current_user
+      redirect_to :back
   end
 
   private

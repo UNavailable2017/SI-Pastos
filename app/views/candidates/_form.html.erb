@@ -15,7 +15,7 @@
       <div class="input-field">
         <i class="material-icons prefix">equalizer</i>
         <%= form.label :votes, "Votos", class: 'active' %>
-        <%= form.number_field :votes, id: :candidate_votes %>
+        <%= form.number_field :votes, id: :candidate_votes, :value =>  0, readonly: true  %>
       </div>
 
       <div class="input-field">

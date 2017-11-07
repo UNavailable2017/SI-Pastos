@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="center-align">Elecciones</h2>
+  <h2 class="center-align">Elecciones para gobernador</h2>
 </div>
 <div class="divider"></div>
 
@@ -12,38 +12,36 @@
             <%= link_to 'Nueva Eleccion', new_election_path, class: "btn waves-effect waves-light" %>
         </h5>
       </div>
-    <% end %>
+            <div class="col m12">
 
-    <div class="col m12">
+              <table class="striped">
+                <thead>
+                  <tr>
+                      <th>Fecha</th>
+                      <th>Ganador</th>
+                      <th>id del candidato</th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
 
-      <table class="striped">
-        <thead>
-          <tr>
-              <th>Fecha</th>
-              <th>Ganador</th>
-              <th>id del candidato</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
+                <tbody>
+                    <% @elections.each do |election| %>
+                    <tr>
+                        <td><%= election.date %></td>
+                        <td><%= election.winner %></td>
+                        <td><%= election.candidate_id %></td>
+                      <td><%= link_to (fa_icon "eye"), election %></td>
 
-        <tbody>
-            <% @elections.each do |election| %>
-            <tr>
-                <td><%= election.date %></td>
-                <td><%= election.winner %></td>
-                <td><%= election.candidate_id %></td>
-              <td><%= link_to (fa_icon "eye"), election %></td>
+                      <% if current_user.try(:admin?) %>
+                        <td><%= link_to (fa_icon "pencil"), edit_election_path(election) %></td>
+                        <td><%= link_to (fa_icon "times"), election, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
 
-              <% if current_user.try(:admin?) %>
-                <td><%= link_to (fa_icon "pencil"), edit_election_path(election) %></td>
-                <td><%= link_to (fa_icon "times"), election, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
-              <% end %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-
-    </div>
+            </div>
+        <% end %>
   </div>
-
 </div>

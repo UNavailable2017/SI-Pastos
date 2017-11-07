@@ -1,5 +1,5 @@
 class ElectionsController < ApplicationController
-  before_action :set_election, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_election, only: [:show, :edit, :update, :destroy   ]
 
   # GET /elections
   # GET /elections.json
@@ -10,7 +10,7 @@ class ElectionsController < ApplicationController
   # GET /elections/1
   # GET /elections/1.json
   def show
-     @get_data_candidates = Candidate.get_data    
+     @get_data_candidates = Candidate.get_data
   end
 
   # GET /elections/new
@@ -62,15 +62,6 @@ class ElectionsController < ApplicationController
     end
   end
 
-  def upvote
-      @election.upvote_from current_user
-      redirect_to election_path
-  end
-
-  def downvote
-      @election.upvote_from current_user
-      redirect_to election_path
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
