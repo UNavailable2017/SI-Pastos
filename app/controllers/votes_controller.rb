@@ -17,7 +17,7 @@ class VotesController < ApplicationController
   def new
     @candidates = Candidate.get_data
     @check_vote = Vote.check_vote
-    @vote = Vote.new
+    @vote = Vote.new    
   end
 
   # GET /votes/1/edit

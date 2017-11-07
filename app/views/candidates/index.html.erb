@@ -1,61 +1,51 @@
-<%if @candidates==nil%>
-
-<div class="container">
-  <div class="row">
-    <div class="col m12">
-      <h5 class="header center-align"> En el momento no hay votaciones en curso para gobernador</h5>
-    </div>
-  </div>
-
-<%else%>
-<div class="container">
-  <div class="row">
-    <div class="col m12">
-      <h3 class="header center-align">Votación Gobernador </h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="card horizontal z-depth-5">
-      <div class="card-form">
-
-        <% @candidates.each do |candidate| %>
-        <div class="card-stacked col s3.5 m3.5 l3.5">
-          <div class="card-content">
-            <div class="card horizontal z-depth-10">
-               <img src="" alt="img">
-            </div>
-            <p><strong>Nombre</strong> <%= candidate.firstname %></p>
-            <p><strong>Apellido</strong> <%= candidate.lastname %></p>
-            <% if current_user.try(:admin?) %>
-                <p><strong>Voto</strong> <%= candidate.votes %></p>
-            <%else%>
-                <%= link_to 'votar', elections_path, class:"btn waves-effect waves-light" %>
-            <%end%>
-
-          </div>
-         </div>
-         <% end %>
-         <div class="card-stacked col s1.5 m1.5 l1.5">
-           <div class="card-content">
-              <h5 class="header center-align">Voto en blanco </h5>
-              <% unless current_user.try(:admin?) %>
-                <%= link_to 'votar', elections_path, class:"btn waves-effect waves-light" %>
-              <%end%>
-           </div>
-          </div>
-         </div>
+<% if user_signed_in? %>
+  <% if current_user.try(:admin?) %>
+    <div class="container">
+      <div class="row">
+        <div class="col m12">
+          <h3 class="header center-align">Votación Gobernador </h3>
         </div>
-     </div><!-- .row -->
+      </div>
+      <div class="row">
+        <div class="card horizontal z-depth-5">
+          <div class="card-form col m12">
+
+            <% @candidates.each do |candidate| %>
+            <div class="card-stacked col s3 m3 l3.">
+              <div class="card-content">
+                <div class="card horizontal z-depth-10">
+                   <img src="" alt="img">
+                </div>
 
 
-          <div class="card-action">
-            <div class="center-align">
-              <%= link_to 'Atras', :back, class:"btn waves-effect waves-light" %>
-              <% if current_user.try(:admin?) %>
-                <%= link_to 'Finalizar elección', #edit_event_path(@event),
-                    class:"btn waves-effect waves-light" %>
-              <% end %>
+                <%unless candidate.firstname == "Voto" %>
+                    <p><strong>Nombre</strong> <%= candidate.firstname %></p>
+                    <p><strong>Apellido</strong> <%= candidate.lastname %></p>
+                <%else%>
+                <h5 class="header center-align">Voto en blanco </h5>
+
+
+                <%end%>
+                    <% if current_user.try(:admin?) %>
+                        <p><strong>Voto</strong> <%= candidate.votes %></p>
+                    <%else%>
+                        <%= link_to 'votar', elections_path, class:"btn waves-effect waves-light" %>
+                    <%end%>
+
+              </div>
+             </div>
+             <% end %>
+             </div>
             </div>
-          </div>
-</div>  <!-- .container -->
+         </div><!-- .row -->
+
+              <div class="card-action">
+                <div class="center-align">
+                 <%= link_to 'Atras', :back, class:"btn waves-effect waves-light" %>
+                <!-- <%= link_to 'Finalizar elección', class:"btn waves-effect waves-light" %> -->
+
+                </div>
+              </div>
+    </div>  <!-- .container -->
+    <%end%>
 <%end%>

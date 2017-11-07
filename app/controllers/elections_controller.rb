@@ -15,7 +15,7 @@ class ElectionsController < ApplicationController
 
   # GET /elections/new
   def new
-    @election = Election.new
+    @election = Election.new    
   end
 
   # GET /elections/1/edit

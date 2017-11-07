@@ -21,4 +21,5 @@ class Election < ApplicationRecord
        a=Candidate.select( "election_id").where("\"election_id\" =?",  id_elec.id)
        a.size
   end
+
 end

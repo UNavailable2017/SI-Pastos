@@ -19,8 +19,9 @@
 <% if current_user.try(:admin?) %>
       <div class="actions center-align">
         <%= button_tag type: 'submit', class: "waves-effect waves-light btn" do %>
-            Consulta Censo <i class="material-icons">search</i>
+            <h6>Buscar      <i class="material-icons">search</i> </h6>
         <% end %>
+
       </div>
  <% else %>
      <div class="input-field">

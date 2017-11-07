@@ -11,8 +11,7 @@
               </div>
 
             </article>
-        </section>
-
+            </section>
     <% else %>
         <%if @candidates==nil%>
         <div class="container">
@@ -31,32 +30,31 @@
           </div>
           <div class="row">
             <div class="card horizontal z-depth-5">
-              <div class="card-form">
+              <div class="card-form col s12 m12 l12">
                  <%option = 0%>
                 <% @candidates.each do |candidate| %>
-                <div class="card-stacked col s3 m3 l3">
-                  <div class="card-content">
-                      <%option +=1%>
-                      <h5 class="header center-align"><strong><%=option%> opción </strong> </h5>
-                      <br>
-                    <div class="card horizontal z-depth-10">
-                       <img src="" alt="img">
-                    </div>
+                    <div class="card-stacked col s3 m3 l3">
+                      <div class="card-content">
+                          <%option +=1%>
+                          <h5 class="header center-align"><strong><%=option%> opción </strong> </h5>
+                          <br>
+                        <div class="card horizontal z-depth-10">
+                           <img src="" alt="img">
+                        </div>
 
-                    <p><strong>Nombre</strong> <%= candidate.firstname %></p>
-                    <p><strong>Apellido</strong> <%= candidate.lastname %></p>
-                    <!-- <p><strong>votos</strong> <%= candidate.votes %></p> -->
-                  </div>
-                 </div>
+                        <%unless candidate.firstname == "Voto" %>
+                            <p><strong>Nombre</strong> <%= candidate.firstname %></p>
+                            <p><strong>Apellido</strong> <%= candidate.lastname %></p>
+                            <!-- <p><strong>votos</strong> <%= candidate.votes %></p> -->
+                        <%else%>
+                        <h5 class="header center-align">Voto en blanco </h5>
+
+
+                        <%end%>
+                      </div>
+                     </div>
                  <% end %>
-                 <div class="card-stacked col s3 m3 l3">
-                   <div class="card-content">
-                       <h5 class="header center-align"><strong>4 opción </strong> </h5>
-                       <br>
-                       <br>
-                      <h6 class="header center-align">Voto en blanco </h6>
-                   </div>
-                  </div>
+
                  </div>
                 </div>
              </div><!-- .row -->
@@ -73,5 +71,5 @@
             </article>
           </div>
         </section>
-<%end%>
-<%end%>
+        <%end%>
+    <%end%>
