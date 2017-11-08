@@ -1,5 +1,6 @@
 <div class="container">
   <h2 class="center-align">CENSOS DE LA COMUNIDAD</h2>
+  <h6><%= User.current.id %></h6>
 </div>
 
 <div class="divider"></div>
@@ -9,11 +10,11 @@
     <div class="col s6">
       <h5 class="center-align">Buscar Persona:</h5>
 
-      <div class="input-field">
+      <!-- <div class="input-field">
         <i class="material-icons prefix">chevron_right</i>
         <%= form.label :documentPerson, "Ingrese Documento de identidad:" %>
         <%= form.number_field :documentPerson, id: :person_documentPerson %>
-      </div>
+      </div> -->
 
 
     </div>

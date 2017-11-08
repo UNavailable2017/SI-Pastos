@@ -5,53 +5,70 @@
 
 <div class="row">
   <div class="container">
-    <% if current_user.try(:admin?) %>
-      <div class="col m12">
-        <h5 class="center-align">
-            <%= link_to 'Nueva Persona', new_person_path, class: "btn waves-effect waves-light" %>
-        </h5>
-      </div>
-    <% end %>
-    <div class="col m12">
-      <table class="striped">
-        <thead>
-          <tr>
-            <th>Documento</th>
-            <th>Tipo Documento</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Cumpleaños</th>
-            <th>Estado Civil</th>
-            <th>Genero</th>
-            <th>¿Censado?</th>
-            <th>Lengua Origen</th>
-            <th>Dominio Lenguaje</th>
-            <!-- <th>User</th> -->
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @people.each do |person| %>
-            <tr>
-              <td><%= person.documentPerson %></td>
-              <td><%= person.documentType %></td>
-              <td><%= person.firstname %></td>
-              <td><%= person.lastname %></td>
-              <td><%= person.birthDate %></td>
-              <td><%= person.civilStatus %></td>
-              <td><%= person.gender %></td>
-              <td><%= person.isCensus %></td>
-              <td><%= person.originLanguage %></td>
-              <td><%= person.languageDomination %></td>
-              <!-- <td><%= person.user_id %></td> -->
-              <td><%= link_to (fa_icon "eye"), person %></td>
-              <td><%= link_to (fa_icon "pencil"), edit_person_path(person) %></td>
-              <td><%= link_to (fa_icon "times"), person, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
-            </tr>
+    <div class="row">
+      <div class="col s4">
+        <% if current_user.try(:admin?) %>
+          <%= form_tag(people_path, method: 'get') do %>
+            <div class="row">
+              <div class="col s7">
+                <%= text_field_tag :search,
+                    params[:search],
+                    type: 'search'
+                %>
+              </div>
+              <div class="actions s4">
+                <%= submit_tag "Buscar", class: 'btn col s3' %>
+              </div>
+            </div>
+            <div class="row">
+              <%= link_to 'Atras', people_path, class: "btn col s3" %>
+            </div>
           <% end %>
-        </tbody>
-      </table>
+        <% end %>
+      </div>
+
+      <div class="col s8">
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Documento</th>
+              <th>Tipo Documento</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <!-- <th>Cumpleaños</th>
+              <th>Estado Civil</th>
+              <th>Genero</th>
+              <th>¿Censado?</th>
+              <th>Lengua Origen</th>
+              <th>Dominio Lenguaje</th> -->
+              <th>User</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @people.each do |person| %>
+              <tr>
+                <td><%= person.documentPerson %></td>
+                <td><%= person.documentType %></td>
+                <td><%= person.name %></td>
+                <td><%= person.lastname %></td>
+                <!-- <td><%= person.birthDate %></td>
+                <td><%= person.civilStatus %></td>
+                <td><%= person.gender %></td>
+                <td><%= person.isCensus %></td>
+                <td><%= person.originLanguage %></td>
+                <td><%= person.languageDomination %></td> -->
+                <td><%= person.user_id %></td>
+                <td><%= link_to (fa_icon "eye"), person %></td>
+                <td><%= link_to (fa_icon "pencil"), edit_person_path(person) %></td>
+                <!-- <td><%= link_to (fa_icon "times"), person, method: :delete, data: { confirm: '¿Esta seguro?' } %></td> -->
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
   </div>

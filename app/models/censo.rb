@@ -21,7 +21,9 @@ class Censo < ApplicationRecord
   belongs_to :health_service
 
   def self.check_user
-    us_id = User.find_by email: ("#{User.current.id}")
+    us_id = User.find_by id: ("#{User.current.id}")
+
+    Person.joins(:censo).select(:id,:documentPerson,:user_id).where("\"user_id\"=? and \"documentPerson\" =?", us_id , "38425")
   end
 
   def self.check_data
@@ -30,7 +32,7 @@ class Censo < ApplicationRecord
       Person.joins(:censo).select(:id,:documentPerson,:user_id).where("\"isCensus\"=? and \"documentPerson\" =?", "t", "38425")
 
   end
-  
+
 end
 
 

@@ -29,10 +29,21 @@ class Person < ApplicationRecord
     Person.pluck(:birthDate)
   end
 
-  def self.check_user
-    get_user = User.select(:name, :id).find_by id: ("#{User.current.id}")
-    Person.joins(:censo).where(user_id: get_user)
+  def self.my_id
+    get_user = User.select(:id).find_by id: ("#{User.current.id}")
+    Person.joins(:user).select(:user_id, :id).where(user_id: get_user)
   end
 
+  def self.check_user
+    User.select(:id).where(id: ("#{User.current.id}"))
+  end
+
+  def self.paginate_all(page, field)
+    if field
+      Person.paginate(page: page).where('documentPerson LIKE ?', "%#{field}%")
+    else
+      Person.paginate(page: page)
+    end
+  end
 
 end
