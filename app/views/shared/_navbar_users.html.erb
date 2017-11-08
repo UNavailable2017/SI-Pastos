@@ -6,17 +6,17 @@
 %>
   <% if current_user.try(:admin?) %>
     <!-- is admin -->
-    <div class="container">
+    <div class="container col s12 m12 l12">
       <div class="row">
-        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Mapa", residences_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col m1.5" %>
-        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Censo", censos_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Votacion", elections_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Estadisticas", statistics_total_path, class: "waves-effect waves-light btn col m1.5" %>
-        <%= link_to "Correos Masivos", newsletters_path, class: "waves-effect waves-light btn col m2" %>
+        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
+        <%= link_to "Mapa", residences_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
+        <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
+        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col s2 m2 l2" %>
+        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
+        <%= link_to "Censo", censos_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
+        <%= link_to "Votación", elections_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
+        <%= link_to "Estadisticas", statistics_total_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
+        <%= link_to "Correos", newsletters_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
       </div>
     </div>
 
@@ -30,7 +30,7 @@
         <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Votacion", new_vote_path, class: "waves-effect waves-light btn col m2" %>
+        <%= link_to "Votación", new_vote_path, class: "waves-effect waves-light btn col m2" %>
       </div>
     </div>
 

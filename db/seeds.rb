@@ -103,25 +103,25 @@ puts 'finished loading child data'
 end
 puts 'finished loading contact data'
 
-
-
-Election.create(date: Faker::Date.backward(900),
-              winner: Faker::Name.name,
-              candidate_id:Faker::Number.unique.between(1, 100))
-
-Faker::UniqueGenerator.clear
-puts 'finished loading election data'
-
-3.times do
-  a = Candidate.new
-  a.votes = Faker::Number.number(100)
-  a.person_id = Faker::Number.unique.between(1, 100)
-  Faker::UniqueGenerator.clear
-  a.election_id = Faker::Number.unique.between(1, 100)
-  a.save
-end
-Faker::UniqueGenerator.clear
-puts 'finished loading candidates data'
+# 
+#
+# Election.create(date: Faker::Date.backward(900),
+#               winner: Faker::Name.name,
+#               candidate_id:Faker::Number.unique.between(1, 100))
+#
+# Faker::UniqueGenerator.clear
+# puts 'finished loading election data'
+#
+# 3.times do
+#   a = Candidate.new
+#   a.votes = Faker::Number.number(100)
+#   a.person_id = Faker::Number.unique.between(1, 100)
+#   Faker::UniqueGenerator.clear
+#   a.election_id = Faker::Number.unique.between(1, 100)
+#   a.save
+# end
+# Faker::UniqueGenerator.clear
+# puts 'finished loading candidates data'
 
 100.times do
   Event.create(name: Faker::Lorem.word,
