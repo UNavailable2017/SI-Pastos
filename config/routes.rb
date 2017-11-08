@@ -1,35 +1,48 @@
 Rails.application.routes.draw do
 
-  resources :votes
-  # get 'gobernador/inicio', to: 'governor#home'
-  # get 'gobernador/registrar_censo', to: 'governor#register_censo'
-  # get 'gobernador/buscar_censo', to: 'governor#find_censo'
-  # get 'gobernador/certificado', to: 'governor#certificate'
-  # get 'gobernador/publicar_evento', to: 'governor#publish_event'
-  # get 'gobernador/correo', to: 'governor#email'
-  # get 'gobernador/mapa', to: 'residences#index'
-  # get 'gobernador/convocatorias', to: 'governor#announcement'
-  # get 'gobernador/elecciones', to: 'governor#election'
-  # get 'gobernador/estadisticas', to: 'governor#statistic'
-  # resources :candidates
-  # resources :children
-  # resources :health_services
-  # resources :opinions
+  # rest
   resources :censos
   resources :people
   resources :certificates
+
+  # routes for announcements
+  delete '/announcements/remove_olds', to: 'announcements#remove_olds'
   resources :announcements
+
+  # routes for events
+  delete '/events/remove_olds', to: 'events#remove_olds'
   resources :events
-  resources :residences, only: [:index]
-  resources :candidates  do
-      member do
-          put "like" => "elections#upvote"
-          put "unlike" => "elections#downvote"
-      end
-  end
+  resources :votes
+  resources :candidates
+
   resources :elections
   resources :request_censos
-  resources :contacts, only: [:new, :index, :create]
+  resources :contacts, only: %i[new index create]
+  resources :newsletters do
+    member do
+      post :deliver
+    end
+  end
+
+  # single routes
+
+  get 'residences/index'
+  get 'newsletters/deliver'
+
+  # routes with namespace
+
+  namespace :statistics do
+    get 'total'
+    get 'average'
+    get 'health'
+    get 'gender'
+    get 'health'
+    get 'censo_date'
+    get 'children'
+  end
+
+
+  # routes devise
 
   devise_for :users
   namespace :users do
@@ -43,20 +56,13 @@ Rails.application.routes.draw do
     get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
   end
 
-  resources :newsletters do
-    member do
-      post :deliver
-    end
-  end
 
-  get 'newsletters/deliver'
-  get 'statistics/total'
-  get 'statistics/average'
-  get 'statistics/children'
-  get 'statistics/health'
-  get 'statistics/gender'
-  get 'statistics/health'
-  get 'statistics/censo_date'
-
+  # root
   root to: 'home#index'
+
+  # routes future
+
+  # resources :children
+  # resources :health_services
+  # resources :opinions
 end
