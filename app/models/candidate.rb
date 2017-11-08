@@ -13,4 +13,13 @@
 class Candidate < ApplicationRecord
     belongs_to :person
     belongs_to :election
+
+    def self.get_data
+        last_election = Election.last
+        if last_election == nil
+            nil
+        else
+            Person.select( "\"documentPerson\"", "firstname", "lastname", "votes").joins(:candidate).where("\"election_id\" =?", last_election.id)
+        end
+    end
 end

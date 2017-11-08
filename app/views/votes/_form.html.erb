@@ -1,0 +1,37 @@
+<%= form_with(model: vote, local: true) do |form| %>
+  <% if vote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(election.errors.count, "error") %> prohibited this election from being saved:</h2>
+
+      <ul>
+      <% vote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+    <i class="material-icons prefix">email</i>
+    <%= form.label :email, "email", class: 'active' %>
+    <%= form.email_field :email, id: :vote_email, :value => current_user.email, readonly: true  %>
+  </div>
+
+  <!-- <div class="input-field">
+    <i class="material-icons prefix">access_time</i>
+    <%= form.label :document_num, "numero documento", class: 'active' %>
+    <%= form.number_field :document_num, id: :vote_document_num %>
+  </div> -->
+
+  <div class="input-field">
+    <i class="material-icons prefix">format_list_bulleted</i>
+    <%= form.label :option, "opcion", class: 'active' %>
+    <%= form.number_field :option, id: :vote_option %>
+  </div>
+
+
+
+  <div class="actions center-align">
+      <%= form.submit 'votar', class: "btn waves-effect waves-light" %>
+  </div>
+<% end %>

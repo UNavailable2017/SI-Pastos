@@ -11,4 +11,15 @@
 #
 class Election < ApplicationRecord
   has_many :candidates
+  def self.id_election
+      id_elec = Election.last
+      id_elec.id
+  end
+
+  def self.count_id_elec
+       id_elec = Election.last
+       a=Candidate.select( "election_id").where("\"election_id\" =?",  id_elec.id)
+       a.size
+  end
+
 end

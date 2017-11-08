@@ -1,32 +1,99 @@
-<%= form_with(model: candidate, local: true) do |form| %>
-  <% if candidate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
 
-      <ul>
-      <% candidate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<%if @count_id_elec == 4%>
+        <div class="actions center-align">
+            <div class="container">
+              <h5 class="center-align">Ya estan completos todos los candidatos</h5>
+             </div>
+
+            <%= link_to 'volver', elections_path, class:"btn waves-effect waves-light" %>
+        </div>
+
+<%else%>
+    <%if @count_id_elec == 3%>
+        <h5 class="center-align">Voto en blanco</h5>
+
+        <%= form_with(model: candidate, local: true) do |form| %>
+          <% if candidate.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+              <ul>
+              <% candidate.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="input-field">
+            <i class="material-icons prefix">equalizer</i>
+            <%= form.label :votes, "Votos", class: 'active' %>
+            <%= form.number_field :votes, id: :candidate_votes, :value =>  0, readonly: true  %>
+          </div>
+
+          <div class="input-field">
+            <i class="material-icons prefix">person</i>
+            <%= form.label :person_id, "id persona", class: 'active' %>
+            <%= form.number_field :person_id, id: :candidate_person_id, :value =>  101, readonly: true   %>
+          </div>
+
+          <div class="input-field">
+             <i class="material-icons prefix">format_list_numbered</i>
+             <%= form.label :election_id, "id eleccion", class: 'active' %>
+            <%=  form.text_field :election_id, id: :candidate_election_id, :value =>  @get_id_election, readonly: true %>
+          </div>
+
+
+          <div class="actions center-align">
+              <%= form.submit (current_page?(new_candidate_path) ? 'Adicionar' : 'Editar') + ' candidato',
+              class: "btn waves-effect waves-light" %>
+          </div>
+
+          <%end%>
+
+        <%else%>
+
+
+        <%= form_with(model: candidate, local: true) do |form| %>
+          <% if candidate.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+              <ul>
+              <% candidate.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+      <div class="input-field">
+        <i class="material-icons prefix">equalizer</i>
+        <%= form.label :votes, "Votos", class: 'active' %>
+        <%= form.number_field :votes, id: :candidate_votes, :value =>  0, readonly: true  %>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix">person</i>
+        <%= form.label :person_id, "id persona", class: 'active' %>
+        <%= form.number_field :person_id, id: :candidate_person_id %>
+      </div>
+
+
+      <div class="input-field">
+         <i class="material-icons prefix">format_list_numbered</i>
+         <%= form.label :election_id, "id eleccion", class: 'active' %>
+        <%=  form.text_field :election_id, id: :candidate_election_id, :value =>  @get_id_election, readonly: true %>
+      </div>
+
+      <div class="actions center-align">
+          <%= link_to 'Atrás', candidates_path, class:"btn waves-effect waves-light" %>
+          <%= form.submit (current_page?(new_candidate_path) ? 'Adicionar' : 'Editar') + ' candidato',
+          class: "btn waves-effect waves-light" %>
+      </div>
+
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :idCandidate %>
-    <%= form.number_field :idCandidate, id: :candidate_idCandidate %>
-  </div>
 
-  <div class="field">
-    <%= form.label :votes %>
-    <%= form.number_field :votes, id: :candidate_votes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :candidate_person_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%end%>

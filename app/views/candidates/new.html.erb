@@ -1,5 +1,11 @@
-<h1>New Candidate</h1>
 
-<%= render 'form', candidate: @candidate %>
-
-<%= link_to 'Back', candidates_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Nuevo candidato</h3>
+    <article class="col s6 offset-s3 z-depth-5">
+      <div class="card-form">
+    <%= render 'form', candidate: @candidate %>
+      </div>
+    </article>
+  </div>
+</section>

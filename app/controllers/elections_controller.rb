@@ -1,20 +1,21 @@
 class ElectionsController < ApplicationController
-  before_action :set_election, only: [:show, :edit, :update, :destroy]
+  before_action :set_election, only: [:show, :edit, :update, :destroy   ]
 
   # GET /elections
   # GET /elections.json
   def index
-    @elections = Election.paginate(page: params[:page])
+    @elections = Election.all
   end
 
   # GET /elections/1
   # GET /elections/1.json
   def show
+     @get_data_candidates = Candidate.get_data
   end
 
   # GET /elections/new
   def new
-    @election = Election.new
+    @election = Election.new    
   end
 
   # GET /elections/1/edit
@@ -60,6 +61,7 @@ class ElectionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,5 +1,11 @@
-<h1>New Election</h1>
 
-<%= render 'form', election: @election %>
-
-<%= link_to 'Back', elections_path %>
+<section class="container">
+  <div class="row">
+    <h3 class="center-align">Nueva Elección Gobernador</h3>
+    <article class="col s6 offset-s3 z-depth-5">
+      <div class="card-form">
+        <%= render 'form', election: @election %>
+      </div>
+    </article>
+  </div>
+</section>

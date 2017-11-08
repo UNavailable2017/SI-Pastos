@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :idElection %>
-    <%= form.number_field :idElection, id: :election_idElection %>
+
+  <div class="input-field">
+    <i class="material-icons prefix">access_time</i>
+    <%= form.label :date, "Fecha de inicio", class: 'active' %>
+    <%= form.text_field :date, id: :election_date, class: "datepicker" %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date, id: :election_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :winner %>
+  <!-- <div class="input-field">
+    <i class="material-icons prefix">stars</i>
+    <%= form.label :winner, "Ganador", class: 'active' %>
     <%= form.text_field :winner, id: :election_winner %>
   </div>
 
-  <div class="field">
-    <%= form.label :candidate_id %>
-    <%= form.number_field :candidate_id, id: :election_candidate_id %>
-  </div>
+  <div class="input-field">
+      <i class="material-icons prefix">picture_in_picture</i>
+     <%= form.label :candidate_id, "id del candidato", class: 'active' %>
+    <%= form.text_field :candidate_id, id: :election_candidate_id %>
+  </div> -->
 
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="actions center-align">
+      <%= link_to 'Atrás', :back, class:"btn waves-effect waves-light" %>
+      <%= form.submit (current_page?(new_election_path) ? 'Crear' : 'Editar') + ' Elección',
+      class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

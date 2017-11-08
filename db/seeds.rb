@@ -18,6 +18,12 @@ require 'rubygems'
   a.password_confirmation = '12345678'
   a.save
 end
+
+a = User.new
+a.email =  "voto@blanco.io"
+a.password = '12345678'
+a.password_confirmation = '12345678'
+a.save
 puts 'finished loading user data'
 
 100.times do
@@ -34,7 +40,20 @@ puts 'finished loading user data'
                 user_id: Faker::Number.unique.between(1, 100))
 end
 Faker::UniqueGenerator.clear
+Person.create(documentPerson: Faker::Number.number(5),
+              documentType: Faker::Lorem.characters(2),
+              firstname: "Voto",
+              lastname: "blanco",
+              birthDate: Faker::Date.backward(23_725),
+              civilStatus: Faker::Lorem.words.join(' '),
+              gender: Faker::Demographic.sex,
+              isCensus: Faker::Boolean.boolean(0.5),
+              originLanguage: Faker::Lorem.characters(8),
+              languageDomination: Faker::Lorem.characters(8),
+              user_id: 101)
 puts 'finished loading person data'
+
+
 
 100.times do
   Announcement.create(publicationDate: Faker::Date.forward(2300),
@@ -84,25 +103,25 @@ puts 'finished loading child data'
 end
 puts 'finished loading contact data'
 
-
-100.times do
-  Election.create(date: Faker::Date.forward(900),
-                  winner: Faker::Lorem.characters(8),
-                  candidate_id:Faker::Number.unique.between(1, 100))
-end
-Faker::UniqueGenerator.clear
-puts 'finished loading election data'
-
-100.times do
-  a = Candidate.new
-  a.votes = Faker::Number.number(2)
-  a.person_id = Faker::Number.unique.between(1, 100)
-  Faker::UniqueGenerator.clear
-  a.election_id = Faker::Number.unique.between(1, 100)
-  a.save
-end
-Faker::UniqueGenerator.clear
-puts 'finished loading candidates data'
+# 
+#
+# Election.create(date: Faker::Date.backward(900),
+#               winner: Faker::Name.name,
+#               candidate_id:Faker::Number.unique.between(1, 100))
+#
+# Faker::UniqueGenerator.clear
+# puts 'finished loading election data'
+#
+# 3.times do
+#   a = Candidate.new
+#   a.votes = Faker::Number.number(100)
+#   a.person_id = Faker::Number.unique.between(1, 100)
+#   Faker::UniqueGenerator.clear
+#   a.election_id = Faker::Number.unique.between(1, 100)
+#   a.save
+# end
+# Faker::UniqueGenerator.clear
+# puts 'finished loading candidates data'
 
 100.times do
   Event.create(name: Faker::Lorem.word,
