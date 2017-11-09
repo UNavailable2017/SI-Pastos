@@ -55,7 +55,7 @@ Rails.application.routes.draw do
     get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
     get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
   end
-  
+
   # root
   root to: 'home#index'
 
