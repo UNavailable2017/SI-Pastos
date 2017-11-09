@@ -21,6 +21,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   documentPerson: 1
   documentType: MyString
   firstname: MyString
@@ -34,6 +35,7 @@ one:
   user_id: 1
 
 two:
+  id: 2
   documentPerson: 1
   documentType: MyString
   firstname: MyString

@@ -31,6 +31,8 @@ class ContactTest < ActiveSupport::TestCase
     assert_equal 'Correo de Contáctanos SI-Pastos', email.subject
   end
 
+  # CREATE
+  # it is used for serialize instance variable for send email
   # validates :name, :email, :message, presence: true
 
   test 'should save an event with all fields' do

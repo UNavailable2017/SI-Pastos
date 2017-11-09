@@ -16,6 +16,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 all_fields:
+  id: 1
   name: MyString
   date: 2017-09-21
   image: MyString
@@ -23,7 +24,8 @@ all_fields:
   eventInfo: MyString
   person_id: 1
 
-withoutName:
+without_name:
+  id: 2
   date: 2017-09-21
   image: MyString
   eventType: MyString
@@ -31,6 +33,7 @@ withoutName:
   person_id: 1
 
 without_image:
+  id: 3
   name: MyString
   date: 2017-09-21
   eventType: MyString
@@ -38,6 +41,7 @@ without_image:
   person_id: 1
 
 without_date:
+  id: 4
   name: MyString
   image: MyString
   eventType: MyString
@@ -45,6 +49,7 @@ without_date:
   person_id: 1
 
 without_event_type:
+  id: 5
   name: MyString
   date: 2017-09-21
   image: MyString
@@ -52,6 +57,7 @@ without_event_type:
   person_id: 1
 
 without_event_info:
+  id: 6
   name: MyString
   date: 2017-09-21
   image: MyString
@@ -59,8 +65,26 @@ without_event_info:
   person_id: 1
 
 without_person_id:
+  id: 8
   name: MyString
   date: 2017-09-21
   image: MyString
   eventType: MyString
   eventInfo: MyString
+
+one:
+  id: 9
+  name: MyString
+  date: 2017-09-21
+  image: MyString
+  eventType: MyString
+  eventInfo: MyString
+  person_id: 1
+
+two:
+  name: MyAwesomeString
+  date: 2017-09-21
+  image: MyString
+  eventType: MyString
+  eventInfo: MyString
+  person_id: 1
