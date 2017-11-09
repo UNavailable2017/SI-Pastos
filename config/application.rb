@@ -16,7 +16,5 @@ module SIPastos
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Use sidekiq for active job in production
-    config.active_job.queue_adapter = :sidekiq
   end
 end
