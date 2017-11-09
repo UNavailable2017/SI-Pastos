@@ -15,16 +15,52 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+all_fields:
+  name: MyString
+  date: 2017-09-21
+  image: MyString
+  eventType: MyString
+  eventInfo: MyString
+  person_id: 1
+
+withoutName:
+  date: 2017-09-21
+  image: MyString
+  eventType: MyString
+  eventInfo: MyString
+  person_id: 1
+
+without_image:
   name: MyString
   date: 2017-09-21
   eventType: MyString
   eventInfo: MyString
   person_id: 1
 
-two:
+without_date:
   name: MyString
-  date: 2017-09-21
+  image: MyString
   eventType: MyString
   eventInfo: MyString
   person_id: 1
+
+without_event_type:
+  name: MyString
+  date: 2017-09-21
+  image: MyString
+  eventInfo: MyString
+  person_id: 1
+
+without_event_info:
+  name: MyString
+  date: 2017-09-21
+  image: MyString
+  eventType: MyString
+  person_id: 1
+
+without_person_id:
+  name: MyString
+  date: 2017-09-21
+  image: MyString
+  eventType: MyString
+  eventInfo: MyString
