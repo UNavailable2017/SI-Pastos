@@ -1,11 +1,25 @@
-<section class="container">
-  <div class="row">
-    <h3 class="center-align">Editar Datos Personales</h3>
-    <article class="col s8 offset-s2">
-      <%= render 'form', person: @person %>
-      <div class="right-align">
-        <%= link_to 'Ver', @person, class:"btn waves-effect waves-light" %>
-      </div>
-    </article>
-  </div>
-</section>
+<% unless current_user.try(:admin?) %>
+  <section class="container">
+    <div class="row">
+      <h3 class="center-align">Editar Datos Personales</h3>
+      <article class="col s8 offset-s2">
+        <%= render 'form', person: @prs %>
+        <div class="right-align">
+          <%= link_to 'Ver', @prs, class:"btn waves-effect waves-light" %>
+        </div>
+      </article>
+    </div>
+  </section>
+<% else %>
+  <section class="container">
+    <div class="row">
+      <h3 class="center-align">Editar Datos Personales</h3>
+      <article class="col s8 offset-s2">
+        <%= render 'form', person: @person %>
+        <div class="right-align">
+          <%= link_to 'Ver', @person, class:"btn waves-effect waves-light" %>
+        </div>
+      </article>
+    </div>
+  </section>
+<% end %>

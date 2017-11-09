@@ -1,64 +1,99 @@
-<div class="container">
-  <h2 class="center-align">Datos Personales</h2>
-</div>
-<div class="divider"></div>
-
-<div class="row">
+<% unless current_user.try(:admin?) %>
   <div class="container">
-    <% if current_user.try(:admin?) %>
-      <div class="col m12">
-        <h5 class="center-align">
-            <%= link_to 'Nueva Persona', new_person_path, class: "btn waves-effect waves-light" %>
-        </h5>
-      </div>
-    <% end %>
-    <div class="col m12">
-      <table class="striped">
-        <thead>
-          <tr>
-            <th>Documento</th>
-            <th>Tipo Documento</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Cumpleaños</th>
-            <th>Estado Civil</th>
-            <th>Genero</th>
-            <th>¿Censado?</th>
-            <th>Lengua Origen</th>
-            <th>Dominio Lenguaje</th>
-            <!-- <th>User</th> -->
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @people.each do |person| %>
-            <tr>
-              <td><%= person.documentPerson %></td>
-              <td><%= person.documentType %></td>
-              <td><%= person.firstname %></td>
-              <td><%= person.lastname %></td>
-              <td><%= person.birthDate %></td>
-              <td><%= person.civilStatus %></td>
-              <td><%= person.gender %></td>
-              <td><%= person.isCensus %></td>
-              <td><%= person.originLanguage %></td>
-              <td><%= person.languageDomination %></td>
-              <!-- <td><%= person.user_id %></td> -->
-              <td><%= link_to (fa_icon "eye"), person %></td>
-              <td><%= link_to (fa_icon "pencil"), edit_person_path(person) %></td>
-              <td><%= link_to (fa_icon "times"), person, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-
+    <h2 class="center-align">Datos Personales</h2>
   </div>
-</div>
+  <div class="divider"></div>
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <h4 class="center-align">ACCESO RESTRINGIDO</h4>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="container">
+    <h2 class="center-align">Datos Personales</h2>
+  </div>
+  <div class="divider"></div>
 
-<%= will_paginate @people,
-    class: 'apple_pagination',
-    previous_label: '&#8592;<strong> Anterior',
-    next_label: 'Siguiente &#8594;'
-%>
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col s4">
+          <% if current_user.try(:admin?) %>
+            <%= form_tag(people_path, method: 'get') do %>
+              <div class="row">
+                <div class="col s7">
+                  <%= text_field_tag :search,
+                      params[:search],
+                      type: 'search'
+                  %>
+                </div>
+                <div class="actions s3">
+                  <!-- <%= submit_tag "Buscar", class: 'btn col s3' %> -->
+                  <%= button_tag(type: "submit", class: 'btn col s3') do %>
+                      <i class="material-icons">search</i>
+                  <% end %>
+                </div>
+              </div>
+              <div class="row">
+                <%= link_to "Atras", root_path, class: "btn col s3" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="col s8">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>Tipo Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <!-- <th>Cumpleaños</th>
+                <th>Estado Civil</th>
+                <th>Genero</th>
+                <th>¿Censado?</th>
+                <th>Lengua Origen</th>
+                <th>Dominio Lenguaje</th> -->
+                <th>User</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @people.each do |person| %>
+                <tr>
+                  <td><%= person.documentPerson %></td>
+                  <td><%= person.documentType %></td>
+                  <td><%= person.firstname %></td>
+                  <td><%= person.lastname %></td>
+                  <!-- <td><%= person.birthDate %></td>
+                  <td><%= person.civilStatus %></td>
+                  <td><%= person.gender %></td>
+                  <td><%= person.isCensus %></td>
+                  <td><%= person.originLanguage %></td>
+                  <td><%= person.languageDomination %></td> -->
+                  <td><%= person.user_id %></td>
+                  <td><%= link_to (fa_icon "eye"), person %></td>
+                  <td><%= link_to (fa_icon "pencil"), edit_person_path(person.id) %></td>
+                  <!-- <td><%= link_to (fa_icon "times"), person, method: :delete, data: { confirm: '¿Esta seguro?' } %></td> -->
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <%= will_paginate @people,
+      class: 'apple_pagination',
+      previous_label: '&#8592;<strong> Anterior',
+      next_label: 'Siguiente &#8594;'
+  %>
+
+<% end %>

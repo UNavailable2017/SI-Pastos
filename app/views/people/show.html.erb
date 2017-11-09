@@ -37,9 +37,11 @@
 
 <div class="col s10">
   <div class="center-align">
-    <% if current_user.try(:admin?) %>
+    <%= link_to 'Editar', edit_person_path(@person.id), class:"btn waves-effect waves-light" %>
+    <% unless current_user.try(:admin?) %>
+      <%= link_to 'Atrás', root_path, class:"btn waves-effect waves-light" %>
+    <% else %>
       <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
-      <%= link_to 'Editar', edit_person_path(@person), class:"btn waves-effect waves-light" %>
     <% end %>
   </div>
 </div>

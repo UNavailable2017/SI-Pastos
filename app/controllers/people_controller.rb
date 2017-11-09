@@ -4,12 +4,15 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.paginate(page: params[:page])
+    @people = Person.paginate_all(params[:page], params[:search]).order(sort_column + ' ' + sort_direction)
   end
 
   # GET /people/1
   # GET /people/1.json
   def show
+    unless current_user.try(:admin?)
+      @prs = Person.my_id
+    end
   end
 
   # GET /people/new
@@ -19,6 +22,9 @@ class PeopleController < ApplicationController
 
   # GET /people/1/edit
   def edit
+    unless current_user.try(:admin?)
+      @prs = Person.find_all
+    end
   end
 
   # POST /people
@@ -71,4 +77,17 @@ class PeopleController < ApplicationController
     def person_params
       params.require(:person).permit(:documentPerson, :documentType, :firstname, :lastname, :birthDate, :civilStatus, :gender, :isCensus, :originLanguage, :languageDomination, :user_id)
     end
-end
+
+    def sortable_columns
+      ['documentPerson', 'firstname', 'lastname',]
+    end
+
+    def sort_column
+      sortable_columns.include?(params[:sort]) ? params[:sort] : 'documentPerson'
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'desc'
+    end
+
+  end
