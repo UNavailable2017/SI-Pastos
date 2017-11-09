@@ -8,27 +8,16 @@
     <!-- is admin -->
     <div class="container col s12 m12 l12">
       <div class="row">
-<<<<<<< HEAD
         <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
         <%= link_to "Mapa", residences_index_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
         <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
-        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col s2 m2 l2" %>
+        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
         <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
         <%= link_to "Censo", censos_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
         <%= link_to "Votación", elections_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
         <%= link_to "Estadisticas", statistics_total_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
-        <%= link_to "Correos", newsletters_path, class: "waves-effect waves-light btn col s1.5 m1.5 l1.5" %>
-=======
-        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Mapa", residences_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Censos", censos_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Estadisticas", statistics_total_path, class: "waves-effect waves-light btn col m1" %>
-        <%= link_to "Correos Masivos", newsletters_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Datos Personales", people_path, class: "waves-effect waves-light btn col m1" %>
->>>>>>> test_censo
+        <%= link_to "Correos", newsletters_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
+        <%= link_to "Datos Personales", people_path, class: "waves-effect waves-light btn col s1 m1 l1" %>
       </div>
     </div>
 
@@ -37,21 +26,17 @@
     <!-- is user -->
     <div class="container">
       <div class="row">
-        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col m2" %>
+        <%= link_to "Inicio", root_path, class: "waves-effect waves-light btn col m1" %>
         <%= link_to "Solicitud censo", new_request_censo_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Certificado", new_certificate_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m2" %>
-        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m2" %>
-<<<<<<< HEAD
+        <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m1" %>
         <%= link_to "Votación", new_vote_path, class: "waves-effect waves-light btn col m2" %>
-=======
         <% if Person.my_id == nil  %>
           <%= link_to "Datos Personales", new_person_path, class: "waves-effect waves-light btn col m2" %>
         <% else %>
           <%= link_to "Datos Personales", edit_person_path(Person.my_id.first.id), class: "waves-effect waves-light btn col m2" %>
         <% end %>
-
->>>>>>> test_censo
       </div>
     </div>
 

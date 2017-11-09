@@ -5,11 +5,7 @@
 #  id                 :integer          not null, primary key
 #  documentPerson     :integer
 #  documentType       :string
-<<<<<<< HEAD
 #  firstname          :string
-=======
-#  firstname               :string
->>>>>>> test_censo
 #  lastname           :string
 #  birthDate          :date
 #  civilStatus        :string
