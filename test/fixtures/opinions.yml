@@ -29,7 +29,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  idOpinion: 1
   interest: MyText
   socialOrganization: MyText
   groupsParticipation: MyText
@@ -51,7 +50,6 @@ one:
   censo_id: 1
 
 two:
-  idOpinion: 1
   interest: MyText
   socialOrganization: MyText
   groupsParticipation: MyText

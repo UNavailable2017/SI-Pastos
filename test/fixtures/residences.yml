@@ -21,8 +21,8 @@ one:
   phone: 1
   neighborhood: MyString
   locality: MyString
-  lat: 1.5
-  long: 1.5
+  latitude: 1.5
+  longitude: 1.5
   person_id: 1
 
 two:
@@ -30,6 +30,6 @@ two:
   phone: 1
   neighborhood: MyString
   locality: MyString
-  lat: 1.5
-  long: 1.5
+  latitude: 1.5
+  longitude: 1.5
   person_id: 1

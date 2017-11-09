@@ -5,7 +5,6 @@
 #  id         :integer          not null, primary key
 #  name       :string
 #  email      :string
-#  phone      :string
 #  message    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -13,12 +12,21 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+all_fields:
   name: MyString
   email: MyString
   message: MyText
 
-two:
-  name: MyString
+without_name:
   email: MyString
   message: MyText
+
+
+without_email:
+  name: MyString
+  message: MyText
+
+
+without_message:
+  name: MyString
+  email: MyString
