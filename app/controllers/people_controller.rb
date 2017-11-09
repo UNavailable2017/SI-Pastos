@@ -10,9 +10,7 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    if  current_user.try(:admin?)
-      @prs = Person.my_id
-    else
+    unless current_user.try(:admin?)
       @prs = Person.my_id
     end
   end
@@ -24,6 +22,9 @@ class PeopleController < ApplicationController
 
   # GET /people/1/edit
   def edit
+    unless current_user.try(:admin?)
+      @prs = Person.find_all
+    end
   end
 
   # POST /people

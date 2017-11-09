@@ -13,43 +13,43 @@
 
   <div class="input-field">
     <i class="material-icons prefix">credit_card</i>
-    <%= form.label :documentPerson, "N° Documento" %>
+    <%= form.label :documentPerson, "N° Documento", class:"active" %>
     <%= form.number_field :documentPerson, id: :person_documentPerson %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">card_membership</i>
-    <%= form.label :documentType, "Tipo Documento" %>
+    <%= form.label :documentType, "Tipo Documento", class:"active" %>
     <%= form.text_field :documentType, id: :person_documentType %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">accessibility</i>
-    <%= form.label :firstname, "Nombre" %>
-    <%= form.text_field :firstname, id: :person_name %>
+    <%= form.label :firstname, "Nombre", class:"active" %>
+    <%= form.text_field :name, id: :person_name %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">directions_walk</i>
-    <%= form.label :lastname, "Apellido" %>
+    <%= form.label :lastname, "Apellido", class:"active" %>
     <%= form.text_field :lastname, id: :person_lastname %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">access_time</i>
-    <%= form.label :birthDate, "Fecha de Nacimiento" %>
+    <%= form.label :birthDate, "Fecha de Nacimiento", class:"active" %>
     <%= form.text_field :birthDate, id: :person_birthDate, class: "datepicker" %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">supervisor_account</i>
-    <%= form.label :civilStatus, "Estado Civil" %>
+    <%= form.label :civilStatus, "Estado Civil", class:"active" %>
     <%= form.text_field :civilStatus, id: :person_civilStatus %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">wc</i>
-    <%= form.label :gender, "Genero" %>
+    <%= form.label :gender, "Genero", class:"active" %>
     <%= form.text_field :gender, id: :person_gender %>
   </div>
 
@@ -60,24 +60,37 @@
 
   <div class="input-field">
     <i class="material-icons prefix">record_voice_over</i>
-    <%= form.label :originLanguage, "Lengua de Origen" %>
+    <%= form.label :originLanguage, "Lengua de Origen", class:"active" %>
     <%= form.text_field :originLanguage, id: :person_originLanguage %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">hearing</i>
-    <%= form.label :languageDomination, "Dominio de Lenguaje" %>
+    <%= form.label :languageDomination, "Dominio de Lenguaje", class:"active" %>
     <%= form.text_field :languageDomination, id: :person_languageDomination %>
   </div>
 
-  <div class="input-field">
-    <i class="material-icons prefix">verified_user</i>
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :person_user_id %>
-  </div>
+  <% unless current_user.try(:admin?) %>
+    <div class="input-field">
+      <i class="material-icons prefix">verified_user</i>
+      <%= form.label :user_id %>
+      <%= form.number_field :user_id, id: :person_user_id,:value => current_user.id, readonly: true  %>
+    </div>
+
+  <%else%>
+    <div class="input-field">
+      <i class="material-icons prefix">verified_user</i>
+      <%= form.label :user_id %>
+      <%= form.number_field :user_id, id: :person_user_id, readonly: true %>
+    </div>
+  <% end %>
 
   <div class="actions center-align">
-    <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
-    <%= form.submit 'Crear Persona',class: "btn waves-effect waves-light" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
+    <% else %>
+      <%= link_to 'Atrás', root_path, class:"btn waves-effect waves-light" %>
+    <% end %>
+    <%= form.submit 'Actualizar',class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
