@@ -63,4 +63,6 @@ class EventTest < ActiveSupport::TestCase
     event = events(:one)
     assert event.destroy
   end
+
+  
 end
