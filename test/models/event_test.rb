@@ -37,12 +37,12 @@ class EventTest < ActiveSupport::TestCase
 
   test 'should not save an event without date' do
     event = events(:without_date)
-    assert !event.save, 'saved the event without date'
+    assert_not event.save, 'saved the event without date'
   end
 
   test 'should not save an event without eventType' do
     event = events(:without_event_type)
-    assert !event.save, 'saved the event without eventType'
+    assert_not event.save, 'saved the event without eventType'
   end
 
   # READ
@@ -64,5 +64,5 @@ class EventTest < ActiveSupport::TestCase
     assert event.destroy
   end
 
-  
+
 end
