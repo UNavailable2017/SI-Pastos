@@ -40,7 +40,7 @@ class Person < ApplicationRecord
   end
 
   def self.find_all
-    Person.find_by id: ("#{User.current.id}")
+    Person.find_by user_id: ("#{User.current.id}")
   end
 
   def self.check_user

@@ -20,10 +20,10 @@ class Censo < ApplicationRecord
   has_many :children
   belongs_to :health_service
 
-  def self.check_user
-    us_id = User.find_by id: ("#{User.current.id}")
-
-    Person.joins(:censo).select(:id,:documentPerson,:user_id).where("\"user_id\"=? and \"documentPerson\" =?", us_id , "38425")
+  def self.get_censo
+    us_id = Person.select(:id).find_by user_id: ("#{User.current.id}")
+    doc_per = Person.find_by "\"documentPerson\"": ("#{field}")
+    Censo.joins(:person).where("person_id=? and \"documentPerson\" =?", us_id , doc_per )
   end
 
   def self.check_data
