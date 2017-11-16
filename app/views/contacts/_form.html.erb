@@ -1,5 +1,15 @@
 <%= form_with(model: contact, local: true) do |form| %>
 
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="input-field">
     <i class="material-icons prefix">person_pin</i>
     <%= form.label :name, "Nombre" %>
@@ -30,18 +40,5 @@
         Enviar <i class="material-icons right">send</i>
     <% end %>
   </div>
-
-<!-- 
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %> -->
 
 <% end %>

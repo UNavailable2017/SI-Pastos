@@ -317,7 +317,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-oauth2
   omniauth-twitter
-  pg (~> 0.20)
+  pg
   puma (~> 3.7)
   quilljs-rails
   railroady

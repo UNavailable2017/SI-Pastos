@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if @contact
+    if @contact.save
       UserMailer.contact_email(@contact).deliver_now
       redirect_to contacts_path
     else
@@ -22,6 +22,6 @@ class ContactsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def contact_params
-    params.require(:contact).permit(:name, :email, :message)
+    params.require(:contact).permit(:name, :email, :phone, :message)
   end
 end
