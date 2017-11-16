@@ -1,18 +1,20 @@
 <div class="container">
     <div class="row">
-      <div class="col s10">
-        <p class="center-align">
-          <h5>Asunto</h5>
-          <%= @newsletter.subject %>
-        </p>
+      <div class="col s12">
+        <h5>Asunto</h5>
+        <%= @newsletter.subject %>
       </div>
     </div>
     <div class="row">
-      <div class="col s10">
-        <p class="center-align">
-          <h5>Mensaje </h5>
-          <%= raw @newsletter.content %>
-        </p>
+      <div class="col s12">
+        <h5>Mensaje </h5>
+        <textarea name="name" class="quill_container">
+          <%= @newsletter.content %>
+          <!-- <script type="text/javascript">
+            Quilljs.setDefaults( { toolbar: false });
+          </script> -->
+        </textarea>
+        </div>
       </div>
     </div>
 </div>

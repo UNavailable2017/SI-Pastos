@@ -5,7 +5,6 @@ class UserMailer < ApplicationMailer
   def contact_email(user)
     @user = user
     mail(to: ENV['email_platform'], subject: 'Correo de Contáctanos SI-Pastos')
-    return @user
   end
 
   def newsletter(newsletter)

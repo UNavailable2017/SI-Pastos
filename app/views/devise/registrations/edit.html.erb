@@ -6,10 +6,10 @@
           <%= link_to image_tag("escudo.png", height: "200"), :root %>
       </div>
 
-      <h2 class="center-align">Editar Perfil</h2>
 
       <% if !current_user.try(:provider?) %>
 
+        <h2 class="center-align">Editar Perfil</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
@@ -49,13 +49,12 @@
         <% end %>
       <% end %>
 
+      <h2 class="center-align">Zona de peligro</h2>
       <div class="center-align">
-        <div class="actions btn waves-effect waves-light center-align">
+        <div class="actions btn waves-effect waves-light center-align red darken-4">
           <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "estas seguro?" }, method: :delete %></p>
         </div>
       </div>
-
-      <%= link_to "Atras", root_path %>
       </div>
   </div>
 </div>

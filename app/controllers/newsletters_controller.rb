@@ -9,7 +9,7 @@ class NewslettersController < ApplicationController
 
   # GET /newsletters/1
   # GET /newsletters/1.json
-  def show
+  def show    
   end
 
   # GET /newsletters/new
