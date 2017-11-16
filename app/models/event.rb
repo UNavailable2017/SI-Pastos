@@ -12,11 +12,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Event < ApplicationRecord
   belongs_to :person
   mount_uploader :image, ImageUploader
-  validates :name, :date, :eventType, :eventInfo, presence: true
+  validates :name, :date, :eventType, :eventInfo, :image, presence: true
 
   def self.paginate_all(page, field, option_order)
     if field

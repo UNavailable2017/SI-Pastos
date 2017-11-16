@@ -36,7 +36,6 @@ Rails.application.routes.draw do
       get 'total', 'average', 'health', 'gender', 'health', 'censo_date', 'children'
     end
 
-
     # routes devise
     devise_for :users
 
