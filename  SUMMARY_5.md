@@ -34,7 +34,7 @@ Haga clic aqui [aqui](https://sipastos.herokuapp.com/)
   ### Usuario y contraseña administrador
 
   * **Usuario:** admin@admin.com
-  * **Contraseña:** 12345679
+  * **Contraseña:** 123456709
 
   ### Usuario y contraseña usuario final
 

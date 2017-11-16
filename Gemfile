@@ -52,6 +52,12 @@ gem 'fog-aws'
 gem 'mini_magick'
 # quill for masive emails
 gem 'quilljs-rails'
+# underscore
+gem 'underscore-rails'
+# translate routes
+gem 'rails-i18n'
+gem 'route_translator'
+
 
 
 # Use Puma as the app server

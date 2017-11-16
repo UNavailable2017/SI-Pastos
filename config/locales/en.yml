@@ -31,3 +31,32 @@
 
 en:
   hello: "Hello world"
+es:
+  routes:
+    users: usuarios
+    sign_in: iniciar_sesion
+    password: contrasena
+    sign_out: cerrar_sesion
+    edit: editar
+    cancel: cancelar
+    new: nuevo
+    sign_up: registrarse
+    certificates: certificados
+    announcements: empleos
+    remove_olds: eliminar_viejos
+    events: eventos
+    votes: votos
+    candidates: candidatos
+    statistics: estadisticas
+    request_censos: solicitar_censo
+    contacts: contacto
+    newsletters: correos_masivos
+    auth: autorizacion
+    index: indice
+    average: promedio
+    health: salud
+    gender: genero
+    censo_date: censo_fecha
+    children: ninos
+    elections: elecciones
+    deliver: entregar

@@ -1,19 +1,26 @@
-# Sprint 2
+# Sprint 5
 
 ## Features desarrollados
 
-* **Multiple autenticación facebook, google y twitter:** Jhon
-* **Correos masivos:** Camilo
-* **Mejora de eventos con imagenes y busqueda por nombre:** Jhon y Cristian
-* **Mejoramiento de estadisticas:** Jhon
-* **Certificado perfil usuario:** Rafael
+* **Datos personales:** Cristian
+* **Correos masivos:** Camilo y Jhon
+* **Active Jobs y Pruebas unitarias:** Jhon
+* **Votaciones:** Rafael
 
 
 ## Features posibles para la otras iteracion
 
-* Censo Usuario
-* Censo Administradora
-* Mejoramiento de la funcionalidad empleos
+* Mejora de censo
+* Mejora de estadisiticas
+
+## Ejecucion de las pruebas
+
+Se le hicieron las pruebas a dos modelos "event" y "contact". si desea ejecutarlas por favor ejecutar las siguientes comando en el directorio del proyecto
+
+```
+rails test test/models/event_test.rb
+rails test test/models/contact_test.rb
+```
 
 
 ## URL
