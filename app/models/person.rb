@@ -17,7 +17,6 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
-
 class Person < ApplicationRecord
   has_one :residence
   belongs_to :user
