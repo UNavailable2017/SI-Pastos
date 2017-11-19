@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :user_not_auth, except: [:index, :show]
   helper_method :sort_column, :sort_direction
 
   # GET /announcements

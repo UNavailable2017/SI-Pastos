@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def set_current_user
     User.current = current_user
   end
+
+  def user_not_auth
+    redirect_to root_url unless current_user.try(:admin?)
+  end
 end

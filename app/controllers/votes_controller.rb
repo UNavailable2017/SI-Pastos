@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   before_action :set_vote, only: [:show, :edit, :update, :destroy]
+  before_action :user_not_auth, except: [:new, :show, :create]
 
   # GET /votes
   # GET /votes.json
@@ -10,14 +11,14 @@ class VotesController < ApplicationController
   # GET /votes/1
   # GET /votes/1.json
   def show
-      @plus_one = Vote.plus_one
+    @plus_one = Vote.plus_one
   end
 
   # GET /votes/new
   def new
     @candidates = Candidate.get_data
     @check_vote = Vote.check_vote
-    @vote = Vote.new    
+    @vote = Vote.new
   end
 
   # GET /votes/1/edit

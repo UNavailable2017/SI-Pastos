@@ -31,7 +31,6 @@ Rails.application.routes.draw do
     get 'newsletters/deliver'
 
     # routes with namespace
-
     namespace :statistics do
       get 'total', 'average', 'health', 'gender', 'health', 'censo_date', 'children'
     end

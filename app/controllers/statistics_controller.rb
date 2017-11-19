@@ -1,5 +1,7 @@
 # statistic_controller
 class StatisticsController < ApplicationController
+  before_action :user_not_auth
+  
   def total
     @data = Statistic.importante_statistics
   end

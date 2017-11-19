@@ -103,7 +103,7 @@ puts 'finished loading child data'
 end
 puts 'finished loading contact data'
 
-# 
+#
 #
 # Election.create(date: Faker::Date.backward(900),
 #               winner: Faker::Name.name,

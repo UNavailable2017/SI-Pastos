@@ -12,26 +12,25 @@ class RequestCensosController < ApplicationController
   # GET /request_censos/1
   # GET /request_censos/1.json
   def show
-      if  current_user.try(:admin?)
-          @check_censo = RequestCenso.check_data_two
-      else
-          @check_censo = RequestCenso.check_data
-      end
+    if current_user.try(:admin?)
+      @check_censo = RequestCenso.check_data_two
+    else
+      @check_censo = RequestCenso.check_data
+    end
   end
 
   # GET /request_censos/new
   def new
     @request_censo = RequestCenso.new
     if  current_user.try(:admin?)
-        @check_data = nil
+      @check_data = nil
     else
-        @check_data = RequestCenso.check_user_request
+      @check_data = RequestCenso.check_user_request
     end
   end
 
   # GET /request_censos/1/edit
   def edit
-
   end
 
   # POST /request_censos
@@ -95,8 +94,9 @@ class RequestCensosController < ApplicationController
     def sort_direction
       %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
     end
+
     def authorize_admin
-       return unless !current_user.admin?
-       redirect_to root_path, alert: 'Admins only!'
+     return unless !current_user.admin?
+     redirect_to root_path, alert: 'Admins only!'
    end
 end

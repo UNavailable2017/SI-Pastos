@@ -1,6 +1,7 @@
 # certificate_controller
 class CertificatesController < ApplicationController
   before_action :set_certificate, only: [:show, :edit, :update, :destroy]
+  before_action :user_not_auth, except: [:new, :show]
 
   # GET /certificates
   # GET /certificates.json
@@ -11,11 +12,10 @@ class CertificatesController < ApplicationController
   # GET /certificates/1
   # GET /certificates/1.json
   def show
-     if  current_user.try(:admin?)
-         @dat = Certificate.data_person
-        
+    if current_user.try(:admin?)
+      @dat = Certificate.data_person
     else
-        @dat = Certificate.check_censo
+      @dat = Certificate.check_censo
     end
     respond_to do |format|
       format.html

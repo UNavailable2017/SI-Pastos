@@ -1,7 +1,6 @@
 class CensosController < ApplicationController
   before_action :set_censo, only: [:show, :edit, :update, :destroy]
-  # GET /censos
-  # GET /censos.json
+  before_action :user_not_auth
 
   def index
     @censos = Censo.paginate(page: params[:page])
@@ -10,10 +9,10 @@ class CensosController < ApplicationController
   # GET /censos/1
   # GET /censos/1.json
   def show
-    if  current_user.try(:admin?)
+    if current_user.try(:admin?)
       @dat = Censo.check_user
     else
-      @dat = Censo.check_data 
+      @dat = Censo.check_data
     end
   end
 
