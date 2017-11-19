@@ -55,4 +55,9 @@ class ContactTest < ActiveSupport::TestCase
     assert_not contact.save, 'saved the event without message'
   end
 
+  test 'should save an event without phone' do
+    contact = contacts(:without_phone)
+    assert_not contact.save, 'saved the event without phone'
+  end
+
 end

@@ -1,44 +1,53 @@
 <%= form_with(model: contact, local: true) do |form| %>
 
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="input-field">
     <i class="material-icons prefix">person_pin</i>
-    <%= form.label :name, "Nombre" %>
+    <%= form.label :name, "Nombre", class: 'active' %>
     <%= form.text_field :name, id: :contact_name %>
+    <% if contact.errors.include?(:name) %>
+      <div class="right-align red-text">* Nombre no puede estar vacio</div>
+    <% end %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">email</i>
-    <%= form.label :email %>
+    <%= form.label :email, 'Correo electrónico', class: 'active' %>
     <%= form.text_field :email, id: :contact_email %>
+    <% if contact.errors.include?(:email) %>
+      <div class="right-align red-text">* Correo electrónico no puede estar vacio</div>
+    <% end %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">local_phone</i>
-    <%= form.label :phone %>
+    <%= form.label :phone, 'Telefono', class: 'active' %>
     <%= form.text_field :phone, id: :contact_phone %>
+    <% if contact.errors.include?(:phone) %>
+      <div class="right-align red-text">* Telefono no puede estar vacio</div>
+    <% end %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">mode_edit</i>
-    <%= form.label :message, "Mensaje" %>
+    <%= form.label :message, "Mensaje", class: 'active' %>
     <%= form.text_area :message, id: :contact_message,  class: "materialize-textarea" %>
+    <% if contact.errors.include?(:message) %>
+      <p class="right-align red-text">* Mensaje no puede estar vacio</p>
+    <% end %>
   </div>
 
 
   <div class="actions center-align">
-    <%= button_tag type: 'submit', class: "waves-effect waves-light btn" do %>
+    <%= button_tag type: 'submit',
+        class: "waves-effect waves-light btn",
+        data: {
+          confirm: '¿Desea enviar el correo?',
+          'cancel-button-text': 'Cancelar',
+          'sweet-alert-type': 'question'
+    } do %>
         Enviar <i class="material-icons right">send</i>
     <% end %>
+
   </div>
 
 <% end %>

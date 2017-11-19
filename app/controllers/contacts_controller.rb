@@ -11,8 +11,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      UserMailer.contact_email(@contact).deliver_now
-      redirect_to contacts_path
+      UserMailer.contact_email(@contact).deliver_later
+      flash[:notice] = 'El correo se ha enviardo exitosamente'
+      redirect_to new_contact_path
     else
       render :new
     end

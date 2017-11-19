@@ -1,4 +1,16 @@
 <section class="container">
+    <% if notice %>
+    <div class="row">
+      <article class="col s8 offset-s2">
+        <div class="alert alert-success">
+          <div class="close">&#10005;</div>
+          <div class="center-align">
+            <b>Felicitaciones!</b> El correo se ha enviado satisfatoriamente            
+          </div>
+        </div>
+      </article>
+    </div>
+    <% end %>
   <div class="row card-form">
     <article class="col s8 offset-s2 z-depth-5">
       <div class="card-form">

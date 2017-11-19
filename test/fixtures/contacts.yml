@@ -16,17 +16,25 @@ all_fields:
   name: MyString
   email: MyString
   message: MyText
+  phone: MyText
 
 without_name:
   email: MyString
   message: MyText
-
+  phone: MyText
 
 without_email:
   name: MyString
   message: MyText
+  phone: MyText
 
 
 without_message:
   name: MyString
   email: MyString
+  phone: MyText
+
+without_phone:
+  name: MyString
+  email: MyString
+  message: MyText

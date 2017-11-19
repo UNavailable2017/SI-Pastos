@@ -22,3 +22,7 @@ $('.datepicker').pickadate({
   close: 'Aceptar',
   closeOnSelect: false # Close upon selecting a date,
 })
+
+$('body').on 'click', '.alert .close', ->
+  $(this).parent().fadeOut 300, ->
+    $(this).remove()

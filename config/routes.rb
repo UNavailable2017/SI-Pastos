@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
     resources :elections
     resources :request_censos
-    resources :contacts, only: %i[new index create]
+    resources :contacts, only: %i[new create]
     resources :newsletters do
       member do
         post :deliver
