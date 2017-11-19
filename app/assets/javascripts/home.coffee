@@ -23,6 +23,8 @@ $('.datepicker').pickadate({
   closeOnSelect: false # Close upon selecting a date,
 })
 
-$('body').on 'click', '.alert .close', ->
-  $(this).parent().fadeOut 300, ->
-    $(this).remove()
+$(document).on "turbolinks:load", ->
+  $('body').on 'click', '.alert .close', ->
+    $(this).parent().fadeOut 300, ->
+      $(this).remove()
+      
