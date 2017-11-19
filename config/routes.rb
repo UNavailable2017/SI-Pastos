@@ -60,7 +60,4 @@ Rails.application.routes.draw do
       get 'auth/twitter/callback', to: 'omniauth_callbacks#twitter'
     end
   end
-  # get '/users/auth/facebook/callback', to: 'users/omniauth_callbacks#facebook'
-  # get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
-  # get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
 end

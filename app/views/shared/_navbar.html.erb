@@ -10,7 +10,7 @@
 
         <% if user_signed_in? %>
           <li><%= link_to (current_user.name || 'Editar perfil'), edit_user_registration_path %><li>
-          <li><%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %><li>
+          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %><li>
         <% else %>
           <li>
 
