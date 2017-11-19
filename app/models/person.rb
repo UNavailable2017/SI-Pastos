@@ -36,17 +36,16 @@ class Person < ApplicationRecord
   def self.my_id
     #get_user = User.select(:id).find_by id: ("#{User.current.id}")
     #=Person.select("id").where(user_id: ("#{User.current.id}"))
-    Person.select("id").joins(:user).where("user_id= ?" ,("#{User.current.id}"))
+    Person.select('id').joins(:user).where("user_id= ?" ,("#{User.current.id}"))
 
   end
 
   def self.find_all
-    Person.find_by id: ("#{User.current.id}")
+    Person.find_by(id: User.current.id)
   end
 
   def self.check_user
-    #User.select(:id).where(id: ("#{User.current.id}"))
-    User.select(:id).find_by id: ("#{User.current.id}")
+    User.select(:id).find_by(id: User.current.id)
   end
 
   def self.paginate_all(page, field)

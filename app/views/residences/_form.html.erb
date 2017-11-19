@@ -11,42 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address, id: :residence_address %>
+  <div class="input-field">
+    <%= form.label :address, 'Dirección', class: 'active' %>
+    <%= form.text_field  :address, id: :residence_address, class: "materialize-textarea" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :phone %>
     <%= form.number_field :phone, id: :residence_phone %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :neighborhood %>
     <%= form.text_field :neighborhood, id: :residence_neighborhood %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :locality %>
     <%= form.text_field :locality, id: :residence_locality %>
   </div>
 
-  <div class="field">
-    <%= form.label :lat %>
-    <%= form.text_field :lat, id: :residence_lat %>
-  </div>
-
-  <div class="field">
-    <%= form.label :long %>
-    <%= form.text_field :long, id: :residence_long %>
-  </div>
-
-  <div class="field">
+  <div class="input-field" style="display:none">
     <%= form.label :person_id %>
     <%= form.number_field :person_id, id: :residence_person_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions center-align">
+    <%= form.submit 'Siguiente', class: 'waves-effect waves-light btn' %>
   </div>
 <% end %>

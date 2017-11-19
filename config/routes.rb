@@ -26,8 +26,8 @@ Rails.application.routes.draw do
     end
 
     # single routes
-
-    get 'residences/index'
+    resources :residences
+    #  get 'residences/index'
     get 'newsletters/deliver'
 
     # routes with namespace
