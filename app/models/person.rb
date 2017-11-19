@@ -25,7 +25,9 @@ class Person < ApplicationRecord
   has_many :announcements
   has_one :censo
 
-  validates_presence_of :documentPerson, :firstname, :lastname
+  validates_presence_of :documentPerson, :firstname, :lastname,
+    :documentType, :birthDate, :civilStatus, :gender,
+    :originLanguage, :languageDomination
 
   def self.birth_date
     Person.pluck(:birthDate)

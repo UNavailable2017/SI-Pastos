@@ -10,22 +10,18 @@
 
         <% if user_signed_in? %>
           <li><%= link_to (current_user.name || 'Editar perfil'), edit_user_registration_path %><li>
-          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %><li>
+          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :get %><li>
         <% else %>
-          <li>
-
-          <%= link_to 'Iniciar sesión', new_user_session_path %>
-          </li>
+          <li><%= link_to 'Iniciar sesión', new_user_session_path %></li>
           <li><%= link_to "Regístrate", new_user_registration_path %></li>
         <% end %>
         <li><%= link_to "Contáctanos", new_contact_path %></li>
       </ul>
 
       <ul class="side-nav" id="mobile-demo">
-
         <% if user_signed_in? %>
           <li><%= link_to (current_user.name || 'Editar perfil'), edit_user_registration_path %><li>
-          <li><%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %><li>
+          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :get %><li>
         <% else %>
           <li><%= link_to 'Iniciar sesión', new_user_session_path %></li>
           <li><%= link_to "Regístrate", new_user_registration_path %></li>

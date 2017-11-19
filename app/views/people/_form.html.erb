@@ -53,11 +53,6 @@
     <%= form.text_field :gender, id: :person_gender %>
   </div>
 
-  <div class="input">
-    <%= form.check_box :isCensus, id: :person_isCensus, class:"filled-in" %>
-    <%= form.label :isCensus, "Esta_censado?" %>
-  </div>
-
   <div class="input-field">
     <i class="material-icons prefix">record_voice_over</i>
     <%= form.label :originLanguage, "Lengua de Origen", class:"active" %>
@@ -70,15 +65,15 @@
     <%= form.text_field :languageDomination, id: :person_languageDomination %>
   </div>
 
-  <% unless current_user.try(:admin?) %>
-    <div class="input-field">
+  <% unless current_user.admin? %>
+    <div class="input-field" style="display:none">
       <i class="material-icons prefix">verified_user</i>
       <%= form.label :user_id %>
       <%= form.number_field :user_id, id: :person_user_id,:value => current_user.id, readonly: true  %>
     </div>
 
-  <%else%>
-    <div class="input-field">
+  <% else %>
+    <div class="input-field" style="display:none">
       <i class="material-icons prefix">verified_user</i>
       <%= form.label :user_id %>
       <%= form.number_field :user_id, id: :person_user_id, readonly: true %>
@@ -86,7 +81,7 @@
   <% end %>
 
   <div class="actions center-align">
-    <% if current_user.try(:admin?) %>
+    <% if current_user.admin? %>
       <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
     <% else %>
       <%= link_to 'Atrás', root_path, class:"btn waves-effect waves-light" %>
