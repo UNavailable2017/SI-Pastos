@@ -1,24 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <h2 class="center-align">Su hijo tiene los siguientes datos</h2>
+  </div>
 
-<p>
-  <strong>Idchild:</strong>
-  <%= @child.idChild %>
-</p>
+  <div class="row">
+    <div class="col s8 offset-s2">
 
-<p>
-  <strong>Name:</strong>
-  <%= @child.name %>
-</p>
+      <table class="bordered highlight centered responsive-table striped">
+        <tdead>
+          <tr>
+            <td><strong>Npmbre:</strong></td>
+            <td><%= @child.name %></td>
+          </tr>
+          <tr>
+            <td><strong>Fecha de Nacimiento:</strong></td>
+            <td><%= @child.birthdate %></td>
+          </tr>
+          <tr>
+            <td><strong>Estudios Completados:</strong></td>
+            <td><%= @child.completed_studies %></td>
+          </tr>
+        </tdead>
+      </table>
+    </div>
+    <div class="row">
+      <div class="center-align col s12">
+        <%= link_to 'Atras', children_path, class: 'waves-effect waves-light btn' %>
+        <%= link_to 'Editar', edit_child_path(@child), class: 'waves-effect waves-light btn' %>
+      </div>
+    </div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @child.age %>
-</p>
 
-<p>
-  <strong>Censo:</strong>
-  <%= @child.censo_id %>
-</p>
 
-<%= link_to 'Edit', edit_child_path(@child) %> |
-<%= link_to 'Back', children_path %>
+
+  </div>
+</div>

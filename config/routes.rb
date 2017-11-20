@@ -40,11 +40,9 @@ Rails.application.routes.draw do
 
     # root
     root to: 'home#index'
+    resources :children
+    resources :opinions
 
-    # routes future
-    # resources :children
-    # resources :health_services
-    # resources :opinions
   end
 
   namespace :users do

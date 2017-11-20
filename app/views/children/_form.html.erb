@@ -2,7 +2,6 @@
   <% if child.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
-
       <ul>
       <% child.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,26 +11,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :idChild %>
-    <%= form.number_field :idChild, id: :child_idChild %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, 'Nombres y Apellidos', class: 'active' %>
     <%= form.text_field :name, id: :child_name %>
   </div>
 
   <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age, id: :child_age %>
+    <%= form.label :birthdate, 'Fecha de Nacimiento', class: 'active' %>
+    <%= form.number_field :birthdate, id: :child_birthdate, class: 'datepicker' %>
   </div>
 
   <div class="field">
-    <%= form.label :censo_id %>
-    <%= form.number_field :censo_id, id: :child_censo_id %>
+    <%= form.label :completed_studies, 'Estudios Completados', class: 'active' %>
+    <%= form.text_field :completed_studies, id: :child_completed_studies %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions center-align">
+    <%= form.submit 'Agregar', class: 'waves-effect waves-light btn' %>
   </div>
 <% end %>

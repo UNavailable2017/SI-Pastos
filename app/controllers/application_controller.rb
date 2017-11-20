@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_auth
-    redirect_to root_url unless current_user.try(:admin?)
+    redirect_to root_url unless current_user.admin?
   end
 end

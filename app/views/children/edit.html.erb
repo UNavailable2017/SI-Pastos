@@ -1,6 +1,12 @@
-<h1>Editing Child</h1>
+<div class="container">
+  <h1>Editar hijo</h1>
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <%= render 'form', child: @child %>
+    </div>
+  </div>
 
-<%= render 'form', child: @child %>
+  <%= link_to 'Atras', children_path, class: 'waves-effect waves-light btn' %>
+  <%= link_to 'Ver', @child, class: 'waves-effect waves-light btn' %>
 
-<%= link_to 'Show', @child %> |
-<%= link_to 'Back', children_path %>
+</div>

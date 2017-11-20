@@ -1,7 +1,7 @@
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
-  before_action :user_not_auth
-  
+
+
   # GET /children
   # GET /children.json
   def index
@@ -26,6 +26,7 @@ class ChildrenController < ApplicationController
   # POST /children.json
   def create
     @child = Child.new(child_params)
+    @child[:censo_id] = Censo.find_by(person_id: Person.find_by(user_id: 1).id).id
 
     respond_to do |format|
       if @child.save
@@ -70,6 +71,6 @@ class ChildrenController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def child_params
-      params.require(:child).permit(:idChild, :name, :age, :censo_id)
+      params.require(:child).permit(:name, :birthdate, :completed_studies)
     end
 end
