@@ -29,11 +29,7 @@
         <%= link_to "Eventos", events_path, class: "waves-effect waves-light btn col m2" %>
         <%= link_to "Empleo", announcements_path, class: "waves-effect waves-light btn col m1" %>
         <%= link_to "Votación", new_vote_path, class: "waves-effect waves-light btn col m2" %>
-        <% if Person.my_id.empty?  %>
-          <%= link_to "Datos Personales", new_person_path, class: "waves-effect waves-light btn col m2" %>
-        <% else %>
-          <%= link_to "Datos Personales", edit_person_path(Person.my_id.first.id), class: "waves-effect waves-light btn col m2" %>
-        <% end %>
+        <%= link_to "Datos Personales", new_person_path, class: "waves-effect waves-light btn col m2" %>
       </div>
     </div>
 

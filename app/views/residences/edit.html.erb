@@ -1,6 +1,12 @@
-<h1>Editing Residence</h1>
-
-<%= render 'form', residence: @residence %>
-
-<%= link_to 'Show', @residence %> |
-<%= link_to 'Back', residences_path %>
+<div class="container">
+  <div class="row">
+    <h1 class="center-align">Edite su residencia</h1>
+  </div>
+  <div class="row">
+    <div class="col s8 offset-s2 z-depth-5">
+      <div class="card-form">
+        <%= render 'form', residence: @residence %>
+      </div>
+    </div>
+  </div>
+</div>

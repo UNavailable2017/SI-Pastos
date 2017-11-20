@@ -12,21 +12,25 @@
   <% end %>
 
   <div class="input-field">
+    <i class="material-icons prefix">home</i>
     <%= form.label :address, 'Dirección', class: 'active' %>
     <%= form.text_field  :address, id: :residence_address, class: "materialize-textarea" %>
   </div>
 
   <div class="input-field">
+    <i class="material-icons prefix">phone</i>
     <%= form.label :phone, 'Telefono', class: 'active' %>
     <%= form.number_field :phone, id: :residence_phone %>
   </div>
 
   <div class="input-field">
+    <i class="material-icons prefix">place</i>
     <%= form.label :neighborhood, 'Barrio', class: 'active' %>
     <%= form.text_field :neighborhood, id: :residence_neighborhood %>
   </div>
 
   <div class="input-field">
+    <i class="material-icons prefix">place</i>
     <%= form.label :locality, 'Localidad', class: 'active' %>
     <%= form.text_field :locality, id: :residence_locality %>
   </div>

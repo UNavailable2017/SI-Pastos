@@ -5,29 +5,33 @@
       <%= link_to 'Agregar hijo', new_child_path, class: 'waves-effect waves-light btn' %>
       <%= link_to 'Siguiente', new_opinion_path, class: 'waves-effect waves-light btn' %>
     </div>
-    <table class="bordered highlight centered responsive-table">
-      <thead>
-        <tr>
-          <th>Nombres y Apellidos</th>
-          <th>Años</th>
-          <th>Estudios Completados</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @children.each do |child| %>
+  </div>
+  <div class="row">
+    <div class="col s8 offset-s2 z-depth-5">
+      <table class="bordered highlight centered responsive-table">
+        <thead>
           <tr>
-            <td><%= child.name %></td>
-            <td><%= (Time.now.year - child.birthdate.year).to_i %></td>
-            <td><%= child.completed_studies %></td>
-            <td><%= link_to (fa_icon 'eye'), child %></td>
-            <td><%= link_to (fa_icon 'pencil'), edit_child_path(child) %></td>
-            <td><%= link_to (fa_icon 'times'), child, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Nombres y Apellidos</th>
+            <th>Años</th>
+            <th>Estudios Completados</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <% @children.each do |child| %>
+            <tr>
+              <td><%= child.name %></td>
+              <td><%= (Time.now.year - child.birthdate.year).to_i %></td>
+              <td><%= child.completed_studies %></td>
+              <td><%= link_to (fa_icon 'eye'), child %></td>
+              <td><%= link_to (fa_icon 'pencil'), edit_child_path(child) %></td>
+              <td><%= link_to (fa_icon 'times'), child, method: :delete, data: { confirm: '¿Esta seguro que desea eliminar?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 

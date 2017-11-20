@@ -1,4 +1,4 @@
-# events_controller
+  # events_controller
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy], except: [:remove_olds]
   before_action :user_not_auth, except: [:index, :show]

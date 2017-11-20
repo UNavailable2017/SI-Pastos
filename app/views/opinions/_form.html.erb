@@ -13,94 +13,75 @@
 
 
   <div class="input-field">
-    <%= form.label :interest %>
+    <%= form.label :interest, '¿Que intereses tiene?', class: 'active' %>
     <%= form.text_area :interest, id: :opinion_interest, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :socialOrganization %>
+    <%= form.label :socialOrganization, '¿Que opina acerca de los Grupo Organizacional?', class: 'active' %>
     <%= form.text_area :socialOrganization, id: :opinion_socialOrganization, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :groupsParticipation %>
+    <%= form.label :groupsParticipation, '¿Que opina de los grupos de participacion?', class: 'active' %>
     <%= form.text_area :groupsParticipation, id: :opinion_groupsParticipation, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :workGroupDecision %>
+    <%= form.label :workGroupDecision, '¿Que opina acerca de los grupos de trabajo de decision?', class: 'active' %>
     <%= form.text_area :workGroupDecision, id: :opinion_workGroupDecision, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :ideas %>
+    <%= form.label :ideas, '¿Cual es su motivacion para estar la ciudad?', class: 'active' %>
     <%= form.text_area :ideas, id: :opinion_ideas, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :activitiesParticipatedBogota %>
+    <%= form.label :activitiesParticipatedBogota, '¿En cuales actividades ha participado dentro de su comunidad?', class: 'active' %>
     <%= form.text_area :activitiesParticipatedBogota, id: :opinion_activitiesParticipatedBogota, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :whatIsParticipating %>
+    <%= form.label :whatIsParticipating, '¿En cuales actividades esta participando actualmente?', class: 'active' %>
     <%= form.text_area :whatIsParticipating, id: :opinion_whatIsParticipating, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :rightsMechanisms %>
+    <%= form.label :rightsMechanisms, '¿Con cuales mecanismos ha ejercido su derecho?', class: 'active' %>
     <%= form.text_area :rightsMechanisms, id: :opinion_rightsMechanisms, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :districtParticipation %>
+    <%= form.label :districtParticipation, '¿Que opina de la participacion en el distrito de la comunidad?', class: 'active' %>
     <%= form.text_area :districtParticipation, id: :opinion_districtParticipation , class:'materialize-textarea'%>
   </div>
 
   <div class="input-field">
-    <%= form.label :reasonParticipation %>
-    <%= form.text_area :reasonParticipation, id: :opinion_reasonParticipation, class:'materialize-textarea' %>
-  </div>
-
-  <div class="input-field">
-    <%= form.label :reasonNoParticipation %>
-    <%= form.text_area :reasonNoParticipation, id: :opinion_reasonNoParticipation, class:'materialize-textarea' %>
-  </div>
-
-  <div class="input-field">
-    <%= form.label :adviceOnParticipation %>
-    <%= form.text_area :adviceOnParticipation, id: :opinion_adviceOnParticipation, class:'materialize-textarea' %>
-  </div>
-
-  <div class="input-field">
-    <%= form.label :training %>
+    <%= form.label :training, '¿Con?', class: 'active' %>
     <%= form.text_area :training, id: :opinion_training, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :trainingTheme %>
+    <%= form.label :trainingTheme, class: 'active' %>
     <%= form.text_area :trainingTheme, id: :opinion_trainingTheme, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :cabildoTrust %>
+    <%= form.label :cabildoTrust, '¿Que opina acerca del cabildo?', class: 'active' %>
     <%= form.text_area :cabildoTrust, id: :opinion_cabildoTrust, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :trustLocalGovernment %>
+    <%= form.label :trustLocalGovernment, '¿Que opina del gobierno local?', class: 'active' %>
     <%= form.text_area :trustLocalGovernment, id: :opinion_trustLocalGovernment, class:'materialize-textarea' %>
   </div>
 
   <div class="input-field">
-    <%= form.label :trustNationalGovernment %>
+    <%= form.label :trustNationalGovernment, '¿Que opina del gobierno nacional?', class: 'active' %>
     <%= form.text_area :trustNationalGovernment, id: :opinion_trustNationalGovernment, class:'materialize-textarea' %>
   </div>
 
-  <div class="input-field">
-    <%= form.label :trustONGfoundation %>
-    <%= form.text_area :trustONGfoundation, id: :opinion_trustONGfoundation, class:'materialize-textarea' %>
-  </div>
 
   <div class="actions center-align">
     <%= form.submit 'Finalizar', class: 'waves-effect waves-light btn' %>

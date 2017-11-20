@@ -2,6 +2,16 @@ class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
   # before_action :user_not_auth, except: [:new, :create]
 
+
+  def check_censo
+    if people.user_is_census(current_user)
+      @information = 'I am the best in the world!!!'
+
+    else
+      redirect_to new_person_path
+    end
+  end
+
   # GET /people
   # GET /people.json
   def index
@@ -33,9 +43,11 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
 
+
+
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+        format.html { redirect_to @person }
       else
         format.html { render :new }
       end
@@ -88,4 +100,5 @@ class PeopleController < ApplicationController
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : 'desc'
     end
+
   end

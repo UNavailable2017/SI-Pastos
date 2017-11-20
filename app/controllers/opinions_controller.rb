@@ -2,6 +2,7 @@ class OpinionsController < ApplicationController
   before_action :set_opinion, only: [:show, :edit, :update, :destroy]
   # before_action :user_not_auth
 
+
   # GET /opinions
   # GET /opinions.json
   def index
@@ -25,7 +26,7 @@ class OpinionsController < ApplicationController
   # POST /opinions
   # POST /opinions.json
   def create
-    @opinion = Opinion.new(opinion_params)
+    @opinion = Opinion.create_current_user(opinion_params, current_user)
 
     respond_to do |format|
       if @opinion.save

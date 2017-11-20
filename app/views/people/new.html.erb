@@ -1,8 +1,10 @@
 <section class="container">
-  <div class="row">
-    <h3 class="center-align">Nuevos Datos Personales</h3>
-    <article class="col s6 offset-s3">
-      <%= render 'form', person: @person %>
+  <div class="row card-form">
+    <h3 class="center-align">Datos Personales</h3>
+    <article class="col s6 offset-s3 z-depth-5">
+      <div class="card-form">
+        <%= render 'form', person: @person %>
+      </div>
     </article>
   </div>
 </section>

@@ -34,10 +34,7 @@ class Person < ApplicationRecord
   end
 
   def self.my_id
-    #get_user = User.select(:id).find_by id: ("#{User.current.id}")
-    #=Person.select("id").where(user_id: ("#{User.current.id}"))
     Person.select('id').joins(:user).where("user_id= ?" ,("#{User.current.id}"))
-
   end
 
   def self.find_all
@@ -54,6 +51,16 @@ class Person < ApplicationRecord
     else
       Person.paginate(page: page)
     end
+  end
+
+  def self.get_person_id(user)
+    Person.find_by(user_id: user.id).id
+  end
+
+  def self.user_is_census(user)
+    if Person.get_person_id(user)
+      return true
+    return false
   end
 
 end

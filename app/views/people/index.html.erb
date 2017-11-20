@@ -29,7 +29,7 @@
                       type: 'search'
                   %>
                 </div>
-                <div class="actions s3">                  
+                <div class="actions s3">
                   <%= button_tag(type: "submit", class: 'btn col s3') do %>
                       <i class="material-icons">search</i>
                   <% end %>
@@ -50,12 +50,6 @@
                 <th>Tipo Documento</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <!-- <th>Cumpleaños</th>
-                <th>Estado Civil</th>
-                <th>Genero</th>
-                <th>¿Censado?</th>
-                <th>Lengua Origen</th>
-                <th>Dominio Lenguaje</th> -->
                 <th>User</th>
                 <th colspan="3"></th>
               </tr>
@@ -68,16 +62,9 @@
                   <td><%= person.documentType %></td>
                   <td><%= person.firstname %></td>
                   <td><%= person.lastname %></td>
-                  <!-- <td><%= person.birthDate %></td>
-                  <td><%= person.civilStatus %></td>
-                  <td><%= person.gender %></td>
-                  <td><%= person.isCensus %></td>
-                  <td><%= person.originLanguage %></td>
-                  <td><%= person.languageDomination %></td> -->
                   <td><%= person.user_id %></td>
                   <td><%= link_to (fa_icon "eye"), person %></td>
                   <td><%= link_to (fa_icon "pencil"), edit_person_path(person.id) %></td>
-                  <!-- <td><%= link_to (fa_icon "times"), person, method: :delete, data: { confirm: '¿Esta seguro?' } %></td> -->
                 </tr>
               <% end %>
             </tbody>

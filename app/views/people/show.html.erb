@@ -3,54 +3,62 @@
 
 <div class="container">
   <div class="row">
-    <table class="striped">
-      <thead>
-        <tr>
-          <th>Documento:</th>
-          <th>Tipo Documento:</th>
-          <th>Nombre:</th>
-          <th>Apellido:</th>
-          <th>Fecha Nacimiento:</th>
-          <th>Estado Civil:</th>
-          <th>Genero:</th>
-          <th>Esta Censado?</th>
-          <th>Lengua Origen:</th>
-          <th>Dominio Lengua</th>
-          <th>User:</th>
-        </tr>
-      </thead>
+    <h2 class="center-align">Se guardaron los siguientes datos</h2>
+  </div>
+  <div class="row">
+    <div class="col s8 offset-s2 card-form">
+    <table class="bordered highlight centered responsive-table z-depth-5">
       <tbody>
         <tr>
+          <td><strong>Documento</strong></td>
           <td><%= @person.documentPerson %></td>
+        </tr>
+        <tr>
+          <td><strong>Tipo Documento</strong></td>
           <td><%= @person.documentType %></td>
+        </tr>
+        <tr>
+          <td><strong>Nombres</strong></td>
           <td><%= @person.firstname %></td>
+        </tr>
+        <tr>
+          <td><strong>Apellidos</strong></td>
           <td><%= @person.lastname %></td>
+        </tr>
+        <tr>
+          <td><strong>Fecha de Nacimiento</strong></td>
           <td><%= @person.birthDate %></td>
+        <tr>
+          <td><strong>Estado Civil</strong></td>
           <td><%= @person.civilStatus %></td>
+        </tr>
+        <tr>
+          <td><strong>Genero</strong></td>
           <td><%= @person.gender %></td>
-          <td><%= @person.isCensus %></td>
+        </tr>
+          <td><strong>Lengua de Origen</strong></td>
           <td><%= @person.originLanguage %></td>
+        </tr>
+        <tr>
+          <td><strong>Dominio de la Lengua</strong></td>
           <td><%= @person.languageDomination %></td>
-          <td><%= @person.user_id %></td>
         </tr>
       </tbody>
     </table>
+  </div>
+
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <%= link_to 'Siguiente', new_residence_path %>
+
   </div>
 </div>
 
 <div class="col s10">
   <div class="center-align">
-    <%= link_to 'Editar', edit_person_path(@person.id), class:"btn waves-effect waves-light" %>
-    <% unless current_user.try(:admin?) %>
-      <%= link_to 'Atrás', root_path, class:"btn waves-effect waves-light" %>
-    <% else %>
-      <%= link_to 'Atrás', people_path, class:"btn waves-effect waves-light" %>
-    <% end %>
+    <%= link_to 'Editar', edit_person_path(@person), class:"btn waves-effect waves-light" %>
+    <%= link_to 'Siguiente', new_residence_path, class:"btn waves-effect waves-light" %>
   </div>
 </div>

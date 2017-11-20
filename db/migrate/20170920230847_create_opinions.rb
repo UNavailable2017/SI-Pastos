@@ -10,9 +10,6 @@ class CreateOpinions < ActiveRecord::Migration[5.1]
       t.text :whatIsParticipating
       t.text :rightsMechanisms
       t.text :districtParticipation
-      t.text :reasonParticipation
-      t.text :reasonNoParticipation
-      t.text :adviceOnParticipation
       t.text :training
       t.text :trainingTheme
       t.text :cabildoTrust

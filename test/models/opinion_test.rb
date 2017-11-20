@@ -12,9 +12,6 @@
 #  whatIsParticipating          :text
 #  rightsMechanisms             :text
 #  districtParticipation        :text
-#  reasonParticipation          :text
-#  reasonNoParticipation        :text
-#  adviceOnParticipation        :text
 #  training                     :text
 #  trainingTheme                :text
 #  cabildoTrust                 :text

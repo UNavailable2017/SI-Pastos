@@ -5,7 +5,7 @@ class ChildrenController < ApplicationController
   # GET /children
   # GET /children.json
   def index
-    @children = Child.paginate(page: params[:page])
+    @children = Child.paginate_all(params[:page], current_user)
   end
 
   # GET /children/1
@@ -25,8 +25,9 @@ class ChildrenController < ApplicationController
   # POST /children
   # POST /children.json
   def create
-    @child = Child.new(child_params)
-    @child[:censo_id] = Censo.find_by(person_id: Person.find_by(user_id: 1).id).id
+    @child = Child.create_current_user(child_params, current_user)
+    # @child = Child.new(child_params)
+    # @child[:censo_id] = Censo.find_by(person_id: Person.find_by(user_id: current_user.id).id).id
 
     respond_to do |format|
       if @child.save
