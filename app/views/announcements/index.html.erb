@@ -8,13 +8,6 @@
     <div class="row">
       <h5 class="center-align">
         <%= link_to 'Nuevo empleo', new_announcement_path, class: "btn waves-effect waves-light" %>
-        <%=
-          link_to 'Eliminar Ofertas Antiguos',
-          announcements_remove_olds_path,
-          method: :delete,
-          data: { confirm: '¿Esta seguro?' },
-          class: "btn waves-effect waves-light"
-        %>
       </h5>
     </div>
   <% end %>

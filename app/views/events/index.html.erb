@@ -26,13 +26,7 @@
       <div class="col m12">
         <h5 class="center-align">
             <%= link_to 'Nuevo Evento', new_event_path, class: "btn waves-effect waves-light" %>
-            <%=
-              link_to 'Eliminar Eventos Antiguos',
-              events_remove_olds_path,
-              method: :delete,
-              data: { confirm: '¿Esta seguro?' },
-              class: "btn waves-effect waves-light"
-            %>
+
         </h5>
       </div>
     <% end %>

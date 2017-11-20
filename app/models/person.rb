@@ -60,7 +60,9 @@ class Person < ApplicationRecord
   def self.user_is_census(user)
     if Person.get_person_id(user)
       return true
-    return false
+    else
+      return false
+    end
   end
 
 end
