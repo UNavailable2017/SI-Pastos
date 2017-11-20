@@ -22,12 +22,13 @@ class Censo < ApplicationRecord
 
   def self.get_censo
     us_id = Person.select(:id).find_by user_id: ("#{User.current.id}")
-    doc_per = Person.find_by "\"documentPerson\"": ("#{field}")
-    Censo.joins(:person).where("person_id=? and \"documentPerson\" =?", us_id , doc_per )
+    # doc_per = Person.find_by "\"documentPerson\"": ("#{field}")
+    Censo.joins(:person).where( "person_id=?", us_id )
   end
 
   def self.check_data
-      get_usid = User.find_by id: ("#{User.current.id}")
+      # get_usid = User.find_by id: ("#{User.current.id}")
+      get_usid = Person.find_by "\"documentPerson\"": ("#{field}")
       #Person.select("\"documentPerson\"").joins(:censo).where(documentPerson: get_document.num_document)
       Person.joins(:censo).select(:id,:documentPerson,:user_id).where("\"isCensus\"=? and \"documentPerson\" =?", "t", "38425")
 
