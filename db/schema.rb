@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20171106222443) do
     t.string "levelStudies"
     t.string "profession"
     t.string "entry"
+    t.string "health_service"
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,13 +83,6 @@ ActiveRecord::Schema.define(version: 20171106222443) do
     t.string "eventType"
     t.string "eventInfo"
     t.integer "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "health_services", force: :cascade do |t|
-    t.string "name"
-    t.integer "censo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,78 +1,35 @@
 <div class="container">
-<!-- 
-  <p>
-    <strong>Person:</strong>
-    <%= @censo.person_id %>
-  </p> -->
-
-  <p>
-    <strong>Fecha:</strong>
-    <%= @censo.date %>
-  </p>
+  <div class="row">
+    <h2 class="center-align">Se llenaron los siguientes campos</h2>
+  </div>
 
   <div class="row">
-
-    <table class="striped">
-     <thead>
-        <tr>
-          <th>N° Hijos:</th>
-          <th>Resguardo Origen:</th>
-          <th>Nivel de Estudios:</th>
-          <th>Profesión:</th>
-          <th>Ingresos:</th>
-          <th colspan="3"></th>
-
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td><%= @censo.numberOfChildren %></td>
-          <td><%= @censo.originResguardo %></td>
-          <td><%= @censo.levelStudies %></td>
-          <td><%= @censo.profession %></td>
-          <td><%= @censo.entry %></td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- fgffdfgdr
-    <div class="col s2">
-      <strong>N° Hijos:</strong>
-      <%= @censo.numberOfChildren %>
+    <div class="col s8 offset-s2">
+      <table class="bordered centered highlight responsive-table">
+        <tbody>
+          <tr>
+            <td><strong>Resguardo Origen:</strong></td>
+            <td><%= @censo.originResguardo %></td>
+          </tr>
+          <tr>
+            <td><strong>Nivel de Estudios:</strong></td>
+            <td><%= @censo.levelStudies %></td>
+          </tr>
+          <tr>
+            <td><strong>Nivel de Estudios:</strong></td>
+            <td><%= @censo.levelStudies %></td>
+          </tr>
+          <tr>
+            <td><strong>Servicio de Salud:</strong></td>
+            <td><%= @censo.health_service %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <div class="col s3">
-      <strong>Resguardo Origen:</strong>
-      <%= @censo.originResguardo %>
-    </div>
-
-    <div class="col s3">
-      <strong>Nivel de Estudios:</strong>
-      <%= @censo.levelStudies %>
-    </div>
-
-    <div class="col s2">
-      <strong>Profesión:</strong>
-      <%= @censo.profession %>
-    </div>
-
-    <div class="col s2">
-      <strong>Ingresos:</strong>
-      <%= @censo.entry %>
-    </div>
-    -->
-
   </div>
-
-
-</div>
-
-
-<div class="col s10">
   <div class="center-align">
-    <% if current_user.try(:admin?) %>
-      <%= link_to 'Atrás', censos_path, class:"btn waves-effect waves-light" %>
-      <%= link_to 'Editar', edit_censo_path(@censo), class:"btn waves-effect waves-light" %>
-    <% end %>
+    <%= link_to 'Editar', edit_censo_path(@censo), class:"btn waves-effect waves-light" %>
+    <%= link_to 'Siguiente', root_path, class:"btn waves-effect waves-light" %>
   </div>
+
 </div>

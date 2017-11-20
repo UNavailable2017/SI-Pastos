@@ -5,8 +5,8 @@ class CreateResidences < ActiveRecord::Migration[5.1]
       t.integer :phone
       t.string :neighborhood
       t.string :locality
-      t.float :lat
-      t.float :long
+      t.float :latitude
+      t.float :longitude
       t.integer :person_id
 
       t.timestamps

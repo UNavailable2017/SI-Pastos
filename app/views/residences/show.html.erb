@@ -1,39 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <h2 class="center-align">Se llenaron los siguientes datos</h2>
+  </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @residence.address %>
-</p>
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <table class="bordered centered highlight responsive-table">
+        <tbody>
+          <tr>
+            <td><strong>Dirrección:</strong></td>
+            <td><%= @residence.address %></td>
+          </tr>
+          <tr>
+            <td><strong>Telefono:</strong></td>
+            <td><%= @residence.phone %></td>
+          </tr>
+          <tr>
+            <td><strong>Barrio:</strong></td>
+            <td><%= @residence.neighborhood %></td>
+          </tr>
+          <tr>
+            <td><strong>Localidad:</strong></td>
+            <td><%= @residence.locality %></td>
+          </tr>
+        </tbody>
+    </div>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @residence.phone %>
-</p>
+  </table>
 
-<p>
-  <strong>Neighborhood:</strong>
-  <%= @residence.neighborhood %>
-</p>
+  <div class="center-align">
+    <%= link_to 'Editar', edit_residence_path(@residence), class: 'waves-effect waves-light btn-large' %>
+    <%= link_to 'Siguiente', new_censo_path, class: 'waves-effect waves-light btn-large' %>
+  </div>
 
-<p>
-  <strong>Locality:</strong>
-  <%= @residence.locality %>
-</p>
 
-<p>
-  <strong>Lat:</strong>
-  <%= @residence.latitude %>
-</p>
 
-<p>
-  <strong>Long:</strong>
-  <%= @residence.longitude %>
-</p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @residence.person_id %>
-</p>
-
-<%= link_to 'Edit', edit_residence_path(@residence) %> |
-<%= link_to 'Back', residences_path %>
+</div>

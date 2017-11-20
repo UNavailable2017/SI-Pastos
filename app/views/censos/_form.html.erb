@@ -12,49 +12,36 @@
   <% end %>
 
   <div class="input-field">
-    <i class="material-icons prefix">access_time</i>
-    <%= form.label :date, "Fecha" %>
-    <%= form.text_field :date, id: :censo_date, class: "datepicker" %>
-  </div>
-
-  <div class="input-field">
-    <i class="material-icons prefix">child_care</i>
-    <%= form.label :numberOfChildren, "Numero de Hijos" %>
-    <%= form.number_field :numberOfChildren, id: :censo_numberOfChildren %>
-  </div>
-
-  <div class="input-field">
     <i class="material-icons prefix">group</i>
-    <%= form.label :originResguardo, "Resguardo de Origen" %>
+    <%= form.label :originResguardo, "Resguardo de Origen", class: 'active' %>
     <%= form.text_field :originResguardo, id: :censo_originResguardo %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">book</i>
-    <%= form.label :levelStudies, "Nivel de Estudios" %>
+    <%= form.label :levelStudies, "Nivel de Estudios", class: 'active' %>
     <%= form.text_field :levelStudies, id: :censo_levelStudies %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">business</i>
-    <%= form.label :profession, "Profesión" %>
+    <%= form.label :profession, "Profesión", class: 'active' %>
     <%= form.text_field :profession, id: :censo_profession %>
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">attach_money</i>
-    <%= form.label :entry, "Ingresos" %>
+    <%= form.label :entry, "Ingresos", class: 'active' %>
     <%= form.text_field :entry, id: :censo_entry %>
   </div>
 
   <div class="input-field">
-    <i class="material-icons prefix">account_circle</i>
-    <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :censo_person_id %>
+    <i class="material-icons prefix">healing</i>
+    <%= form.label :health_service, "Servicio de salud", class: 'active' %>
+    <%= form.text_field :health_service, id: :censo_health_service %>
   </div>
 
-  <div class="actions center-align">
-    <%= link_to 'Atrás', censos_path, class:"btn waves-effect waves-light" %>
-    <%= form.submit 'Crear Censo' ,class: "btn waves-effect waves-light" %>
+  <div class="actions center-align">    
+    <%= form.submit 'Siguiente' ,class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

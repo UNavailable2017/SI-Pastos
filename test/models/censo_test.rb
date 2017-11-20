@@ -3,12 +3,13 @@
 # Table name: censos
 #
 #  id                :integer          not null, primary key
-#  date              :date
+#  date              :date             default(NULL)
 #  numberOfChildren  :integer
 #  originResguardo   :string
 #  levelStudies      :string
 #  profession        :string
 #  entry             :string
+#  health_service    :string
 #  person_id         :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null

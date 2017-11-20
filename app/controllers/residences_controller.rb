@@ -27,6 +27,7 @@ class ResidencesController < ApplicationController
   # POST /residences.json
   def create
     @residence = Residence.new(residence_params)
+    @residence[:person_id] = Person.find_by(user_id: current_user.id).id
 
     respond_to do |format|
       if @residence.save
@@ -72,6 +73,6 @@ class ResidencesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def residence_params
-    params.require(:residence).permit(:address, :phone, :neighborhood, :locality, :latitude, :longitude, :person_id)
+    params.require(:residence).permit(:address, :phone, :neighborhood, :locality)
   end
 end

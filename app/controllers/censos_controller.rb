@@ -1,6 +1,6 @@
 class CensosController < ApplicationController
   before_action :set_censo, only: [:show, :edit, :update, :destroy]
-  before_action :user_not_auth
+  # before_action :user_not_auth
 
   def index
     @censos = Censo.paginate(page: params[:page])
@@ -29,6 +29,7 @@ class CensosController < ApplicationController
   # POST /censos.json
   def create
     @censo = Censo.new(censo_params)
+    @censo[:person_id] = Person.find_by(user_id: current_user.id).id
 
     respond_to do |format|
       if @censo.save
@@ -73,6 +74,6 @@ class CensosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def censo_params
-      params.require(:censo).permit(:date, :numberOfChildren, :originResguardo, :levelStudies, :profession, :entry, :person_id)
+      params.require(:censo).permit(:numberOfChildren, :originResguardo, :levelStudies, :profession, :entry, :health_service)
     end
 end

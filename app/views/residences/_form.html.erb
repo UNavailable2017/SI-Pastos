@@ -1,7 +1,7 @@
 <%= form_with(model: residence, local: true) do |form| %>
   <% if residence.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(residence.errors.count, "error") %> prohibited this residence from being saved:</h2>
+      <h2><%= residence.errors.count %><%= residence.errors.count == 1 ? ' error' : ' errores' %></h2>
 
       <ul>
       <% residence.errors.full_messages.each do |message| %>
@@ -17,23 +17,18 @@
   </div>
 
   <div class="input-field">
-    <%= form.label :phone %>
+    <%= form.label :phone, 'Telefono', class: 'active' %>
     <%= form.number_field :phone, id: :residence_phone %>
   </div>
 
   <div class="input-field">
-    <%= form.label :neighborhood %>
+    <%= form.label :neighborhood, 'Barrio', class: 'active' %>
     <%= form.text_field :neighborhood, id: :residence_neighborhood %>
   </div>
 
   <div class="input-field">
-    <%= form.label :locality %>
+    <%= form.label :locality, 'Localidad', class: 'active' %>
     <%= form.text_field :locality, id: :residence_locality %>
-  </div>
-
-  <div class="input-field" style="display:none">
-    <%= form.label :person_id %>
-    <%= form.number_field :person_id, id: :residence_person_id %>
   </div>
 
   <div class="actions center-align">

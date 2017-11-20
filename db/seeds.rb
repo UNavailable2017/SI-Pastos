@@ -24,6 +24,12 @@ a.email =  "voto@blanco.io"
 a.password = '12345678'
 a.password_confirmation = '12345678'
 a.save
+a = User.new
+a.email =  "admin@admin.com"
+a.password = '123456789'
+a.password_confirmation = '123456789'
+a.admin = true
+a.save
 puts 'finished loading user data'
 
 100.times do
@@ -66,13 +72,6 @@ puts 'finished loading Announcement data'
 Faker::UniqueGenerator.clear
 
 100.times do
-  HealthService.create(name: Faker::Company.suffix,
-                       censo_id: Faker::Number.unique.between(1, 100))
-end
-puts 'finished loading health_service data'
-Faker::UniqueGenerator.clear
-
-100.times do
   a = Censo.new
   a.numberOfChildren = Faker::Number.number(1)
   a.date = Faker::Date.forward(2000)
@@ -82,7 +81,7 @@ Faker::UniqueGenerator.clear
   a.entry = Faker::Lorem.characters(8)
   a.person_id = Faker::Number.unique.between(1, 100)
   Faker::UniqueGenerator.clear
-  a.health_service_id = Faker::Number.unique.between(1, 100)
+  a.health_service = Faker::Company.suffix
   a.save
 end
 Faker::UniqueGenerator.clear
