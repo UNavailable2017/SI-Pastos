@@ -1,7 +1,7 @@
 # statistic_controller
 class StatisticsController < ApplicationController
   before_action :user_not_auth
-  
+
   def total
     @data = Statistic.importante_statistics
   end
@@ -15,7 +15,7 @@ class StatisticsController < ApplicationController
   end
 
   def health
-    @health_service = HealthService.count_name
+    @health_service = Statistic.count_name_healt_service
   end
 
   def gender

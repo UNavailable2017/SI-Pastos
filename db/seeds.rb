@@ -11,6 +11,13 @@
 require 'faker'
 require 'rubygems'
 
+a = User.new
+a.email =  "admin@admin.com"
+a.password = '123456789'
+a.password_confirmation = '123456789'
+a.admin = true
+a.save
+
 100.times do
   a = User.new
   a.email =  Faker::Internet.email
@@ -24,12 +31,7 @@ a.email =  "voto@blanco.io"
 a.password = '12345678'
 a.password_confirmation = '12345678'
 a.save
-a = User.new
-a.email =  "admin@admin.com"
-a.password = '123456789'
-a.password_confirmation = '123456789'
-a.admin = true
-a.save
+
 puts 'finished loading user data'
 
 100.times do
@@ -73,8 +75,8 @@ Faker::UniqueGenerator.clear
 
 100.times do
   a = Censo.new
-  a.numberOfChildren = Faker::Number.number(1)
   a.date = Faker::Date.forward(2000)
+  a.numberOfChildren = Faker::Number.unique.between(1, 8)
   a.originResguardo = Faker::Lorem.characters(7)
   a.levelStudies = Faker::Lorem.characters(7)
   a.profession = Faker::Company.profession
@@ -89,7 +91,8 @@ puts 'finished loading censo data'
 
 100.times do
   Child.create(name: Faker::Name.first_name,
-               age: Faker::Number.number(1),
+               birthdate: Faker::Date.between(50.years.ago, Date.today),
+               completed_studies: Faker::GameOfThrones.house,
                censo_id: Faker::Number.unique.between(1, 100))
 end
 Faker::UniqueGenerator.clear
@@ -98,6 +101,7 @@ puts 'finished loading child data'
 100.times do
   Contact.create(name: Faker::Name.first_name,
                  email: Faker::Internet.email,
+                 phone: Faker::PhoneNumber.cell_phone,
                  message: Faker::Lorem.paragraph)
 end
 puts 'finished loading contact data'

@@ -11,107 +11,98 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :idOpinion %>
-    <%= form.number_field :idOpinion, id: :opinion_idOpinion %>
-  </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :interest %>
-    <%= form.text_area :interest, id: :opinion_interest %>
+    <%= form.text_area :interest, id: :opinion_interest, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :socialOrganization %>
-    <%= form.text_area :socialOrganization, id: :opinion_socialOrganization %>
+    <%= form.text_area :socialOrganization, id: :opinion_socialOrganization, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :groupsParticipation %>
-    <%= form.text_area :groupsParticipation, id: :opinion_groupsParticipation %>
+    <%= form.text_area :groupsParticipation, id: :opinion_groupsParticipation, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :workGroupDecision %>
-    <%= form.text_area :workGroupDecision, id: :opinion_workGroupDecision %>
+    <%= form.text_area :workGroupDecision, id: :opinion_workGroupDecision, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :ideas %>
-    <%= form.text_area :ideas, id: :opinion_ideas %>
+    <%= form.text_area :ideas, id: :opinion_ideas, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :activitiesParticipatedBogota %>
-    <%= form.text_area :activitiesParticipatedBogota, id: :opinion_activitiesParticipatedBogota %>
+    <%= form.text_area :activitiesParticipatedBogota, id: :opinion_activitiesParticipatedBogota, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :whatIsParticipating %>
-    <%= form.text_area :whatIsParticipating, id: :opinion_whatIsParticipating %>
+    <%= form.text_area :whatIsParticipating, id: :opinion_whatIsParticipating, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :rightsMechanisms %>
-    <%= form.text_area :rightsMechanisms, id: :opinion_rightsMechanisms %>
+    <%= form.text_area :rightsMechanisms, id: :opinion_rightsMechanisms, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :districtParticipation %>
-    <%= form.text_area :districtParticipation, id: :opinion_districtParticipation %>
+    <%= form.text_area :districtParticipation, id: :opinion_districtParticipation , class:'materialize-textarea'%>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :reasonParticipation %>
-    <%= form.text_area :reasonParticipation, id: :opinion_reasonParticipation %>
+    <%= form.text_area :reasonParticipation, id: :opinion_reasonParticipation, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :reasonNoParticipation %>
-    <%= form.text_area :reasonNoParticipation, id: :opinion_reasonNoParticipation %>
+    <%= form.text_area :reasonNoParticipation, id: :opinion_reasonNoParticipation, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :adviceOnParticipation %>
-    <%= form.text_area :adviceOnParticipation, id: :opinion_adviceOnParticipation %>
+    <%= form.text_area :adviceOnParticipation, id: :opinion_adviceOnParticipation, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :training %>
-    <%= form.text_area :training, id: :opinion_training %>
+    <%= form.text_area :training, id: :opinion_training, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :trainingTheme %>
-    <%= form.text_area :trainingTheme, id: :opinion_trainingTheme %>
+    <%= form.text_area :trainingTheme, id: :opinion_trainingTheme, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :cabildoTrust %>
-    <%= form.text_area :cabildoTrust, id: :opinion_cabildoTrust %>
+    <%= form.text_area :cabildoTrust, id: :opinion_cabildoTrust, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :trustLocalGovernment %>
-    <%= form.text_area :trustLocalGovernment, id: :opinion_trustLocalGovernment %>
+    <%= form.text_area :trustLocalGovernment, id: :opinion_trustLocalGovernment, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :trustNationalGovernment %>
-    <%= form.text_area :trustNationalGovernment, id: :opinion_trustNationalGovernment %>
+    <%= form.text_area :trustNationalGovernment, id: :opinion_trustNationalGovernment, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :trustONGfoundation %>
-    <%= form.text_area :trustONGfoundation, id: :opinion_trustONGfoundation %>
+    <%= form.text_area :trustONGfoundation, id: :opinion_trustONGfoundation, class:'materialize-textarea' %>
   </div>
 
-  <div class="field">
-    <%= form.label :censo_id %>
-    <%= form.number_field :censo_id, id: :opinion_censo_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions center-align">
+    <%= form.submit 'Finalizar', class: 'waves-effect waves-light btn' %>
   </div>
 <% end %>

@@ -28,4 +28,5 @@
 
 class Opinion < ApplicationRecord
   belongs_to :censo
+
 end

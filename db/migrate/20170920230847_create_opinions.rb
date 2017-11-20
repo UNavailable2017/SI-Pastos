@@ -1,7 +1,6 @@
 class CreateOpinions < ActiveRecord::Migration[5.1]
   def change
     create_table :opinions do |t|
-      t.integer :idOpinion
       t.text :interest
       t.text :socialOrganization
       t.text :groupsParticipation

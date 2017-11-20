@@ -14,6 +14,8 @@ class Candidate < ApplicationRecord
     belongs_to :person
     belongs_to :election
 
+    validates_presence_of :votes
+
     def self.get_data
         last_election = Election.last
         if last_election == nil

@@ -6,8 +6,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Statistic < ApplicationRecord
+
   def self.average_age
     birth_date = Person.birth_date
     time = Time.new
@@ -30,7 +30,6 @@ class Statistic < ApplicationRecord
     statistics['¿Cantidad de eventos realizados?'] = Event.count
     statistics['¿Cantidad de empleos publicados?'] = Announcement.count
     statistics['¿Cantidad de elecciones hechas?'] = Election.count
-    statistics['¿Cantidad de de Centros de salud?'] = HealthService.count
     statistics['¿Edad promedio de los usuarios censados?'] = Statistic.average_age
     return statistics
   end
@@ -49,6 +48,10 @@ class Statistic < ApplicationRecord
 
   def self.censo_group_by_year_date_count_sort
     Censo.group_by_year(:date).count.sort
+  end
+
+  def self.count_name_healt_service
+    Censo.group(:health_service).count
   end
 
 end

@@ -14,4 +14,6 @@
 
 class Announcement < ApplicationRecord
   belongs_to :person
+
+  validates_presence_of :publicationDate, :deadline, :announcementType, :announcementInformation
 end

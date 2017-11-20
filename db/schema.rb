@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20171106222443) do
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "health_service_id"
   end
 
   create_table "certificates", force: :cascade do |t|
