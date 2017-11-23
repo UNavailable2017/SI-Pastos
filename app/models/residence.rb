@@ -18,6 +18,8 @@ class Residence < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  validates :address, :phone, :neighborhood, :locality, :latitude, presence: true
+
   def self.data_gps
     residences = Residence.all
     Gmaps4rails.build_markers(residences) do |residence, marker|

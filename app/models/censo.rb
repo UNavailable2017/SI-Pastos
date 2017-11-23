@@ -19,6 +19,7 @@ class Censo < ApplicationRecord
   has_one :opinion
   has_many :children
   belongs_to :health_service
+  validates :date, :numberOfChildren, :originResguardo, :profession, :entry, presence: true
 
   def self.check_user
     us_id = User.find_by id: ("#{User.current.id}")

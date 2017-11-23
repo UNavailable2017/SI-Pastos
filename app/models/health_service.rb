@@ -10,6 +10,8 @@
 #
 class HealthService < ApplicationRecord
   has_many :censos
+  validates :name, presence: true
+
   def self.count_name
     HealthService.joins(:censos).group(:name).count
   end

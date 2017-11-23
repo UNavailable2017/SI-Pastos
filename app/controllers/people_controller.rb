@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-  before_action :user_not_auth, except: [:new, :create]
+
 
   # GET /people
   # GET /people.json

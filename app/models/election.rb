@@ -11,6 +11,9 @@
 #
 class Election < ApplicationRecord
   has_many :candidates
+
+  validates :date, :winner, presence: true
+
   def self.id_election
       id_elec = Election.last
       id_elec.id

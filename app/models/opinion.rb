@@ -28,4 +28,12 @@
 
 class Opinion < ApplicationRecord
   belongs_to :censo
+
+  validates :interest, :socialOrganization, :groupsParticipation,
+    :workGroupDecision, :ideas, :activitiesParticipatedBogota,
+    :whatIsParticipating, :rightsMechanisms, :districtParticipation,
+    :reasonParticipation, :reasonNoParticipation, :adviceOnParticipation,
+    :training, :trainingTheme, :cabildoTrust, :trustLocalGovernment,
+    :trustNationalGovernment, :trustONGfoundation, presence: true
+
 end

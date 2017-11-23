@@ -12,4 +12,6 @@
 
 class Newsletter < ApplicationRecord
   belongs_to :user
+
+  validates :subject, :content, presence: true
 end

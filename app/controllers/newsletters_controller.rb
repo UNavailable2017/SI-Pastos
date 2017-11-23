@@ -1,7 +1,6 @@
 class NewslettersController < ApplicationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
-  before_action :user_not_auth
-  
+
   # GET /newsletters
   # GET /newsletters.json
   def index

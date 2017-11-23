@@ -1,6 +1,5 @@
 class CensosController < ApplicationController
   before_action :set_censo, only: [:show, :edit, :update, :destroy]
-  before_action :user_not_auth
 
   def index
     @censos = Censo.paginate(page: params[:page])

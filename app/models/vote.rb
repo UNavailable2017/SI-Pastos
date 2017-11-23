@@ -11,6 +11,9 @@
 #
 
 class Vote < ApplicationRecord
+
+    validates :email, presence: true
+
     def self.check_vote
         Vote.find_by email: ("#{User.current.email}")
     end

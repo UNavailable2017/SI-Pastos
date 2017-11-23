@@ -1,8 +1,7 @@
 # residences_controller
 class ResidencesController < ApplicationController
   before_action :set_residence, only: [:show, :edit, :update, :destroy]
-  before_action :user_not_auth
-  
+
   # GET /residences
   # GET /residences.json
   def index

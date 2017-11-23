@@ -28,7 +28,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event[:person_id] = 1 # governor
 
     respond_to do |format|
       if @event.save

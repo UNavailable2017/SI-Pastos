@@ -1,6 +1,6 @@
 class ElectionsController < ApplicationController
   before_action :set_election, only: [:show, :edit, :update, :destroy   ]
-  before_action :user_not_auth
+
 
   # GET /elections
   # GET /elections.json

@@ -67,7 +67,7 @@
             </div>
           <% end %>
 
-      <div class="input-field">
+      <div class="input-field" style="display:none">
         <i class="material-icons prefix">equalizer</i>
         <%= form.label :votes, "Votos", class: 'active' %>
         <%= form.number_field :votes, id: :candidate_votes, :value =>  0, readonly: true  %>
@@ -80,10 +80,16 @@
       </div>
 
 
-      <div class="input-field">
+      <div class="input-field" style="display:none">
          <i class="material-icons prefix">format_list_numbered</i>
          <%= form.label :election_id, "id eleccion", class: 'active' %>
         <%=  form.text_field :election_id, id: :candidate_election_id, :value =>  @get_id_election, readonly: true %>
+      </div>
+
+      <div class="input-field" style="display:none">
+         <i class="material-icons prefix">format_list_numbered</i>
+         <%= form.label :person_id, "id eleccion", class: 'active' %>
+        <%=  form.text_field :person_id, id: :candidate_election_id, value: 1 %>
       </div>
 
       <div class="actions center-align">

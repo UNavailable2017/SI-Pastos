@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :contacts, only: %i[new index create]
 
     # routes with only a member
-
     resources :announcements do
       delete 'remove_olds', on: :collection
     end

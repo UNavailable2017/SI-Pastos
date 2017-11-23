@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require sweetalert2
+//= require sweet-alert2-rails
 //= require materialize-sprockets
 //= require underscore
 //= require Chart.bundle

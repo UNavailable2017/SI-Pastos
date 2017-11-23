@@ -11,5 +11,6 @@
 #
 
 class Child < ApplicationRecord
-    belongs_to :censo
+  belongs_to :censo
+  validates :name, :age, presence: true
 end

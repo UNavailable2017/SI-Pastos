@@ -11,6 +11,9 @@
 
 # certificate_model
 class Certificate < ApplicationRecord
+
+  validates :documentPerson, :email, presence: true
+
   def self.data_person
     certi_last = Certificate.last
     User.select("\"documentPerson\"", "firstname", "lastname", "\"documentType\"").joins(:person).where("\"isCensus\"=? and \"documentPerson\" =?", "t", certi_last.documentPerson)

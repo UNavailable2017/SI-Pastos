@@ -35,3 +35,19 @@
       <%= form.submit 'votar', class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
+
+<script>
+$ ->
+  $("h1").click ->
+    $.ajax({
+      type: "POST",
+      url: "/products",
+      data: { product: { name: "Filip", description: "whatever" } },
+      success:(data) ->
+        alert data.id
+        return false
+      error:(data) ->
+        return false
+    })
+
+</script>

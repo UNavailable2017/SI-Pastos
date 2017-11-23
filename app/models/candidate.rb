@@ -13,6 +13,7 @@
 class Candidate < ApplicationRecord
     belongs_to :person
     belongs_to :election
+    validates :votes, presence: true
 
     def self.get_data
         last_election = Election.last
