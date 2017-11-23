@@ -12,7 +12,7 @@
 # certificate_model
 class Certificate < ApplicationRecord
 
-  validates :documentPerson, :email, presence: true
+  validates :documentPerson, presence: true
 
   def self.data_person
     certi_last = Certificate.last

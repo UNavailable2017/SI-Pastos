@@ -22,13 +22,12 @@ Rails.application.routes.draw do
 
     # routes for events
     resources :newsletters do
-      get 'deliver', on: :member
+      post 'deliver', on: :member
     end
 
     # single routes
 
     get 'residences/index'
-    get 'newsletters/deliver'
 
     # routes with namespace
     namespace :statistics do

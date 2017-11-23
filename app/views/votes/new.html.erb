@@ -4,7 +4,7 @@
           <div class="row card-form">
             <article class="col s8 offset-s2 z-depth-5">
               <div class="card-form">
-                  <h4 class="center-align"> Agradecemos su participación en las elecciones para gobernador</h4>
+                  <h4 class="center-align">Agradecemos su participación en las elecciones para gobernador</h4>
               </div>
               <div class="center-align">
                   <%= link_to 'Ir al inicio', root_path %>
@@ -17,7 +17,7 @@
         <div class="container">
           <div class="row">
             <div class="col m12">
-              <h5 class="header center-align"> En el momento no hay votaciones en curso para gobernador</h5>
+              <h5 class="header center-align">En el momento no hay votaciones en curso para gobernador</h5>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
               <div class="card-form col s12 m12 l12">
                  <%option = 0%>
                 <% @candidates.each do |candidate| %>
-                    <div class="card-stacked col s3 m3 l3">
+                    <div class="card-stacked col s3 m3 l3 hoverable">
                       <div class="card-content">
                           <%option +=1%>
                           <h5 class="header center-align"><strong><%=option%> opción </strong> </h5>

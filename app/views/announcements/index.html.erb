@@ -10,7 +10,7 @@
         <%= link_to 'Nuevo empleo', new_announcement_path, class: "btn waves-effect waves-light" %>
         <%=
           link_to 'Eliminar Ofertas Antiguos',
-          announcements_remove_olds_path,
+          remove_olds_announcements_path,
           method: :delete,
           data: { confirm: '¿Esta seguro?' },
           class: "btn waves-effect waves-light"
