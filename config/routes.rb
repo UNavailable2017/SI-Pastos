@@ -5,24 +5,25 @@ Rails.application.routes.draw do
     resources :censos
     resources :people
     resources :certificates
-
-    # routes for announcements
-    delete '/announcements/remove_olds', to: 'announcements#remove_olds'
-    resources :announcements
-
-    # routes for events
-    delete '/events/remove_olds', to: 'events#remove_olds'
-    resources :events
     resources :votes
     resources :candidates
-
     resources :elections
     resources :request_censos
     resources :contacts, only: %i[new index create]
+
+    # routes with only a member
+
+    resources :announcements do
+      delete 'remove_olds', on: :collection
+    end
+
+    resources :events do
+      delete 'remove_olds', on: :collection
+    end
+
+    # routes for events
     resources :newsletters do
-      member do
-        post :deliver
-      end
+      get 'deliver', on: :member
     end
 
     # single routes
@@ -40,11 +41,6 @@ Rails.application.routes.draw do
 
     # root
     root to: 'home#index'
-
-    # routes future
-    # resources :children
-    # resources :health_services
-    # resources :opinions
   end
 
   namespace :users do
@@ -55,12 +51,11 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     namespace :users do
-      get 'auth/facebook/callback', to: 'omniauth_callbacks#facebook'
-      get 'auth/google_oauth2/callback', to: 'omniauth_callbacks#google_oauth2'
-      get 'auth/twitter/callback', to: 'omniauth_callbacks#twitter'
+      scope 'auth' do
+        get 'facebook/callback', to: 'omniauth_callbacks#facebook'
+        get 'google_oauth2/callback', to: 'omniauth_callbacks#google_oauth2'
+        get 'twitter/callback', to: 'omniauth_callbacks#twitter'
+      end
     end
   end
-  # get '/users/auth/facebook/callback', to: 'users/omniauth_callbacks#facebook'
-  # get '/users/auth/google_oauth2/callback' => 'users/omniauth_callbacks#google_oauth2'
-  # get '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter'
 end
