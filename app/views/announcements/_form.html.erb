@@ -27,7 +27,14 @@
   <div class="input-field">
     <i class="material-icons prefix">info</i>
     <%= form.label :announcementType, "Tipo de Anuncio", class: 'active' %>
-    <%= form.text_area :announcementType, id: :announcement_announcementType, class: "materialize-textarea" %>
+
+    <%= form.select(:announcementType, id: :announcement_announcementType )do %>
+      <% [['General'], ['Area de Salud'], ['Ingenieria'],
+          ['Construccion'], ['Transporte'], ['Educacion']].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+
   </div>
 
   <div class="input-field">

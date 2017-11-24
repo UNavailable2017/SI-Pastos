@@ -21,7 +21,7 @@
     <i class="material-icons prefix">card_membership</i>
     <%= form.label :documentType, "Tipo Documento", class:"active" %>
 
-    <%= form.select(:documentType, :disabled => "0" )do %>
+    <%= form.select(:documentType, :id: :person_documentType )do %>
       <% [['Cedula'], ['Extranjeria'],
           ['T.Identidad'], ['Registro Civil']].each do |c| -%>
         <%= content_tag(:option, c.first, value: c.last) %>
