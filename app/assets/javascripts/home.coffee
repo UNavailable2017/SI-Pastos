@@ -22,3 +22,5 @@ $('.datepicker').pickadate({
   close: 'Aceptar',
   closeOnSelect: false # Close upon selecting a date,
 })
+
+$('select').material_select()

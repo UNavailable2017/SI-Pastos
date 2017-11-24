@@ -20,7 +20,14 @@
   <div class="input-field">
     <i class="material-icons prefix">card_membership</i>
     <%= form.label :documentType, "Tipo Documento", class:"active" %>
-    <%= form.text_field :documentType, id: :person_documentType %>
+
+    <%= form.select(:documentType, :disabled => "0" )do %>
+      <% [['Cedula'], ['Extranjeria'],
+          ['T.Identidad'], ['Registro Civil']].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+
   </div>
 
   <div class="input-field">
@@ -44,17 +51,31 @@
   <div class="input-field">
     <i class="material-icons prefix">supervisor_account</i>
     <%= form.label :civilStatus, "Estado Civil", class:"active" %>
-    <%= form.text_field :civilStatus, id: :person_civilStatus %>
+
+    <%= form.select(:civilStatus, id: :person_civilStatus )do %>
+      <% [['Soltero(a)'], ['Casado(a)'],
+          ['U.Libre']].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+
   </div>
 
   <div class="input-field">
     <i class="material-icons prefix">wc</i>
     <%= form.label :gender, "Genero", class:"active" %>
-    <%= form.text_field :gender, id: :person_gender %>
+
+    <%= form.select(:gender, id: :person_gender )do %>
+      <% [['Femenino'], ['Masculino'],
+          ['Libre']].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+
   </div>
 
   <div class="input">
-    <%= form.check_box :isCensus, id: :person_isCensus, class:"filled-in" %>
+    <%= form.check_box :isCensus, id: :person_isCensus, class:"filled-in", disabled: true %>
     <%= form.label :isCensus, "Esta_censado?" %>
   </div>
 
@@ -67,10 +88,17 @@
   <div class="input-field">
     <i class="material-icons prefix">hearing</i>
     <%= form.label :languageDomination, "Dominio de Lenguaje", class:"active" %>
-    <%= form.text_field :languageDomination, id: :person_languageDomination %>
+
+    <%= form.select(:languageDomination, id: :person_languageDomination)do %>
+      <% [['Bueno'], ['Regular'],
+          ['Malo'], ['No Sabe']].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+
   </div>
 
-  <% unless current_user.try(:admin?) %>
+  <!-- <% unless current_user.try(:admin?) %>
     <div class="input-field">
       <i class="material-icons prefix">verified_user</i>
       <%= form.label :user_id %>
@@ -83,7 +111,7 @@
       <%= form.label :user_id %>
       <%= form.number_field :user_id, id: :person_user_id, readonly: true %>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div class="actions center-align">
     <% if current_user.try(:admin?) %>

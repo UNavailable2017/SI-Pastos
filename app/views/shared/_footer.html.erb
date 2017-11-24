@@ -1,7 +1,7 @@
 <footer class="page-footer">
-  <div class="container">
+
     <div class="row">
-      <div class="col l6 s12 center-align">
+      <div class="col l4 offset-l1 s6 center-align">
         <%=link_to image_tag("Escudo_UN.png", {height: 75} ), "http://www.unal.edu.co/" %>
         <h5 class="white-text"> Universidad Nacional de Colombia </h5>
         <p class="grey-text text-lighten-4">
@@ -10,17 +10,36 @@
           Ingenieria de Software II
         </p>
       </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Desarrollador por</h5>
-        <ul>
-          <li>Cristian Cristancho</li>
-          <li>Rafael Salgado</li>
-          <li>Camilo Pinzón</li>
-          <li>Jhon Torres</li>
-        </ul>
+      <div class="col l5 offset-l1 s6">
+        <h5 class="white-text center-align">Desarrollado por:</h5>
+        <div class="col s8">
+          <div class="row">
+            <li>
+              <%= image_tag("jhon.png", height: '45', class:'circle') %>
+              Jhon Torres
+
+            </li>
+            <li>
+              <%= image_tag("cccc.jpg", height: '45', class:'circle') %>
+              Cristian Cristancho
+            </li>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="row">
+            <li>
+              <%= image_tag("camP.png", height: '45', class:'circle') %>
+              Camilo Pinzón</li>
+            <li>
+              <%= image_tag("rfa.jpg", height: '45', class:'circle') %>
+              Rafael Salgado
+            </li>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
   <div class="footer-copyright">
     <div class="container">
       <div class="center-align">
