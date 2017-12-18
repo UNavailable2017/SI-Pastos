@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      UserMailer.contact_email(@contact).deliver_now
+      UserMailer.contact_email(@contact).deliver_later
       redirect_to contacts_path
     else
       render :new
