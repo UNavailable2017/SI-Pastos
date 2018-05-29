@@ -4,7 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  phone      :string
 #  email      :string
 #  message    :text
 #  created_at :datetime         not null
