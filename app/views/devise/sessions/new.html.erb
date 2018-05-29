@@ -20,10 +20,9 @@
     <div class="col l6 m10 offset-m1 s12 z-depth-5">
 
       <% if notice or alert %>
-        <div class="card-panel red lighten-4">
-          <%= notice %>
-          <%= alert %>
-        </div>
+        <script>
+          Materialize.toast("<%= alert %> \n <%= notice %>", 3000, 'rounded');
+        </script>
       <% end %>
 
       <div class="card-form">
