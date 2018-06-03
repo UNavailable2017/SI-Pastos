@@ -8,14 +8,25 @@
   </head>
 
   <body>
+    <% if alert %>
+      <script>
+        Materialize.toast("<%= alert %>", 3000, 'rounded');
+      </script>
+    <% end %>
+    <% if notice %>
+      <script>
+        Materialize.toast("<%= notice %>", 3000, 'rounded');
+      </script>
+    <% end %>
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/navbar_users' %>
     <main>
       <%= yield %>
     </main>
-    <%= render "shared/footer" %>
-    <%= javascript_include_tag :application %>
+    <% cache do %>
+      <%= render "shared/footer" %>
+    <% end %>
 
   </body>
 </html>

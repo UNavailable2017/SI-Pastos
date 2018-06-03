@@ -19,15 +19,8 @@
     <!-- with email -->
     <div class="col l6 m10 offset-m1 s12 z-depth-5">
 
-      <% if notice or alert %>
-        <script>
-          Materialize.toast("<%= alert %> \n <%= notice %>", 3000, 'rounded');
-        </script>
-      <% end %>
-
       <div class="card-form">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
 
           <div class="field">
             <%= f.label :email, 'Correo electrónico:' %>
@@ -46,10 +39,8 @@
               <%= f.label :remember_me, "Recuérdame" %>
             </div>
           <% end -%>
-          <div class="center-align">
-            <div class="actions btn waves-effect waves-light center-align">
-              <%= f.submit "Iniciar sesión" %>
-            </div>
+          <div class="actions center-align">
+            <%= f.button "Iniciar sesión", class: 'btn waves-effect waves-light' %>
           </div>
         <% end %>
       </div>

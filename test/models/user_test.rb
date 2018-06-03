@@ -20,6 +20,12 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :text
+#  failed_attempts        :integer          default(0), not null
+#  unlock_token           :string
+#  locked_at              :datetime
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
 #
 
 require 'test_helper'

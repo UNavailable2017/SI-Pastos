@@ -32,7 +32,6 @@ gem 'figaro'
 gem 'chartkick'
 # jquery
 gem 'jquery-rails'
-gem 'jquery-turbolinks'
 # annotate
 gem 'annotate'
 # for generate model
